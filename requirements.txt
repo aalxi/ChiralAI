@@ -1,0 +1,6 @@
+rdkit
+pubchempy
+requests
+openai
+pandas
+python-dotenv
