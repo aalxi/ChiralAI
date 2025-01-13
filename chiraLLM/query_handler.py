@@ -1,8 +1,8 @@
-import openai
 import os
+from openai import OpenAI
 from dotenv import load_dotenv
 
-load_dotenv()
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 def ask_gpt_chirality(query):
     """
@@ -18,7 +18,7 @@ def ask_gpt_chirality(query):
     openai.api_key = os.getenv('OPENAI_API_KEY')
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-4",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": query}
@@ -28,3 +28,5 @@ def ask_gpt_chirality(query):
         return response.choices[0].message.content
     except Exception as e:
         return f"Error in GPT query: {str(e)}"
+
+load_dotenv()
