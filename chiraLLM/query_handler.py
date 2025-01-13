@@ -2,6 +2,8 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv
 
+load_dotenv()
+
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 def ask_gpt_chirality(query):
@@ -29,4 +31,4 @@ def ask_gpt_chirality(query):
     except Exception as e:
         return f"Error in GPT query: {str(e)}"
 
-load_dotenv()
+
