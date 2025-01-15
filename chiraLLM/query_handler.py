@@ -1,10 +1,13 @@
 import os
+
 from openai import OpenAI
+from openai import ChatCompletion
+from openai import Client
 from dotenv import load_dotenv
 
 load_dotenv()
 
-client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+client = Client(api_key=os.getenv('OPENAI_API_KEY'))
 
 def ask_gpt_chirality(query):
     """
@@ -17,9 +20,9 @@ def ask_gpt_chirality(query):
     4. Brief description of applications
     Format your response as JSON with keys: name, SMILES, KEGG_ID, applications."""
     
-    openai.api_key = os.getenv('OPENAI_API_KEY')
+    OpenAI.api_key = os.getenv('OPENAI_API_KEY')
     try:
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},

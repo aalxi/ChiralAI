@@ -1,6 +1,6 @@
-from ChiraLLM.query_handler import ask_gpt_chirality
-from ChiraLLM.database_validator import query_kegg
-from ChiraLLM.chirality_checker import validate_chirality
+from chiraLLM.query_handler import ask_gpt_chirality
+from chiraLLM.database_validator import query_kegg
+from chiraLLM.chirality_checker import validate_chirality
 from utils.file_saver import save_suggestions_to_csv
 
 def main():
@@ -13,6 +13,7 @@ def main():
     print(f"Response from GPT: {response}")
 
     # Step 2: Parse and validate suggestions
+    # Don't offer a fallback suggestion - the ChatGPT call is failing, and we didn't realize that at first.
     suggestions = [
         {
             "name": "L-glutamate",
@@ -29,7 +30,8 @@ def main():
 
         compound_id = suggestion.get("KEGG_ID")
         if compound_id:
-            suggestion["kegg_data"] = query_kegg(compound_id)
+            suggestion["kegg_data"] = query_kegg(compound_id) # Formatting for this is coming back as a KEY (spaces) VALUE\n KEY (spaces) VALUE \n thing, and we're looking for CSVs.
+            print("kegg_data = " + str(suggestion["kegg_data"]))
 
     # Step 3: Save and display results
     print(f"Processed suggestions: {suggestions}")

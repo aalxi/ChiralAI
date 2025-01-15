@@ -9,6 +9,7 @@ def query_kegg(compound_id):
     if response.status_code == 200:
         # Parse KEGG data to extract useful information
         data = response.text
+        # Should we format this here better?
         return {"status": "success", "data": data[:500]}  # Trimmed for brevity
     else:
         return {"status": "error", "message": f"Failed to retrieve data for {compound_id}"}
