@@ -1,4 +1,4 @@
-![GitHub release downloads](https://img.shields.io/github/downloads/aalxi/ChiralAI/total)
+![GitHub watchers](https://img.shields.io/github/watchers/aalxi/ChiralAI?style=social)
 
 ## How to run:
 1. pip install -r requirements.txt
