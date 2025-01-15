@@ -1,4 +1,4 @@
-![GitHub watchers](https://img.shields.io/github/watchers/aalxi/ChiralAI?style=social)
+![GitHub clones](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=clones&query=count&url=https%3A%2F%2Fapi.github.com%2Frepos%2Faalxi%2FChiralAI%2Ftraffic%2Fclones)
 
 ## How to run:
 1. pip install -r requirements.txt
