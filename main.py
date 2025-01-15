@@ -1,6 +1,6 @@
-from chiraLLM.query_handler import ask_gpt_chirality
-from chiraLLM.database_validator import query_kegg
-from chiraLLM.chirality_checker import validate_chirality
+from ChiraLLM.query_handler import ask_gpt_chirality
+from ChiraLLM.database_validator import query_kegg
+from ChiraLLM.chirality_checker import validate_chirality
 from utils.file_saver import save_suggestions_to_csv
 
 def main():
