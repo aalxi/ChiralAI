@@ -1,4 +1,5 @@
-![Visits](https://img.shields.io/badge/Visits-0-blue)
+![Visitor Count](https://visitor-badge.glitch.me/badge?page_id=aalxi.ChiralAI)
+
 
 ## How to run:
 1. pip install -r requirements.txt
