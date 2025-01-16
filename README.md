@@ -1,4 +1,4 @@
-![GitHub clones](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=clones&query=count&url=https%3A%2F%2Fapi.github.com%2Frepos%2Faalxi%2FChiralAI%2Ftraffic%2Fclones)
+![Visits](https://img.shields.io/badge/Visits-0-blue)
 
 ## How to run:
 1. pip install -r requirements.txt
