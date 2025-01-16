@@ -1,7 +1,3 @@
-![Visitor Count](https://visitor-badge.glitch.me/badge?page_id=aalxi.ChiralAI&cache_bust=1)
-
-
-## How to run:
 1. pip install -r requirements.txt
 2. get .env file / create it, ask Alexei for this, or add your own OPENAI_API_KEY
 3. python3 main.py
