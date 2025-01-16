@@ -1,4 +1,4 @@
-![Visitor Count](https://visitor-badge.glitch.me/badge?page_id=<aalxi>.ChiralAI&cache_bust=1)
+![Visitor Count](https://visitor-badge.glitch.me/badge?page_id=aalxi.ChiralAI&cache_bust=1)
 
 
 ## How to run:
