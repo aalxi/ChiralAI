@@ -10,18 +10,29 @@ def main():
 
     # Step 1: Query GPT
     response = ask_gpt_chirality(query)
+    print("Raw GPT output:", response)
     print(f"Response from GPT: {response}")
 
     # Step 2: Parse and validate suggestions
     # Don't offer a fallback suggestion - the ChatGPT call is failing, and we didn't realize that at first.
-    suggestions = [
-        {
-            "name": "L-glutamate",
-            "SMILES": "C(CC(=O)O)C(N)=O",
-            "KEGG_ID": "C00025",
-            "applications": "Used in agriculture as a nitrogen source."
-        }  # Example suggestion; replace with parsed response
-    ]
+import json
+
+# Step 2: Parse and validate suggestions
+try:
+    parsed_response = json.loads(response)
+    # If GPT returns a single dictionary, put it in a list so we can iterate.
+    if isinstance(parsed_response, dict):
+        suggestions = [parsed_response]
+    # If GPT returns a list of dicts, just use it directly.
+    elif isinstance(parsed_response, list):
+        suggestions = parsed_response
+    else:
+        # If it's neither a dict nor a list, fallback to empty list.
+        suggestions = []
+except Exception as e:
+    print(f"Error parsing GPT response as JSON: {e}")
+    suggestions = []
+
 
     for suggestion in suggestions:
         smiles = suggestion.get("SMILES")
