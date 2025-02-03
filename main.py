@@ -35,8 +35,8 @@ def main():
     # Process each suggestion: validate chirality and fetch KEGG data if applicable
     for suggestion in suggestions:
         smiles = suggestion.get("SMILES")
-        if smiles:
-            suggestion["chirality_validation"] = validate_chirality(smiles)
+        #if smiles: # Disabling because it doesn't work, yet.
+        #    suggestion["chirality_validation"] = validate_chirality(smiles)
 
         compound_id = suggestion.get("KEGG_ID")
         if compound_id:
