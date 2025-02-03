@@ -25,8 +25,11 @@ def main():
             suggestions = parsed_response
         else:
             suggestions = []
-    except Exception as e:
-        print(f"Error parsing GPT response as JSON: {e}")
+    except Exception as ex:
+        template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+        message = template.format(type(ex).__name__, ex.args)
+        print(message)
+        sys.exit(-1)
         suggestions = []
 
     # Process each suggestion: validate chirality and fetch KEGG data if applicable
