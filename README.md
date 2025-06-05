@@ -163,7 +163,7 @@ ChiralAI is just getting started. Our vision is an “oracle” for biosynthetic
 
 ---
 
-## 👩‍🔬 Developed by BettermindLabs
+## Developed with BettermindLabs
 
 - **Useful molecular descriptors:** Chiral centers, redox state, MW, solubility, logP, rotatable bonds, H-bond donors/acceptors.
 - **Pathway inference:** Integrate with KEGG, MetaCyc, BRENDA; leverage Rhea, UniProt for enzyme mapping.
@@ -176,7 +176,9 @@ ChiralAI is just getting started. Our vision is an “oracle” for biosynthetic
 
 ## 📫 Get in Touch
 
-Questions? Ideas? Join the discussion or reach out via Issues or [email@example.com](mailto:email@example.com).
+Questions? Ideas? Connect w/ me on LinkedIn: https://www.linkedin.com/in/alexeimanuel/
+
+Open to collabs/any ideas you want to shoot over!
 
 ---
 
