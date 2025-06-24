@@ -1,5 +1,4 @@
 import os
-
 from openai import OpenAI
 from openai import ChatCompletion
 from openai import Client
