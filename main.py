@@ -44,7 +44,7 @@ def main():
             print("kegg_data =", suggestion["kegg_data"])
 
     # Step 3: Save and display results
-    print(f"Processed suggestions: {suggestions}")
+    # print(f"Processed suggestions: {suggestions}")
     filename = save_suggestions_to_csv(suggestions)
     print(f"Results saved to {filename}")
 
