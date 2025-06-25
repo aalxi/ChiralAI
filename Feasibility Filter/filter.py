@@ -86,11 +86,3 @@ def process_csv_and_analyze(file_path, host):
     except FileNotFoundError:
         return {"error": f"File {file_path} not found"}
     return results
-
-# Example usage
-if __name__ == "__main__":
-    csv_file_path = input("Enter the path to the CSV file: ")
-    host = input("Enter the host organism (e.g., 'E. coli', 'yeast'): ")
-    analysis_results = process_csv_and_analyze(csv_file_path, host)
-    for result in analysis_results:
-        print(result)
