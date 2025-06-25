@@ -1,12 +1,15 @@
 import requests
+import csv
 from rdkit import Chem
 from rdkit.Chem import Descriptors
+
 # KEGG constants
 KEGG_REST = "http://rest.kegg.jp"
 ORGANISMS = {
     "E. coli": "eco",
     "yeast": "sce"
 }
+
 def analyze_molecule_rdkit(smiles):
     mol = Chem.MolFromSmiles(smiles)
     if mol is None:
@@ -20,6 +23,7 @@ def analyze_molecule_rdkit(smiles):
         "num_chiral_centers": num_chiral_centers,
         "feasibility_rule": feasibility
     }
+
 def find_compound_kegg(name):
     url = f"{KEGG_REST}/find/compound/{name}"
     r = requests.get(url)
@@ -28,41 +32,65 @@ def find_compound_kegg(name):
         entry = lines[0].split('\t')[0]
         return entry
     return None
+
 def get_kegg_pathways(compound_id, host_code):
     url = f"{KEGG_REST}/link/pathway/{compound_id}"
     r = requests.get(url)
     if r.ok and r.text.strip():
-        lines = r.text.strip().split('\n')
-        pathways = [line.split('\t')[1] for line in lines]
-        return [p for p in pathways if p.startswith(f"path:{host_code}")]
+        pathways = []
+        for line in r.text.strip().split('\n'):
+            pathway_id = line.split('\t')[1]
+            pathways.append(pathway_id)
+        return pathways
     return []
+
 def combined_feasibility_analysis(name, smiles, host):
+    # Analyze molecule with RDKit
+    rdkit_analysis = analyze_molecule_rdkit(smiles)
+    if "error" in rdkit_analysis:
+        return {"error": f"RDKit analysis failed for {name}: {rdkit_analysis['error']}"}
+    
+    # Find compound in KEGG
+    compound_id = find_compound_kegg(name)
+    if not compound_id:
+        return {"error": f"Compound {name} not found in KEGG"}
+    
+    # Get KEGG pathways
     host_code = ORGANISMS.get(host)
     if not host_code:
-        return {"error": f"Unknown host: {host}"}
-    rdkit_result = analyze_molecule_rdkit(smiles)
-    kegg_id = find_compound_kegg(name)
-    if not kegg_id:
-        kegg_status = "Not found in KEGG"
-        pathways = []
-    else:
-        kegg_status = f"Found as {kegg_id}"
-        pathways = get_kegg_pathways(kegg_id, host_code)
-    feasibility_kegg = "YES" if pathways else "NO"
+        return {"error": f"Host organism {host} not supported"}
+    pathways = get_kegg_pathways(compound_id, host_code)
+    
+    # Combine results
     return {
-        "input": {"name": name, "host": host},
-        "rdkit_analysis": rdkit_result,
-        "kegg": {
-            "compound_status": kegg_status,
-            "feasible_in_host": feasibility_kegg,
-            "pathways": pathways
-        }
+        "name": name,
+        "smiles": smiles,
+        "rdkit_analysis": rdkit_analysis,
+        "kegg_compound_id": compound_id,
+        "kegg_pathways": pathways
     }
-# Example usage:
+
+def process_csv_and_analyze(file_path, host):
+    results = []
+    try:
+        with open(file_path, mode='r') as csv_file:
+            reader = csv.DictReader(csv_file)
+            for row in reader:
+                name = row.get("name")
+                smiles = row.get("smiles")
+                if name and smiles:
+                    result = combined_feasibility_analysis(name, smiles, host)
+                    results.append(result)
+                else:
+                    results.append({"error": "Missing name or SMILES in CSV row"})
+    except FileNotFoundError:
+        return {"error": f"File {file_path} not found"}
+    return results
+
+# Example usage
 if __name__ == "__main__":
-    name = input("Molecule name (e.g., glucose): ")
-    smiles = input("SMILES string: ")
-    host = input("Host organism (E. coli or yeast): ")
-    result = combined_feasibility_analysis(name, smiles, host)
-    from pprint import pprint
-    pprint(result)
+    csv_file_path = input("Enter the path to the CSV file: ")
+    host = input("Enter the host organism (e.g., 'E. coli', 'yeast'): ")
+    analysis_results = process_csv_and_analyze(csv_file_path, host)
+    for result in analysis_results:
+        print(result)
