@@ -1,6 +1,6 @@
 from utils.file_saver import save_suggestions_to_csv
 from ChiraLLM.query_handler import ask_gpt_chirality
-from Feasibility_Filter.filter import process_csv_and_analyze
+from filter import process_csv_and_analyze
 
 if __name__ == "__main__":
     # Step 1: Get user query and generate molecule suggestions
