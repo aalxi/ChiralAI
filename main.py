@@ -1,52 +1,48 @@
-import json
-from ChiraLLM.query_handler import ask_gpt_chirality
-from ChiraLLM.database_validator import query_kegg
-from ChiraLLM.chirality_checker import validate_chirality
-from utils.file_saver import save_suggestions_to_csv
+import sys, json, os
+from datetime import datetime
 
-def main():
+from ChiraLLM.query_handler    import ask_gpt_chirality
+from utils.file_saver          import save_suggestions_to_csv
+from ChiraLLM.feasibility      import process_csv_and_analyze
+
+
+def main() -> None:
     print("Welcome to ChiraLLM (Discovery Engine of ChiralAI)!")
-    query = input("Enter your query (e.g., 'suggest a biodegradable polymer precursor'): ")
-    print(f"Processing query: {query}")
+    query = input("Natural-language query (e.g. 'biodegradable polymer precursor'): ")
 
-    # Step 1: Query GPT
-    response = ask_gpt_chirality(query)
-    print("Raw GPT output:", response)
-    # Optionally, remove one of the duplicate prints if not needed:
-    # print(f"Response from GPT: {response}")
+    # ─── Stage A: LLM suggestions → raw CSV ──────────────────────────
+    raw = ask_gpt_chirality(query)
+    print("Raw GPT output:", raw)
 
-    # Step 2: Parse and validate suggestions
     try:
-        parsed_response = json.loads(response)
-        # If GPT returns a single dictionary, put it in a list so we can iterate.
-        if isinstance(parsed_response, dict):
-            suggestions = [parsed_response]
-        elif isinstance(parsed_response, list):
-            suggestions = parsed_response
-        else:
-            suggestions = []
-    except Exception as ex:
-        template = "An exception of type {0} occurred. Arguments:\n{1!r}"
-        message = template.format(type(ex).__name__, ex.args)
-        print(message)
-        sys.exit(-1)
-        suggestions = []
+        parsed = json.loads(raw)
+        suggestions = [parsed] if isinstance(parsed, dict) else parsed
+    except Exception as exc:
+        print(f"JSON-parsing failed → {exc}")
+        sys.exit(1)
 
-    # Process each suggestion: validate chirality and fetch KEGG data if applicable
-    for suggestion in suggestions:
-        smiles = suggestion.get("SMILES")
-        #if smiles: # Disabling because it doesn't work, yet.
-        #    suggestion["chirality_validation"] = validate_chirality(smiles)
+    suggestions_csv = save_suggestions_to_csv(suggestions)
+    print(f"✅  Raw suggestions saved to {suggestions_csv}")
 
-        compound_id = suggestion.get("KEGG_ID")
-        if compound_id:
-            suggestion["kegg_data"] = query_kegg(compound_id)
-            print("kegg_data =", suggestion["kegg_data"])
+    # ─── Stage B: Feasibility analysis from CSV ─────────────────────
+    host = input("Host organism for feasibility check (e.g. 'E. coli' or 'yeast'): ").strip()
 
-    # Step 3: Save and display results
-    # print(f"Processed suggestions: {suggestions}")
-    filename = save_suggestions_to_csv(suggestions)
-    print(f"Results saved to {filename}")
+    analysis_results = process_csv_and_analyze(suggestions_csv, host)
+    if isinstance(analysis_results, dict) and analysis_results.get("error"):
+        # fatal error (e.g., file not found)
+        print("Feasibility step failed →", analysis_results["error"])
+        sys.exit(1)
+
+    # Flatten + save annotated output
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    out_file  = f"feasibility_{host.replace(' ', '_')}_{timestamp}.csv"
+    save_suggestions_to_csv(analysis_results).replace("suggestions", "feasibility")
+
+    # Cheeky way to ensure the filename uses our prefix
+    os.rename([f for f in os.listdir() if f.startswith("suggestions_") and f.endswith(".csv")][-1], out_file)
+
+    print(f"🎉  Feasibility results saved to {out_file}")
+
 
 if __name__ == "__main__":
     main()
