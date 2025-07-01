@@ -1,24 +1,25 @@
 import pandas as pd
 from datetime import datetime
+import os
 
-def save_suggestions_to_csv(suggestions):
+def save_data_to_csv(data: list[dict], base_filename: str) -> str:
     """
-    Saves a list of molecule suggestions to a timestamped CSV file.
+    Saves a list of dictionaries to a timestamped CSV file.
+    The filename will be 'output/{base_filename}_{timestamp}.csv'.
     """
+    if not data:
+        return "No data to save."
+
+    # Create an 'output' directory if it doesn't exist
+    output_dir = "output"
+    os.makedirs(output_dir, exist_ok=True)
+
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"suggestions_{timestamp}.csv"
+    filename = f"{base_filename}_{timestamp}.csv"
+    full_path = os.path.join(output_dir, filename)
 
-    flattened_data = []
-    for suggestion in suggestions:
-        flat_dict = {}
-        for key, value in suggestion.items():
-            if isinstance(value, dict):
-                for sub_key, sub_value in value.items():
-                    flat_dict[f"{key}_{sub_key}"] = str(sub_value)
-            else:
-                flat_dict[key] = str(value)
-        flattened_data.append(flat_dict)
+    # Use pandas to easily handle list of dicts and save to CSV
+    df = pd.DataFrame(data)
+    df.to_csv(full_path, index=False, encoding='utf-8')
 
-    df = pd.DataFrame(flattened_data)
-    df.to_csv(filename, index=False)
-    return filename
+    return full_path
