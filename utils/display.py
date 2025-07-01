@@ -7,7 +7,7 @@ def display_results_in_terminal(results: list[dict]):
         return
 
     print("\n" + "="*50)
-    print("🔬 CHIRALAI FEASIBILITY REPORT 🔬")
+    print("   CHIRALAI FEASIBILITY REPORT ")
     print("="*50)
 
     for i, result in enumerate(results):
@@ -17,7 +17,7 @@ def display_results_in_terminal(results: list[dict]):
         host = result.get("predicted_host", "N/A")
         bottlenecks = result.get("bottlenecks", [])
 
-        status_emoji = "✅ Feasible" if is_feasible else "❌ Not Feasible"
+        status_emoji = "Feasible" if is_feasible else  "Not Feasible"
         
         print(f"\n--- Result {i+1}: {name} ---")
         print(f"  - Status: {status_emoji}")
