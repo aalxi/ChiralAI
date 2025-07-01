@@ -10,3 +10,4 @@ def validate_chirality(smiles):
     
     chiral_centers = Chem.FindMolChiralCenters(molecule, includeUnassigned=True)
     return {"valid": len(chiral_centers) > 0, "chiral_centers": chiral_centers}
+

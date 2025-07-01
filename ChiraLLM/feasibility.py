@@ -146,5 +146,4 @@ def process_csv_and_analyze(file_path: str, host: str) -> list[dict] | dict:
                 for r in rdr
             ]
     except FileNotFoundError:
-        return {"error": f"File {file_path} not found"}
-    
+        return {"error": f"File {file_path} not found"} 
