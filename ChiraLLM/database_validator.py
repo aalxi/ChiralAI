@@ -13,3 +13,4 @@ def query_kegg(compound_id):
         return {"status": "success", "data": data[:500]}  # Trimmed for brevity
     else:
         return {"status": "error", "message": f"Failed to retrieve data for {compound_id}"}
+

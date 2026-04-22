@@ -1,185 +1,133 @@
-# 🧬 ChiralAI
+# ChiralAI
 
-**From “How” to “What” in Biomanufacturing.**  
-_Reimagine bio-based production: Ask for the molecule you want, and ChiralAI maps out how to make it using the power of synthetic biology and AI._
-
----
-
-## 🚀 What is ChiralAI?
-
-ChiralAI is an open-source platform at the intersection of synthetic biology and artificial intelligence, designed to unlock biology’s untapped potential for producing chiral molecules—compounds where the arrangement of atoms matters, often with huge impact in **pharmaceuticals, agrochemicals, and advanced materials**.
-
-> **“Type ‘chiral nitrogen fertilizer for hydroponics’ and ChiralAI spits out a feasibility heat-map, the CRISPR plasmid design, and—if a step’s missing—an auto-generated enzyme to bridge the gap.”**
-
-**Key Insight:**  
-Biology is inherently chiral and excels at making enantiopure compounds. ChiralAI leverages this, using AI to answer not just “how do we make more X?” but “what *new* X’s does biology make best?”
+**AI-guided discovery of biosynthetically-accessible chiral molecules.**
 
 ---
 
-## 🧠 Core Modules
+## The Problem
 
-### 1. **Discovery Engine** (LLM-powered)
-- **Input:** Plain-English queries (e.g., “A biodegradable chiral molecule for crop protection with a cyclopropane ring”)
-- **Output:**  
-  - Suggested target compounds (known or hypothetical)
-  - Biologically plausible precursors/scaffolds
-  - Pathway candidates (if known)
-  - Relevant literature/patents
+Enantiopure compounds are essential in pharmaceutical synthesis, agrochemistry, and advanced materials — ~80% of chiral APIs are now required as single enantiomers. Biocatalysis is the preferred route: enzymes are inherently chiral, operate under mild conditions, and can achieve >99% ee. But identifying the right enzyme, for the right substrate, with the right stereochemical outcome, in a host that can actually produce the compound — that requires manually stitching together five different tools and databases that were never designed to talk to each other.
 
-### 2. **Feasibility Filter** (Chem/Bio ML models)
-- **Predictions:**  
-  - Can the molecule be biosynthesized in common hosts (E. coli, yeast)?
-  - Likely biosynthetic pathway (e.g., shikimate, mevalonate)
-  - Required cofactors, toxic intermediates
-  - Known enzymes or functional analogs
-
-### 3. **Optimization Module**
-- **Assesses:**  
-  - Pathway efficiency and robustness
-  - Thermodynamics (e.g., via eQuilibrator-style tools)
-  - Enzyme engineering opportunities (using models like ProGen, ESMFold)
-  - Codon optimization, regulatory element suggestions
-
-### 4. **Retrospective Benchmarking**
-- **Validation:**  
-  - Backtests with known biosynthesized chiral molecules
-  - Compares synthetic routes (ChiralAI vs. literature)
-  - Gathers expert feedback from synthetic biologists
+No existing software does this end-to-end. **ChiralAI does.**
 
 ---
 
-## ✨ How to Use ChiralAI
+## What ChiralAI Does
 
-1. **Clone the Repo**
-   ```bash
-   git clone https://github.com/aalxi/ChiralAI.git
-   cd ChiralAI
-   ```
+Given a natural-language query, ChiralAI runs a grounded discovery pipeline:
 
-2. **Set Up Your Environment**
-   - Requires Python 3.8+
-   - (Strongly recommended) Set up a virtual environment:
-     ```bash
-     python -m venv venv
-     source venv/bin/activate  # On Windows: venv\Scripts\activate
-     ```
+```
+User query (e.g., "enantiopure amine building block for beta-lactam synthesis")
+    ↓
+GPT-4.1 — suggests candidate chiral molecules with defined stereochemistry
+    ↓
+RDKit — validates chirality; identifies and assigns R/S stereocenters
+    ↓
+KEGG — maps compounds to known metabolic pathways and enzyme classes
+    ↓
+[BRENDA — retrieves known ee values and enantioselective enzyme data]     ← in progress
+    ↓
+[COBRApy FBA — checks metabolic feasibility in a target host organism]    ← in progress
+    ↓
+Ranked CSV output with stereochemistry, pathway, enzyme, and feasibility data
+```
 
-3. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-   _Core dependencies include:_
-   - `transformers`, `torch` (LLMs & ML models)
-   - `rdkit` (cheminformatics)
-   - `networkx` (pathway graphing)
-   - `requests`, `tqdm`, etc.
-
-4. **Run the Main Interface**
-   ```bash
-   python main.py
-   ```
-   - **OR** launch the web UI (if available):
-     ```bash
-     streamlit run app.py
-     ```
-
-5. **Try Example Queries**
-   - _“Chiral building block for β-lactam antibiotics”_
-   - _“Enzyme pathway for enantiopure arylpropionates in yeast”_
-
-   The system will return:
-   - **Feasibility heatmap**
-   - **Biosynthetic pathway sketch**
-   - **Enzyme/plasmid suggestions**
-   - **Gaps and engineering opportunities**
+The LLM is the **orchestration and reasoning layer** — not the scientific ground truth. Every suggestion is grounded in a database call or computational result.
 
 ---
 
-## 📦 Dependencies
+## Why This Is a Real Gap
 
-- Python 3.8+
-- [RDKit](https://www.rdkit.org/) (cheminformatics)
-- [Transformers](https://huggingface.co/transformers/) (LLMs)
-- [PyTorch](https://pytorch.org/) (ML backend)
-- [NetworkX](https://networkx.org/) (graph analysis)
-- [Streamlit](https://streamlit.io/) (optional UI)
-- See `requirements.txt` for full list.
+| Tool | What It Does | What It Misses |
+|------|-------------|----------------|
+| RetroBioCat | Biocatalytic route planning | No stereochemistry or enantioselectivity awareness |
+| ASKCOS | Organic retrosynthesis | Not built for enzymatic pathways |
+| ChemCrow | GPT-4 + chemistry tools | Organic synthesis only; no biocatalysis |
+| COBRApy | Genome-scale metabolic FBA | Ignores stereochemistry entirely |
+| BRENDA | Gold-standard enzyme database with ee values | A database, not a discovery tool |
+
+ChiralAI's contribution is integration — connecting retrosynthetic reasoning, chiral validation, pathway context, and metabolic feasibility in a single workflow accessible via natural language.
 
 ---
 
-## 🏗️ Project Structure
+## Current State
+
+**Working:**
+- GPT-4.1 → structured JSON molecule suggestions
+- RDKit chirality validation (stereocenters, R/S assignments)
+- KEGG compound and pathway lookup
+- Timestamped CSV export
+
+**In Progress:**
+- BRENDA integration (enantioselective enzyme data, known ee values)
+- Structured KEGG data parsing (pathways, enzyme classes, reactions)
+- COBRApy metabolic feasibility layer (*E. coli* iJO1366 model)
+- Enantioselectivity scoring from database-retrieved ee data
+
+---
+
+## Quickstart
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Set your OpenAI API key
+cp env.example .env
+# Edit .env and add: OPENAI_API_KEY=your_key_here
+
+# 3. Run
+python3 main.py
+```
+
+Enter a query like:
+- `"suggest a chiral amino acid precursor for asymmetric synthesis"`
+- `"enantiopure lactone building blocks for biodegradable polymers"`
+- `"(R)-selective secondary alcohol for pharmaceutical synthesis via E. coli fermentation"`
+
+Results are saved to a timestamped CSV in the project directory.
+
+---
+
+## Architecture
 
 ```
 ChiralAI/
-├── main.py               # Command-line interface
-├── app.py                # Web UI (Streamlit)
-├── chiralai/
-│   ├── discovery.py      # LLM query parsing & molecule suggestions
-│   ├── feasibility.py    # ML models for pathway prediction
-│   ├── optimization.py   # Pathway/enzyme optimization routines
-│   └── benchmarking.py   # Validation/benchmarking scripts
-├── data/                 # Example datasets, pre-built models
-├── requirements.txt
-└── README.md
+├── main.py                      # Orchestrator — runs the full pipeline
+├── ChiraLLM/
+│   ├── query_handler.py         # GPT-4.1 interface — molecule suggestion
+│   ├── chirality_checker.py     # RDKit — stereocenter detection and R/S assignment
+│   └── database_validator.py   # KEGG REST API — pathway and enzyme lookup
+└── utils/
+    └── file_saver.py            # Timestamped CSV export
 ```
 
----
-
-## 🛠️ Long-Term Goals
-
-- **Automated pathway inference** for any chiral target, including novel bio-retrosynthesis.
-- **LLM fine-tuning** on chemical patents, enzymatic reactions, and metabolic pathways for domain alignment.
-- **Integration with pathway databases** (KEGG, MetaCyc, BRENDA) for richer predictions.
-- **Interactive visualization:** Metabolic maps, chiral similarity networks, and pathway heatmaps.
-- **Industry relevance:** Focus on high-value classes like:
-  - Arylpropionates
-  - Cycloalkyl ketones
-  - β-lactams
-  - Chiral amines and alcohols
+**Planned additions:**
+- `ChiraLLM/brenda_client.py` — BRENDA SOAP API for ee values and substrate specificity
+- `ChiraLLM/feasibility_checker.py` — COBRApy FBA for host organism metabolic feasibility
+- `ChiraLLM/enantioselectivity_scorer.py` — enzyme ranking by predicted/known ee
 
 ---
 
-## 🧪 What Makes ChiralAI Unique?
+## Scientific Grounding
 
-- **Natural Language to Pathway:** Go from a plain-English chemical wish-list to a lab-ready playbook.
-- **Bridges AI & Synthetic Biology:** Fuses LLMs, ML, and metabolic databases for end-to-end design.
-- **Designed for extensibility:** Modular codebase for adding new models, organisms, and compound classes.
-
----
-
-## 💡 Contributing & Collaborating
-
-Interested in helping push the boundaries of biomanufacturing?  
-Check out our [CONTRIBUTING.md](CONTRIBUTING.md) or open an issue!  
-Want a more detailed onboarding or LLM fine-tuning guide? Let us know.
+- **KEGG** — compound, pathway, and enzyme commission data
+- **BRENDA** (planned) — 112k enzymes, 5.8M data points, chiral SMILES, ee values
+- **MetaCyc** (planned) — 3,284 curated biosynthetic pathways
+- **COBRApy + iJO1366** (planned) — genome-scale *E. coli* metabolic model for flux analysis
+- **RDKit** — open-source cheminformatics; stereocenters, SMILES validation, R/S assignment
 
 ---
 
-## 🔮 Roadmap & Vision
+## Roadmap
 
-ChiralAI is just getting started. Our vision is an “oracle” for biosynthetic innovation:  
-- Ask for any chiral molecule—get a real, actionable plan for bio-based production.
-- Democratize metabolic engineering by making biosynthetic design as intuitive as searching Google.
-
----
-
-## Developed with BettermindLabs
-
-- **Useful molecular descriptors:** Chiral centers, redox state, MW, solubility, logP, rotatable bonds, H-bond donors/acceptors.
-- **Pathway inference:** Integrate with KEGG, MetaCyc, BRENDA; leverage Rhea, UniProt for enzyme mapping.
-- **Modeling approaches:** GNNs for compound feasibility, LLMs for text-to-pathway, enzyme design via transformer models.
-- **Evaluation:** Expert validation, experimental backtesting, simulated pathway scoring.
-- **Visualization:** Interactive metabolic maps, chiral similarity networks.
-- **Industry targets:** Prioritize pharmaceuticals, agrochemicals, advanced materials.
+- [ ] BRENDA integration — enantioselective enzyme lookup by substrate
+- [ ] KEGG flat-file parsing — structured pathway/enzyme/reaction extraction
+- [ ] COBRApy feasibility layer — FBA with target metabolite, cofactor flagging
+- [ ] Enantioselectivity scoring — rank enzymes by known ee, substrate similarity
+- [ ] Multi-candidate output — ranked list of 5–10 molecules per query
+- [ ] Enzyme engineering flags — identify substrates requiring directed evolution
 
 ---
 
-## 📫 Get in Touch
-
-Questions? Ideas? Connect w/ me on LinkedIn: https://www.linkedin.com/in/alexeimanuel/
-
-Open to collabs/any ideas you want to shoot over!
-
----
-
-> **“Biology doesn’t ask how to make more of X—it asks what X’s it could make best. ChiralAI lets you ask the same.”**
+Questions or ideas? Connect on LinkedIn: https://www.linkedin.com/in/alexeimanuel/

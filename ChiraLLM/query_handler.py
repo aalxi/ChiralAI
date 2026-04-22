@@ -22,7 +22,7 @@ def ask_gpt_chirality(query):
     OpenAI.api_key = os.getenv('OPENAI_API_KEY')
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4.1",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": query}
@@ -33,5 +33,6 @@ def ask_gpt_chirality(query):
         return response.choices[0].message.content
     except Exception as e:
         return f"Error in GPT query: {str(e)}"
+
 
 

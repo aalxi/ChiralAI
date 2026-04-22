@@ -1,4 +1,5 @@
 import json
+import sys
 from ChiraLLM.query_handler import ask_gpt_chirality
 from ChiraLLM.database_validator import query_kegg
 from ChiraLLM.chirality_checker import validate_chirality
@@ -22,7 +23,7 @@ def main():
         if isinstance(parsed_response, dict):
             suggestions = [parsed_response]
         elif isinstance(parsed_response, list):
-            suggestions = parsed_response
+            suggestions = parsed_response 
         else:
             suggestions = []
     except Exception as ex:

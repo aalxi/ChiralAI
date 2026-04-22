@@ -4,3 +4,4 @@ requests
 openai
 pandas
 python-dotenv
+cobra
