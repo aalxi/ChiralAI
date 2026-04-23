@@ -3,6 +3,7 @@ import sys
 from ChiraLLM.query_handler import ask_gpt_chirality
 from ChiraLLM.database_validator import query_kegg
 from ChiraLLM.chirality_checker import validate_chirality
+from ChiraLLM.brenda_client import query_enantioselectivity_batch
 from utils.file_saver import save_suggestions_to_csv
 
 def main():
@@ -41,8 +42,14 @@ def main():
 
         compound_id = suggestion.get("KEGG_ID")
         if compound_id:
-            suggestion["kegg_data"] = query_kegg(compound_id)
-            print("kegg_data =", suggestion["kegg_data"])
+            kegg = query_kegg(compound_id)
+            suggestion["kegg_data"] = kegg
+            # Use EC numbers from KEGG to pull enantioselectivity from BRENDA
+            ec_numbers = kegg.get("enzymes", []) if kegg.get("status") == "success" else []
+            if ec_numbers:
+                suggestion["brenda_data"] = query_enantioselectivity_batch(ec_numbers[:5])
+            else:
+                suggestion["brenda_data"] = {"status": "no_ec_numbers"}
 
     # Step 3: Save and display results
     # print(f"Processed suggestions: {suggestions}")
