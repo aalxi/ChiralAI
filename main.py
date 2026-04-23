@@ -19,11 +19,11 @@ def main():
     # Step 2: Parse and validate suggestions
     try:
         parsed_response = json.loads(response)
-        # If GPT returns a single dictionary, put it in a list so we can iterate.
         if isinstance(parsed_response, dict):
-            suggestions = [parsed_response]
+            # New prompt returns {"suggestions": [...]}; fall back to wrapping bare dict
+            suggestions = parsed_response.get("suggestions", [parsed_response])
         elif isinstance(parsed_response, list):
-            suggestions = parsed_response 
+            suggestions = parsed_response
         else:
             suggestions = []
     except Exception as ex:
@@ -36,8 +36,8 @@ def main():
     # Process each suggestion: validate chirality and fetch KEGG data if applicable
     for suggestion in suggestions:
         smiles = suggestion.get("SMILES")
-        #if smiles: # Disabling because it doesn't work, yet.
-        #    suggestion["chirality_validation"] = validate_chirality(smiles)
+        if smiles:
+            suggestion["chirality_validation"] = validate_chirality(smiles)
 
         compound_id = suggestion.get("KEGG_ID")
         if compound_id:
