@@ -5,6 +5,7 @@ from ChiraLLM.database_validator import query_kegg
 from ChiraLLM.chirality_checker import validate_chirality
 from ChiraLLM.brenda_client import query_enantioselectivity_batch
 from ChiraLLM.feasibility_checker import check_feasibility
+from ChiraLLM.enantioselectivity_scorer import score_suggestion
 from utils.file_saver import save_suggestions_to_csv
 
 def main():
@@ -52,6 +53,8 @@ def main():
             else:
                 suggestion["brenda_data"] = {"status": "no_ec_numbers"}
             suggestion["feasibility"] = check_feasibility(compound_id)
+
+        suggestion["scoring"] = score_suggestion(suggestion)
 
     # Step 3: Save and display results
     # print(f"Processed suggestions: {suggestions}")

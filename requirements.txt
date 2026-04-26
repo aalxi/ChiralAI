@@ -1,7 +1,7 @@
 rdkit
 pubchempy
 requests
-openai
+openai>=2.0.0
 pandas
 python-dotenv
 cobra
