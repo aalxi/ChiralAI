@@ -1,3 +1,4 @@
+import argparse
 import json
 import sys
 from ChiraLLM.query_handler import ask_gpt_chirality
@@ -9,8 +10,18 @@ from ChiraLLM.enantioselectivity_scorer import score_suggestion
 from utils.file_saver import save_suggestions_to_csv
 
 def main():
+    parser = argparse.ArgumentParser(description="ChiraLLM — AI-guided chiral molecule discovery")
+    parser.add_argument("--query", "-q", type=str, default=None,
+                        help="Discovery query (if omitted, prompts interactively)")
+    parser.add_argument("--out-dir", type=str, default=".",
+                        help="Directory for output CSV/JSON files (default: current dir)")
+    args = parser.parse_args()
+
     print("Welcome to ChiraLLM (Discovery Engine of ChiralAI)!")
-    query = input("Enter your query (e.g., 'suggest a biodegradable polymer precursor'): ")
+    if args.query:
+        query = args.query
+    else:
+        query = input("Enter your query (e.g., 'suggest a biodegradable polymer precursor'): ")
     print(f"Processing query: {query}")
 
     # Step 1: Query GPT
@@ -57,9 +68,8 @@ def main():
         suggestion["scoring"] = score_suggestion(suggestion)
 
     # Step 3: Save and display results
-    # print(f"Processed suggestions: {suggestions}")
-    filename = save_suggestions_to_csv(suggestions)
-    print(f"Results saved to {filename}")
+    csv_file, json_file = save_suggestions_to_csv(suggestions, out_dir=args.out_dir)
+    print(f"Results saved to {csv_file} and {json_file}")
 
 if __name__ == "__main__":
     main()

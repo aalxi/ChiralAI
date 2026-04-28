@@ -1,6 +1,6 @@
 # ChiralAI
 
-**AI-guided discovery of biosynthetically-accessible chiral molecules.**
+**AI-guided discovery and validation engine for biocatalytic chiral molecule targets.**
 
 ---
 
@@ -14,25 +14,29 @@ No existing software does this end-to-end. **ChiralAI does.**
 
 ## What ChiralAI Does
 
-Given a natural-language query, ChiralAI runs a grounded discovery pipeline:
+Given a natural-language query, ChiralAI runs a grounded discovery and validation pipeline:
 
 ```
 User query (e.g., "enantiopure amine building block for beta-lactam synthesis")
     ↓
-GPT-4.1 — suggests candidate chiral molecules with defined stereochemistry
+GPT-4.1 — suggests 5 candidate chiral molecules with defined R/S stereochemistry
     ↓
 RDKit — validates chirality; identifies and assigns R/S stereocenters
     ↓
 KEGG — maps compounds to known metabolic pathways and enzyme classes
     ↓
-[BRENDA — retrieves known ee values and enantioselective enzyme data]     ← in progress
+BRENDA — retrieves known ee values from enzyme substrate data (requires API credentials)
     ↓
-[COBRApy FBA — checks metabolic feasibility in a target host organism]    ← in progress
+COBRApy FBA — checks metabolic feasibility in E. coli iJO1366; flags cofactor requirements
     ↓
-Ranked CSV output with stereochemistry, pathway, enzyme, and feasibility data
+Composite scorer — ranks candidates by ee source, Tanimoto substrate similarity, and feasibility
+    ↓
+Timestamped CSV + JSON output with full provenance and confidence tiers
 ```
 
-The LLM is the **orchestration and reasoning layer** — not the scientific ground truth. Every suggestion is grounded in a database call or computational result.
+The LLM is the **orchestration and reasoning layer** — not the scientific ground truth. Every suggestion is grounded in a database call or computational result. LLM-claimed ee values are labeled `"llm_claim"` and discounted; BRENDA-verified ee is labeled `"brenda_verified"` and weighted higher.
+
+**What ChiralAI does not do:** It does not perform retrosynthetic route planning — it validates and scores named targets, it does not enumerate multi-step enzymatic routes from scratch. That is a planned future module.
 
 ---
 
@@ -46,23 +50,7 @@ The LLM is the **orchestration and reasoning layer** — not the scientific grou
 | COBRApy | Genome-scale metabolic FBA | Ignores stereochemistry entirely |
 | BRENDA | Gold-standard enzyme database with ee values | A database, not a discovery tool |
 
-ChiralAI's contribution is integration — connecting retrosynthetic reasoning, chiral validation, pathway context, and metabolic feasibility in a single workflow accessible via natural language.
-
----
-
-## Current State
-
-**Working:**
-- GPT-4.1 → structured JSON molecule suggestions
-- RDKit chirality validation (stereocenters, R/S assignments)
-- KEGG compound and pathway lookup
-- Timestamped CSV export
-
-**In Progress:**
-- BRENDA integration (enantioselective enzyme data, known ee values)
-- Structured KEGG data parsing (pathways, enzyme classes, reactions)
-- COBRApy metabolic feasibility layer (*E. coli* iJO1366 model)
-- Enantioselectivity scoring from database-retrieved ee data
+ChiralAI's contribution is integration — connecting chiral validation, pathway context, enantioselectivity data, and metabolic feasibility in a single workflow accessible via natural language.
 
 ---
 
@@ -72,9 +60,9 @@ ChiralAI's contribution is integration — connecting retrosynthetic reasoning, 
 # 1. Install dependencies
 pip install -r requirements.txt
 
-# 2. Set your OpenAI API key
+# 2. Set credentials
 cp env.example .env
-# Edit .env and add: OPENAI_API_KEY=your_key_here
+# Add: OPENAI_API_KEY, BRENDA_EMAIL, BRENDA_PASSWORD
 
 # 3. Run
 python3 main.py
@@ -85,7 +73,7 @@ Enter a query like:
 - `"enantiopure lactone building blocks for biodegradable polymers"`
 - `"(R)-selective secondary alcohol for pharmaceutical synthesis via E. coli fermentation"`
 
-Results are saved to a timestamped CSV in the project directory.
+Results are saved to a timestamped CSV and JSON sidecar in the project directory.
 
 ---
 
@@ -93,40 +81,59 @@ Results are saved to a timestamped CSV in the project directory.
 
 ```
 ChiralAI/
-├── main.py                      # Orchestrator — runs the full pipeline
+├── main.py                            # Orchestrator — runs the full pipeline
 ├── ChiraLLM/
-│   ├── query_handler.py         # GPT-4.1 interface — molecule suggestion
-│   ├── chirality_checker.py     # RDKit — stereocenter detection and R/S assignment
-│   └── database_validator.py   # KEGG REST API — pathway and enzyme lookup
+│   ├── query_handler.py               # GPT-4.1 — molecule suggestion (5 ranked candidates)
+│   ├── chirality_checker.py           # RDKit — stereocenter detection and R/S assignment
+│   ├── database_validator.py          # KEGG REST API — pathway and enzyme lookup
+│   ├── brenda_client.py               # BRENDA SOAP — ee values from enzyme substrate data
+│   ├── feasibility_checker.py         # COBRApy FBA — metabolic feasibility in iJO1366
+│   └── enantioselectivity_scorer.py   # Composite scorer — ranks by ee, Tanimoto, feasibility
 └── utils/
-    └── file_saver.py            # Timestamped CSV export
+    └── file_saver.py                  # Timestamped CSV + JSON export
 ```
 
-**Planned additions:**
-- `ChiraLLM/brenda_client.py` — BRENDA SOAP API for ee values and substrate specificity
-- `ChiraLLM/feasibility_checker.py` — COBRApy FBA for host organism metabolic feasibility
-- `ChiraLLM/enantioselectivity_scorer.py` — enzyme ranking by predicted/known ee
+---
+
+## Output Columns (CSV)
+
+| Column | Source | Notes |
+|--------|--------|-------|
+| `scoring_composite_score` | Scorer | 0–1; weighted ee + Tanimoto + feasibility |
+| `scoring_confidence` | Scorer | `high` / `medium` / `low` |
+| `scoring_top_enzyme_ec` | BRENDA / KEGG | Best-ranked EC number |
+| `scoring_top_enzyme_ee` | BRENDA / LLM | ee% value |
+| `scoring_top_enzyme_source` | Scorer | `brenda_verified` or `llm_claim` |
+| `scoring_stereo_confirmed` | RDKit | True only if all stereocenters are R/S assigned |
+| `scoring_feasibility_flux` | COBRApy | mmol/gDW/h in iJO1366; None if not in model |
+| `scoring_notes` | Scorer | Human-readable provenance and caveats |
 
 ---
 
 ## Scientific Grounding
 
+- **RDKit** — stereocenter detection, CIP R/S assignment, Morgan fingerprints for Tanimoto
 - **KEGG** — compound, pathway, and enzyme commission data
-- **BRENDA** (planned) — 112k enzymes, 5.8M data points, chiral SMILES, ee values
-- **MetaCyc** (planned) — 3,284 curated biosynthetic pathways
-- **COBRApy + iJO1366** (planned) — genome-scale *E. coli* metabolic model for flux analysis
-- **RDKit** — open-source cheminformatics; stereocenters, SMILES validation, R/S assignment
+- **BRENDA** — 112k enzymes, 5.8M data points; ee% extracted from substrate commentary fields
+- **PubChem** — substrate SMILES resolution for Tanimoto computation
+- **COBRApy + iJO1366** — genome-scale *E. coli* K-12 metabolic model for flux analysis
+
+---
+
+## Known Limitations
+
+- **BRENDA credentials required for verified ee.** Without `BRENDA_EMAIL` / `BRENDA_PASSWORD` in `.env`, all ee values fall back to LLM claims labeled `llm_claim`. BRENDA registration is free.
+- **E. coli only.** The FBA layer uses iJO1366 (E. coli K-12). Secondary metabolites and many pharmaceutical targets return `not_in_model`. Other host models (S. cerevisiae, P. putida) are not yet supported.
+- **No retrosynthetic route planning.** ChiralAI validates and scores named targets; it does not enumerate the enzymatic steps needed to build a molecule from simpler precursors.
 
 ---
 
 ## Roadmap
 
-- [ ] BRENDA integration — enantioselective enzyme lookup by substrate
-- [ ] KEGG flat-file parsing — structured pathway/enzyme/reaction extraction
-- [ ] COBRApy feasibility layer — FBA with target metabolite, cofactor flagging
-- [ ] Enantioselectivity scoring — rank enzymes by known ee, substrate similarity
-- [ ] Multi-candidate output — ranked list of 5–10 molecules per query
-- [ ] Enzyme engineering flags — identify substrates requiring directed evolution
+- [ ] Retrosynthetic route prediction — enumerate enzymatic steps from target to precursors
+- [ ] Non-E. coli host models — S. cerevisiae (iMM904), P. putida support in FBA layer
+- [ ] Engineered variant data — wire BRENDA `getEngineering` for directed evolution candidates
+- [ ] Name↔SMILES stereo consistency check — programmatic CIP verification against molecule name
 
 ---
 

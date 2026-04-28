@@ -1,0 +1,733 @@
+[
+  {
+    "name": "(S)-reticuline",
+    "SMILES": "COc1ccc([C@@H]2c3cc(OC)c(O)cc3CCN2C)cc1O",
+    "R_S_config": "S",
+    "KEGG_ID": "C01516",
+    "enzyme_class": "berberine bridge enzyme / CYP80B1",
+    "known_ee": ">99% ee",
+    "applications": "Central BIA biosynthesis intermediate; opioid pathway landmark",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          6,
+          "R"
+        ]
+      ]
+    },
+    "kegg_data": {
+      "status": "success",
+      "entry": "C01516",
+      "names": [
+        "Morphine"
+      ],
+      "formula": "C17H19NO3",
+      "pathways": [
+        {
+          "id": "map00950",
+          "name": "Isoquinoline alkaloid biosynthesis"
+        },
+        {
+          "id": "map00982",
+          "name": "Drug metabolism - cytochrome P450"
+        },
+        {
+          "id": "map01063",
+          "name": "Biosynthesis of alkaloids derived from shikimate pathway"
+        },
+        {
+          "id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "id": "map04080",
+          "name": "Neuroactive ligand-receptor interaction"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.218",
+        "1.1.1.247",
+        "1.14.11.32",
+        "1.14.14.1",
+        "2.4.1.17"
+      ],
+      "reactions": [
+        "R03591",
+        "R03592",
+        "R03697",
+        "R08262",
+        "R08263",
+        "R08265",
+        "R09402"
+      ]
+    },
+    "brenda_data": {
+      "1.1.1.218": {
+        "status": "no_data",
+        "ec_number": "1.1.1.218",
+        "entries": []
+      },
+      "1.1.1.247": {
+        "status": "no_data",
+        "ec_number": "1.1.1.247",
+        "entries": []
+      },
+      "1.14.11.32": {
+        "status": "no_data",
+        "ec_number": "1.14.11.32",
+        "entries": []
+      },
+      "1.14.14.1": {
+        "status": "no_data",
+        "ec_number": "1.14.14.1",
+        "entries": []
+      },
+      "2.4.1.17": {
+        "status": "no_data",
+        "ec_number": "2.4.1.17",
+        "entries": []
+      }
+    },
+    "feasibility": {
+      "status": "not_in_model",
+      "kegg_id": "C01516",
+      "model": "iJO1366",
+      "message": "C01516 has no matching metabolite in iJO1366 \u2014 compound may be outside E. coli metabolism or use a non-standard ID"
+    },
+    "scoring": {
+      "composite_score": 0.6447,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "1.1.1.218",
+        "ee_value": 99.0,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "1.1.1.218",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.1.247",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.14.11.32",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.14.14.1",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "2.4.1.17",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "Feasibility: not_in_model \u2014 excluded from composite score",
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(S)-norcoclaurine",
+    "SMILES": "Oc1ccc(C[C@@H]2NCCc3cc(O)c(O)cc32)cc1",
+    "R_S_config": "S",
+    "KEGG_ID": "C09136",
+    "enzyme_class": "norcoclaurine synthase (NCS, EC 4.2.1.78)",
+    "known_ee": ">99% ee",
+    "applications": "First committed step BIA biosynthesis; Pictet-Speraserase product",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          6,
+          "S"
+        ]
+      ]
+    },
+    "kegg_data": {
+      "status": "success",
+      "entry": "C09136",
+      "names": [
+        "Montanin A"
+      ],
+      "formula": "C19H20O4",
+      "pathways": [],
+      "enzymes": [],
+      "reactions": []
+    },
+    "brenda_data": {
+      "status": "no_ec_numbers"
+    },
+    "feasibility": {
+      "status": "not_in_model",
+      "kegg_id": "C09136",
+      "model": "iJO1366",
+      "message": "C09136 has no matching metabolite in iJO1366 \u2014 compound may be outside E. coli metabolism or use a non-standard ID"
+    },
+    "scoring": {
+      "composite_score": 0.6447,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "norcoclaurine synthase (NCS, EC 4.2.1.78)",
+        "ee_value": 99.0,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "norcoclaurine synthase (NCS, EC 4.2.1.78)",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "Feasibility: not_in_model \u2014 excluded from composite score",
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(R)-mandelic acid",
+    "SMILES": "O[C@@H](C(=O)O)c1ccccc1",
+    "R_S_config": "R",
+    "KEGG_ID": "C01983",
+    "enzyme_class": "mandelate dehydrogenase (EC 1.1.1.379)",
+    "known_ee": ">99% ee",
+    "applications": "Strain engineering target; E. coli heterologous production via HmaS",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          1,
+          "R"
+        ]
+      ]
+    },
+    "kegg_data": {
+      "status": "success",
+      "entry": "C01983",
+      "names": [
+        "(R)-Mandelate",
+        "(R)-2-Hydroxy-2-phenylacetic acid",
+        "(R)-2-Hydroxy-2-phenylacetate",
+        "(R)-Mandelic acid"
+      ],
+      "formula": "C8H8O3",
+      "pathways": [
+        {
+          "id": "map00627",
+          "name": "Aminobenzoate degradation"
+        },
+        {
+          "id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.379",
+        "3.5.1.86",
+        "5.1.2.2"
+      ],
+      "reactions": [
+        "R03790",
+        "R03791",
+        "R05783"
+      ]
+    },
+    "brenda_data": {
+      "1.1.1.379": {
+        "status": "no_data",
+        "ec_number": "1.1.1.379",
+        "entries": []
+      },
+      "3.5.1.86": {
+        "status": "no_data",
+        "ec_number": "3.5.1.86",
+        "entries": []
+      },
+      "5.1.2.2": {
+        "status": "no_data",
+        "ec_number": "5.1.2.2",
+        "entries": []
+      }
+    },
+    "feasibility": {
+      "status": "not_in_model",
+      "kegg_id": "C01983",
+      "model": "iJO1366",
+      "message": "C01983 has no matching metabolite in iJO1366 \u2014 compound may be outside E. coli metabolism or use a non-standard ID"
+    },
+    "scoring": {
+      "composite_score": 0.6447,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "1.1.1.379",
+        "ee_value": 99.0,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "1.1.1.379",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "3.5.1.86",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "5.1.2.2",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "Feasibility: not_in_model \u2014 excluded from composite score",
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(S)-lactic acid",
+    "SMILES": "C[C@H](O)C(=O)O",
+    "R_S_config": "S",
+    "KEGG_ID": "C00186",
+    "enzyme_class": "L-lactate dehydrogenase",
+    "known_ee": ">99.9% ee",
+    "applications": "E. coli native metabolite; iJO1366 feasibility positive control",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          1,
+          "S"
+        ]
+      ]
+    },
+    "kegg_data": {
+      "status": "success",
+      "entry": "C00186",
+      "names": [
+        "(S)-Lactate",
+        "L-Lactate",
+        "L-Lactic acid"
+      ],
+      "formula": "C3H6O3",
+      "pathways": [
+        {
+          "id": "map00010",
+          "name": "Glycolysis / Gluconeogenesis"
+        },
+        {
+          "id": "map00051",
+          "name": "Fructose and mannose metabolism"
+        },
+        {
+          "id": "map00620",
+          "name": "Pyruvate metabolism"
+        },
+        {
+          "id": "map00640",
+          "name": "Propanoate metabolism"
+        },
+        {
+          "id": "map00643",
+          "name": "Styrene degradation"
+        },
+        {
+          "id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "id": "map04024",
+          "name": "cAMP signaling pathway"
+        },
+        {
+          "id": "map04066",
+          "name": "HIF-1 signaling pathway"
+        },
+        {
+          "id": "map04148",
+          "name": "Efferocytosis"
+        },
+        {
+          "id": "map04922",
+          "name": "Glucagon signaling pathway"
+        },
+        {
+          "id": "map05230",
+          "name": "Central carbon metabolism in cancer"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.27",
+        "1.1.1.436",
+        "1.1.2.3",
+        "1.1.3.2",
+        "1.1.99.7",
+        "1.2.1.22",
+        "1.13.12.4",
+        "2.8.3.1",
+        "3.7.1.26",
+        "4.1.1.101",
+        "4.1.2.36",
+        "5.1.2.1"
+      ],
+      "reactions": [
+        "R00196",
+        "R00319",
+        "R00703",
+        "R00753",
+        "R01446",
+        "R01447",
+        "R01449",
+        "R01450",
+        "R05508",
+        "R10691",
+        "R11074",
+        "R11996",
+        "R13050"
+      ]
+    },
+    "brenda_data": {
+      "1.1.1.27": {
+        "status": "no_data",
+        "ec_number": "1.1.1.27",
+        "entries": []
+      },
+      "1.1.1.436": {
+        "status": "no_data",
+        "ec_number": "1.1.1.436",
+        "entries": []
+      },
+      "1.1.2.3": {
+        "status": "no_data",
+        "ec_number": "1.1.2.3",
+        "entries": []
+      },
+      "1.1.3.2": {
+        "status": "no_data",
+        "ec_number": "1.1.3.2",
+        "entries": []
+      },
+      "1.1.99.7": {
+        "status": "no_data",
+        "ec_number": "1.1.99.7",
+        "entries": []
+      }
+    },
+    "feasibility": {
+      "kegg_id": "C00186",
+      "metabolite_id": "lac__L_c",
+      "metabolite_name": "L-Lactate",
+      "model": "iJO1366",
+      "cofactors_required": [
+        "NAD+",
+        "NADH"
+      ],
+      "n_producing_reactions": 2,
+      "status": "feasible",
+      "flux": 17.3344
+    },
+    "scoring": {
+      "composite_score": 0.7196,
+      "confidence": "medium",
+      "top_enzyme": {
+        "ec_number": "1.1.1.27",
+        "ee_value": 99.9,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "1.1.1.27",
+          "score": 0.5994,
+          "ee_value": 99.9,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.1.436",
+          "score": 0.5994,
+          "ee_value": 99.9,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.2.3",
+          "score": 0.5994,
+          "ee_value": 99.9,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.3.2",
+          "score": 0.5994,
+          "ee_value": 99.9,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.99.7",
+          "score": 0.5994,
+          "ee_value": 99.9,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.2.1.22",
+          "score": 0.5994,
+          "ee_value": 99.9,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.13.12.4",
+          "score": 0.5994,
+          "ee_value": 99.9,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "2.8.3.1",
+          "score": 0.5994,
+          "ee_value": 99.9,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "3.7.1.26",
+          "score": 0.5994,
+          "ee_value": 99.9,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.1.1.101",
+          "score": 0.5994,
+          "ee_value": 99.9,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.1.2.36",
+          "score": 0.5994,
+          "ee_value": 99.9,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "5.1.2.1",
+          "score": 0.5994,
+          "ee_value": 99.9,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": 17.3344,
+      "scoring_notes": [
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(R)-1,3-butanediol",
+    "SMILES": "C[C@@H](O)CCO",
+    "R_S_config": "R",
+    "KEGG_ID": "C04483",
+    "enzyme_class": "3-hydroxybutyrate dehydrogenase",
+    "known_ee": ">98% ee",
+    "applications": "Bioplastic precursor; Genomatica commercial strain target",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          1,
+          "R"
+        ]
+      ]
+    },
+    "kegg_data": {
+      "status": "success",
+      "entry": "C04483",
+      "names": [
+        "Deoxycholic acid",
+        "Deoxycholate",
+        "3alpha,12alpha-Dihydroxy-5beta-cholanate",
+        "3alpha,12alpha-Dihydroxy-5beta-cholanic acid"
+      ],
+      "formula": "C24H40O4",
+      "pathways": [
+        {
+          "id": "map00121",
+          "name": "Secondary bile acid biosynthesis"
+        },
+        {
+          "id": "map04976",
+          "name": "Bile secretion"
+        }
+      ],
+      "enzymes": [
+        "2.8.3.25",
+        "3.5.1.24"
+      ],
+      "reactions": [
+        "R04486",
+        "R04487",
+        "R05836",
+        "R07220",
+        "R07295"
+      ]
+    },
+    "brenda_data": {
+      "2.8.3.25": {
+        "status": "no_data",
+        "ec_number": "2.8.3.25",
+        "entries": []
+      },
+      "3.5.1.24": {
+        "status": "no_data",
+        "ec_number": "3.5.1.24",
+        "entries": []
+      }
+    },
+    "feasibility": {
+      "status": "not_in_model",
+      "kegg_id": "C04483",
+      "model": "iJO1366",
+      "message": "C04483 has no matching metabolite in iJO1366 \u2014 compound may be outside E. coli metabolism or use a non-standard ID"
+    },
+    "scoring": {
+      "composite_score": 0.6395,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "2.8.3.25",
+        "ee_value": 98.0,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "2.8.3.25",
+          "score": 0.588,
+          "ee_value": 98.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "3.5.1.24",
+          "score": 0.588,
+          "ee_value": 98.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "Feasibility: not_in_model \u2014 excluded from composite score",
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  }
+]

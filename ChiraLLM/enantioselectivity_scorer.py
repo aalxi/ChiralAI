@@ -99,7 +99,7 @@ def _score_enzyme_entry(entry: dict, query_smiles: Optional[str]) -> dict:
             tanimoto = _compute_tanimoto(query_smiles, sub_smiles)
 
     if tanimoto is not None:
-        score = (0.50 * ee_norm + 0.20 * tanimoto) / 0.70
+        score = (ee_norm * 0.50 + tanimoto * 0.20) / 0.70
     else:
         score = ee_norm
 

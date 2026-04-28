@@ -1,0 +1,649 @@
+[
+  {
+    "name": "(S)-styrene oxide",
+    "SMILES": "[C@H]1(c2ccccc2)CO1",
+    "R_S_config": "S",
+    "KEGG_ID": "C02944",
+    "enzyme_class": "styrene monooxygenase",
+    "known_ee": ">99% ee",
+    "applications": "Asymmetric epoxidation; CYP450 / styrene monooxygenase",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          0,
+          "S"
+        ]
+      ]
+    },
+    "kegg_data": {
+      "status": "success",
+      "entry": "C02944",
+      "names": [
+        "3-cis-Dodecenoyl-CoA",
+        "3-cis-Dodecenoyl coenzyme A",
+        "(3Z)-Dodecenoyl-CoA",
+        "(3Z)-Dodec-3-enoyl-CoA"
+      ],
+      "formula": "C33H56N7O17P3S",
+      "pathways": [],
+      "enzymes": [
+        "5.3.3.8"
+      ],
+      "reactions": [
+        "R04100"
+      ]
+    },
+    "brenda_data": {
+      "5.3.3.8": {
+        "status": "no_data",
+        "ec_number": "5.3.3.8",
+        "entries": []
+      }
+    },
+    "feasibility": {
+      "status": "not_in_model",
+      "kegg_id": "C02944",
+      "model": "iJO1366",
+      "message": "C02944 has no matching metabolite in iJO1366 \u2014 compound may be outside E. coli metabolism or use a non-standard ID"
+    },
+    "scoring": {
+      "composite_score": 0.6447,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "5.3.3.8",
+        "ee_value": 99.0,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "5.3.3.8",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "Feasibility: not_in_model \u2014 excluded from composite score",
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(1R,2S)-cyclopropane-1-carboxylic acid ethyl ester from styrene",
+    "SMILES": "CCOC(=O)[C@@H]1C[C@@H]1c1ccccc1",
+    "R_S_config": "1R,2S",
+    "KEGG_ID": null,
+    "enzyme_class": "engineered cytochrome P450 (carbene transferase)",
+    "known_ee": "97% ee",
+    "applications": "Non-natural cyclopropanation; Arnold lab P450 BM3 directed evolution",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          5,
+          "R"
+        ],
+        [
+          7,
+          "S"
+        ]
+      ]
+    },
+    "scoring": {
+      "composite_score": 0.6342,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "engineered cytochrome P450 (carbene transferase)",
+        "ee_value": 97.0,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "engineered cytochrome P450 (carbene transferase)",
+          "score": 0.582,
+          "ee_value": 97.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(R)-mandelic acid",
+    "SMILES": "O[C@@H](C(=O)O)c1ccccc1",
+    "R_S_config": "R",
+    "KEGG_ID": "C01983",
+    "enzyme_class": "mandelate dehydrogenase (EC 1.1.1.379)",
+    "known_ee": ">99% ee",
+    "applications": "Pharmaceutical building block; hydroxymandelate synthase route",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          1,
+          "R"
+        ]
+      ]
+    },
+    "kegg_data": {
+      "status": "success",
+      "entry": "C01983",
+      "names": [
+        "(R)-Mandelate",
+        "(R)-2-Hydroxy-2-phenylacetic acid",
+        "(R)-2-Hydroxy-2-phenylacetate",
+        "(R)-Mandelic acid"
+      ],
+      "formula": "C8H8O3",
+      "pathways": [
+        {
+          "id": "map00627",
+          "name": "Aminobenzoate degradation"
+        },
+        {
+          "id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.379",
+        "3.5.1.86",
+        "5.1.2.2"
+      ],
+      "reactions": [
+        "R03790",
+        "R03791",
+        "R05783"
+      ]
+    },
+    "brenda_data": {
+      "1.1.1.379": {
+        "status": "no_data",
+        "ec_number": "1.1.1.379",
+        "entries": []
+      },
+      "3.5.1.86": {
+        "status": "no_data",
+        "ec_number": "3.5.1.86",
+        "entries": []
+      },
+      "5.1.2.2": {
+        "status": "no_data",
+        "ec_number": "5.1.2.2",
+        "entries": []
+      }
+    },
+    "feasibility": {
+      "status": "not_in_model",
+      "kegg_id": "C01983",
+      "model": "iJO1366",
+      "message": "C01983 has no matching metabolite in iJO1366 \u2014 compound may be outside E. coli metabolism or use a non-standard ID"
+    },
+    "scoring": {
+      "composite_score": 0.6447,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "1.1.1.379",
+        "ee_value": 99.0,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "1.1.1.379",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "3.5.1.86",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "5.1.2.2",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "Feasibility: not_in_model \u2014 excluded from composite score",
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(S)-4-hydroxyphenylglycine",
+    "SMILES": "N[C@@H](C(=O)O)c1ccc(O)cc1",
+    "R_S_config": "S",
+    "KEGG_ID": "C03618",
+    "enzyme_class": "4-hydroxyphenylglycine aminotransferase",
+    "known_ee": ">99% ee",
+    "applications": "Vancomycin antibiotic biosynthetic intermediate",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          1,
+          "R"
+        ]
+      ]
+    },
+    "kegg_data": {
+      "status": "success",
+      "entry": "C03618",
+      "names": [
+        "L-threo-3-Methylaspartate",
+        "(2S,3S)-3-Methylaspartate"
+      ],
+      "formula": "C5H9NO4",
+      "pathways": [
+        {
+          "id": "map00630",
+          "name": "Glyoxylate and dicarboxylate metabolism"
+        },
+        {
+          "id": "map00660",
+          "name": "C5-Branched dibasic acid metabolism"
+        },
+        {
+          "id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "id": "map01200",
+          "name": "Carbon metabolism"
+        }
+      ],
+      "enzymes": [
+        "4.3.1.2",
+        "5.4.99.1"
+      ],
+      "reactions": [
+        "R00262",
+        "R03696",
+        "R04269"
+      ]
+    },
+    "brenda_data": {
+      "4.3.1.2": {
+        "status": "success",
+        "ec_number": "4.3.1.2",
+        "entries": [
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + 1-cyclopropylmethanamine",
+            "enantioselectivity": 95.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 61%, excess of threo isomer over erythro isomer: more than 95%, enantiomeric excess: more than 99%"
+          },
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + 1-cyclopropylmethanamine",
+            "enantioselectivity": 28.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 96%, yield: 28%, enantiomeric excess: more than 99%"
+          },
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + aminobutane",
+            "enantioselectivity": 95.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 60%, excess of threo isomer over erythro isomer: more than 95%, enantiomeric excess: more than 99%"
+          },
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + aminobutane",
+            "enantioselectivity": 33.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 97%, yield: 33%, enantiomeric excess: more than 99%"
+          },
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + cyclobutanamine",
+            "enantioselectivity": 95.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 65%, excess of threo isomer over erythro isomer: more than 95%, enantiomeric excess: more than 99%"
+          },
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + cyclobutanamine",
+            "enantioselectivity": 74.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 99%, yield: 74%, enantiomeric excess: more than 99%"
+          },
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + ethanamine",
+            "enantioselectivity": 95.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 51%, excess of threo isomer over erythro isomer: more than 95%, enantiomeric excess: more than 99%"
+          },
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + ethanamine",
+            "enantioselectivity": 75.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 100%, yield: 75%, enantiomeric excess: more than 99%"
+          },
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + methanamine",
+            "enantioselectivity": 96.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 100%, yield: 96%, enantiomeric excess: more than 99%"
+          },
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + NH3",
+            "enantioselectivity": 79.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 100%, yield: 79%, enantiomeric excess: more than 99%"
+          },
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + pentanamine",
+            "enantioselectivity": 14.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 91%, yield: 14%, enantiomeric excess: more than 99%"
+          },
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + propan-2-amine",
+            "enantioselectivity": 95.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 8%, excess of threo isomer over erythro isomer: more than 95%, enantiomeric excess: more than 99%"
+          },
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + propanamine",
+            "enantioselectivity": 95.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 53%, excess of threo isomer over erythro isomer: more than 95%, enantiomeric excess: more than 99%"
+          },
+          {
+            "ec_number": "4.3.1.2",
+            "substrates": "mesaconate + propanamine",
+            "enantioselectivity": 53.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "mutant Q73A, conversion: 99%, yield: 53%, enantiomeric excess: more than 99%"
+          }
+        ]
+      },
+      "5.4.99.1": {
+        "status": "no_data",
+        "ec_number": "5.4.99.1",
+        "entries": []
+      }
+    },
+    "feasibility": {
+      "status": "not_in_model",
+      "kegg_id": "C03618",
+      "model": "iJO1366",
+      "message": "C03618 has no matching metabolite in iJO1366 \u2014 compound may be outside E. coli metabolism or use a non-standard ID"
+    },
+    "scoring": {
+      "composite_score": 0.965,
+      "confidence": "medium",
+      "top_enzyme": {
+        "ec_number": "4.3.1.2",
+        "ee_value": 96.0,
+        "ee_source": "brenda_verified",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.96,
+          "ee_value": 96.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.95,
+          "ee_value": 95.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.95,
+          "ee_value": 95.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.95,
+          "ee_value": 95.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.95,
+          "ee_value": 95.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.95,
+          "ee_value": 95.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.95,
+          "ee_value": 95.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.79,
+          "ee_value": 79.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.75,
+          "ee_value": 75.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.74,
+          "ee_value": 74.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.53,
+          "ee_value": 53.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.33,
+          "ee_value": 33.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.28,
+          "ee_value": 28.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "4.3.1.2",
+          "score": 0.14,
+          "ee_value": 14.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "Feasibility: not_in_model \u2014 excluded from composite score",
+        "No BRENDA data for EC 5.4.99.1 (status: no_data)"
+      ]
+    }
+  },
+  {
+    "name": "(S)-2-aminobutyric acid",
+    "SMILES": "CC[C@@H](N)C(=O)O",
+    "R_S_config": "S",
+    "KEGG_ID": "C02261",
+    "enzyme_class": "threonine deaminase / transaminase",
+    "known_ee": ">99% ee",
+    "applications": "Non-proteinogenic amino acid; levetiracetam precursor",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          2,
+          "R"
+        ]
+      ]
+    },
+    "kegg_data": {
+      "status": "success",
+      "entry": "C02261",
+      "names": [
+        "D-2-Aminobutyrate",
+        "D-2-Aminobutyric acid",
+        "D-2-Aminobutanoic acid",
+        "(R)-2-Aminobutanoic acid"
+      ],
+      "formula": "C4H9NO2",
+      "pathways": [],
+      "enzymes": [],
+      "reactions": []
+    },
+    "brenda_data": {
+      "status": "no_ec_numbers"
+    },
+    "feasibility": {
+      "status": "not_in_model",
+      "kegg_id": "C02261",
+      "model": "iJO1366",
+      "message": "C02261 has no matching metabolite in iJO1366 \u2014 compound may be outside E. coli metabolism or use a non-standard ID"
+    },
+    "scoring": {
+      "composite_score": 0.6447,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "threonine deaminase / transaminase",
+        "ee_value": 99.0,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "threonine deaminase / transaminase",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "Feasibility: not_in_model \u2014 excluded from composite score",
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  }
+]

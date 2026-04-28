@@ -1,0 +1,240 @@
+[
+  {
+    "name": "(R)-2-fluoro-2-methylcyclopropane-1-carboxylic acid",
+    "SMILES": "F[C@]1(C)CC1C(=O)O",
+    "R_S_config": "R",
+    "KEGG_ID": null,
+    "enzyme_class": "cyclopropane synthase",
+    "known_ee": "unknown",
+    "applications": "Novel chiral scaffold for agrochemical design",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          1,
+          "R"
+        ],
+        [
+          4,
+          "?"
+        ]
+      ]
+    },
+    "scoring": {
+      "composite_score": 0.0,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "cyclopropane synthase",
+        "ee_value": null,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "cyclopropane synthase",
+          "score": 0.0,
+          "ee_value": null,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": false,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "Chiral centers found but stereochemistry unassigned in SMILES \u2014 LLM may have omitted @ notation",
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(1R,2S)-2-fluorocyclopropylamine",
+    "SMILES": "N[C@H]1C[C@@H]1F",
+    "R_S_config": "1R,2S",
+    "KEGG_ID": null,
+    "enzyme_class": "unknown",
+    "known_ee": "unknown",
+    "applications": "Mechanism-based MAO inhibitor scaffold",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          1,
+          "S"
+        ],
+        [
+          3,
+          "S"
+        ]
+      ]
+    },
+    "scoring": {
+      "composite_score": 0.125,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "unknown",
+        "ee_value": null,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "unknown",
+          "score": 0.0,
+          "ee_value": null,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(S)-1-trifluoromethylethanol",
+    "SMILES": "FC(F)(F)[C@@H](O)C",
+    "R_S_config": "S",
+    "KEGG_ID": null,
+    "enzyme_class": "ketoreductase (KRED)",
+    "known_ee": "85% ee",
+    "applications": "Fluorinated building block; expensive asymmetric synthesis",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          4,
+          "S"
+        ]
+      ]
+    },
+    "scoring": {
+      "composite_score": 0.5713,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "ketoreductase (KRED)",
+        "ee_value": 85.0,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "ketoreductase (KRED)",
+          "score": 0.51,
+          "ee_value": 85.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(R)-hexafluoroleucine",
+    "SMILES": "N[C@H](CC(C(F)(F)F)C(F)(F)F)C(=O)O",
+    "R_S_config": "R",
+    "KEGG_ID": null,
+    "enzyme_class": "unknown",
+    "known_ee": "unknown",
+    "applications": "Fluorinated amino acid for protein engineering",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          1,
+          "R"
+        ]
+      ]
+    },
+    "scoring": {
+      "composite_score": 0.125,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "unknown",
+        "ee_value": null,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "unknown",
+          "score": 0.0,
+          "ee_value": null,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(1R,2R)-2-methylcyclopropane-1-carbaldehyde",
+    "SMILES": "O=C[C@H]1C[C@@H]1C",
+    "R_S_config": "1R,2R",
+    "KEGG_ID": null,
+    "enzyme_class": "cyclopropane carboxaldehyde synthase",
+    "known_ee": "unknown",
+    "applications": "Exotic chiral aldehyde; no biosynthetic route established",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          2,
+          "S"
+        ],
+        [
+          4,
+          "S"
+        ]
+      ]
+    },
+    "scoring": {
+      "composite_score": 0.125,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "cyclopropane carboxaldehyde synthase",
+        "ee_value": null,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "cyclopropane carboxaldehyde synthase",
+          "score": 0.0,
+          "ee_value": null,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  }
+]

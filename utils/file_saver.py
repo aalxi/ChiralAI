@@ -1,3 +1,5 @@
+import json
+import os
 import pandas as pd
 from datetime import datetime
 
@@ -16,12 +18,16 @@ def _flatten_scoring(scoring: dict) -> dict:
     }
 
 
-def save_suggestions_to_csv(suggestions):
+def save_suggestions_to_csv(suggestions, out_dir: str = ".") -> tuple[str, str]:
     """
-    Saves a list of molecule suggestions to a timestamped CSV file.
+    Saves suggestions to a timestamped CSV (flat columns) and a parallel JSON
+    sidecar (full nested structure including enzyme_rankings).
+
+    Returns (csv_path, json_path).
     """
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"suggestions_{timestamp}.csv"
+    csv_path  = os.path.join(out_dir, f"suggestions_{timestamp}.csv")
+    json_path = os.path.join(out_dir, f"suggestions_{timestamp}.json")
 
     flattened_data = []
     for suggestion in suggestions:
@@ -37,5 +43,9 @@ def save_suggestions_to_csv(suggestions):
         flattened_data.append(flat_dict)
 
     df = pd.DataFrame(flattened_data)
-    df.to_csv(filename, index=False)
-    return filename
+    df.to_csv(csv_path, index=False)
+
+    with open(json_path, "w") as f:
+        json.dump(suggestions, f, indent=2, default=str)
+
+    return csv_path, json_path

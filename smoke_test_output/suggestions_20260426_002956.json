@@ -1,0 +1,654 @@
+[
+  {
+    "name": "(S)-1-phenylethanol",
+    "SMILES": "[C@@H](O)(c1ccccc1)C",
+    "R_S_config": "S",
+    "KEGG_ID": "C02934",
+    "enzyme_class": "ketoreductase (KRED)",
+    "known_ee": ">99% ee",
+    "applications": "Chiral building block; produced by Lactobacillus kefir ADH",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          0,
+          "S"
+        ]
+      ]
+    },
+    "kegg_data": {
+      "status": "success",
+      "entry": "C02934",
+      "names": [
+        "3-Dehydrosphinganine",
+        "3-Dehydro-D-sphinganine"
+      ],
+      "formula": "C18H37NO2",
+      "pathways": [
+        {
+          "id": "map00600",
+          "name": "Sphingolipid metabolism"
+        },
+        {
+          "id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "id": "map04382",
+          "name": "Cornified envelope formation"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.102",
+        "2.3.1.50",
+        "2.3.1.-"
+      ],
+      "reactions": [
+        "R01281",
+        "R02978",
+        "R04092",
+        "R13552"
+      ]
+    },
+    "brenda_data": {
+      "1.1.1.102": {
+        "status": "no_data",
+        "ec_number": "1.1.1.102",
+        "entries": []
+      },
+      "2.3.1.50": {
+        "status": "no_data",
+        "ec_number": "2.3.1.50",
+        "entries": []
+      },
+      "2.3.1.-": {
+        "status": "no_data",
+        "ec_number": "2.3.1.-",
+        "entries": []
+      }
+    },
+    "feasibility": {
+      "status": "not_in_model",
+      "kegg_id": "C02934",
+      "model": "iJO1366",
+      "message": "C02934 has no matching metabolite in iJO1366 \u2014 compound may be outside E. coli metabolism or use a non-standard ID"
+    },
+    "scoring": {
+      "composite_score": 0.6447,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "1.1.1.102",
+        "ee_value": 99.0,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "1.1.1.102",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "2.3.1.50",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "2.3.1.-",
+          "score": 0.594,
+          "ee_value": 99.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "Feasibility: not_in_model \u2014 excluded from composite score",
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(R)-1-phenylethanol",
+    "SMILES": "[C@H](O)(c1ccccc1)C",
+    "R_S_config": "R",
+    "KEGG_ID": "C02934",
+    "enzyme_class": "ketoreductase (KRED)",
+    "known_ee": "98% ee",
+    "applications": "Pharmaceutical intermediate; Thermoanaerobacter ethanolicus ADH",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          0,
+          "R"
+        ]
+      ]
+    },
+    "kegg_data": {
+      "status": "success",
+      "entry": "C02934",
+      "names": [
+        "3-Dehydrosphinganine",
+        "3-Dehydro-D-sphinganine"
+      ],
+      "formula": "C18H37NO2",
+      "pathways": [
+        {
+          "id": "map00600",
+          "name": "Sphingolipid metabolism"
+        },
+        {
+          "id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "id": "map04382",
+          "name": "Cornified envelope formation"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.102",
+        "2.3.1.50",
+        "2.3.1.-"
+      ],
+      "reactions": [
+        "R01281",
+        "R02978",
+        "R04092",
+        "R13552"
+      ]
+    },
+    "brenda_data": {
+      "1.1.1.102": {
+        "status": "no_data",
+        "ec_number": "1.1.1.102",
+        "entries": []
+      },
+      "2.3.1.50": {
+        "status": "no_data",
+        "ec_number": "2.3.1.50",
+        "entries": []
+      },
+      "2.3.1.-": {
+        "status": "no_data",
+        "ec_number": "2.3.1.-",
+        "entries": []
+      }
+    },
+    "feasibility": {
+      "status": "not_in_model",
+      "kegg_id": "C02934",
+      "model": "iJO1366",
+      "message": "C02934 has no matching metabolite in iJO1366 \u2014 compound may be outside E. coli metabolism or use a non-standard ID"
+    },
+    "scoring": {
+      "composite_score": 0.6395,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "1.1.1.102",
+        "ee_value": 98.0,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "1.1.1.102",
+          "score": 0.588,
+          "ee_value": 98.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "2.3.1.50",
+          "score": 0.588,
+          "ee_value": 98.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "2.3.1.-",
+          "score": 0.588,
+          "ee_value": 98.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "Feasibility: not_in_model \u2014 excluded from composite score",
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(R)-3-hydroxybutyrate",
+    "SMILES": "C[C@@H](O)CC(=O)[O-]",
+    "R_S_config": "R",
+    "KEGG_ID": "C01089",
+    "enzyme_class": "ketoreductase (KRED)",
+    "known_ee": ">98% ee",
+    "applications": "PHA polymer precursor; 3-hydroxybutyrate dehydrogenase EC 1.1.1.30",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          1,
+          "R"
+        ]
+      ]
+    },
+    "kegg_data": {
+      "status": "success",
+      "entry": "C01089",
+      "names": [
+        "(R)-3-Hydroxybutanoate",
+        "(R)-3-Hydroxybutanoic acid",
+        "(R)-3-Hydroxybutyric acid",
+        "D-beta-Hydroxybutyric acid"
+      ],
+      "formula": "C4H8O3",
+      "pathways": [
+        {
+          "id": "map00650",
+          "name": "Butanoate metabolism"
+        },
+        {
+          "id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "id": "map04024",
+          "name": "cAMP signaling pathway"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.30",
+        "3.1.1.22"
+      ],
+      "reactions": [
+        "R00048",
+        "R01361"
+      ]
+    },
+    "brenda_data": {
+      "1.1.1.30": {
+        "status": "no_data",
+        "ec_number": "1.1.1.30",
+        "entries": []
+      },
+      "3.1.1.22": {
+        "status": "no_data",
+        "ec_number": "3.1.1.22",
+        "entries": []
+      }
+    },
+    "feasibility": {
+      "status": "not_in_model",
+      "kegg_id": "C01089",
+      "model": "iJO1366",
+      "message": "C01089 has no matching metabolite in iJO1366 \u2014 compound may be outside E. coli metabolism or use a non-standard ID"
+    },
+    "scoring": {
+      "composite_score": 0.6395,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "1.1.1.30",
+        "ee_value": 98.0,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "1.1.1.30",
+          "score": 0.588,
+          "ee_value": 98.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "3.1.1.22",
+          "score": 0.588,
+          "ee_value": 98.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "Feasibility: not_in_model \u2014 excluded from composite score",
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  },
+  {
+    "name": "(R)-pantolactone",
+    "SMILES": "O=C1OC[C@@](O)(C)C1",
+    "R_S_config": "R",
+    "KEGG_ID": "C01012",
+    "enzyme_class": "carbonyl reductase",
+    "known_ee": "99.5% ee",
+    "applications": "Pantothenic acid (vitamin B5) synthesis intermediate",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          4,
+          "R"
+        ]
+      ]
+    },
+    "kegg_data": {
+      "status": "success",
+      "entry": "C01012",
+      "names": [
+        "(R)-Pantolactone",
+        "(R)-Pantoyl lactone",
+        "(3R)-Dihydro-3-hydroxy-4,4-dimethyl-2(3H)-furanone"
+      ],
+      "formula": "C6H10O3",
+      "pathways": [],
+      "enzymes": [
+        "1.1.1.168",
+        "1.1.1.214",
+        "1.1.1.358",
+        "1.1.99.27"
+      ],
+      "reactions": [
+        "R03155",
+        "R03156"
+      ]
+    },
+    "brenda_data": {
+      "1.1.1.168": {
+        "status": "success",
+        "ec_number": "1.1.1.168",
+        "entries": [
+          {
+            "ec_number": "1.1.1.168",
+            "substrates": "2-dehydropantolactone + NADPH + H+",
+            "enantioselectivity": 99.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "98% conversion and 99% enantiomeric excess within 2 h"
+          },
+          {
+            "ec_number": "1.1.1.168",
+            "substrates": "2-dehydropantolactone + NADPH + H+",
+            "enantioselectivity": 99.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "100% activity, 99% conversion and more than 99% enantiomeric excess within 5 h"
+          },
+          {
+            "ec_number": "1.1.1.168",
+            "substrates": "2-dehydropantolactone + NADPH + H+",
+            "enantioselectivity": 99.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "98% conversion and 99% enantiomeric excess within 2 h"
+          },
+          {
+            "ec_number": "1.1.1.168",
+            "substrates": "2-dehydropantolactone + NADPH + H+",
+            "enantioselectivity": 99.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "100% activity, 99% conversion and more than 99% enantiomeric excess within 5 h"
+          },
+          {
+            "ec_number": "1.1.1.168",
+            "substrates": "2-dehydropantolactone + NADPH + H+",
+            "enantioselectivity": 99.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "98% conversion and 99% enantiomeric excess within 2 h"
+          },
+          {
+            "ec_number": "1.1.1.168",
+            "substrates": "2-dehydropantolactone + NADPH + H+",
+            "enantioselectivity": 99.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "98% conversion and 99% enantiomeric excess within 2 h"
+          },
+          {
+            "ec_number": "1.1.1.168",
+            "substrates": "2-dehydropantolactone + NADPH + H+",
+            "enantioselectivity": 99.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "98% conversion and 99% enantiomeric excess within 2 h"
+          },
+          {
+            "ec_number": "1.1.1.168",
+            "substrates": "2-dehydropantolactone + NADPH + H+",
+            "enantioselectivity": 99.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "98% conversion and 99% enantiomeric excess within 2 h"
+          }
+        ]
+      },
+      "1.1.1.214": {
+        "status": "no_data",
+        "ec_number": "1.1.1.214",
+        "entries": []
+      },
+      "1.1.1.358": {
+        "status": "success",
+        "ec_number": "1.1.1.358",
+        "entries": [
+          {
+            "ec_number": "1.1.1.358",
+            "substrates": "2-dehydropantolactone + NADPH + H+",
+            "enantioselectivity": 99.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "recombinant CorCPR exhibited a high catalytic activity for the synthesis of (R)-pantolactone ((R)-PL) from 2-dehydropantolactone (KPL). The activity assay is performed using purified CorCPR and crude recombinant GDH in a single batch reaction. GDH is used to complete the enzyme-coupled NADPH regeneration system. CPR-01 form Candida orthopsilosis Co 90-125 exhibits excellent enantioselectivity (enantiomeric excess of over 99%). CorCPR exhibits the highest activity and stereoselectivity toward KPL"
+          },
+          {
+            "ec_number": "1.1.1.358",
+            "substrates": "2-dehydropantolactone + NADPH + H+",
+            "enantioselectivity": 99.0,
+            "stereo": null,
+            "organism": null,
+            "commentary": "recombinant CorCPR exhibited a high catalytic activity for the synthesis of (R)-pantolactone ((R)-PL) from 2-dehydropantolactone (KPL). The activity assay is performed using purified CorCPR and crude recombinant GDH in a single batch reaction. GDH is used to complete the enzyme-coupled NADPH regeneration system. CPR-01 form Candida orthopsilosis Co 90-125 exhibits excellent enantioselectivity (enantiomeric excess of over 99%). CorCPR exhibits the highest activity and stereoselectivity toward KPL"
+          }
+        ]
+      },
+      "1.1.99.27": {
+        "status": "no_data",
+        "ec_number": "1.1.99.27",
+        "entries": []
+      }
+    },
+    "feasibility": {
+      "status": "not_in_model",
+      "kegg_id": "C01012",
+      "model": "iJO1366",
+      "message": "C01012 has no matching metabolite in iJO1366 \u2014 compound may be outside E. coli metabolism or use a non-standard ID"
+    },
+    "scoring": {
+      "composite_score": 0.833,
+      "confidence": "high",
+      "top_enzyme": {
+        "ec_number": "1.1.1.168",
+        "ee_value": 99.0,
+        "ee_source": "brenda_verified",
+        "tanimoto_similarity": 0.3571,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "1.1.1.168",
+          "score": 0.8092,
+          "ee_value": 99.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": 0.3571,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.1.168",
+          "score": 0.8092,
+          "ee_value": 99.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": 0.3571,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.1.168",
+          "score": 0.8092,
+          "ee_value": 99.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": 0.3571,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.1.168",
+          "score": 0.8092,
+          "ee_value": 99.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": 0.3571,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.1.168",
+          "score": 0.8092,
+          "ee_value": 99.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": 0.3571,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.1.168",
+          "score": 0.8092,
+          "ee_value": 99.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": 0.3571,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.1.168",
+          "score": 0.8092,
+          "ee_value": 99.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": 0.3571,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.1.168",
+          "score": 0.8092,
+          "ee_value": 99.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": 0.3571,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.1.358",
+          "score": 0.8092,
+          "ee_value": 99.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": 0.3571,
+          "organism": null,
+          "engineered_variants": null
+        },
+        {
+          "ec_number": "1.1.1.358",
+          "score": 0.8092,
+          "ee_value": 99.0,
+          "ee_source": "brenda_verified",
+          "tanimoto_similarity": 0.3571,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "Feasibility: not_in_model \u2014 excluded from composite score",
+        "No BRENDA data for EC 1.1.1.214 (status: no_data)",
+        "No BRENDA data for EC 1.1.99.27 (status: no_data)"
+      ]
+    }
+  },
+  {
+    "name": "(R)-1-(4-fluorophenyl)ethanol",
+    "SMILES": "C[C@@H](O)c1ccc(F)cc1",
+    "R_S_config": "R",
+    "KEGG_ID": null,
+    "enzyme_class": "ketoreductase (KRED)",
+    "known_ee": "97% ee",
+    "applications": "Paroxetine intermediate; KRED engineering campaigns",
+    "chirality_validation": {
+      "valid": true,
+      "chiral_centers": [
+        [
+          1,
+          "R"
+        ]
+      ]
+    },
+    "scoring": {
+      "composite_score": 0.6342,
+      "confidence": "low",
+      "top_enzyme": {
+        "ec_number": "ketoreductase (KRED)",
+        "ee_value": 97.0,
+        "ee_source": "llm_claim",
+        "tanimoto_similarity": null,
+        "organism": null
+      },
+      "enzyme_rankings": [
+        {
+          "ec_number": "ketoreductase (KRED)",
+          "score": 0.582,
+          "ee_value": 97.0,
+          "ee_source": "llm_claim",
+          "tanimoto_similarity": null,
+          "organism": null,
+          "engineered_variants": null
+        }
+      ],
+      "stereo_confirmed": true,
+      "feasibility_flux": null,
+      "scoring_notes": [
+        "No BRENDA credentials or data available; ee sourced from LLM claim (unverified)"
+      ]
+    }
+  }
+]

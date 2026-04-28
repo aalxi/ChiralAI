@@ -124,9 +124,17 @@ def query_enantioselectivity(ec_number: str, organism: str = "") -> dict:
             if ee_value is None:
                 continue
 
+            substrate_val = getattr(r, "substrates", None)
+            # BRENDA uses 'more' as a sentinel when the substrate is described only in
+            # the commentary, not the structured substrates field. These entries have no
+            # resolvable structure for Tanimoto computation, so exclude them here —
+            # their ee% is already captured via the commentary parse above.
+            if not substrate_val or substrate_val.strip().lower() == "more":
+                continue
+
             entries.append({
                 "ec_number": ec_number,
-                "substrate": getattr(r, "substrates", None),
+                "substrates": substrate_val,
                 "enantioselectivity": ee_value,
                 "stereo": stereo,
                 "organism": getattr(r, "organism", None),
