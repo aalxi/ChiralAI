@@ -6,9 +6,9 @@
 
 ## The Problem
 
-Enantiopure compounds are essential in pharmaceutical synthesis, agrochemistry, and advanced materials — ~80% of chiral APIs are now required as single enantiomers. Biocatalysis is the preferred route: enzymes are inherently chiral, operate under mild conditions, and can achieve >99% ee. But identifying the right enzyme, for the right substrate, with the right stereochemical outcome, in a host that can actually produce the compound — that requires manually stitching together five different tools and databases that were never designed to talk to each other.
+Enantiopure compounds are essential in pharmaceutical synthesis, agrochemistry, and advanced materials. ~80% of chiral active pharmaceuticals now have to be single enantiomers. Biocatalysis is the preferred route: enzymes are inherently chiral, operate under mild conditions, and can achieve >99% ee (enantiomeric excess). But identifying the right enzyme, for the right substrate, with the right stereochemical outcome, in a host that can actually produce the compound, that requires manually stitching together five different tools and databases that were never designed work compatibly.
 
-No existing software does this end-to-end. **ChiralAI does.**
+No existing software does this end-to-end. 
 
 ---
 
@@ -34,9 +34,7 @@ Composite scorer — ranks candidates by ee source, Tanimoto substrate similarit
 Timestamped CSV + JSON output with full provenance and confidence tiers
 ```
 
-The LLM is the **orchestration and reasoning layer** — not the scientific ground truth. Every suggestion is grounded in a database call or computational result. LLM-claimed ee values are labeled `"llm_claim"` and discounted; BRENDA-verified ee is labeled `"brenda_verified"` and weighted higher.
-
-**What ChiralAI does not do:** It does not perform retrosynthetic route planning — it validates and scores named targets, it does not enumerate multi-step enzymatic routes from scratch. That is a planned future module.
+The LLM is the **orchestration and reasoning layer**, not the scientific ground truth. Every suggestion is grounded in a database call or computational result. LLM-claimed ee values are labeled `"llm_claim"` and discounted; BRENDA-verified ee is labeled `"brenda_verified"` and weighted higher.
 
 ---
 
