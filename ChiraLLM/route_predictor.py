@@ -8,11 +8,13 @@ Public API: predict_route(compound_id, mode='top_n', n=3, budget=500) -> RouteRe
 """
 
 import functools
+import heapq
 import logging
 import os
 import re
 import shutil
 import time
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import requests
@@ -587,4 +589,145 @@ def _compute_edge_cost(reaction: dict, traversed_direction: str) -> dict:
         "directionality": directionality,
         "industrial_override": industrial_override,
         "total": total,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Route dataclasses — typed containers for search results
+# ---------------------------------------------------------------------------
+
+
+@dataclass
+class RouteStep:
+    reaction_id: str
+    ec_numbers: list[str]
+    precursor_id: str           # the upstream compound (one step closer to terminal)
+    intermediate_id: str        # the downstream compound (we just came from this)
+    edge_cost_breakdown: dict[str, float]
+    traversed_direction: str    # 'forward' or 'reverse'
+    # Naming note: "substrate"/"product" would be ambiguous in retrosynthesis traversal;
+    # precursor_id (upstream) and intermediate_id (downstream) name graph position directly.
+
+
+@dataclass
+class Route:
+    target_id: str
+    steps: list[RouteStep]                 # ordered target → terminal precursor
+    terminal_precursor_id: str
+    terminal_precursor_name: str
+    total_cost: float
+    cost_breakdown: dict[str, float]       # summed components across all steps
+    warnings: list[str] = field(default_factory=list)
+
+
+@dataclass
+class RouteResult:
+    target_id: str
+    mode: str
+    routes: list[Route]
+    nodes_explored: int
+    budget_exhausted: bool
+    warnings: list[str] = field(default_factory=list)
+    status: str = "success"
+
+
+# ---------------------------------------------------------------------------
+# A* backward search
+# ---------------------------------------------------------------------------
+
+
+def _astar_search(target_id: str, budget: int = DEFAULT_BUDGET, depth_cap: int = DEFAULT_DEPTH_CAP) -> dict:
+    """Best-first backward search from target. Returns a DAG and search metadata.
+
+    Algorithm: weighted A* / greedy best-first.
+      f(n) = g(n) + h(n)
+      g(n) = cumulative edge cost from target to current node
+      h(n) = TANIMOTO_HEURISTIC_WEIGHT * Tanimoto distance to nearest central metabolite
+
+    Termination: priority queue empty, OR nodes_explored >= budget, OR (per-node) depth > depth_cap.
+    Search continues past the first central-metabolite hit so diverse alternates can be found.
+    """
+    counter = 0  # heap tie-breaker
+    initial_h = TANIMOTO_HEURISTIC_WEIGHT * _tanimoto_to_central(target_id)
+    queue: list = [(initial_h, counter, 0, target_id, 0.0)]
+    heapq.heapify(queue)
+
+    visited_dag: dict[str, list] = {}
+    leaf_ids: list[str] = []
+    nodes_explored = 0
+    budget_exhausted = False
+
+    best_g_seen: dict[str, float] = {target_id: 0.0}
+
+    while queue:
+        if nodes_explored >= budget:
+            budget_exhausted = True
+            break
+
+        f_score, _, depth, compound_id, g_score = heapq.heappop(queue)
+
+        if g_score > best_g_seen.get(compound_id, float("inf")):
+            continue
+
+        nodes_explored += 1
+
+        if compound_id in CENTRAL_METABOLITES:
+            if compound_id not in leaf_ids:
+                leaf_ids.append(compound_id)
+            continue
+
+        if depth >= depth_cap:
+            continue
+
+        reaction_ids = _fetch_compound_reactions(compound_id)
+
+        for rxn_id in reaction_ids:
+            reaction = _fetch_kegg_reaction(rxn_id)
+            if reaction is None:
+                continue
+
+            substrate_ids = [cid for _, cid in reaction["substrates"]]
+            product_ids = [cid for _, cid in reaction["products"]]
+
+            if compound_id in product_ids:
+                traversed_direction = "forward"
+                precursor_candidates = substrate_ids
+            elif compound_id in substrate_ids:
+                traversed_direction = "reverse"
+                precursor_candidates = product_ids
+            else:
+                continue
+
+            edge_cost = _compute_edge_cost(reaction, traversed_direction)
+            new_g = g_score + edge_cost["total"]
+
+            for precursor_id in precursor_candidates:
+                if precursor_id == compound_id:
+                    continue
+                if precursor_id in {"C00080", "C00001", "C00007"}:  # H+, H2O, O2
+                    continue
+
+                if new_g >= best_g_seen.get(precursor_id, float("inf")):
+                    continue
+
+                best_g_seen[precursor_id] = new_g
+                visited_dag.setdefault(precursor_id, []).append({
+                    "parent_id": compound_id,
+                    "reaction": reaction,
+                    "edge_cost": edge_cost,
+                    "depth": depth + 1,
+                    "g_score": new_g,
+                })
+
+                h_new = TANIMOTO_HEURISTIC_WEIGHT * _tanimoto_to_central(precursor_id)
+                f_new = new_g + h_new
+                counter += 1
+                heapq.heappush(queue, (f_new, counter, depth + 1, precursor_id, new_g))
+
+    return {
+        "target_id": target_id,
+        "visited_dag": visited_dag,
+        "leaf_ids": leaf_ids,
+        "nodes_explored": nodes_explored,
+        "budget_exhausted": budget_exhausted,
     }

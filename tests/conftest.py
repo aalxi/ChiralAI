@@ -29,12 +29,32 @@ def mock_kegg(synthetic_kegg, monkeypatch):
         rxn = synthetic_kegg["reactions"].get(rxn_id)
         if rxn is None:
             return None
-        substrates, products, direction = route_predictor._parse_reaction_equation(rxn["equation"])
+        eq = rxn["equation"]
+        # Parse the synthetic equation without calling _parse_reaction_equation, because
+        # synthetic compound IDs (e.g. "C_INTERMEDIATE_A") don't match KEGG's C\d{5} regex.
+        if "<=>" in eq:
+            direction, sep = "reversible", "<=>"
+        else:
+            direction, sep = "forward_only", "=>"
+        left, right = eq.split(sep, 1)
+
+        def parse_side(side):
+            result = []
+            for tok in side.split("+"):
+                parts = tok.strip().split()
+                if not parts:
+                    continue
+                if len(parts) == 2:
+                    result.append((int(parts[0]), parts[1]))
+                else:
+                    result.append((1, parts[0]))
+            return result
+
         return {
             "rxn_id": rxn_id,
-            "equation": rxn["equation"],
-            "substrates": substrates,
-            "products": products,
+            "equation": eq,
+            "substrates": parse_side(left),
+            "products": parse_side(right),
             "ec_numbers": rxn["ec_numbers"],
             "direction": direction,
         }

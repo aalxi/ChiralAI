@@ -457,3 +457,72 @@ class TestComputeEdgeCost:
             cost["base"] + cost["thermodynamic"] + cost["directionality"] + cost["industrial_override"]
         )
         assert abs(cost["total"] - component_sum) < 1e-9
+
+
+class TestAstarSearch:
+    def test_finds_route_in_synthetic_graph(self, mock_kegg, mock_equilibrator, mocker):
+        mocker.patch.object(
+            route_predictor,
+            "CENTRAL_METABOLITES",
+            {"C_PRECURSOR_A": "synthetic A", "C_PRECURSOR_B": "synthetic B"},
+        )
+        mocker.patch("ChiraLLM.route_predictor._tanimoto_to_central", return_value=0.5)
+
+        result = route_predictor._astar_search("C_TARGET", budget=50, depth_cap=5)
+
+        assert isinstance(result, dict)
+        assert result["nodes_explored"] > 0
+        assert result["budget_exhausted"] is False
+        leaf_ids = result["leaf_ids"]
+        assert any(leaf in {"C_PRECURSOR_A", "C_PRECURSOR_B"} for leaf in leaf_ids)
+
+    def test_budget_exhaustion(self, mock_kegg, mock_equilibrator, mocker):
+        mocker.patch.object(
+            route_predictor,
+            "CENTRAL_METABOLITES",
+            {"C_NEVER_REACHED": "unreachable"},
+        )
+        mocker.patch("ChiraLLM.route_predictor._tanimoto_to_central", return_value=0.5)
+
+        result = route_predictor._astar_search("C_TARGET", budget=3, depth_cap=5)
+
+        assert result["budget_exhausted"] is True
+        assert result["nodes_explored"] == 3
+
+    def test_target_with_no_reactions_returns_empty(self, mock_kegg, mock_equilibrator, mocker):
+        mocker.patch("ChiraLLM.route_predictor._tanimoto_to_central", return_value=0.5)
+        result = route_predictor._astar_search("C_DEAD_END", budget=50, depth_cap=5)
+
+        assert result["leaf_ids"] == []
+        assert result["nodes_explored"] >= 1
+
+
+class TestRouteDataclasses:
+    def test_route_step_construction(self):
+        step = route_predictor.RouteStep(
+            reaction_id="R_test",
+            ec_numbers=["1.1.1.184"],
+            precursor_id="C_A",
+            intermediate_id="C_B",
+            edge_cost_breakdown={"base": 1.0, "thermodynamic": 0.5, "directionality": 0.0, "industrial_override": 0.0, "total": 1.5},
+            traversed_direction="forward",
+        )
+        assert step.precursor_id == "C_A"
+        assert step.intermediate_id == "C_B"
+
+    def test_route_construction(self):
+        step = route_predictor.RouteStep(
+            reaction_id="R_test", ec_numbers=["1.1.1.1"],
+            precursor_id="C_A", intermediate_id="C_B",
+            edge_cost_breakdown={"base": 1.0, "thermodynamic": 0.0, "directionality": 0.0, "industrial_override": 0.0, "total": 1.0},
+            traversed_direction="forward",
+        )
+        route = route_predictor.Route(
+            target_id="C_B", steps=[step],
+            terminal_precursor_id="C_A", terminal_precursor_name="alpha",
+            total_cost=1.0,
+            cost_breakdown={"base": 1.0, "thermodynamic": 0.0, "directionality": 0.0, "industrial_override": 0.0},
+            warnings=[],
+        )
+        assert route.terminal_precursor_id == "C_A"
+        assert len(route.steps) == 1
