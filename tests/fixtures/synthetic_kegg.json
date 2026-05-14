@@ -1,0 +1,33 @@
+{
+  "compounds": {
+    "C_TARGET": {"name": "synthetic target", "reactions": ["R_S1", "R_S2"], "mol": "synthetic_target.mol"},
+    "C_INTERMEDIATE_A": {"name": "intermediate A", "reactions": ["R_S2", "R_S3"], "mol": "intermediate_a.mol"},
+    "C_INTERMEDIATE_B": {"name": "intermediate B", "reactions": ["R_S4"], "mol": "intermediate_b.mol"},
+    "C_PRECURSOR_A": {"name": "precursor A (central)", "reactions": ["R_S3"], "mol": "precursor_a.mol"},
+    "C_PRECURSOR_B": {"name": "precursor B (central)", "reactions": ["R_S4"], "mol": "precursor_b.mol"},
+    "C_DEAD_END": {"name": "dead-end compound", "reactions": [], "mol": "dead_end.mol"}
+  },
+  "reactions": {
+    "R_S1": {
+      "equation": "C_INTERMEDIATE_A + C00006 <=> C_TARGET + C00005",
+      "ec_numbers": ["1.1.1.184"],
+      "delta_g_kj_per_mol": -8.0
+    },
+    "R_S2": {
+      "equation": "C_INTERMEDIATE_B + C00006 => C_TARGET + C00005",
+      "ec_numbers": ["1.1.1.999"],
+      "delta_g_kj_per_mol": -25.0
+    },
+    "R_S3": {
+      "equation": "C_PRECURSOR_A <=> C_INTERMEDIATE_A",
+      "ec_numbers": ["5.4.99.1"],
+      "delta_g_kj_per_mol": -2.0
+    },
+    "R_S4": {
+      "equation": "C_PRECURSOR_B <=> C_INTERMEDIATE_B",
+      "ec_numbers": ["1.1.1.184"],
+      "delta_g_kj_per_mol": -1.0
+    }
+  },
+  "central_metabolites_for_test": ["C_PRECURSOR_A", "C_PRECURSOR_B"]
+}

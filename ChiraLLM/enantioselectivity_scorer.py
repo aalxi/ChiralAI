@@ -1,3 +1,4 @@
+import math
 import re
 import logging
 from typing import Optional
@@ -114,6 +115,43 @@ def _score_enzyme_entry(entry: dict, query_smiles: Optional[str]) -> dict:
     }
 
 
+def _compose_route_ee(route: dict, brenda_data: dict) -> Optional[float]:
+    """Computes whole-route ee composition for a multi-step biosynthetic route.
+
+    Formula: ee_overall = ∏(ee_step_i / 100) * 100, taking the best per-step ee
+    across all ECs assigned to that step.
+
+    Returns None if any step has no BRENDA-verified ee, or if the route has no steps.
+
+    Known limitation: this assumes step independence. Routes with dynamic kinetic
+    resolution (DKR) — where an upstream racemization step combined with a downstream
+    enantioselective step produces an artificially-high terminal ee — are underestimated.
+    See the route_predictor design spec §7.1.
+    """
+    steps = route.get("steps") or []
+    if not steps:
+        return None
+
+    step_ees: list[float] = []
+    for step in steps:
+        ec_numbers = step.get("ec_numbers", [])
+        best_ee = None
+        for ec in ec_numbers:
+            ec_data = brenda_data.get(ec)
+            if not isinstance(ec_data, dict) or ec_data.get("status") != "success":
+                continue
+            for entry in ec_data.get("entries", []):
+                ee_val = entry.get("enantioselectivity")
+                if isinstance(ee_val, (int, float)):
+                    if best_ee is None or ee_val > best_ee:
+                        best_ee = float(ee_val)
+        if best_ee is None:
+            return None
+        step_ees.append(best_ee)
+
+    return math.prod(e / 100.0 for e in step_ees) * 100.0
+
+
 def score_suggestion(suggestion: dict) -> dict:
     """
     Synthesize all enrichment data for one molecule suggestion into a ranked,
@@ -141,7 +179,15 @@ def score_suggestion(suggestion: dict) -> dict:
     stereo_component = 1.0 if stereo_confirmed else 0.0
 
     # --- Feasibility component ---
-    feas = suggestion.get("feasibility", {})
+    # Read feasibility from the per-route list main.py builds (route_feasibility),
+    # falling back to the legacy flat 'feasibility' key for callers that don't
+    # use the route predictor pipeline. The first route's feasibility represents
+    # the cheapest/best terminal precursor, which is the meaningful FBA signal.
+    route_feas_list = suggestion.get("route_feasibility") or []
+    if route_feas_list:
+        feas = route_feas_list[0].get("feasibility", {}) if isinstance(route_feas_list[0], dict) else {}
+    else:
+        feas = suggestion.get("feasibility", {})
     feas_status = feas.get("status") if isinstance(feas, dict) else None
     if feas_status == "feasible":
         feas_component: Optional[float] = 1.0
@@ -260,6 +306,14 @@ def score_suggestion(suggestion: dict) -> dict:
             "organism": None,
         }
         notes.append("No enzyme candidates found in KEGG or BRENDA data")
+
+    # Whole-route ee composition (per-route, attached back into the route_prediction structure).
+    # See route_predictor spec §7.1 for the multiplicative formula and DKR limitation.
+    route_pred = suggestion.get("route_prediction") or {}
+    routes = route_pred.get("routes") or []
+    for route in routes:
+        composed = _compose_route_ee(route, brenda_data)
+        route["composed_ee"] = composed
 
     return {
         "composite_score": composite_score,

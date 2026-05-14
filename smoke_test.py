@@ -410,6 +410,7 @@ SEGMENTS = [
     ("Ginkgo/Zymergen — full-stack strain engineering",                 "ginkgo"),
     ("Academic synbio — teaching-grade hello-world molecules",          "academic"),
     ("Adversarial — exotic/non-natural, graceful fallback stress test", "adversarial"),
+    ("Route prediction — Tier 1 acceptance check (all 6 fixture segments)", "route_prediction"),
 ]
 
 # Map query label → fixture key (used by evaluate() to detect adversarial)
@@ -430,6 +431,8 @@ def run_query(query: str, out_dir: str, mock: bool = False,
     from ChiraLLM.brenda_client import query_enantioselectivity_batch
     from ChiraLLM.feasibility_checker import check_feasibility
     from ChiraLLM.enantioselectivity_scorer import score_suggestion
+    from ChiraLLM.route_predictor import predict_route
+    from dataclasses import asdict
     from utils.file_saver import save_suggestions_to_csv
 
     print(f"\n{'='*70}")
@@ -471,6 +474,11 @@ def run_query(query: str, out_dir: str, mock: bool = False,
             else:
                 suggestion["brenda_data"] = {"status": "no_ec_numbers"}
             suggestion["feasibility"] = check_feasibility(compound_id)
+            route_result = predict_route(compound_id, mode="top_n", n=3)
+            suggestion["route_prediction"] = asdict(route_result)
+        else:
+            route_result = predict_route(None, mode="top_n", n=3)
+            suggestion["route_prediction"] = asdict(route_result)
 
         suggestion["scoring"] = score_suggestion(suggestion)
 
@@ -543,6 +551,45 @@ def evaluate(result: dict) -> bool:
     return all_passed
 
 
+def evaluate_route_prediction(suggestions: list) -> dict:
+    """Acceptance check for the route_prediction Sprint 1 deliverable.
+
+    Per spec §10 #7: KEGG-covered segments must succeed; non-covered segments must
+    return appropriate error status without raising.
+    """
+    KEGG_COVERED_SEGMENTS = {"codexis", "pharma", "academic"}
+    NON_COVERED_SEGMENTS = {"arnold", "ginkgo", "adversarial"}
+    EXPECTED_NON_COVERED_STATUSES = {
+        "no_kegg_id", "invalid_kegg_id", "target_not_in_kegg",
+        "target_has_no_reactions", "no_route_found",
+    }
+
+    results = {"passes": [], "fails": []}
+    for s in suggestions:
+        seg = s.get("_fixture_key", "unknown")
+        rp = s.get("route_prediction") or {}
+        status = rp.get("status")
+        n_routes = len(rp.get("routes", []))
+
+        if seg in KEGG_COVERED_SEGMENTS:
+            if status == "success" and n_routes >= 1:
+                results["passes"].append(f"{seg}/{s.get('name')}: success, {n_routes} routes")
+            else:
+                results["fails"].append(
+                    f"{seg}/{s.get('name')}: expected success, got status={status!r} routes={n_routes}"
+                )
+        elif seg in NON_COVERED_SEGMENTS:
+            if status in EXPECTED_NON_COVERED_STATUSES:
+                results["passes"].append(f"{seg}/{s.get('name')}: clean error status={status!r}")
+            else:
+                results["fails"].append(
+                    f"{seg}/{s.get('name')}: unexpected status={status!r}"
+                )
+        else:
+            results["fails"].append(f"{seg}/{s.get('name')}: unknown segment {seg!r}")
+    return results
+
+
 def main():
     parser = argparse.ArgumentParser(description="ChiralAI smoke test — user-segment fixtures")
     mode = parser.add_mutually_exclusive_group()
@@ -551,7 +598,7 @@ def main():
     mode.add_argument("--all", action="store_true",
                       help="Run all six fixture segments")
     mode.add_argument("--fixture", type=str,
-                      choices=list(MOCK_SUGGESTIONS.keys()),
+                      choices=list(MOCK_SUGGESTIONS.keys()) + ["route_prediction"],
                       help="Run a single named fixture segment in mock mode")
     parser.add_argument("--out-dir", type=str, default="smoke_test_output")
     parser.add_argument("--mock", action="store_true",
@@ -560,7 +607,33 @@ def main():
 
     os.makedirs(args.out_dir, exist_ok=True)
 
-    if args.fixture:
+    if args.fixture == "route_prediction":
+        # Meta-fixture: run all 6 base segments, tag suggestions with their segment,
+        # then evaluate route_prediction outputs against bipartite acceptance criteria.
+        args.mock = True
+        all_suggestions = []
+        for label, key in SEGMENTS:
+            if key == "route_prediction":
+                continue  # don't recurse
+            print(f"\n=== Running {label} ===")
+            result = run_query(label, args.out_dir, mock=args.mock, fixture_key=key)
+            for s in result.get("suggestions", []):
+                s["_fixture_key"] = key
+            all_suggestions.extend(result.get("suggestions", []))
+        verdict = evaluate_route_prediction(all_suggestions)
+        print("\n=== Route Prediction Acceptance ===")
+        for p in verdict["passes"]:
+            print(f"  PASS  {p}")
+        for f in verdict["fails"]:
+            print(f"  FAIL  {f}")
+        if verdict["fails"]:
+            print(f"\nOverall: ROUTE PREDICTION ACCEPTANCE FAILED "
+                  f"({len(verdict['fails'])} failures, {len(verdict['passes'])} passes)")
+            sys.exit(1)
+        print(f"\nOverall: ROUTE PREDICTION ACCEPTANCE PASSED "
+              f"({len(verdict['passes'])} passes)")
+        sys.exit(0)
+    elif args.fixture:
         # Single named fixture
         label = next((l for l, k in SEGMENTS if k == args.fixture), args.fixture)
         run_pairs = [(label, args.fixture)]

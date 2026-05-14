@@ -6,11 +6,11 @@ This file is the standing brief for any AI assistant working in this repository.
 
 ## What This Project Is
 
-ChiralAI is an **AI-guided discovery and validation engine for biocatalytic chiral molecule targets**. It is not a general chemistry tool and it is not a retrosynthetic route planner.
+ChiralAI is an **AI-guided discovery, validation, and route-prediction engine for biocatalytic chiral molecule targets**. It is not a general chemistry tool.
 
-The pipeline answers: *given a natural-language research goal, which chiral molecules are strong biocatalytic targets, which enzymes produce them with high enantioselectivity, and is the biosynthesis metabolically feasible in E. coli?*
+The pipeline answers: *given a natural-language research goal, which chiral molecules are strong biocatalytic targets, which enzymes produce them with high enantioselectivity, what is the shortest known biosynthetic route from central metabolites, and is the biosynthesis metabolically feasible in E. coli?*
 
-It does **not** answer: *given molecule X, construct a multi-step enzymatic route to make it from scratch.* That is retrosynthetic route planning (RetroBioCat territory) and is not in scope.
+For compounds in KEGG (~12k reactions), it now **does** enumerate the enzymatic steps needed to reach a target from central metabolites via Tier 1 route prediction. Novel-target retrobiosynthesis via SMARTS pattern matching (Tier 2) is planned for the next sprint.
 
 The scientific premise: biomanufacturing is inherently enantioselective because enzymes are chiral catalysts. This system helps researchers find molecules that are (1) chiral with defined stereochemistry, (2) reachable through known metabolic pathways, (3) producible with high enantioselectivity by known or engineerable enzymes, and (4) metabolically feasible in a target host organism.
 
@@ -44,7 +44,7 @@ ChiralAI's value is **integration and natural-language accessibility**, not outc
 
 ## Architecture
 
-All 7 modules are implemented and wired. `main.py` calls them in sequence.
+All 8 modules are implemented and wired. `main.py` calls them in sequence.
 
 ```
 main.py                               Orchestrator — runs the full pipeline, thin logic only.
@@ -81,6 +81,17 @@ ChiraLLM/enantioselectivity_scorer.py Composite scoring. score_suggestion(sugges
                                       Morgan fingerprints), stereo confirmation, and FBA flux into
                                       a 0–1 composite score with confidence tier (high/medium/low).
                                       Degrades gracefully to LLM-claim ee when BRENDA is absent.
+
+ChiraLLM/route_predictor.py           Tier 1 biosynthesis route predictor. predict_route(compound_id,
+                                      mode='top_n'|'full_tree'|'shortest_plus_diverse', n, budget)
+                                      runs weighted A* backward through KEGG reaction graph from
+                                      target to curated central metabolites. Edge cost is a
+                                      transparent breakdown: thermodynamic (eQuilibrator ΔG),
+                                      directionality (KEGG <=> vs =>), industrial-reversibility
+                                      override (KREDs/TAs/IREDs/lipases/BVMOs). Heuristic is
+                                      Morgan-fingerprint Tanimoto distance to nearest central.
+                                      Disk-cached at ~/.cache/chiralai/. Returns RouteResult
+                                      with status field; never raises.
 
 utils/file_saver.py                   Timestamped CSV + JSON sidecar. Flattens scoring dict into
                                       flat columns; preserves full nested structure in JSON.
@@ -124,6 +135,7 @@ utils/file_saver.py                   Timestamped CSV + JSON sidecar. Flattens s
 | `brenda_client.py` | Working | Full BRENDA SOAP with correct positional calling convention |
 | `feasibility_checker.py` | Working | COBRApy FBA on iJO1366; cofactor flagging |
 | `enantioselectivity_scorer.py` | Working | Composite scoring with BRENDA-verified ee + Tanimoto similarity |
+| `route_predictor.py` | Working | Tier 1 (KEGG traversal); Tier 2 RetroRules SMARTS deferred |
 | `file_saver.py` | Working | CSV + JSON sidecar with flat scoring columns |
 
 ## Known Gaps
@@ -131,4 +143,4 @@ utils/file_saver.py                   Timestamped CSV + JSON sidecar. Flattens s
 - **BRENDA credentials**: Free-tier API access requires `BRENDA_EMAIL` and `BRENDA_PASSWORD` in `.env`. Without credentials, every suggestion falls back to `ee_source: llm_claim` and `confidence: medium`. Acquiring credentials is the single highest-leverage improvement.
 - **Non-E. coli host support**: `feasibility_checker.py` only loads iJO1366 (E. coli K-12). Secondary metabolites and many pharmaceutical targets are `not_in_model`. Non-native pathway hosts (S. cerevisiae iMM904, P. putida) require additional models.
 - **`engineered_variants` field**: Placeholder `None` in all scorer output. `getEngineering` BRENDA SOAP method works but is not yet wired.
-- **Retrosynthetic route prediction**: Not implemented. The pipeline validates and scores named targets; it does not enumerate multi-step enzymatic routes from scratch. This is the natural next major module.
+- **Tier 2 retrobiosynthesis**: Tier 1 covers compounds KEGG already knows. Novel-target retrobiosynthesis (target SMILES → enzymatic disconnection via RetroRules SMARTS + RDKit `RunReactants`) is planned for Sprint 2.

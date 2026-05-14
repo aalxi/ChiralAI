@@ -1,12 +1,14 @@
 import argparse
 import json
 import sys
+from dataclasses import asdict
 from ChiraLLM.query_handler import ask_gpt_chirality
 from ChiraLLM.database_validator import query_kegg
 from ChiraLLM.chirality_checker import validate_chirality
 from ChiraLLM.brenda_client import query_enantioselectivity_batch
 from ChiraLLM.feasibility_checker import check_feasibility
 from ChiraLLM.enantioselectivity_scorer import score_suggestion
+from ChiraLLM.route_predictor import predict_route
 from utils.file_saver import save_suggestions_to_csv
 
 def main():
@@ -57,13 +59,46 @@ def main():
         if compound_id:
             kegg = query_kegg(compound_id)
             suggestion["kegg_data"] = kegg
-            # Use EC numbers from KEGG to pull enantioselectivity from BRENDA
-            ec_numbers = kegg.get("enzymes", []) if kegg.get("status") == "success" else []
-            if ec_numbers:
-                suggestion["brenda_data"] = query_enantioselectivity_batch(ec_numbers[:5])
+
+            # NEW: route prediction runs after KEGG validation, before BRENDA enrichment.
+            # The full set of ECs across all routes' steps becomes the BRENDA query input.
+            route_result = predict_route(compound_id, mode="top_n", n=3)
+            suggestion["route_prediction"] = asdict(route_result)
+
+            if route_result.status == "success":
+                # Deduplicate ECs across all routes' steps before the BRENDA batch call.
+                all_ecs = sorted({
+                    ec
+                    for route in route_result.routes
+                    for step in route.steps
+                    for ec in step.ec_numbers
+                })
+                if all_ecs:
+                    suggestion["brenda_data"] = query_enantioselectivity_batch(all_ecs[:20])
+                else:
+                    suggestion["brenda_data"] = {"status": "no_ec_numbers"}
+
+                # Per-route terminal-precursor feasibility (call site change per spec §2.1).
+                suggestion["route_feasibility"] = [
+                    {
+                        "route_index": i,
+                        "terminal_precursor": route.terminal_precursor_id,
+                        "feasibility": check_feasibility(route.terminal_precursor_id),
+                    }
+                    for i, route in enumerate(route_result.routes)
+                ]
             else:
-                suggestion["brenda_data"] = {"status": "no_ec_numbers"}
-            suggestion["feasibility"] = check_feasibility(compound_id)
+                # Fall back to legacy behavior: BRENDA on KEGG's enzymes for the target only.
+                ec_numbers = kegg.get("enzymes", []) if kegg.get("status") == "success" else []
+                if ec_numbers:
+                    suggestion["brenda_data"] = query_enantioselectivity_batch(ec_numbers[:5])
+                else:
+                    suggestion["brenda_data"] = {"status": "no_ec_numbers"}
+                suggestion["route_feasibility"] = [{
+                    "route_index": 0,
+                    "terminal_precursor": compound_id,
+                    "feasibility": check_feasibility(compound_id),
+                }]
 
         suggestion["scoring"] = score_suggestion(suggestion)
 
