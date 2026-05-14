@@ -8,6 +8,7 @@ Public API: predict_route(compound_id, mode='top_n', n=3, budget=500) -> RouteRe
 """
 
 import logging
+import re
 
 logger = logging.getLogger(__name__)
 
@@ -94,3 +95,56 @@ FALLBACK_DELTA_G_KJ = 5.0
 # Re-tuning trigger: if top-3 routes for (R)-pantolactone (C00599) do not include the
 # KIV-via-ketopantoate-hydroxymethyltransferase route, this constant is too high or too low.
 TANIMOTO_HEURISTIC_WEIGHT = 2.0
+
+
+# ---------------------------------------------------------------------------
+# Direction constants for reaction equations
+# ---------------------------------------------------------------------------
+
+DIRECTION_REVERSIBLE = "reversible"
+DIRECTION_FORWARD_ONLY = "forward_only"
+
+_COMPOUND_TOKEN_RE = re.compile(r"^(?:(\d+)\s+)?(C\d{5})$")
+
+
+# ---------------------------------------------------------------------------
+# Reaction equation parsing
+# ---------------------------------------------------------------------------
+
+
+def _parse_reaction_equation(equation: str) -> tuple[list[tuple[int, str]], list[tuple[int, str]], str]:
+    """Splits a KEGG reaction equation into substrates, products, and direction.
+
+    KEGG equation format: 'C00033 + C00010 <=> C00024 + C00011' (reversible),
+    'C00033 => C00024' (irreversible). Coefficients written as '2 C00006'.
+
+    Returns (substrates, products, direction). direction is 'reversible' or 'forward_only'.
+    Raises ValueError if equation has no arrow or contains an unparseable token.
+    """
+    if "<=>" in equation:
+        direction = DIRECTION_REVERSIBLE
+        sides = equation.split("<=>", 1)
+    elif "=>" in equation:
+        direction = DIRECTION_FORWARD_ONLY
+        sides = equation.split("=>", 1)
+    else:
+        raise ValueError(f"No reaction arrow in equation: {equation!r}")
+
+    if len(sides) != 2:
+        raise ValueError(f"Could not split equation into two sides: {equation!r}")
+
+    def _parse_side(side: str) -> list[tuple[int, str]]:
+        results = []
+        for token in side.split("+"):
+            token = token.strip()
+            if not token:
+                continue
+            m = _COMPOUND_TOKEN_RE.match(token)
+            if m is None:
+                raise ValueError(f"Unparseable token {token!r} in side {side!r}")
+            coef_str, cid = m.groups()
+            coef = int(coef_str) if coef_str else 1
+            results.append((coef, cid))
+        return results
+
+    return _parse_side(sides[0]), _parse_side(sides[1]), direction

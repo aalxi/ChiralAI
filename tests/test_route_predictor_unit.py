@@ -2,6 +2,8 @@
 All external calls (KEGG, eQuilibrator, RDKit MOL parsing) are mocked.
 Coverage target: ≥85%."""
 
+import pytest
+
 from ChiraLLM import route_predictor
 
 
@@ -26,3 +28,40 @@ def test_default_constants_have_sane_values():
     assert 0.0 < route_predictor.THERMO_PENALTY_PER_KJ < 1.0
     assert 0.0 < route_predictor.FALLBACK_DELTA_G_KJ < 100.0
     assert 0.0 < route_predictor.TANIMOTO_HEURISTIC_WEIGHT < 10.0
+
+
+class TestParseReactionEquation:
+    def test_simple_reversible(self):
+        s, p, d = route_predictor._parse_reaction_equation("C00033 + C00010 <=> C00024 + C00011")
+        assert s == [(1, "C00033"), (1, "C00010")]
+        assert p == [(1, "C00024"), (1, "C00011")]
+        assert d == "reversible"
+
+    def test_simple_forward_only(self):
+        s, p, d = route_predictor._parse_reaction_equation("C00033 => C00024")
+        assert s == [(1, "C00033")]
+        assert p == [(1, "C00024")]
+        assert d == "forward_only"
+
+    def test_with_coefficients(self):
+        s, p, d = route_predictor._parse_reaction_equation("2 C00006 + C00149 <=> 2 C00005 + C00026")
+        assert s == [(2, "C00006"), (1, "C00149")]
+        assert p == [(2, "C00005"), (1, "C00026")]
+        assert d == "reversible"
+
+    def test_extra_whitespace_tolerated(self):
+        s, p, d = route_predictor._parse_reaction_equation("  C00033   +   C00010   <=>   C00024  ")
+        assert s == [(1, "C00033"), (1, "C00010")]
+        assert p == [(1, "C00024")]
+
+    def test_missing_arrow_raises(self):
+        with pytest.raises(ValueError, match="No reaction arrow"):
+            route_predictor._parse_reaction_equation("C00033 + C00010 C00024")
+
+    def test_unparseable_token_raises(self):
+        with pytest.raises(ValueError, match="Unparseable token"):
+            route_predictor._parse_reaction_equation("C00033 + foo <=> C00024")
+
+    def test_empty_equation_raises(self):
+        with pytest.raises(ValueError):
+            route_predictor._parse_reaction_equation("")
