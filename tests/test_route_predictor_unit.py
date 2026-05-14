@@ -750,3 +750,35 @@ class TestComposeRouteEe:
         }
         composed = _compose_route_ee(route, brenda_data)
         assert abs(composed - 95.0) < 0.01
+
+
+class TestScorerReadsRouteFeasibility:
+    def test_score_suggestion_reads_route_feasibility_list(self):
+        """Regression test: scorer must read suggestion['route_feasibility'][0]['feasibility'],
+        not the legacy suggestion['feasibility'] key. See final review feedback (2026-05-14)."""
+        from ChiraLLM.enantioselectivity_scorer import score_suggestion
+
+        suggestion = {
+            "name": "test compound",
+            "SMILES": "C[C@H](O)C(=O)O",
+            "chirality_validation": {"valid": True, "chiral_centers": [(1, "S")]},
+            "route_feasibility": [{
+                "route_index": 0,
+                "terminal_precursor": "C00022",
+                "feasibility": {"status": "feasible", "flux": 17.33, "kegg_id": "C00186"},
+            }],
+            "brenda_data": {"status": "no_credentials"},
+            "known_ee": "99% ee",
+            "enzyme_class": "ketoreductase",
+        }
+
+        result = score_suggestion(suggestion)
+
+        assert result["feasibility_flux"] == 17.33
+        assert result["composite_score"] > 0  # some score, not zero
+        # And confirm the legacy fallback still works for non-pipeline callers
+        legacy_suggestion = dict(suggestion)
+        legacy_suggestion.pop("route_feasibility")
+        legacy_suggestion["feasibility"] = {"status": "feasible", "flux": 5.0, "kegg_id": "C00186"}
+        legacy_result = score_suggestion(legacy_suggestion)
+        assert legacy_result["feasibility_flux"] == 5.0

@@ -179,7 +179,15 @@ def score_suggestion(suggestion: dict) -> dict:
     stereo_component = 1.0 if stereo_confirmed else 0.0
 
     # --- Feasibility component ---
-    feas = suggestion.get("feasibility", {})
+    # Read feasibility from the per-route list main.py builds (route_feasibility),
+    # falling back to the legacy flat 'feasibility' key for callers that don't
+    # use the route predictor pipeline. The first route's feasibility represents
+    # the cheapest/best terminal precursor, which is the meaningful FBA signal.
+    route_feas_list = suggestion.get("route_feasibility") or []
+    if route_feas_list:
+        feas = route_feas_list[0].get("feasibility", {}) if isinstance(route_feas_list[0], dict) else {}
+    else:
+        feas = suggestion.get("feasibility", {})
     feas_status = feas.get("status") if isinstance(feas, dict) else None
     if feas_status == "feasible":
         feas_component: Optional[float] = 1.0

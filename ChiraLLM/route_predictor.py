@@ -728,6 +728,7 @@ def _astar_search(target_id: str, budget: int = DEFAULT_BUDGET, depth_cap: int =
                     "edge_cost": edge_cost,
                     "depth": depth + 1,
                     "g_score": new_g,
+                    "traversed_direction": traversed_direction,
                 })
 
                 h_new = TANIMOTO_HEURISTIC_WEIGHT * _tanimoto_to_central(precursor_id)
@@ -778,7 +779,7 @@ def _backtrack_route(dag_result: dict, leaf_id: str) -> "Route | None":
             precursor_id=current,           # upstream
             intermediate_id=parent,         # downstream (closer to target)
             edge_cost_breakdown=dict(edge["edge_cost"]),
-            traversed_direction="forward",
+            traversed_direction=edge.get("traversed_direction", "forward"),
         )
         steps_reverse.append(step)
         current = parent
