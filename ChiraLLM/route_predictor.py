@@ -202,8 +202,17 @@ def _cache_root() -> Path:
 
 
 def _cache_ttl_seconds() -> int:
-    """Returns the cache TTL in seconds; CHIRALAI_CACHE_TTL_DAYS override available."""
-    return int(os.environ.get("CHIRALAI_CACHE_TTL_DAYS", "30")) * 86400
+    """Returns the cache TTL in seconds; CHIRALAI_CACHE_TTL_DAYS override available.
+
+    Raises ValueError with a clear message if the env var is set to a non-numeric value.
+    """
+    raw = os.environ.get("CHIRALAI_CACHE_TTL_DAYS", "30")
+    try:
+        return int(raw) * 86400
+    except ValueError:
+        raise ValueError(
+            f"CHIRALAI_CACHE_TTL_DAYS must be an integer number of days; got {raw!r}"
+        )
 
 
 def _disk_cache_get(category: str, key: str) -> str | None:
@@ -211,14 +220,21 @@ def _disk_cache_get(category: str, key: str) -> str | None:
 
     category: one of 'kegg', 'kegg_mol', 'equilibrator'.
     key: the resource identifier (compound ID, reaction ID).
+
+    Tolerant of races: if the file is deleted between the existence check and the
+    stat/read, returns None rather than raising FileNotFoundError.
     """
     path = _cache_root() / category / f"{key}.cache"
-    if not path.exists():
+    try:
+        age_seconds = time.time() - path.stat().st_mtime
+    except FileNotFoundError:
         return None
-    age_seconds = time.time() - path.stat().st_mtime
     if age_seconds > _cache_ttl_seconds():
         return None
-    return path.read_text(encoding="utf-8")
+    try:
+        return path.read_text(encoding="utf-8")
+    except FileNotFoundError:
+        return None
 
 
 def _disk_cache_set(category: str, key: str, content: str) -> None:
@@ -229,11 +245,24 @@ def _disk_cache_set(category: str, key: str, content: str) -> None:
 
 
 def _clear_disk_cache() -> int:
-    """Removes all cached content. Returns count of files removed.
-    Used by `python -m ChiraLLM.route_predictor --clear-cache`."""
+    """Removes all .cache files under the cache root and returns the count of
+    cache files removed.
+
+    Used by `python -m ChiraLLM.route_predictor --clear-cache`.
+
+    Note: only files matching `*.cache` are removed; any other files a user has
+    placed under the cache root are left in place. Empty subdirectories are also
+    left in place — they cost nothing and avoid surprising the user.
+    """
     root = _cache_root()
     if not root.exists():
         return 0
-    count = sum(1 for _ in root.rglob("*.cache"))
-    shutil.rmtree(root)
+    count = 0
+    for cache_file in root.rglob("*.cache"):
+        try:
+            cache_file.unlink()
+            count += 1
+        except FileNotFoundError:
+            # Concurrent removal — count it as already-cleared
+            count += 1
     return count

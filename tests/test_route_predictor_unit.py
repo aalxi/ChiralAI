@@ -128,3 +128,38 @@ class TestDiskCache:
     def test_unicode_content_preserved(self, tmp_cache_dir):
         route_predictor._disk_cache_set("kegg", "R12345", "alpha-α-ketoglutarate")
         assert route_predictor._disk_cache_get("kegg", "R12345") == "alpha-α-ketoglutarate"
+
+    def test_invalid_ttl_env_raises_clear_error(self, tmp_cache_dir, monkeypatch):
+        monkeypatch.setenv("CHIRALAI_CACHE_TTL_DAYS", "abc")
+        route_predictor._disk_cache_set("kegg", "R12345", "data")
+        with pytest.raises(ValueError, match="CHIRALAI_CACHE_TTL_DAYS must be an integer"):
+            route_predictor._disk_cache_get("kegg", "R12345")
+
+    def test_get_tolerates_concurrent_deletion(self, tmp_cache_dir, monkeypatch):
+        # Simulate the file being deleted between the existence check and stat
+        path = tmp_cache_dir / "kegg" / "R12345.cache"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text("data")
+        original_stat = type(path).stat
+
+        def fake_stat(self, *a, **kw):
+            if self.name == "R12345.cache":
+                raise FileNotFoundError(self)
+            return original_stat(self, *a, **kw)
+
+        monkeypatch.setattr(type(path), "stat", fake_stat)
+        assert route_predictor._disk_cache_get("kegg", "R12345") is None
+
+    def test_clear_disk_cache_only_removes_cache_files(self, tmp_cache_dir):
+        # Set up some cache files and a non-cache file
+        route_predictor._disk_cache_set("kegg", "R1", "a")
+        route_predictor._disk_cache_set("kegg", "R2", "b")
+        route_predictor._disk_cache_set("equilibrator", "R3", "c")
+        unrelated = tmp_cache_dir / "unrelated.txt"
+        unrelated.write_text("don't delete me")
+
+        n = route_predictor._clear_disk_cache()
+
+        assert n == 3
+        assert unrelated.exists()  # non-cache file preserved
+        assert route_predictor._disk_cache_get("kegg", "R1") is None  # cache cleared
