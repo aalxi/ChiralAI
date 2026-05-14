@@ -17,6 +17,7 @@ from pathlib import Path
 
 import requests
 from rdkit import Chem
+from rdkit.Chem import DataStructs, rdFingerprintGenerator
 
 logger = logging.getLogger(__name__)
 
@@ -475,3 +476,61 @@ def _fetch_delta_g_kj_per_mol(rxn_id: str) -> float | None:
         return None
     _disk_cache_set("equilibrator", rxn_id, str(dg))
     return dg
+
+
+# ---------------------------------------------------------------------------
+# A* heuristic: Morgan-fingerprint Tanimoto distance to central metabolites
+# ---------------------------------------------------------------------------
+
+_morgan_gen = rdFingerprintGenerator.GetMorganGenerator(
+    radius=2, fpSize=2048, includeChirality=False
+)
+_central_fingerprints_cache: dict | None = None
+_TANIMOTO_FALLBACK_DISTANCE = 0.5
+
+
+def _get_central_fingerprints() -> dict:
+    """Lazy-initialized Morgan fingerprints for every compound in CENTRAL_METABOLITES.
+
+    Returns a dict mapping compound_id -> ExplicitBitVect. Computed once per module
+    lifetime. Lazy init defers ~50ms × N RDKit calls until first search, and supports
+    future catalog swaps without module-import cost.
+    """
+    global _central_fingerprints_cache
+    if _central_fingerprints_cache is not None:
+        return _central_fingerprints_cache
+    fps = {}
+    for cid in CENTRAL_METABOLITES:
+        mol = _fetch_kegg_mol(cid)
+        if mol is not None:
+            fps[cid] = _morgan_gen.GetFingerprint(mol)
+    _central_fingerprints_cache = fps
+    logger.info("Computed Morgan fingerprints for %d central metabolites", len(fps))
+    return fps
+
+
+def _tanimoto_to_central(compound_id: str) -> float:
+    """Returns 1 - max(Tanimoto similarity to any central metabolite). Range [0, 1].
+
+    0 means the compound is (essentially) identical to a central metabolite.
+    1 means maximally distant from all central metabolites.
+
+    Falls back to uniform 0.5 if the compound's MOL file is unavailable (per
+    spec §5.1 case #11): heuristic degrades to a constant rather than excluding
+    the node from search.
+
+    includeChirality=False is intentional: KEGG MOL files lack stereochemistry
+    annotations for many compounds; including chirality bits would unfairly inflate
+    distance for compounds KEGG doesn't represent stereochemistry for.
+    """
+    mol = _fetch_kegg_mol(compound_id)
+    if mol is None:
+        return _TANIMOTO_FALLBACK_DISTANCE
+    fp = _morgan_gen.GetFingerprint(mol)
+    centrals = _get_central_fingerprints()
+    if not centrals:
+        return _TANIMOTO_FALLBACK_DISTANCE
+    max_sim = max(
+        DataStructs.TanimotoSimilarity(fp, central_fp) for central_fp in centrals.values()
+    )
+    return 1.0 - max_sim

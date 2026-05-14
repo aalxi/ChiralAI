@@ -330,3 +330,62 @@ class TestFetchDeltaG:
 
         assert result == -29.4
         get_mock.assert_not_called()
+
+
+class TestHeuristic:
+    def test_central_fingerprints_lazy_init(self, mocker):
+        # Reset module state
+        route_predictor._central_fingerprints_cache = None
+
+        # Mock _fetch_kegg_mol to return a real RDKit mol for any compound id
+        from rdkit import Chem
+        mol = Chem.MolFromSmiles("CC(=O)C(=O)O")  # pyruvate
+        mocker.patch("ChiraLLM.route_predictor._fetch_kegg_mol", return_value=mol)
+
+        fps = route_predictor._get_central_fingerprints()
+
+        assert isinstance(fps, dict)
+        assert len(fps) > 30  # CENTRAL_METABOLITES has ~40 entries
+
+    def test_tanimoto_to_central_zero_for_central_compound(self, mocker):
+        from rdkit import Chem
+        # Compound IS pyruvate; nearest central should be pyruvate itself, distance ≈ 0
+        pyruvate = Chem.MolFromSmiles("CC(=O)C(=O)O")
+        mocker.patch("ChiraLLM.route_predictor._fetch_kegg_mol", return_value=pyruvate)
+        route_predictor._central_fingerprints_cache = None
+
+        distance = route_predictor._tanimoto_to_central("C00022")
+
+        assert distance < 0.1  # very close
+
+    def test_tanimoto_to_central_positive_for_distant_compound(self, mocker):
+        from rdkit import Chem
+        # Use a complex molecule (caffeine) very different from central metabolites
+        caffeine = Chem.MolFromSmiles("Cn1cnc2c1c(=O)n(C)c(=O)n2C")
+
+        def fake_fetch(cid):
+            if cid in route_predictor.CENTRAL_METABOLITES:
+                return Chem.MolFromSmiles("CC(=O)C(=O)O")  # pyruvate stand-in
+            return caffeine
+
+        mocker.patch("ChiraLLM.route_predictor._fetch_kegg_mol", side_effect=fake_fetch)
+        route_predictor._central_fingerprints_cache = None
+
+        distance = route_predictor._tanimoto_to_central("C07481")  # caffeine KEGG ID
+
+        assert distance > 0.5  # very distant
+
+    def test_tanimoto_falls_back_to_uniform_when_mol_missing(self, mocker):
+        # Mock _fetch_kegg_mol to return None for the query, real mol for centrals
+        from rdkit import Chem
+
+        def fake_fetch(cid):
+            if cid == "C99999":
+                return None
+            return Chem.MolFromSmiles("CC(=O)C(=O)O")
+
+        mocker.patch("ChiraLLM.route_predictor._fetch_kegg_mol", side_effect=fake_fetch)
+        route_predictor._central_fingerprints_cache = None
+
+        distance = route_predictor._tanimoto_to_central("C99999")
+        assert distance == 0.5  # uniform fallback per spec §5.1 case #11
