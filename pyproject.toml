@@ -1,0 +1,7 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: requires live KEGG access (run with -m integration)",
+    "live_equilibrator: requires live eQuilibrator API (run with -m live_equilibrator)",
+]
+addopts = "-m 'not integration and not live_equilibrator'"
