@@ -288,10 +288,10 @@ def _parse_kegg_reaction_flat(text: str, rxn_id: str) -> dict | None:
     ec_numbers: list[str] = []
     in_enzyme_field = False
     for line in text.splitlines():
-        if line.startswith("EQUATION"):
+        if line.startswith("EQUATION "):
             equation = line[12:].strip()
             in_enzyme_field = False
-        elif line.startswith("ENZYME"):
+        elif line.startswith("ENZYME "):
             in_enzyme_field = True
             ec_numbers.extend(line[12:].split())
         elif in_enzyme_field and line.startswith(" "):
@@ -326,7 +326,7 @@ def _parse_kegg_compound_reactions(text: str) -> list[str]:
     reactions: list[str] = []
     in_reaction_field = False
     for line in text.splitlines():
-        if line.startswith("REACTION"):
+        if line.startswith("REACTION "):
             in_reaction_field = True
             reactions.extend(line[12:].split())
         elif in_reaction_field and line.startswith(" "):
