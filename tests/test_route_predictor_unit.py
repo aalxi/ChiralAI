@@ -526,3 +526,62 @@ class TestRouteDataclasses:
         )
         assert route.terminal_precursor_id == "C_A"
         assert len(route.steps) == 1
+
+
+class TestFormatters:
+    @pytest.fixture
+    def hand_built_dag(self, mocker):
+        """A 2-route DAG: target → A → CENTRAL_1, target → B → CENTRAL_2."""
+        mocker.patch.object(
+            route_predictor,
+            "CENTRAL_METABOLITES",
+            {"C_CENTRAL_1": "alpha", "C_CENTRAL_2": "beta"},
+        )
+        rxn_1 = {"rxn_id": "R1", "ec_numbers": ["1.1.1.1"], "direction": "reversible"}
+        rxn_2 = {"rxn_id": "R2", "ec_numbers": ["1.1.1.2"], "direction": "reversible"}
+        rxn_3 = {"rxn_id": "R3", "ec_numbers": ["2.6.1.1"], "direction": "reversible"}
+        rxn_4 = {"rxn_id": "R4", "ec_numbers": ["3.1.3.1"], "direction": "reversible"}
+        cost_low = {"base": 1.0, "thermodynamic": 0.0, "directionality": 0.0, "industrial_override": 0.0, "total": 1.0}
+        cost_high = {"base": 1.0, "thermodynamic": 1.0, "directionality": 0.5, "industrial_override": 0.0, "total": 2.5}
+        return {
+            "target_id": "C_TARGET",
+            "visited_dag": {
+                "C_A": [{"parent_id": "C_TARGET", "reaction": rxn_1, "edge_cost": cost_low, "depth": 1, "g_score": 1.0}],
+                "C_B": [{"parent_id": "C_TARGET", "reaction": rxn_2, "edge_cost": cost_high, "depth": 1, "g_score": 2.5}],
+                "C_CENTRAL_1": [{"parent_id": "C_A", "reaction": rxn_3, "edge_cost": cost_low, "depth": 2, "g_score": 2.0}],
+                "C_CENTRAL_2": [{"parent_id": "C_B", "reaction": rxn_4, "edge_cost": cost_low, "depth": 2, "g_score": 3.5}],
+            },
+            "leaf_ids": ["C_CENTRAL_1", "C_CENTRAL_2"],
+            "nodes_explored": 5,
+            "budget_exhausted": False,
+        }
+
+    def test_extract_top_n_returns_routes_sorted_by_cost(self, hand_built_dag):
+        routes = route_predictor._extract_top_n(hand_built_dag, n=2)
+
+        assert len(routes) == 2
+        assert routes[0].total_cost <= routes[1].total_cost
+        assert routes[0].terminal_precursor_id == "C_CENTRAL_1"  # cheaper
+
+    def test_extract_top_n_respects_n(self, hand_built_dag):
+        routes = route_predictor._extract_top_n(hand_built_dag, n=1)
+        assert len(routes) == 1
+
+    def test_extract_full_tree_returns_one_route_with_full_dag(self, hand_built_dag):
+        routes = route_predictor._extract_full_tree(hand_built_dag)
+        assert len(routes) == 1
+        assert routes[0].target_id == "C_TARGET"
+
+    def test_extract_shortest_plus_diverse_returns_unique_terminals(self, hand_built_dag):
+        routes = route_predictor._extract_shortest_plus_diverse(hand_built_dag, n_diverse=1)
+        terminals = {r.terminal_precursor_id for r in routes}
+        assert len(routes) >= 1
+        assert len(terminals) == len(routes)  # all unique
+
+    def test_route_steps_in_target_to_precursor_order(self, hand_built_dag):
+        routes = route_predictor._extract_top_n(hand_built_dag, n=1)
+        route = routes[0]
+        # First step's intermediate_id should be the target
+        assert route.steps[0].intermediate_id == "C_TARGET"
+        # Last step's precursor_id should be the terminal
+        assert route.steps[-1].precursor_id == route.terminal_precursor_id

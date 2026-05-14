@@ -742,3 +742,125 @@ def _astar_search(target_id: str, budget: int = DEFAULT_BUDGET, depth_cap: int =
         "nodes_explored": nodes_explored,
         "budget_exhausted": budget_exhausted,
     }
+
+
+# ---------------------------------------------------------------------------
+# Output formatters
+# ---------------------------------------------------------------------------
+
+def _backtrack_route(dag_result: dict, leaf_id: str) -> "Route | None":
+    """Walks the DAG from a leaf back to the target, building an ordered Route.
+    Picks the cheapest parent at each level (greedy backtrack).
+    Returns None if no path exists."""
+    visited_dag = dag_result["visited_dag"]
+    target_id = dag_result["target_id"]
+
+    if leaf_id not in visited_dag and leaf_id != target_id:
+        return None
+
+    steps_reverse: list[RouteStep] = []
+    current = leaf_id
+    seen = {leaf_id}
+
+    while current != target_id:
+        edges = visited_dag.get(current, [])
+        if not edges:
+            return None  # broken path
+        edge = min(edges, key=lambda e: e["g_score"])
+        parent = edge["parent_id"]
+        if parent in seen:
+            return None  # cycle
+        seen.add(parent)
+
+        step = RouteStep(
+            reaction_id=edge["reaction"]["rxn_id"],
+            ec_numbers=edge["reaction"]["ec_numbers"],
+            precursor_id=current,           # upstream
+            intermediate_id=parent,         # downstream (closer to target)
+            edge_cost_breakdown=dict(edge["edge_cost"]),
+            traversed_direction="forward",
+        )
+        steps_reverse.append(step)
+        current = parent
+
+    # steps_reverse is leaf → target; reverse so steps go target → terminal precursor
+    steps = list(reversed(steps_reverse))
+
+    total_cost = sum(s.edge_cost_breakdown["total"] for s in steps)
+    cost_breakdown = {
+        "base": sum(s.edge_cost_breakdown["base"] for s in steps),
+        "thermodynamic": sum(s.edge_cost_breakdown["thermodynamic"] for s in steps),
+        "directionality": sum(s.edge_cost_breakdown["directionality"] for s in steps),
+        "industrial_override": sum(s.edge_cost_breakdown["industrial_override"] for s in steps),
+    }
+
+    return Route(
+        target_id=target_id,
+        steps=steps,
+        terminal_precursor_id=leaf_id,
+        terminal_precursor_name=CENTRAL_METABOLITES.get(leaf_id, leaf_id),
+        total_cost=total_cost,
+        cost_breakdown=cost_breakdown,
+        warnings=[],
+    )
+
+
+def _extract_top_n(dag_result: dict, n: int = DEFAULT_MAX_ROUTES) -> list["Route"]:
+    """Returns up to n routes, sorted by total_cost ascending."""
+    routes = []
+    for leaf_id in dag_result["leaf_ids"]:
+        route = _backtrack_route(dag_result, leaf_id)
+        if route is not None:
+            routes.append(route)
+    routes.sort(key=lambda r: r.total_cost)
+    return routes[:n]
+
+
+def _extract_full_tree(dag_result: dict) -> list["Route"]:
+    """Returns a single Route whose 'steps' encode the canonical (cheapest) path.
+    The full DAG is preserved in JSON sidecar; warnings list other leaves."""
+    if not dag_result["leaf_ids"]:
+        return []
+    cheapest_leaf = min(
+        dag_result["leaf_ids"],
+        key=lambda lid: min(
+            (e["g_score"] for e in dag_result["visited_dag"].get(lid, [])),
+            default=float("inf"),
+        ),
+    )
+    canonical = _backtrack_route(dag_result, cheapest_leaf)
+    if canonical is None:
+        return []
+    other_leaves = [lid for lid in dag_result["leaf_ids"] if lid != cheapest_leaf]
+    if other_leaves:
+        canonical.warnings.append(
+            f"full_tree mode: {len(other_leaves)} additional leaves not shown in steps "
+            f"(see JSON sidecar for full DAG): {', '.join(other_leaves)}"
+        )
+    return [canonical]
+
+
+def _extract_shortest_plus_diverse(dag_result: dict, n_diverse: int = 2) -> list["Route"]:
+    """Returns the shortest-hop route plus n_diverse maximally-different alternates.
+    Diversity is measured by terminal_precursor_id; alternates with the same terminal as the
+    shortest are skipped.
+    """
+    all_routes = []
+    for leaf_id in dag_result["leaf_ids"]:
+        route = _backtrack_route(dag_result, leaf_id)
+        if route is not None:
+            all_routes.append(route)
+    if not all_routes:
+        return []
+
+    shortest = min(all_routes, key=lambda r: (len(r.steps), r.total_cost))
+    selected = [shortest]
+    seen_terminals = {shortest.terminal_precursor_id}
+
+    remaining = [r for r in all_routes if r.terminal_precursor_id not in seen_terminals]
+    remaining.sort(key=lambda r: r.total_cost)
+    for r in remaining[:n_diverse]:
+        selected.append(r)
+        seen_terminals.add(r.terminal_precursor_id)
+
+    return selected
