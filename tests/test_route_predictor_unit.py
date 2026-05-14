@@ -585,3 +585,79 @@ class TestFormatters:
         assert route.steps[0].intermediate_id == "C_TARGET"
         # Last step's precursor_id should be the terminal
         assert route.steps[-1].precursor_id == route.terminal_precursor_id
+
+
+class TestPredictRoute:
+    def test_invalid_kegg_id_format(self):
+        result = route_predictor.predict_route("not_a_kegg_id")
+        assert result.status == "invalid_kegg_id"
+        assert result.routes == []
+
+    def test_none_compound_id(self):
+        result = route_predictor.predict_route(None)
+        assert result.status == "no_kegg_id"
+
+    def test_empty_compound_id(self):
+        result = route_predictor.predict_route("")
+        assert result.status == "no_kegg_id"
+
+    def test_invalid_mode(self):
+        result = route_predictor.predict_route("C00599", mode="bogus")
+        assert result.status == "invalid_mode"
+
+    def test_target_with_no_reactions(self, mock_kegg, mock_equilibrator, tmp_cache_dir, mocker):
+        mocker.patch("ChiraLLM.route_predictor._tanimoto_to_central", return_value=0.5)
+        mocker.patch.object(
+            route_predictor, "CENTRAL_METABOLITES",
+            {"C_PRECURSOR_A": "alpha"},
+        )
+        # Pre-populate disk cache for C_DEAD_END so it's "in KEGG" but has no reactions
+        route_predictor._disk_cache_set("kegg", "compound_C_DEAD_END", "ENTRY C_DEAD_END Compound\n///\n")
+
+        result = route_predictor.predict_route("C_DEAD_END", mode="top_n")
+        # The fixture maps C_DEAD_END to {"reactions": []} so _fetch_compound_reactions returns []
+        # and the disk cache pre-population means we don't fall into target_not_in_kegg
+        assert result.status == "target_has_no_reactions"
+
+    def test_successful_top_n_search(self, mock_kegg, mock_equilibrator, tmp_cache_dir, mocker):
+        mocker.patch.object(
+            route_predictor, "CENTRAL_METABOLITES",
+            {"C_PRECURSOR_A": "alpha", "C_PRECURSOR_B": "beta"},
+        )
+        mocker.patch("ChiraLLM.route_predictor._tanimoto_to_central", return_value=0.5)
+        # Pre-populate disk cache so C_TARGET appears "in KEGG"
+        route_predictor._disk_cache_set("kegg", "compound_C_TARGET", "ENTRY C_TARGET Compound\nREACTION R_S1 R_S2\n///\n")
+
+        result = route_predictor.predict_route("C_TARGET", mode="top_n", n=2, budget=50)
+
+        assert result.status == "success"
+        assert len(result.routes) >= 1
+        assert all(r.terminal_precursor_id in {"C_PRECURSOR_A", "C_PRECURSOR_B"} for r in result.routes)
+        assert result.nodes_explored > 0
+
+    def test_full_tree_mode(self, mock_kegg, mock_equilibrator, tmp_cache_dir, mocker):
+        mocker.patch.object(
+            route_predictor, "CENTRAL_METABOLITES",
+            {"C_PRECURSOR_A": "alpha", "C_PRECURSOR_B": "beta"},
+        )
+        mocker.patch("ChiraLLM.route_predictor._tanimoto_to_central", return_value=0.5)
+        route_predictor._disk_cache_set("kegg", "compound_C_TARGET", "ENTRY C_TARGET Compound\nREACTION R_S1 R_S2\n///\n")
+
+        result = route_predictor.predict_route("C_TARGET", mode="full_tree", budget=50)
+
+        assert result.status == "success"
+        assert result.mode == "full_tree"
+        assert len(result.routes) == 1
+
+    def test_no_route_found_when_all_branches_dead_end(self, mock_kegg, mock_equilibrator, tmp_cache_dir, mocker):
+        mocker.patch.object(
+            route_predictor, "CENTRAL_METABOLITES",
+            {"C_NEVER_REACHED": "unreachable"},
+        )
+        mocker.patch("ChiraLLM.route_predictor._tanimoto_to_central", return_value=0.5)
+        route_predictor._disk_cache_set("kegg", "compound_C_TARGET", "ENTRY C_TARGET Compound\nREACTION R_S1 R_S2\n///\n")
+
+        result = route_predictor.predict_route("C_TARGET", mode="top_n", budget=50)
+
+        assert result.status == "no_route_found"
+        assert result.routes == []
