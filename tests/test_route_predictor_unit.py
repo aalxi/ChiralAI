@@ -389,3 +389,71 @@ class TestHeuristic:
 
         distance = route_predictor._tanimoto_to_central("C99999")
         assert distance == 0.5  # uniform fallback per spec §5.1 case #11
+
+
+class TestComputeEdgeCost:
+    REVERSIBLE_RXN = {
+        "rxn_id": "R_test_rev",
+        "ec_numbers": ["1.1.1.184"],  # KRED — industrially reversible
+        "direction": "reversible",
+    }
+
+    FORWARD_ONLY_RXN = {
+        "rxn_id": "R_test_fwd",
+        "ec_numbers": ["3.1.3.1"],  # phosphatase, NOT industrially reversible
+        "direction": "forward_only",
+    }
+
+    def test_forward_traversal_no_directionality_penalty(self, mocker):
+        mocker.patch(
+            "ChiraLLM.route_predictor._fetch_delta_g_kj_per_mol", return_value=-10.0
+        )
+        cost = route_predictor._compute_edge_cost(self.REVERSIBLE_RXN, "forward")
+
+        assert cost["directionality"] == 0.0
+        assert cost["industrial_override"] == 0.0
+        assert cost["base"] == 1.0
+        assert cost["total"] == cost["base"] + cost["thermodynamic"] + cost["directionality"] + cost["industrial_override"]
+
+    def test_reverse_traversal_pays_directionality_for_irreversible(self, mocker):
+        mocker.patch(
+            "ChiraLLM.route_predictor._fetch_delta_g_kj_per_mol", return_value=-30.0
+        )
+        cost = route_predictor._compute_edge_cost(self.FORWARD_ONLY_RXN, "reverse")
+
+        assert cost["directionality"] > 0
+        assert cost["thermodynamic"] > 0
+        assert cost["industrial_override"] == 0.0  # phosphatase not in override list
+        assert cost["total"] > 1.0
+
+    def test_industrial_override_zeroes_directionality_for_kred_reverse(self, mocker):
+        mocker.patch(
+            "ChiraLLM.route_predictor._fetch_delta_g_kj_per_mol", return_value=-10.0
+        )
+        cost = route_predictor._compute_edge_cost(self.REVERSIBLE_RXN, "reverse")
+
+        # KRED in reverse: industrial_override should reduce/zero the directionality penalty
+        assert cost["industrial_override"] < 0  # discount is negative
+        assert cost["directionality"] >= 0
+        # net effect: total should be close to forward cost
+        forward_cost = route_predictor._compute_edge_cost(self.REVERSIBLE_RXN, "forward")
+        assert abs(cost["total"] - forward_cost["total"]) <= 0.5
+
+    def test_fallback_delta_g_when_unreachable(self, mocker):
+        mocker.patch("ChiraLLM.route_predictor._fetch_delta_g_kj_per_mol", return_value=None)
+        cost = route_predictor._compute_edge_cost(self.FORWARD_ONLY_RXN, "reverse")
+
+        # Should not crash; thermodynamic component computed from FALLBACK_DELTA_G_KJ
+        assert cost["thermodynamic"] > 0
+        assert "total" in cost
+
+    def test_breakdown_components_sum_to_total(self, mocker):
+        mocker.patch(
+            "ChiraLLM.route_predictor._fetch_delta_g_kj_per_mol", return_value=-15.0
+        )
+        cost = route_predictor._compute_edge_cost(self.REVERSIBLE_RXN, "reverse")
+
+        component_sum = (
+            cost["base"] + cost["thermodynamic"] + cost["directionality"] + cost["industrial_override"]
+        )
+        assert abs(cost["total"] - component_sum) < 1e-9

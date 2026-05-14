@@ -100,6 +100,10 @@ DEFAULT_MAX_ROUTES = 3
 THERMO_PENALTY_PER_KJ = 0.05
 FALLBACK_DELTA_G_KJ = 5.0
 
+_BASE_EDGE_COST = 1.0
+_REVERSIBLE_REVERSE_PENALTY = 0.5  # reverse traversal of a KEGG-marked-reversible reaction
+_IRREVERSIBLE_REVERSE_PENALTY = 2.0  # reverse traversal of a KEGG-marked-forward-only reaction
+
 # v1 STARTING GUESS — NOT VALIDATED. h(n) Tanimoto distance is scaled by this weight before
 # being added to g(n) accumulated edge cost. Weight=2.0 means structural similarity to a
 # central metabolite matters 2x as much as accumulated thermo+directional cost (g(n) is on
@@ -534,3 +538,53 @@ def _tanimoto_to_central(compound_id: str) -> float:
         DataStructs.TanimotoSimilarity(fp, central_fp) for central_fp in centrals.values()
     )
     return 1.0 - max_sim
+
+
+# ---------------------------------------------------------------------------
+# Edge cost computation for A* search
+# ---------------------------------------------------------------------------
+
+
+def _compute_edge_cost(reaction: dict, traversed_direction: str) -> dict:
+    """Computes the cost breakdown for traversing one reaction edge in the search.
+
+    Components:
+      base               — flat per-step cost (always 1.0)
+      thermodynamic      — proportional to |ΔG| when traversing reverse, 0 when forward
+      directionality     — KEGG reversibility penalty (0 forward, varies by direction marker reverse)
+      industrial_override — negative discount for industrially-reversible EC families when reverse
+
+    traversed_direction: 'forward' (we're walking in the reaction's natural direction)
+                        or 'reverse' (we're walking against it).
+    """
+    base = _BASE_EDGE_COST
+    thermodynamic = 0.0
+    directionality = 0.0
+    industrial_override = 0.0
+
+    if traversed_direction == "reverse":
+        # Thermodynamic penalty: proportional to |ΔG| in the unfavorable direction.
+        dg = _fetch_delta_g_kj_per_mol(reaction["rxn_id"])
+        dg_magnitude = abs(dg) if dg is not None else FALLBACK_DELTA_G_KJ
+        thermodynamic = THERMO_PENALTY_PER_KJ * dg_magnitude
+
+        # Directionality penalty: depends on KEGG's reversibility annotation.
+        if reaction["direction"] == DIRECTION_FORWARD_ONLY:
+            directionality = _IRREVERSIBLE_REVERSE_PENALTY
+        else:
+            directionality = _REVERSIBLE_REVERSE_PENALTY
+
+        # Industrial-override discount: applied only on reverse traversal.
+        if _is_industrially_reversible(reaction["ec_numbers"]):
+            # Discount equal to the directionality penalty (i.e., zero-out the reverse cost
+            # for these EC families, but keep the base + thermodynamic components).
+            industrial_override = -directionality
+
+    total = base + thermodynamic + directionality + industrial_override
+    return {
+        "base": base,
+        "thermodynamic": thermodynamic,
+        "directionality": directionality,
+        "industrial_override": industrial_override,
+        "total": total,
+    }
