@@ -2,6 +2,9 @@
 All external calls (KEGG, eQuilibrator, RDKit MOL parsing) are mocked.
 Coverage target: ≥85%."""
 
+import os
+import time
+
 import pytest
 
 from ChiraLLM import route_predictor
@@ -100,3 +103,28 @@ class TestIsIndustriallyReversible:
         """1.14.13.22 (BVMO) should match ONLY EC 1.14.13.22, not hypothetical 1.14.13.220."""
         assert route_predictor._is_industrially_reversible(["1.14.13.22"]) is True
         assert route_predictor._is_industrially_reversible(["1.14.13.220"]) is False
+
+
+class TestDiskCache:
+    def test_get_returns_none_for_missing(self, tmp_cache_dir):
+        # _disk_cache_get reads CHIRALAI_CACHE_ROOT from env
+        result = route_predictor._disk_cache_get("kegg", "R12345")
+        assert result is None
+
+    def test_set_then_get_roundtrip(self, tmp_cache_dir):
+        route_predictor._disk_cache_set("kegg", "R12345", "raw kegg response")
+        assert route_predictor._disk_cache_get("kegg", "R12345") == "raw kegg response"
+
+    def test_creates_subdirectory(self, tmp_cache_dir):
+        route_predictor._disk_cache_set("equilibrator", "R99999", "data")
+        assert (tmp_cache_dir / "equilibrator" / "R99999.cache").exists()
+
+    def test_expired_returns_none(self, tmp_cache_dir, monkeypatch):
+        # Force TTL to 0 days = always expired
+        monkeypatch.setenv("CHIRALAI_CACHE_TTL_DAYS", "0")
+        route_predictor._disk_cache_set("kegg", "R12345", "stale")
+        assert route_predictor._disk_cache_get("kegg", "R12345") is None
+
+    def test_unicode_content_preserved(self, tmp_cache_dir):
+        route_predictor._disk_cache_set("kegg", "R12345", "alpha-α-ketoglutarate")
+        assert route_predictor._disk_cache_get("kegg", "R12345") == "alpha-α-ketoglutarate"

@@ -8,7 +8,11 @@ Public API: predict_route(compound_id, mode='top_n', n=3, budget=500) -> RouteRe
 """
 
 import logging
+import os
 import re
+import shutil
+import time
+from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
@@ -182,3 +186,54 @@ def _is_industrially_reversible(ec_numbers: list[str]) -> bool:
                 if ec == entry:
                     return True
     return False
+
+
+# ---------------------------------------------------------------------------
+# Disk cache helpers
+# ---------------------------------------------------------------------------
+
+
+def _cache_root() -> Path:
+    """Returns the disk cache root, honoring CHIRALAI_CACHE_ROOT env override."""
+    override = os.environ.get("CHIRALAI_CACHE_ROOT")
+    if override:
+        return Path(override)
+    return Path.home() / ".cache" / "chiralai"
+
+
+def _cache_ttl_seconds() -> int:
+    """Returns the cache TTL in seconds; CHIRALAI_CACHE_TTL_DAYS override available."""
+    return int(os.environ.get("CHIRALAI_CACHE_TTL_DAYS", "30")) * 86400
+
+
+def _disk_cache_get(category: str, key: str) -> str | None:
+    """Returns cached content as a string, or None if missing/expired.
+
+    category: one of 'kegg', 'kegg_mol', 'equilibrator'.
+    key: the resource identifier (compound ID, reaction ID).
+    """
+    path = _cache_root() / category / f"{key}.cache"
+    if not path.exists():
+        return None
+    age_seconds = time.time() - path.stat().st_mtime
+    if age_seconds > _cache_ttl_seconds():
+        return None
+    return path.read_text(encoding="utf-8")
+
+
+def _disk_cache_set(category: str, key: str, content: str) -> None:
+    """Writes content to disk cache, creating the subdirectory if needed."""
+    path = _cache_root() / category / f"{key}.cache"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+
+
+def _clear_disk_cache() -> int:
+    """Removes all cached content. Returns count of files removed.
+    Used by `python -m ChiraLLM.route_predictor --clear-cache`."""
+    root = _cache_root()
+    if not root.exists():
+        return 0
+    count = sum(1 for _ in root.rglob("*.cache"))
+    shutil.rmtree(root)
+    return count
