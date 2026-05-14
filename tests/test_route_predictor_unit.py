@@ -163,3 +163,91 @@ class TestDiskCache:
         assert n == 3
         assert unrelated.exists()  # non-cache file preserved
         assert route_predictor._disk_cache_get("kegg", "R1") is None  # cache cleared
+
+
+class TestFetchKeggReaction:
+    SAMPLE_KEGG_REACTION_FLAT = """ENTRY       R02472                      Reaction
+NAME        2-dehydropantoate:NADP+ 2-oxidoreductase
+DEFINITION  (R)-Pantoate + NADP+ <=> 2-Dehydropantoate + NADPH + H+
+EQUATION    C00966 + C00006 <=> C00890 + C00005 + C00080
+ENZYME      1.1.1.169
+///
+"""
+
+    def test_parses_well_formed_response(self, tmp_cache_dir, mocker):
+        mock_resp = mocker.Mock(status_code=200, text=self.SAMPLE_KEGG_REACTION_FLAT)
+        mocker.patch("ChiraLLM.route_predictor.requests.get", return_value=mock_resp)
+        # Clear lru_cache before the test
+        route_predictor._fetch_kegg_reaction.cache_clear()
+
+        result = route_predictor._fetch_kegg_reaction("R02472")
+
+        assert result is not None
+        assert result["rxn_id"] == "R02472"
+        assert result["ec_numbers"] == ["1.1.1.169"]
+        assert result["direction"] == "reversible"
+        # C00966 is on substrate side per KEGG; (R)-pantoate is upstream
+        assert (1, "C00966") in result["substrates"]
+        assert (1, "C00890") in result["products"]
+
+    def test_returns_none_on_404(self, tmp_cache_dir, mocker):
+        mock_resp = mocker.Mock(status_code=404, text="")
+        mocker.patch("ChiraLLM.route_predictor.requests.get", return_value=mock_resp)
+        route_predictor._fetch_kegg_reaction.cache_clear()
+
+        result = route_predictor._fetch_kegg_reaction("R99999")
+        assert result is None
+
+    def test_disk_cache_hit_skips_network(self, tmp_cache_dir, mocker):
+        # Pre-populate disk cache
+        route_predictor._disk_cache_set("kegg", "R02472", self.SAMPLE_KEGG_REACTION_FLAT)
+        # Network call should not happen
+        get_mock = mocker.patch("ChiraLLM.route_predictor.requests.get")
+        route_predictor._fetch_kegg_reaction.cache_clear()
+
+        result = route_predictor._fetch_kegg_reaction("R02472")
+
+        assert result is not None
+        assert result["ec_numbers"] == ["1.1.1.169"]
+        get_mock.assert_not_called()
+
+    def test_network_failure_retries_then_returns_none(self, tmp_cache_dir, mocker):
+        import requests
+        mocker.patch(
+            "ChiraLLM.route_predictor.requests.get",
+            side_effect=requests.RequestException("connection refused"),
+        )
+        sleep_mock = mocker.patch("ChiraLLM.route_predictor.time.sleep")
+        route_predictor._fetch_kegg_reaction.cache_clear()
+
+        result = route_predictor._fetch_kegg_reaction("R02472")
+
+        assert result is None
+        sleep_mock.assert_called_once_with(1.0)  # single retry after 1s
+
+
+class TestFetchCompoundReactions:
+    SAMPLE_KEGG_COMPOUND_FLAT = """ENTRY       C00599                      Compound
+NAME        (R)-Pantolactone
+FORMULA     C6H10O3
+REACTION    R02472 R09096
+ENZYME      1.1.1.169
+///
+"""
+
+    def test_extracts_reaction_ids(self, tmp_cache_dir, mocker):
+        mock_resp = mocker.Mock(status_code=200, text=self.SAMPLE_KEGG_COMPOUND_FLAT)
+        mocker.patch("ChiraLLM.route_predictor.requests.get", return_value=mock_resp)
+        route_predictor._fetch_compound_reactions.cache_clear()
+
+        result = route_predictor._fetch_compound_reactions("C00599")
+
+        assert result == ["R02472", "R09096"]
+
+    def test_empty_reaction_field_returns_empty_list(self, tmp_cache_dir, mocker):
+        no_reactions = "ENTRY       C99999                      Compound\nNAME        Foo\n///\n"
+        mock_resp = mocker.Mock(status_code=200, text=no_reactions)
+        mocker.patch("ChiraLLM.route_predictor.requests.get", return_value=mock_resp)
+        route_predictor._fetch_compound_reactions.cache_clear()
+
+        assert route_predictor._fetch_compound_reactions("C99999") == []

@@ -7,12 +7,15 @@ full design rationale.
 Public API: predict_route(compound_id, mode='top_n', n=3, budget=500) -> RouteResult
 """
 
+import functools
 import logging
 import os
 import re
 import shutil
 import time
 from pathlib import Path
+
+import requests
 
 logger = logging.getLogger(__name__)
 
@@ -266,3 +269,132 @@ def _clear_disk_cache() -> int:
             # Concurrent removal — count it as already-cleared
             count += 1
     return count
+
+
+# ---------------------------------------------------------------------------
+# KEGG REST fetchers
+# ---------------------------------------------------------------------------
+
+KEGG_REST_BASE = "http://rest.kegg.jp/get"
+KEGG_RETRY_DELAY_SECONDS = 1.0
+
+
+def _parse_kegg_reaction_flat(text: str, rxn_id: str) -> dict | None:
+    """Parses a KEGG reaction flat-file response into the standard reaction dict.
+
+    Returns None if the EQUATION field is absent or the equation cannot be parsed.
+    """
+    equation = None
+    ec_numbers: list[str] = []
+    in_enzyme_field = False
+    for line in text.splitlines():
+        if line.startswith("EQUATION"):
+            equation = line[12:].strip()
+            in_enzyme_field = False
+        elif line.startswith("ENZYME"):
+            in_enzyme_field = True
+            ec_numbers.extend(line[12:].split())
+        elif in_enzyme_field and line.startswith(" "):
+            ec_numbers.extend(line.strip().split())
+        elif line.startswith("///"):
+            break
+        else:
+            in_enzyme_field = False
+
+    if equation is None:
+        return None
+    try:
+        substrates, products, direction = _parse_reaction_equation(equation)
+    except ValueError as e:
+        logger.warning("Could not parse equation for %s: %s", rxn_id, e)
+        return None
+    return {
+        "rxn_id": rxn_id,
+        "equation": equation,
+        "substrates": substrates,
+        "products": products,
+        "ec_numbers": ec_numbers,
+        "direction": direction,
+    }
+
+
+def _parse_kegg_compound_reactions(text: str) -> list[str]:
+    """Extracts the REACTION field from a KEGG compound flat-file as a list of R##### IDs.
+
+    Handles multi-line REACTION fields (continuation lines start with whitespace).
+    """
+    reactions: list[str] = []
+    in_reaction_field = False
+    for line in text.splitlines():
+        if line.startswith("REACTION"):
+            in_reaction_field = True
+            reactions.extend(line[12:].split())
+        elif in_reaction_field and line.startswith(" "):
+            reactions.extend(line.strip().split())
+        elif line.startswith("///"):
+            break
+        else:
+            in_reaction_field = False
+    return reactions
+
+
+@functools.lru_cache(maxsize=4096)
+def _fetch_kegg_reaction(rxn_id: str) -> dict | None:
+    """Fetches and parses a KEGG reaction by ID.
+
+    Returns a dict with keys rxn_id, equation, substrates, products, ec_numbers,
+    direction — or None on 404 or an unparseable response.
+
+    Caching: checks disk cache first; on a network hit writes back to disk.
+    LRU cache prevents repeated disk reads within a process.
+
+    Retry: one retry after KEGG_RETRY_DELAY_SECONDS on RequestException or 5xx.
+    404 returns None immediately (not transient).
+    """
+    cached = _disk_cache_get("kegg", rxn_id)
+    if cached is not None:
+        return _parse_kegg_reaction_flat(cached, rxn_id)
+
+    for attempt in range(2):
+        try:
+            resp = requests.get(f"{KEGG_REST_BASE}/{rxn_id}", timeout=10)
+        except requests.RequestException as e:
+            logger.warning("KEGG network error for %s (attempt %d): %s", rxn_id, attempt + 1, e)
+            if attempt == 0:
+                time.sleep(KEGG_RETRY_DELAY_SECONDS)
+                continue
+            return None
+        if resp.status_code == 200:
+            _disk_cache_set("kegg", rxn_id, resp.text)
+            return _parse_kegg_reaction_flat(resp.text, rxn_id)
+        if resp.status_code == 404:
+            return None
+        # 5xx or unexpected: retry once then give up
+        if attempt == 0:
+            time.sleep(KEGG_RETRY_DELAY_SECONDS)
+            continue
+        logger.warning("KEGG returned %d for %s after retry", resp.status_code, rxn_id)
+        return None
+    return None
+
+
+@functools.lru_cache(maxsize=4096)
+def _fetch_compound_reactions(compound_id: str) -> list[str]:
+    """Fetches the REACTION field of a KEGG compound entry as a list of R##### IDs.
+
+    Returns an empty list if the compound has no reactions or the fetch fails.
+    Uses disk cache; single network attempt (no retry — compound lookups are cheap).
+    """
+    cached = _disk_cache_get("kegg", f"compound_{compound_id}")
+    if cached is not None:
+        return _parse_kegg_compound_reactions(cached)
+
+    try:
+        resp = requests.get(f"{KEGG_REST_BASE}/{compound_id}", timeout=10)
+    except requests.RequestException as e:
+        logger.warning("KEGG network error for %s: %s", compound_id, e)
+        return []
+    if resp.status_code != 200:
+        return []
+    _disk_cache_set("kegg", f"compound_{compound_id}", resp.text)
+    return _parse_kegg_compound_reactions(resp.text)
