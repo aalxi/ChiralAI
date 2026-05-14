@@ -438,3 +438,40 @@ def _fetch_kegg_mol(compound_id: str):
     except Exception as e:
         logger.warning("RDKit MOL parse exception for %s: %s", compound_id, e)
         return None
+
+
+# ---------------------------------------------------------------------------
+# eQuilibrator REST fetcher
+# ---------------------------------------------------------------------------
+
+EQUILIBRATOR_REST_BASE = "https://equilibrator.weizmann.ac.il/api/v1/reaction"
+
+
+def _fetch_delta_g_kj_per_mol(rxn_id: str) -> float | None:
+    """Fetches standard ΔrG' (kJ/mol, forward direction) from eQuilibrator REST.
+
+    Disk-cached. Returns None on network failure, non-200 response, or unparseable JSON.
+    Caller is expected to fall back to FALLBACK_DELTA_G_KJ when None is returned.
+    """
+    cached = _disk_cache_get("equilibrator", rxn_id)
+    if cached is not None:
+        try:
+            return float(cached)
+        except ValueError:
+            return None
+
+    try:
+        resp = requests.get(f"{EQUILIBRATOR_REST_BASE}/{rxn_id}", timeout=10)
+    except requests.RequestException as e:
+        logger.warning("eQuilibrator network error for %s: %s", rxn_id, e)
+        return None
+    if resp.status_code != 200:
+        return None
+    try:
+        payload = resp.json()
+        dg = float(payload["standard_dg_prime"])
+    except (ValueError, KeyError, TypeError) as e:
+        logger.warning("eQuilibrator response parse error for %s: %s", rxn_id, e)
+        return None
+    _disk_cache_set("equilibrator", rxn_id, str(dg))
+    return dg

@@ -293,3 +293,40 @@ M  END
         route_predictor._fetch_kegg_mol.cache_clear()
 
         assert route_predictor._fetch_kegg_mol("C00001") is None
+
+
+class TestFetchDeltaG:
+    def test_parses_well_formed_response(self, tmp_cache_dir, mocker):
+        mock_resp = mocker.Mock(
+            status_code=200,
+            json=lambda: {"standard_dg_prime": -29.4, "units": "kJ/mol"},
+        )
+        mocker.patch("ChiraLLM.route_predictor.requests.get", return_value=mock_resp)
+
+        result = route_predictor._fetch_delta_g_kj_per_mol("R02472")
+
+        assert result == -29.4
+
+    def test_returns_none_on_network_failure(self, tmp_cache_dir, mocker):
+        import requests
+        mocker.patch(
+            "ChiraLLM.route_predictor.requests.get",
+            side_effect=requests.RequestException("eQuilibrator down"),
+        )
+
+        assert route_predictor._fetch_delta_g_kj_per_mol("R02472") is None
+
+    def test_returns_none_on_5xx(self, tmp_cache_dir, mocker):
+        mock_resp = mocker.Mock(status_code=503, text="")
+        mocker.patch("ChiraLLM.route_predictor.requests.get", return_value=mock_resp)
+
+        assert route_predictor._fetch_delta_g_kj_per_mol("R02472") is None
+
+    def test_disk_cache_hit_skips_network(self, tmp_cache_dir, mocker):
+        route_predictor._disk_cache_set("equilibrator", "R02472", "-29.4")
+        get_mock = mocker.patch("ChiraLLM.route_predictor.requests.get")
+
+        result = route_predictor._fetch_delta_g_kj_per_mol("R02472")
+
+        assert result == -29.4
+        get_mock.assert_not_called()
