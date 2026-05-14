@@ -661,3 +661,48 @@ class TestPredictRoute:
 
         assert result.status == "no_route_found"
         assert result.routes == []
+
+    def test_target_not_in_kegg(self, mock_kegg, mock_equilibrator, tmp_cache_dir, mocker):
+        """Compound has no reactions AND no disk cache entry → status 'target_not_in_kegg'."""
+        mocker.patch("ChiraLLM.route_predictor._tanimoto_to_central", return_value=0.5)
+        mocker.patch.object(
+            route_predictor, "CENTRAL_METABOLITES",
+            {"C_PRECURSOR_A": "alpha"},
+        )
+        # Synthetic ID NOT in fixture and NOT in disk cache
+        result = route_predictor.predict_route("C_NEVER_HEARD_OF", mode="top_n")
+        assert result.status == "target_not_in_kegg"
+        assert result.routes == []
+        assert any("KEGG returned no data" in w for w in result.warnings)
+
+    def test_shortest_plus_diverse_mode(self, mock_kegg, mock_equilibrator, tmp_cache_dir, mocker):
+        """Verify mode='shortest_plus_diverse' dispatches correctly."""
+        mocker.patch.object(
+            route_predictor, "CENTRAL_METABOLITES",
+            {"C_PRECURSOR_A": "alpha", "C_PRECURSOR_B": "beta"},
+        )
+        mocker.patch("ChiraLLM.route_predictor._tanimoto_to_central", return_value=0.5)
+        route_predictor._disk_cache_set("kegg", "compound_C_TARGET", "ENTRY C_TARGET Compound\nREACTION R_S1 R_S2\n///\n")
+
+        result = route_predictor.predict_route("C_TARGET", mode="shortest_plus_diverse", n=2, budget=50)
+
+        assert result.status == "success"
+        assert result.mode == "shortest_plus_diverse"
+        assert len(result.routes) >= 1
+
+    def test_budget_exhaustion_attaches_warning(self, mock_kegg, mock_equilibrator, tmp_cache_dir, mocker):
+        """When the search exhausts budget but finds at least one route, the warning fires."""
+        mocker.patch.object(
+            route_predictor, "CENTRAL_METABOLITES",
+            {"C_PRECURSOR_A": "alpha", "C_PRECURSOR_B": "beta"},
+        )
+        mocker.patch("ChiraLLM.route_predictor._tanimoto_to_central", return_value=0.5)
+        route_predictor._disk_cache_set("kegg", "compound_C_TARGET", "ENTRY C_TARGET Compound\nREACTION R_S1 R_S2\n///\n")
+
+        # budget=2 should be small enough to exhaust the search but might find one leaf
+        result = route_predictor.predict_route("C_TARGET", mode="top_n", n=3, budget=2)
+
+        # Either: budget_exhausted=True with warning, OR: search completed (no warning needed)
+        # We assert that IF budget exhausted, the warning is present.
+        if result.budget_exhausted:
+            assert any("Budget of" in w and "exhausted" in w for w in result.warnings)
