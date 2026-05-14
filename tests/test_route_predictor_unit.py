@@ -706,3 +706,47 @@ class TestPredictRoute:
         # We assert that IF budget exhausted, the warning is present.
         if result.budget_exhausted:
             assert any("Budget of" in w and "exhausted" in w for w in result.warnings)
+
+
+class TestComposeRouteEe:
+    def test_multiplicative_composition(self):
+        from ChiraLLM.enantioselectivity_scorer import _compose_route_ee
+
+        route = {
+            "steps": [
+                {"ec_numbers": ["1.1.1.184"]},
+                {"ec_numbers": ["2.6.1.5"]},
+            ]
+        }
+        brenda_data = {
+            "1.1.1.184": {"status": "success", "entries": [{"enantioselectivity": 99.0}]},
+            "2.6.1.5":   {"status": "success", "entries": [{"enantioselectivity": 95.0}]},
+        }
+
+        composed = _compose_route_ee(route, brenda_data)
+
+        # 0.99 * 0.95 * 100 = 94.05
+        assert composed is not None
+        assert abs(composed - 94.05) < 0.01
+
+    def test_returns_none_when_any_step_missing_ee(self):
+        from ChiraLLM.enantioselectivity_scorer import _compose_route_ee
+
+        route = {"steps": [{"ec_numbers": ["1.1.1.184"]}, {"ec_numbers": ["9.9.9.9"]}]}
+        brenda_data = {"1.1.1.184": {"status": "success", "entries": [{"enantioselectivity": 99.0}]}}
+
+        assert _compose_route_ee(route, brenda_data) is None
+
+    def test_empty_route_returns_none(self):
+        from ChiraLLM.enantioselectivity_scorer import _compose_route_ee
+        assert _compose_route_ee({"steps": []}, {}) is None
+
+    def test_picks_best_ee_across_multiple_ecs_per_step(self):
+        from ChiraLLM.enantioselectivity_scorer import _compose_route_ee
+        route = {"steps": [{"ec_numbers": ["1.1.1.184", "1.1.1.999"]}]}
+        brenda_data = {
+            "1.1.1.184": {"status": "success", "entries": [{"enantioselectivity": 50.0}]},
+            "1.1.1.999": {"status": "success", "entries": [{"enantioselectivity": 95.0}]},
+        }
+        composed = _compose_route_ee(route, brenda_data)
+        assert abs(composed - 95.0) < 0.01
