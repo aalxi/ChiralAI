@@ -251,3 +251,45 @@ ENZYME      1.1.1.169
         route_predictor._fetch_compound_reactions.cache_clear()
 
         assert route_predictor._fetch_compound_reactions("C99999") == []
+
+
+class TestFetchKeggMol:
+    # Minimal valid MOL block for methane (a real RDKit-parseable example)
+    SAMPLE_MOL = """methane
+  Mrv0541 01010100002D
+
+  1  0  0  0  0  0            999 V2000
+    0.0000    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+M  END
+"""
+
+    def test_parses_valid_mol(self, tmp_cache_dir, mocker):
+        mock_resp = mocker.Mock(status_code=200, text=self.SAMPLE_MOL)
+        mocker.patch("ChiraLLM.route_predictor.requests.get", return_value=mock_resp)
+        route_predictor._fetch_kegg_mol.cache_clear()
+
+        mol = route_predictor._fetch_kegg_mol("C01438")
+
+        assert mol is not None
+        assert mol.GetNumAtoms() == 1
+
+    def test_returns_none_on_404(self, tmp_cache_dir, mocker):
+        mock_resp = mocker.Mock(status_code=404, text="")
+        mocker.patch("ChiraLLM.route_predictor.requests.get", return_value=mock_resp)
+        route_predictor._fetch_kegg_mol.cache_clear()
+
+        assert route_predictor._fetch_kegg_mol("C99999") is None
+
+    def test_returns_none_on_empty_body(self, tmp_cache_dir, mocker):
+        mock_resp = mocker.Mock(status_code=200, text="")
+        mocker.patch("ChiraLLM.route_predictor.requests.get", return_value=mock_resp)
+        route_predictor._fetch_kegg_mol.cache_clear()
+
+        assert route_predictor._fetch_kegg_mol("C00001") is None
+
+    def test_returns_none_on_unparseable_mol(self, tmp_cache_dir, mocker):
+        mock_resp = mocker.Mock(status_code=200, text="not a mol file")
+        mocker.patch("ChiraLLM.route_predictor.requests.get", return_value=mock_resp)
+        route_predictor._fetch_kegg_mol.cache_clear()
+
+        assert route_predictor._fetch_kegg_mol("C00001") is None

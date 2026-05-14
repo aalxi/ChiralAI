@@ -16,6 +16,7 @@ import time
 from pathlib import Path
 
 import requests
+from rdkit import Chem
 
 logger = logging.getLogger(__name__)
 
@@ -398,3 +399,39 @@ def _fetch_compound_reactions(compound_id: str) -> list[str]:
         return []
     _disk_cache_set("kegg", f"compound_{compound_id}", resp.text)
     return _parse_kegg_compound_reactions(resp.text)
+
+
+@functools.lru_cache(maxsize=4096)
+def _fetch_kegg_mol(compound_id: str):
+    """Fetches a compound's MOL file from KEGG and parses to an RDKit Mol.
+
+    Returns None if compound has no MOL file, KEGG returns 404, or RDKit parse fails.
+    Caching: checks disk cache first; on a network hit writes back to disk cache.
+    LRU cache prevents repeated disk reads within a process.
+    """
+    cached = _disk_cache_get("kegg_mol", compound_id)
+    if cached is not None:
+        if not cached.strip():
+            return None
+        try:
+            mol = Chem.MolFromMolBlock(cached)
+            return mol
+        except Exception:
+            return None
+
+    try:
+        resp = requests.get(f"{KEGG_REST_BASE}/{compound_id}/mol", timeout=10)
+    except requests.RequestException as e:
+        logger.warning("KEGG MOL network error for %s: %s", compound_id, e)
+        return None
+    if resp.status_code != 200 or not resp.text.strip():
+        return None
+    _disk_cache_set("kegg_mol", compound_id, resp.text)
+    try:
+        mol = Chem.MolFromMolBlock(resp.text)
+        if mol is None:
+            logger.warning("RDKit could not parse MOL for %s", compound_id)
+        return mol
+    except Exception as e:
+        logger.warning("RDKit MOL parse exception for %s: %s", compound_id, e)
+        return None
