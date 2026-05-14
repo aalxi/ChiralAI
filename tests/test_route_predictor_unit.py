@@ -65,3 +65,27 @@ class TestParseReactionEquation:
     def test_empty_equation_raises(self):
         with pytest.raises(ValueError):
             route_predictor._parse_reaction_equation("")
+
+
+class TestIsIndustriallyReversible:
+    def test_kred_yes(self):
+        assert route_predictor._is_industrially_reversible(["1.1.1.184"]) is True
+
+    def test_transaminase_yes(self):
+        assert route_predictor._is_industrially_reversible(["2.6.1.5"]) is True
+
+    def test_phosphatase_no(self):
+        assert route_predictor._is_industrially_reversible(["3.1.3.1"]) is False
+
+    def test_empty_list_no(self):
+        assert route_predictor._is_industrially_reversible([]) is False
+
+    def test_any_match_returns_true(self):
+        assert route_predictor._is_industrially_reversible(["3.1.3.1", "1.1.1.184"]) is True
+
+    def test_specific_bvm_match(self):
+        assert route_predictor._is_industrially_reversible(["1.14.13.22"]) is True
+
+    def test_close_but_no_match(self):
+        # 1.14.13.21 is NOT in the override list (only .22 is)
+        assert route_predictor._is_industrially_reversible(["1.14.13.21"]) is False

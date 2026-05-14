@@ -148,3 +148,23 @@ def _parse_reaction_equation(equation: str) -> tuple[list[tuple[int, str]], list
         return results
 
     return _parse_side(sides[0]), _parse_side(sides[1]), direction
+
+
+# ---------------------------------------------------------------------------
+# Enzyme and reaction directional logic
+# ---------------------------------------------------------------------------
+
+
+def _is_industrially_reversible(ec_numbers: list[str]) -> bool:
+    """Returns True if any EC number matches a prefix in INDUSTRIAL_REVERSIBLE_EC_PREFIXES.
+
+    The override list is the wet-lab domain-knowledge contract: enzyme classes that are
+    routinely run in the non-physiological direction in industrial biocatalysis (KREDs,
+    transaminases, IREDs, EREDs, lipases, BVMOs). For these, the reverse-direction penalty
+    in _compute_edge_cost is dropped to ~0.
+    """
+    return any(
+        ec.startswith(prefix)
+        for ec in ec_numbers
+        for prefix in INDUSTRIAL_REVERSIBLE_EC_PREFIXES
+    )
