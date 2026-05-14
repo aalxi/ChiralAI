@@ -21,7 +21,7 @@ def synthetic_kegg():
 
 @pytest.fixture
 def mock_kegg(synthetic_kegg, monkeypatch):
-    """Patches _fetch_kegg_reaction to return synthetic data.
+    """Patches _fetch_kegg_reaction and _fetch_compound_reactions to return synthetic data.
     Tests that need different fixtures can extend by mutating synthetic_kegg before use."""
     from ChiraLLM import route_predictor
 
@@ -58,3 +58,4 @@ def mock_equilibrator(synthetic_kegg, monkeypatch):
         return rxn["delta_g_kj_per_mol"] if rxn else None
 
     monkeypatch.setattr(route_predictor, "_fetch_delta_g_kj_per_mol", fake_fetch_dg)
+    return synthetic_kegg
