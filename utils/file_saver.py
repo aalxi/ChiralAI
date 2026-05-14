@@ -18,6 +18,29 @@ def _flatten_scoring(scoring: dict) -> dict:
     }
 
 
+def _flatten_route_prediction(route_pred: dict) -> dict:
+    """Flattens a RouteResult dict into 5 CSV columns covering the top route.
+    Full route data (all routes, all step breakdowns) preserved in JSON sidecar.
+    """
+    routes = route_pred.get("routes") or []
+    if not routes:
+        return {
+            "route_top1_step_count": None,
+            "route_top1_terminal_precursor": None,
+            "route_top1_total_cost": None,
+            "route_top1_composed_ee": None,
+            "route_top1_warnings": "; ".join(route_pred.get("warnings") or []),
+        }
+    top = routes[0]
+    return {
+        "route_top1_step_count": len(top.get("steps") or []),
+        "route_top1_terminal_precursor": top.get("terminal_precursor_name"),
+        "route_top1_total_cost": top.get("total_cost"),
+        "route_top1_composed_ee": top.get("composed_ee"),  # populated by scorer if available
+        "route_top1_warnings": "; ".join(top.get("warnings") or []),
+    }
+
+
 def save_suggestions_to_csv(suggestions, out_dir: str = ".") -> tuple[str, str]:
     """
     Saves suggestions to a timestamped CSV (flat columns) and a parallel JSON
@@ -35,6 +58,8 @@ def save_suggestions_to_csv(suggestions, out_dir: str = ".") -> tuple[str, str]:
         for key, value in suggestion.items():
             if key == "scoring" and isinstance(value, dict):
                 flat_dict.update(_flatten_scoring(value))
+            elif key == "route_prediction" and isinstance(value, dict):
+                flat_dict.update(_flatten_route_prediction(value))
             elif isinstance(value, dict):
                 for sub_key, sub_value in value.items():
                     flat_dict[f"{key}_{sub_key}"] = str(sub_value)
