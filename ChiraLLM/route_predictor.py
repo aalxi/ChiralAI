@@ -68,13 +68,16 @@ CENTRAL_METABOLITES: dict[str, str] = {
 }
 
 
+# Entries ending in '.' match any EC under that class prefix (e.g., '1.1.1.' matches all KREDs).
+# Entries WITHOUT trailing '.' match the EC exactly (e.g., '1.6.99.1' matches only that one EC,
+# not '1.6.99.10' or '1.6.99.12'). The dual-mode matching is in _is_industrially_reversible.
 INDUSTRIAL_REVERSIBLE_EC_PREFIXES: list[str] = [
-    "1.1.1.",      # KREDs / aldo-keto reductases
-    "2.6.1.",      # transaminases
-    "1.5.1.",      # IREDs (imine reductases)
-    "1.6.99.1",    # Old Yellow Enzyme (ene-reductases)
-    "3.1.1.",      # lipases
-    "1.14.13.22",  # cyclohexanone monooxygenase (Baeyer-Villiger archetype)
+    "1.1.1.",      # KREDs / aldo-keto reductases (class)
+    "2.6.1.",      # transaminases (class)
+    "1.5.1.",      # IREDs (imine reductases) (class)
+    "1.6.99.1",    # Old Yellow Enzyme — exact EC, NOT a class prefix
+    "3.1.1.",      # lipases (class)
+    "1.14.13.22",  # cyclohexanone monooxygenase (BVMO archetype) — exact EC, NOT a class prefix
 ]
 
 
@@ -156,15 +159,26 @@ def _parse_reaction_equation(equation: str) -> tuple[list[tuple[int, str]], list
 
 
 def _is_industrially_reversible(ec_numbers: list[str]) -> bool:
-    """Returns True if any EC number matches a prefix in INDUSTRIAL_REVERSIBLE_EC_PREFIXES.
+    """Returns True if any EC number matches an entry in INDUSTRIAL_REVERSIBLE_EC_PREFIXES.
+
+    Match semantics depend on the entry shape:
+      - entries ending in '.' (e.g., '1.1.1.') match any EC starting with that class prefix
+      - entries WITHOUT trailing '.' (e.g., '1.6.99.1') match the EC exactly
+
+    This dual-mode handling prevents '1.6.99.1' from over-matching '1.6.99.12'
+    (which would falsely classify EC 1.6.99.12 as Old Yellow Enzyme).
 
     The override list is the wet-lab domain-knowledge contract: enzyme classes that are
     routinely run in the non-physiological direction in industrial biocatalysis (KREDs,
     transaminases, IREDs, EREDs, lipases, BVMOs). For these, the reverse-direction penalty
     in _compute_edge_cost is dropped to ~0.
     """
-    return any(
-        ec.startswith(prefix)
-        for ec in ec_numbers
-        for prefix in INDUSTRIAL_REVERSIBLE_EC_PREFIXES
-    )
+    for ec in ec_numbers:
+        for entry in INDUSTRIAL_REVERSIBLE_EC_PREFIXES:
+            if entry.endswith("."):
+                if ec.startswith(entry):
+                    return True
+            else:
+                if ec == entry:
+                    return True
+    return False

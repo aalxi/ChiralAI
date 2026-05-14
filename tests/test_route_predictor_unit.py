@@ -89,3 +89,14 @@ class TestIsIndustriallyReversible:
     def test_close_but_no_match(self):
         # 1.14.13.21 is NOT in the override list (only .22 is)
         assert route_predictor._is_industrially_reversible(["1.14.13.21"]) is False
+
+    def test_oye_full_ec_does_not_overmatch(self):
+        """1.6.99.1 (Old Yellow Enzyme) should match ONLY EC 1.6.99.1, not 1.6.99.10+."""
+        assert route_predictor._is_industrially_reversible(["1.6.99.1"]) is True
+        assert route_predictor._is_industrially_reversible(["1.6.99.10"]) is False
+        assert route_predictor._is_industrially_reversible(["1.6.99.12"]) is False
+
+    def test_bvm_full_ec_does_not_overmatch(self):
+        """1.14.13.22 (BVMO) should match ONLY EC 1.14.13.22, not hypothetical 1.14.13.220."""
+        assert route_predictor._is_industrially_reversible(["1.14.13.22"]) is True
+        assert route_predictor._is_industrially_reversible(["1.14.13.220"]) is False
