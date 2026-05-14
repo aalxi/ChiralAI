@@ -79,6 +79,17 @@ CENTRAL_METABOLITES: dict[str, str] = {
 }
 
 
+# Ubiquitous cofactors / inorganics that appear on both sides of many KEGG reactions and
+# would pollute the search graph with non-substrate "precursors". Explicitly excluded
+# from search expansion in _astar_search. Kept short on purpose — broader cofactor lists
+# (NADH, ATP, etc.) are real precursors in some pathways and should NOT be skipped here.
+COFACTOR_SKIP_IDS: frozenset[str] = frozenset({
+    "C00080",  # H+
+    "C00001",  # H2O
+    "C00007",  # O2
+})
+
+
 # Entries ending in '.' match any EC under that class prefix (e.g., '1.1.1.' matches all KREDs).
 # Entries WITHOUT trailing '.' match the EC exactly (e.g., '1.6.99.1' matches only that one EC,
 # not '1.6.99.10' or '1.6.99.12'). The dual-mode matching is in _is_industrially_reversible.
@@ -704,7 +715,7 @@ def _astar_search(target_id: str, budget: int = DEFAULT_BUDGET, depth_cap: int =
             for precursor_id in precursor_candidates:
                 if precursor_id == compound_id:
                     continue
-                if precursor_id in {"C00080", "C00001", "C00007"}:  # H+, H2O, O2
+                if precursor_id in COFACTOR_SKIP_IDS:
                     continue
 
                 if new_g >= best_g_seen.get(precursor_id, float("inf")):
