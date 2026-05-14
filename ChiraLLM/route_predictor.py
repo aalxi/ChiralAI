@@ -415,8 +415,11 @@ def _fetch_kegg_mol(compound_id: str):
             return None
         try:
             mol = Chem.MolFromMolBlock(cached)
+            if mol is None:
+                logger.warning("RDKit could not parse cached MOL for %s", compound_id)
             return mol
-        except Exception:
+        except Exception as e:
+            logger.warning("RDKit cached MOL parse exception for %s: %s", compound_id, e)
             return None
 
     try:
