@@ -25,7 +25,9 @@ RDKit — validates chirality; identifies and assigns R/S stereocenters
     ↓
 KEGG — maps compounds to known metabolic pathways and enzyme classes
     ↓
-BRENDA — retrieves known ee values from enzyme substrate data (requires API credentials)
+Route predictor — backward search through KEGG reactions from target to central metabolites
+    ↓
+BRENDA — retrieves known ee values for ECs across all route steps (deduplicated)
     ↓
 COBRApy FBA — checks metabolic feasibility in E. coli iJO1366; flags cofactor requirements
     ↓
@@ -86,7 +88,8 @@ ChiralAI/
 │   ├── database_validator.py          # KEGG REST API — pathway and enzyme lookup
 │   ├── brenda_client.py               # BRENDA SOAP — ee values from enzyme substrate data
 │   ├── feasibility_checker.py         # COBRApy FBA — metabolic feasibility in iJO1366
-│   └── enantioselectivity_scorer.py   # Composite scorer — ranks by ee, Tanimoto, feasibility
+│   ├── enantioselectivity_scorer.py   # Composite scorer — ranks by ee, Tanimoto, feasibility
+│   └── route_predictor.py            # Tier 1 biosynthesis route predictor — A* over KEGG graph
 └── utils/
     └── file_saver.py                  # Timestamped CSV + JSON export
 ```
@@ -122,13 +125,13 @@ ChiralAI/
 
 - **BRENDA credentials required for verified ee.** Without `BRENDA_EMAIL` / `BRENDA_PASSWORD` in `.env`, all ee values fall back to LLM claims labeled `llm_claim`. BRENDA registration is free.
 - **E. coli only.** The FBA layer uses iJO1366 (E. coli K-12). Secondary metabolites and many pharmaceutical targets return `not_in_model`. Other host models (S. cerevisiae, P. putida) are not yet supported.
-- **No retrosynthetic route planning.** ChiralAI validates and scores named targets; it does not enumerate the enzymatic steps needed to build a molecule from simpler precursors.
+- **Tier 1 only.** Route prediction works for compounds KEGG already covers (~12k reactions). Novel targets require Tier 2 (RetroRules SMARTS retrobiosynthesis), planned for the next sprint.
 
 ---
 
 ## Roadmap
 
-- [ ] Retrosynthetic route prediction — enumerate enzymatic steps from target to precursors
+- [ ] Tier 2 — novel-target retrobiosynthesis via RetroRules + RDKit RunReactants
 - [ ] Non-E. coli host models — S. cerevisiae (iMM904), P. putida support in FBA layer
 - [ ] Engineered variant data — wire BRENDA `getEngineering` for directed evolution candidates
 - [ ] Name↔SMILES stereo consistency check — programmatic CIP verification against molecule name
