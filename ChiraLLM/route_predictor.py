@@ -1,0 +1,96 @@
+"""Tier 1 route predictor: best-first backward search through the KEGG reaction
+graph from a target compound to curated central metabolites.
+
+See docs/superpowers/specs/2026-04-27-route-predictor-tier1-design.md for the
+full design rationale.
+
+Public API: predict_route(compound_id, mode='top_n', n=3, budget=500) -> RouteResult
+"""
+
+import logging
+
+logger = logging.getLogger(__name__)
+
+
+# ---------------------------------------------------------------------------
+# SCIENTIFIC CONTRACT — these two constants are the module's domain commitments.
+# A wet-lab reviewer should be able to read and audit them in the first 100 lines.
+# ---------------------------------------------------------------------------
+
+CENTRAL_METABOLITES: dict[str, str] = {
+    # TCA cycle
+    "C00022": "pyruvate",
+    "C00024": "acetyl-CoA",
+    "C00036": "oxaloacetate",
+    "C00149": "(S)-malate",
+    "C00122": "fumarate",
+    "C00042": "succinate",
+    "C00091": "succinyl-CoA",
+    "C00026": "alpha-ketoglutarate",
+    "C00311": "isocitrate",
+    "C00158": "citrate",
+    # Glycolysis / PPP
+    "C00031": "D-glucose",
+    "C00092": "glucose-6-phosphate",
+    "C00085": "fructose-6-phosphate",
+    "C00354": "fructose-1,6-bisphosphate",
+    "C00111": "DHAP",
+    "C00118": "G3P",
+    "C00197": "3-phosphoglycerate",
+    "C00074": "PEP",
+    "C00117": "ribose-5-phosphate",
+    "C00199": "ribulose-5-phosphate",
+    # 20 proteinogenic amino acids
+    "C00041": "L-alanine",
+    "C00037": "glycine",
+    "C00065": "L-serine",
+    "C00188": "L-threonine",
+    "C00097": "L-cysteine",
+    "C00073": "L-methionine",
+    "C00407": "L-isoleucine",
+    "C00123": "L-leucine",
+    "C00183": "L-valine",
+    "C00079": "L-phenylalanine",
+    "C00082": "L-tyrosine",
+    "C00078": "L-tryptophan",
+    "C00135": "L-histidine",
+    "C00148": "L-proline",
+    "C00064": "L-glutamine",
+    "C00025": "L-glutamate",
+    "C00049": "L-aspartate",
+    "C00152": "L-asparagine",
+    "C00047": "L-lysine",
+    "C00062": "L-arginine",
+    # Branched-chain amino acid intermediates (defensibly central — produced from pyruvate
+    # via the BCAA biosynthesis pathway; nodes for valine/leucine/isoleucine biosynthesis)
+    "C00141": "alpha-ketoisovalerate",
+}
+
+
+INDUSTRIAL_REVERSIBLE_EC_PREFIXES: list[str] = [
+    "1.1.1.",      # KREDs / aldo-keto reductases
+    "2.6.1.",      # transaminases
+    "1.5.1.",      # IREDs (imine reductases)
+    "1.6.99.1",    # Old Yellow Enzyme (ene-reductases)
+    "3.1.1.",      # lipases
+    "1.14.13.22",  # cyclohexanone monooxygenase (Baeyer-Villiger archetype)
+]
+
+
+# ---------------------------------------------------------------------------
+# Search defaults — tunable, but with sane starting values.
+# ---------------------------------------------------------------------------
+
+DEFAULT_BUDGET = 500
+DEFAULT_DEPTH_CAP = 8
+DEFAULT_MAX_ROUTES = 3
+THERMO_PENALTY_PER_KJ = 0.05
+FALLBACK_DELTA_G_KJ = 5.0
+
+# v1 STARTING GUESS — NOT VALIDATED. h(n) Tanimoto distance is scaled by this weight before
+# being added to g(n) accumulated edge cost. Weight=2.0 means structural similarity to a
+# central metabolite matters 2x as much as accumulated thermo+directional cost (g(n) is on
+# the order of ~1 per step). Re-tune against integration fixtures.
+# Re-tuning trigger: if top-3 routes for (R)-pantolactone (C00599) do not include the
+# KIV-via-ketopantoate-hydroxymethyltransferase route, this constant is too high or too low.
+TANIMOTO_HEURISTIC_WEIGHT = 2.0
