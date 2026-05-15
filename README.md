@@ -76,17 +76,19 @@ These are the decisions that make the pipeline useful rather than impressive-loo
 
 ---
 
-## Why this gap is real
+## The wedge
 
-| Tool | Strength | What it misses |
-|------|----------|----------------|
-| RetroBioCat | Biocatalytic route planning | No stereochemistry or ee awareness |
-| ASKCOS | Organic retrosynthesis | Not built for enzymes |
-| ChemCrow | LLM + chemistry tools | Organic synthesis only |
-| COBRApy | Genome-scale FBA | Stereochemistry-blind |
-| BRENDA | Gold-standard enzyme data | A database, not a discovery engine |
+ChiralAI does not compete with the tools below at their core functions. It runs the chain none of them span — chiral validation, route prediction, enantioselectivity, host feasibility — with explicit provenance throughout.
 
-ChiralAI's contribution is **integration with provenance**, accessible by natural language. None of the above does the full chain end-to-end, and none label LLM speculation distinctly from verified data.
+| Tool | Core strength | What it leaves out |
+|------|---------------|--------------------|
+| RetroBioCat | Biocatalytic route planning | Stereochemistry / ee |
+| ASKCOS | Organic retrosynthesis | Enzymes |
+| ChemCrow | LLM + chemistry tools | Biocatalysis |
+| COBRApy | Genome-scale FBA | Stereochemistry |
+| BRENDA | Enzyme database | Discovery |
+
+The discipline none of them enforce: labeling LLM speculation distinctly from database-verified fact.
 
 ---
 
