@@ -7,7 +7,6 @@ full design rationale.
 Public API: predict_route(compound_id, mode='top_n', n=3, budget=500) -> RouteResult
 """
 
-import functools
 import heapq
 import logging
 import os
@@ -294,7 +293,7 @@ def _clear_disk_cache() -> int:
 # KEGG REST fetchers
 # ---------------------------------------------------------------------------
 
-KEGG_REST_BASE = "http://rest.kegg.jp/get"
+KEGG_REST_BASE = "https://rest.kegg.jp/get"
 KEGG_RETRY_DELAY_SECONDS = 1.0
 
 
@@ -357,7 +356,36 @@ def _parse_kegg_compound_reactions(text: str) -> list[str]:
     return reactions
 
 
-@functools.lru_cache(maxsize=4096)
+def _success_only_cache(maxsize: int = 4096):
+    """In-process cache that stores only truthy results.
+
+    Replaces functools.lru_cache for KEGG fetchers. The previous use of
+    @functools.lru_cache poisoned the cache when a transient network failure
+    returned [] or None: the falsy result was memoized for the entire process,
+    so a later call (after the network recovered) silently returned the empty
+    failure instead of retrying. Caching only truthy results preserves the
+    in-process speedup for successful lookups while letting transient
+    failures be retried.
+
+    Provides .cache_clear() for test compatibility with the previous API.
+    """
+    def decorator(func):
+        cache: dict = {}
+        def wrapper(arg):
+            if arg in cache:
+                return cache[arg]
+            result = func(arg)
+            if result:
+                if len(cache) >= maxsize:
+                    cache.pop(next(iter(cache)))  # FIFO eviction
+                cache[arg] = result
+            return result
+        wrapper.cache_clear = cache.clear
+        return wrapper
+    return decorator
+
+
+@_success_only_cache(maxsize=4096)
 def _fetch_kegg_reaction(rxn_id: str) -> dict | None:
     """Fetches and parses a KEGG reaction by ID.
 
@@ -365,7 +393,8 @@ def _fetch_kegg_reaction(rxn_id: str) -> dict | None:
     direction — or None on 404 or an unparseable response.
 
     Caching: checks disk cache first; on a network hit writes back to disk.
-    LRU cache prevents repeated disk reads within a process.
+    No in-process LRU: it would memoize transient failures (which return None
+    without writing to disk) and poison the result for the rest of the process.
 
     Retry: one retry after KEGG_RETRY_DELAY_SECONDS on RequestException or 5xx.
     404 returns None immediately (not transient).
@@ -397,12 +426,14 @@ def _fetch_kegg_reaction(rxn_id: str) -> dict | None:
     return None
 
 
-@functools.lru_cache(maxsize=4096)
+@_success_only_cache(maxsize=4096)
 def _fetch_compound_reactions(compound_id: str) -> list[str]:
     """Fetches the REACTION field of a KEGG compound entry as a list of R##### IDs.
 
     Returns an empty list if the compound has no reactions or the fetch fails.
     Uses disk cache; single network attempt (no retry — compound lookups are cheap).
+    Uses _success_only_cache (not lru_cache) so a transient empty result does not
+    poison the cache for the rest of the process.
     """
     cached = _disk_cache_get("kegg", f"compound_{compound_id}")
     if cached is not None:
@@ -419,13 +450,14 @@ def _fetch_compound_reactions(compound_id: str) -> list[str]:
     return _parse_kegg_compound_reactions(resp.text)
 
 
-@functools.lru_cache(maxsize=4096)
+@_success_only_cache(maxsize=4096)
 def _fetch_kegg_mol(compound_id: str):
     """Fetches a compound's MOL file from KEGG and parses to an RDKit Mol.
 
     Returns None if compound has no MOL file, KEGG returns 404, or RDKit parse fails.
     Caching: checks disk cache first; on a network hit writes back to disk cache.
-    LRU cache prevents repeated disk reads within a process.
+    Uses _success_only_cache (not lru_cache) so transient None returns are not
+    memoized for the rest of the process.
     """
     cached = _disk_cache_get("kegg_mol", compound_id)
     if cached is not None:

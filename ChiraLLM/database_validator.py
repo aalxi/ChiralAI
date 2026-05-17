@@ -4,7 +4,7 @@ def query_kegg(compound_id):
     """
     Queries KEGG for compound data and parses the flat-file response.
     """
-    url = f"http://rest.kegg.jp/get/{compound_id}"
+    url = f"https://rest.kegg.jp/get/{compound_id}"
     response = requests.get(url)
 
     if response.status_code != 200:
