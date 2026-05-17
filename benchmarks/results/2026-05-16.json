@@ -1,0 +1,497 @@
+{
+  "summary": {
+    "n_total": 10,
+    "n_route_found": 9,
+    "n_terminal_match": 1,
+    "n_step_within_2": 7,
+    "routes_found_pct": 90.0,
+    "terminal_match_pct": 10.0,
+    "step_within_2_pct": 70.0,
+    "ec_overlap_mean": 0.11,
+    "ec_overlap_median": 0,
+    "ec_overlap_normalized_mean": 0.056
+  },
+  "results": [
+    {
+      "kegg_id": "C00186",
+      "name": "L-Lactate",
+      "category": "sanity",
+      "status": "success",
+      "elapsed_sec": 648.69,
+      "nodes_explored": 200,
+      "budget_exhausted": true,
+      "expected_terminals": [
+        "C00022"
+      ],
+      "expected_steps": 1,
+      "expected_ec_numbers": [
+        "1.1.1.27",
+        "1.1.1.28"
+      ],
+      "warnings": [
+        "Budget of 200 nodes exhausted; some routes may be missing"
+      ],
+      "route_found": true,
+      "terminal_match": false,
+      "ec_overlap_count": 0,
+      "ec_overlap": [],
+      "step_count_predicted": 1,
+      "step_within_2": true,
+      "predicted_terminal": "C00149",
+      "predicted_terminal_name": "(S)-malate",
+      "predicted_ecs": [
+        "4.1.1.101"
+      ],
+      "top_route_total_cost": 1.0,
+      "top_route_step_summary": [
+        {
+          "rxn": "R11074",
+          "ec": [
+            "4.1.1.101"
+          ],
+          "from": "C00149",
+          "to": "C00186"
+        }
+      ]
+    },
+    {
+      "kegg_id": "C00599",
+      "name": "(R)-Pantolactone",
+      "category": "industrial",
+      "status": "success",
+      "elapsed_sec": 736.11,
+      "nodes_explored": 200,
+      "budget_exhausted": true,
+      "expected_terminals": [
+        "C00141",
+        "C00966",
+        "C00522"
+      ],
+      "expected_steps": 3,
+      "expected_ec_numbers": [
+        "1.1.1.169",
+        "2.1.2.11"
+      ],
+      "warnings": [
+        "Budget of 200 nodes exhausted; some routes may be missing"
+      ],
+      "route_found": true,
+      "terminal_match": false,
+      "ec_overlap_count": 0,
+      "ec_overlap": [],
+      "step_count_predicted": 2,
+      "step_within_2": true,
+      "predicted_terminal": "C00047",
+      "predicted_terminal_name": "L-lysine",
+      "predicted_ecs": [
+        "1.14.13.59",
+        "1.3.1.3"
+      ],
+      "top_route_total_cost": 2.0,
+      "top_route_step_summary": [
+        {
+          "rxn": "R02609",
+          "ec": [
+            "1.3.1.3"
+          ],
+          "from": "C00006",
+          "to": "C00599"
+        },
+        {
+          "rxn": "R00448",
+          "ec": [
+            "1.14.13.59"
+          ],
+          "from": "C00047",
+          "to": "C00006"
+        }
+      ]
+    },
+    {
+      "kegg_id": "C00355",
+      "name": "L-DOPA",
+      "category": "pharma",
+      "status": "success",
+      "elapsed_sec": 1016.58,
+      "nodes_explored": 200,
+      "budget_exhausted": true,
+      "expected_terminals": [
+        "C00082"
+      ],
+      "expected_steps": 1,
+      "expected_ec_numbers": [
+        "1.14.16.2",
+        "1.14.18.1"
+      ],
+      "warnings": [
+        "Budget of 200 nodes exhausted; some routes may be missing"
+      ],
+      "route_found": true,
+      "terminal_match": true,
+      "ec_overlap_count": 1,
+      "ec_overlap": [
+        "1.14.18.1"
+      ],
+      "step_count_predicted": 1,
+      "step_within_2": true,
+      "predicted_terminal": "C00082",
+      "predicted_terminal_name": "L-tyrosine",
+      "predicted_ecs": [
+        "1.10.3.1",
+        "1.14.18.1"
+      ],
+      "top_route_total_cost": 1.0,
+      "top_route_step_summary": [
+        {
+          "rxn": "R00031",
+          "ec": [
+            "1.10.3.1",
+            "1.14.18.1"
+          ],
+          "from": "C00082",
+          "to": "C00355"
+        }
+      ]
+    },
+    {
+      "kegg_id": "C01089",
+      "name": "(R)-3-Hydroxybutyrate",
+      "category": "industrial",
+      "status": "success",
+      "elapsed_sec": 2.77,
+      "nodes_explored": 200,
+      "budget_exhausted": true,
+      "expected_terminals": [
+        "C00024"
+      ],
+      "expected_steps": 3,
+      "expected_ec_numbers": [
+        "2.3.1.9",
+        "1.1.1.36",
+        "3.1.2.20"
+      ],
+      "warnings": [
+        "Budget of 200 nodes exhausted; some routes may be missing"
+      ],
+      "route_found": true,
+      "terminal_match": false,
+      "ec_overlap_count": 0,
+      "ec_overlap": [],
+      "step_count_predicted": 2,
+      "step_within_2": true,
+      "predicted_terminal": "C00026",
+      "predicted_terminal_name": "alpha-ketoglutarate",
+      "predicted_ecs": [
+        "1.1.1.30",
+        "1.1.99.24"
+      ],
+      "top_route_total_cost": 2.25,
+      "top_route_step_summary": [
+        {
+          "rxn": "R01361",
+          "ec": [
+            "1.1.1.30"
+          ],
+          "from": "C00164",
+          "to": "C01089"
+        },
+        {
+          "rxn": "R03225",
+          "ec": [
+            "1.1.99.24"
+          ],
+          "from": "C00026",
+          "to": "C00164"
+        }
+      ]
+    },
+    {
+      "kegg_id": "C01984",
+      "name": "(R)-Mandelate",
+      "category": "industrial",
+      "status": "success",
+      "elapsed_sec": 4.42,
+      "nodes_explored": 200,
+      "budget_exhausted": true,
+      "expected_terminals": [
+        "C02137",
+        "C00601"
+      ],
+      "expected_steps": 2,
+      "expected_ec_numbers": [
+        "1.1.1.272",
+        "5.1.2.2"
+      ],
+      "warnings": [
+        "Budget of 200 nodes exhausted; some routes may be missing"
+      ],
+      "route_found": true,
+      "terminal_match": false,
+      "ec_overlap_count": 0,
+      "ec_overlap": [],
+      "step_count_predicted": 2,
+      "step_within_2": true,
+      "predicted_terminal": "C00025",
+      "predicted_terminal_name": "L-glutamate",
+      "predicted_ecs": [
+        "1.1.1.-",
+        "1.4.1.14"
+      ],
+      "top_route_total_cost": 2.25,
+      "top_route_step_summary": [
+        {
+          "rxn": "R03792",
+          "ec": [
+            "1.1.1.-"
+          ],
+          "from": "C00004",
+          "to": "C01984"
+        },
+        {
+          "rxn": "R00093",
+          "ec": [
+            "1.4.1.14"
+          ],
+          "from": "C00025",
+          "to": "C00004"
+        }
+      ]
+    },
+    {
+      "kegg_id": "C00418",
+      "name": "(R)-Mevalonate",
+      "category": "industrial",
+      "status": "success",
+      "elapsed_sec": 2.57,
+      "nodes_explored": 200,
+      "budget_exhausted": true,
+      "expected_terminals": [
+        "C00024"
+      ],
+      "expected_steps": 3,
+      "expected_ec_numbers": [
+        "2.3.1.9",
+        "2.3.3.10",
+        "1.1.1.34"
+      ],
+      "warnings": [
+        "Budget of 200 nodes exhausted; some routes may be missing"
+      ],
+      "route_found": true,
+      "terminal_match": false,
+      "ec_overlap_count": 0,
+      "ec_overlap": [],
+      "step_count_predicted": 2,
+      "step_within_2": true,
+      "predicted_terminal": "C00091",
+      "predicted_terminal_name": "succinyl-CoA",
+      "predicted_ecs": [
+        "1.1.1.88",
+        "2.8.3.13"
+      ],
+      "top_route_total_cost": 2.25,
+      "top_route_step_summary": [
+        {
+          "rxn": "R02081",
+          "ec": [
+            "1.1.1.88"
+          ],
+          "from": "C00356",
+          "to": "C00418"
+        },
+        {
+          "rxn": "R02084",
+          "ec": [
+            "2.8.3.13"
+          ],
+          "from": "C00091",
+          "to": "C00356"
+        }
+      ]
+    },
+    {
+      "kegg_id": "C00547",
+      "name": "(R)-Noradrenaline",
+      "category": "pharma",
+      "status": "success",
+      "elapsed_sec": 3.0,
+      "nodes_explored": 200,
+      "budget_exhausted": true,
+      "expected_terminals": [
+        "C00082"
+      ],
+      "expected_steps": 3,
+      "expected_ec_numbers": [
+        "1.14.17.1",
+        "4.1.1.28",
+        "1.14.16.2"
+      ],
+      "warnings": [
+        "Budget of 200 nodes exhausted; some routes may be missing"
+      ],
+      "route_found": true,
+      "terminal_match": false,
+      "ec_overlap_count": 0,
+      "ec_overlap": [],
+      "step_count_predicted": 2,
+      "step_within_2": true,
+      "predicted_terminal": "C00037",
+      "predicted_terminal_name": "glycine",
+      "predicted_ecs": [
+        "2.1.1.156",
+        "2.1.1.162",
+        "2.1.1.20",
+        "2.1.1.28"
+      ],
+      "top_route_total_cost": 2.75,
+      "top_route_step_summary": [
+        {
+          "rxn": "R02533",
+          "ec": [
+            "2.1.1.28"
+          ],
+          "from": "C00021",
+          "to": "C00547"
+        },
+        {
+          "rxn": "R00367",
+          "ec": [
+            "2.1.1.20",
+            "2.1.1.156",
+            "2.1.1.162"
+          ],
+          "from": "C00037",
+          "to": "C00021"
+        }
+      ]
+    },
+    {
+      "kegg_id": "C00509",
+      "name": "(S)-Naringenin",
+      "category": "plant_secondary",
+      "status": "success",
+      "elapsed_sec": 2463.85,
+      "nodes_explored": 200,
+      "budget_exhausted": true,
+      "expected_terminals": [
+        "C00079",
+        "C00423"
+      ],
+      "expected_steps": 5,
+      "expected_ec_numbers": [
+        "4.3.1.24",
+        "1.14.14.91",
+        "6.2.1.12",
+        "2.3.1.74",
+        "5.5.1.6"
+      ],
+      "warnings": [
+        "Budget of 200 nodes exhausted; some routes may be missing"
+      ],
+      "route_found": true,
+      "terminal_match": false,
+      "ec_overlap_count": 0,
+      "ec_overlap": [],
+      "step_count_predicted": 1,
+      "step_within_2": false,
+      "predicted_terminal": "C00042",
+      "predicted_terminal_name": "succinate",
+      "predicted_ecs": [
+        "1.14.11.9"
+      ],
+      "top_route_total_cost": 1.75,
+      "top_route_step_summary": [
+        {
+          "rxn": "R02444",
+          "ec": [
+            "1.14.11.9"
+          ],
+          "from": "C00042",
+          "to": "C00509"
+        }
+      ]
+    },
+    {
+      "kegg_id": "C09136",
+      "name": "(S)-Norcoclaurine",
+      "category": "alkaloid",
+      "status": "target_has_no_reactions",
+      "elapsed_sec": 0.0,
+      "nodes_explored": 0,
+      "budget_exhausted": false,
+      "expected_terminals": [
+        "C00082"
+      ],
+      "expected_steps": 4,
+      "expected_ec_numbers": [
+        "4.2.1.78",
+        "4.1.1.28",
+        "1.14.16.2"
+      ],
+      "warnings": [
+        "KEGG entry for C09136 lists no reactions; compound may be a leaf metabolite or unconnected"
+      ],
+      "route_found": false,
+      "terminal_match": false,
+      "ec_overlap_count": 0,
+      "step_count_predicted": null,
+      "step_within_2": false,
+      "predicted_terminal": null,
+      "predicted_ecs": []
+    },
+    {
+      "kegg_id": "C00590",
+      "name": "Coniferyl alcohol",
+      "category": "plant_secondary",
+      "status": "success",
+      "elapsed_sec": 937.88,
+      "nodes_explored": 200,
+      "budget_exhausted": true,
+      "expected_terminals": [
+        "C00079"
+      ],
+      "expected_steps": 6,
+      "expected_ec_numbers": [
+        "4.3.1.24",
+        "1.14.14.91",
+        "1.2.1.44",
+        "1.1.1.195"
+      ],
+      "warnings": [
+        "Budget of 200 nodes exhausted; some routes may be missing"
+      ],
+      "route_found": true,
+      "terminal_match": false,
+      "ec_overlap_count": 0,
+      "ec_overlap": [],
+      "step_count_predicted": 2,
+      "step_within_2": false,
+      "predicted_terminal": "C00073",
+      "predicted_terminal_name": "L-methionine",
+      "predicted_ecs": [
+        "2.1.1.68",
+        "4.1.99.26"
+      ],
+      "top_route_total_cost": 2.0,
+      "top_route_step_summary": [
+        {
+          "rxn": "R06575",
+          "ec": [
+            "2.1.1.68"
+          ],
+          "from": "C00019",
+          "to": "C00590"
+        },
+        {
+          "rxn": "R12750",
+          "ec": [
+            "4.1.99.26"
+          ],
+          "from": "C00073",
+          "to": "C00019"
+        }
+      ]
+    }
+  ],
+  "run_at": "2026-05-16T16:46:55.457670"
+}
