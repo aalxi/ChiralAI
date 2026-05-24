@@ -78,14 +78,26 @@ CENTRAL_METABOLITES: dict[str, str] = {
 }
 
 
-# Ubiquitous cofactors / inorganics that appear on both sides of many KEGG reactions and
-# would pollute the search graph with non-substrate "precursors". Explicitly excluded
-# from search expansion in _astar_search. Kept short on purpose — broader cofactor lists
-# (NADH, ATP, etc.) are real precursors in some pathways and should NOT be skipped here.
+# Cofactors and inorganics excluded from search graph expansion in _astar_search.
+# Carbon-bearing intermediates (acetyl-CoA, malonyl-CoA, succinyl-CoA) are NOT in this set —
+# they carry real carbon flow and must remain traversable. Free CoA (C00010) IS skipped
+# because it's the cofactor moiety, not a biosynthetic carbon source.
+#
+# Why this set is large: the 2026-05-16 chiral-route benchmark showed that without skipping
+# redox/energy/methyl cofactors, the A* search exploits them as graph-connectivity hubs and
+# terminates at biologically wrong central metabolites via chemically valid but real-world
+# nonsensical 2-hop shortcuts (e.g., mandelate → NADH → glutamate). See benchmarks/REPORT.md.
 COFACTOR_SKIP_IDS: frozenset[str] = frozenset({
-    "C00080",  # H+
-    "C00001",  # H2O
-    "C00007",  # O2
+    # Inorganics — H+, water, O2
+    "C00080", "C00001", "C00007",
+    # Redox carriers — NAD/NADH, NADP/NADPH, FAD/FADH2
+    "C00003", "C00004", "C00005", "C00006", "C00016", "C01352",
+    # Energy / phosphate — ATP, ADP, AMP, Pi, PPi
+    "C00002", "C00008", "C00020", "C00009", "C00013",
+    # Methyl donors — SAM, SAH
+    "C00019", "C00021",
+    # Free CoA (NOT acyl-CoA species, which carry real carbon)
+    "C00010",
 })
 
 

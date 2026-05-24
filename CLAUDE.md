@@ -117,7 +117,7 @@ utils/file_saver.py                   Timestamped CSV + JSON sidecar. Flattens s
 
 | Resource | Access | Notes |
 |----------|--------|-------|
-| KEGG REST | `http://rest.kegg.jp/get/{id}` | Free, no auth. Parse flat-file text response. |
+| KEGG REST | `https://rest.kegg.jp/get/{id}` | Free, no auth. Parse flat-file text response. **HTTPS required** — http endpoint returns 301 with empty body. |
 | BRENDA SOAP | `brenda-enzymes.org/soap/brenda_zeep.wsdl` | Requires free registration. Use zeep with `Settings(strict=False)`. Positional param-strings only. |
 | PubChem | `pubchempy` library | Used for substrate SMILES lookup in scorer (Tanimoto computation). |
 | OpenAI | `openai` client, model `gpt-4.1` | Key in `.env` as `OPENAI_API_KEY`. |
@@ -137,6 +137,10 @@ utils/file_saver.py                   Timestamped CSV + JSON sidecar. Flattens s
 | `enantioselectivity_scorer.py` | Working | Composite scoring with BRENDA-verified ee + Tanimoto similarity |
 | `route_predictor.py` | Working | Tier 1 (KEGG traversal); Tier 2 RetroRules SMARTS deferred |
 | `file_saver.py` | Working | CSV + JSON sidecar with flat scoring columns |
+
+## Validation
+
+Tier 1 route predictor is empirically benchmarked. See [`benchmarks/REPORT.md`](benchmarks/REPORT.md) for current recall numbers, per-target results, and characterized residual failure modes. Run `python3 -m benchmarks.run_benchmark` to reproduce. Latest run (2026-05-17): 90% routes found, 20% terminal-precursor match against literature ground truth. Three named residual failure modes ranked as next calibration targets: (1) KEGG pseudo-compound hubs ("acceptor" C00030 etc.) — extend `COFACTOR_SKIP_IDS`; (2) reaction-direction semantics (byproducts treated as precursors) — needs curated direction annotations; (3) Tanimoto heuristic preferring chemically-similar over biologically-natural terminals — retune `TANIMOTO_HEURISTIC_WEIGHT`.
 
 ## Known Gaps
 

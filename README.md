@@ -68,6 +68,22 @@ These are the decisions that make the pipeline useful rather than impressive-loo
 
 ---
 
+## Validation
+
+The route predictor is empirically benchmarked against literature-documented biosynthesis on a curated set of 10 chiral targets (industrial chiral building blocks, pharma intermediates, plant secondary metabolites). See [`benchmarks/REPORT.md`](benchmarks/REPORT.md) for full per-target results and reproduction instructions.
+
+**Latest run (2026-05-17):**
+
+| Metric | Value |
+|---|---|
+| Routes found | 90% (9/10) |
+| Terminal precursor matches literature | 20% (2/10) |
+| Step count within ±2 of literature | 70% |
+
+The 90/20 split is honest: route discovery is robust, but the predicted route reaches the biologically correct anchor only sometimes. The benchmark exists specifically to quantify this and catch regressions — its first run drove a fix that doubled terminal-match recall (10% → 20%) by excluding cofactor-mediated graph edges (NADH, SAM, ATP, CoA, etc.) that the search was exploiting as connectivity hubs. Three remaining failure modes are characterized and named in REPORT.md as the next calibration targets.
+
+---
+
 ## What it is not (yet)
 
 - **Tier 2 retrobiosynthesis (novel targets).** Route prediction currently covers compounds KEGG already knows (~12k reactions). Targets outside KEGG need RetroRules SMARTS + RDKit `RunReactants` — planned for Sprint 2.
