@@ -98,6 +98,21 @@ COFACTOR_SKIP_IDS: frozenset[str] = frozenset({
     "C00019", "C00021",
     # Free CoA (NOT acyl-CoA species, which carry real carbon)
     "C00010",
+    # Generic redox pseudo-compounds — "Acceptor" / "Reduced acceptor". These are
+    # KEGG placeholders for an unspecified electron acceptor/donor, not real metabolites.
+    # The 2026-05-17 benchmark showed mandelate routing through C00030 as a false hub.
+    "C00028", "C00030",
+    # Electron carriers — ferredoxin, thioredoxin, cytochrome c, ubiquinone/ubiquinol, e-.
+    # Real molecules but pure redox shuttles in KEGG reactions; never the carbon precursor
+    # of a chiral target. Skipped for the same reason as FAD/FADH2 above.
+    "C00138", "C00139",   # reduced / oxidized ferredoxin
+    "C00342", "C00343",   # thioredoxin / thioredoxin disulfide
+    "C00125", "C00126",   # ferri- / ferrocytochrome c
+    "C00399", "C00390",   # ubiquinone / ubiquinol
+    "C05359",             # e- (free electron)
+    # Generic macromolecule placeholder — "Protein". A graph hub via every
+    # post-translational-modification reaction; not a small-molecule precursor.
+    "C00017",
 })
 
 
