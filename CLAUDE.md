@@ -142,6 +142,10 @@ utils/file_saver.py                   Timestamped CSV + JSON sidecar. Flattens s
 
 Tier 1 route predictor is empirically benchmarked. See [`benchmarks/REPORT.md`](benchmarks/REPORT.md) for current recall numbers, per-target results, and characterized residual failure modes. Run `python3 -m benchmarks.run_benchmark` to reproduce. Latest run (2026-05-17): 90% routes found, 20% terminal-precursor match against literature ground truth. Three named residual failure modes ranked as next calibration targets: (1) KEGG pseudo-compound hubs ("acceptor" C00030 etc.) — extend `COFACTOR_SKIP_IDS`; (2) reaction-direction semantics (byproducts treated as precursors) — needs curated direction annotations; (3) Tanimoto heuristic preferring chemically-similar over biologically-natural terminals — retune `TANIMOTO_HEURISTIC_WEIGHT`.
 
+## Continuing this work
+
+[`docs/HANDOFF-route-predictor-and-tier2.md`](docs/HANDOFF-route-predictor-and-tier2.md) — deep context for the next model/developer: Tier 1 architecture and data contract, the `status="target_not_in_kegg"` hook point and recommended build for Tier 2 retrobiosynthesis, the `route_common.py` refactor that makes the two tiers file-disjoint, the eQuilibrator SSL caveat, and the parallel-branch git workflow.
+
 ## Known Gaps
 
 - **BRENDA credentials**: Free-tier API access requires `BRENDA_EMAIL` and `BRENDA_PASSWORD` in `.env`. Without credentials, every suggestion falls back to `ee_source: llm_claim` and `confidence: medium`. Acquiring credentials is the single highest-leverage improvement.
