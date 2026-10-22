@@ -1,6 +1,9 @@
 rdkit
 pubchempy
 requests
-openai
+openai>=1.0
 pandas
 python-dotenv
+ijson
+brendapyrser
+equilibrator-api
