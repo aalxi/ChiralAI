@@ -1,0 +1,381 @@
+{
+ "host": "E. coli",
+ "n": 36,
+ "stage1_retrieval": [
+  {
+   "query_name": "L-DOPA",
+   "stratum": "A1",
+   "truth": "C00355",
+   "retrieved": "C00355",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "L-tryptophan",
+   "stratum": "A1",
+   "truth": "C00078",
+   "retrieved": "C00078",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "L-lysine",
+   "stratum": "A1",
+   "truth": "C00047",
+   "retrieved": "C00047",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "L-threonine",
+   "stratum": "A1",
+   "truth": "C00188",
+   "retrieved": "C00188",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "L-glutamate",
+   "stratum": "A1",
+   "truth": "C00025",
+   "retrieved": "C00025",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "shikimate",
+   "stratum": "A1",
+   "truth": "C00493",
+   "retrieved": "C00493",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "L-malate",
+   "stratum": "A1",
+   "truth": "C00149",
+   "retrieved": "C00149",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "L-lactate",
+   "stratum": "A1",
+   "truth": "C00186",
+   "retrieved": "C00186",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "L-alanine",
+   "stratum": "A1",
+   "truth": "C00041",
+   "retrieved": "C00041",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "L-valine",
+   "stratum": "A1",
+   "truth": "C00183",
+   "retrieved": "C00183",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "L-serine",
+   "stratum": "A1",
+   "truth": "C00065",
+   "retrieved": "C00065",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "(R)-mevalonate",
+   "stratum": "A1",
+   "truth": "C00418",
+   "retrieved": "C00418",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "naringenin",
+   "stratum": "A2",
+   "truth": "C00509",
+   "retrieved": "C00509",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "hydrocortisone",
+   "stratum": "A2",
+   "truth": "C00735",
+   "retrieved": "C00735",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "artemisinic acid",
+   "stratum": "A2",
+   "truth": "C20309",
+   "retrieved": "C20309",
+   "multiword": true,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "(S)-reticuline",
+   "stratum": "A2",
+   "truth": "C02105",
+   "retrieved": "C02105",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "thebaine",
+   "stratum": "A2",
+   "truth": "C06173",
+   "retrieved": "C06173",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "strictosidine",
+   "stratum": "A2",
+   "truth": "C03470",
+   "retrieved": "C03309",
+   "multiword": false,
+   "hit": true,
+   "exact": false,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "(R)-limonene",
+   "stratum": "A2",
+   "truth": "C06099",
+   "retrieved": "C06099",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "farnesene",
+   "stratum": "A2",
+   "truth": "C09666",
+   "retrieved": "C09665",
+   "multiword": false,
+   "hit": true,
+   "exact": false,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "ibuprofen",
+   "stratum": "B",
+   "truth": "C01588",
+   "retrieved": "C01588",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "omeprazole",
+   "stratum": "B",
+   "truth": "C07324",
+   "retrieved": "C07324",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "atenolol",
+   "stratum": "B",
+   "truth": "",
+   "retrieved": "",
+   "multiword": false,
+   "hit": false,
+   "exact": false,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "naproxen",
+   "stratum": "B",
+   "truth": "C01517",
+   "retrieved": "C01517",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "levofloxacin",
+   "stratum": "B",
+   "truth": "C07660",
+   "retrieved": "C07660",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "sertraline",
+   "stratum": "B",
+   "truth": "C07246",
+   "retrieved": "C07246",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "duloxetine",
+   "stratum": "B",
+   "truth": "",
+   "retrieved": "",
+   "multiword": false,
+   "hit": false,
+   "exact": false,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "clopidogrel",
+   "stratum": "B",
+   "truth": "",
+   "retrieved": "",
+   "multiword": false,
+   "hit": false,
+   "exact": false,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "salbutamol",
+   "stratum": "B",
+   "truth": "C11770",
+   "retrieved": "C11770",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "ketamine",
+   "stratum": "B",
+   "truth": "C07525",
+   "retrieved": "C07525",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "citalopram",
+   "stratum": "B",
+   "truth": "C07572",
+   "retrieved": "C07572",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "sitagliptin",
+   "stratum": "B",
+   "truth": "",
+   "retrieved": "",
+   "multiword": false,
+   "hit": false,
+   "exact": false,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "paclitaxel",
+   "stratum": "C",
+   "truth": "C07394",
+   "retrieved": "C07394",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "vinblastine",
+   "stratum": "C",
+   "truth": "C07201",
+   "retrieved": "C07201",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "digoxin",
+   "stratum": "C",
+   "truth": "C06956",
+   "retrieved": "C06956",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  },
+  {
+   "query_name": "camptothecin",
+   "stratum": "C",
+   "truth": "C01897",
+   "retrieved": "C01897",
+   "multiword": false,
+   "hit": true,
+   "exact": true,
+   "same_skeleton_wrong_stereo": false
+  }
+ ],
+ "url_log_sample": [
+  "http://rest.kegg.jp/find/compound/L-DOPA",
+  "http://rest.kegg.jp/find/compound/L-tryptophan",
+  "http://rest.kegg.jp/find/compound/L-lysine",
+  "http://rest.kegg.jp/find/compound/L-threonine",
+  "http://rest.kegg.jp/find/compound/L-glutamate",
+  "http://rest.kegg.jp/find/compound/shikimate",
+  "http://rest.kegg.jp/find/compound/L-malate",
+  "http://rest.kegg.jp/find/compound/L-lactate",
+  "http://rest.kegg.jp/find/compound/L-alanine",
+  "http://rest.kegg.jp/find/compound/L-valine",
+  "http://rest.kegg.jp/find/compound/L-serine",
+  "http://rest.kegg.jp/find/compound/(R)-mevalonate"
+ ],
+ "url_log_count": 36
+}

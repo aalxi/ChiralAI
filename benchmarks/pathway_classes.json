@@ -1,0 +1,1069 @@
+{
+ "records": [
+  {
+   "query_name": "L-DOPA",
+   "label": 1,
+   "stratum": "A1",
+   "mw": 197.19,
+   "n_links": 13,
+   "classes": {
+    "metabolism": 1,
+    "biosynthesis": 2,
+    "global_overview": 4,
+    "physiology_or_disease": 6
+   },
+   "detail": {
+    "metabolism": [
+     "path:map00350:Tyrosine metabolism"
+    ],
+    "biosynthesis": [
+     "path:map00950:Isoquinoline alkaloid biosynthesis",
+     "path:map00965:Betalain biosynthesis"
+    ],
+    "global_overview": [
+     "path:map01060:Biosynthesis of plant secondary metaboli",
+     "path:map01063:Biosynthesis of alkaloids derived from s",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites"
+    ],
+    "physiology_or_disease": [
+     "path:map04728:Dopaminergic synapse",
+     "path:map04917:Prolactin signaling pathway",
+     "path:map05012:Parkinson disease",
+     "path:map05030:Cocaine addiction",
+     "path:map05031:Amphetamine addiction",
+     "path:map05034:Alcoholism"
+    ]
+   },
+   "n_biosynthesis": 2,
+   "n_specific_metab": 3,
+   "n_noise": 10
+  },
+  {
+   "query_name": "L-tryptophan",
+   "label": 1,
+   "stratum": "A1",
+   "mw": 204.23,
+   "n_links": 25,
+   "classes": {
+    "metabolism": 2,
+    "biosynthesis": 8,
+    "global_overview": 9,
+    "physiology_or_disease": 6
+   },
+   "detail": {
+    "metabolism": [
+     "path:map00260:Glycine, serine and threonine metabolism",
+     "path:map00380:Tryptophan metabolism"
+    ],
+    "biosynthesis": [
+     "path:map00400:Phenylalanine, tyrosine and tryptophan b",
+     "path:map00404:Staurosporine biosynthesis",
+     "path:map00901:Indole alkaloid biosynthesis",
+     "path:map00966:Glucosinolate biosynthesis",
+     "path:map00970:Aminoacyl-tRNA biosynthesis",
+     "path:map00996:Biosynthesis of various alkaloids",
+     "path:map00997:Biosynthesis of various other secondary ",
+     "path:map00999:Biosynthesis of various plant secondary "
+    ],
+    "global_overview": [
+     "path:map01060:Biosynthesis of plant secondary metaboli",
+     "path:map01061:Biosynthesis of phenylpropanoids",
+     "path:map01063:Biosynthesis of alkaloids derived from s",
+     "path:map01070:Biosynthesis of plant hormones",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites",
+     "path:map01210:2-Oxocarboxylic acid metabolism",
+     "path:map01230:Biosynthesis of amino acids",
+     "path:map01240:Biosynthesis of cofactors"
+    ],
+    "physiology_or_disease": [
+     "path:map04361:Axon regeneration",
+     "path:map04726:Serotonergic synapse",
+     "path:map04974:Protein digestion and absorption",
+     "path:map04978:Mineral absorption",
+     "path:map05143:African trypanosomiasis",
+     "path:map05230:Central carbon metabolism in cancer"
+    ]
+   },
+   "n_biosynthesis": 8,
+   "n_specific_metab": 10,
+   "n_noise": 15
+  },
+  {
+   "query_name": "L-lysine",
+   "label": 1,
+   "stratum": "A1",
+   "mw": 146.19,
+   "n_links": 17,
+   "classes": {
+    "biosynthesis": 5,
+    "degradation": 1,
+    "metabolism": 2,
+    "global_overview": 7,
+    "other": 1,
+    "physiology_or_disease": 1
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00300:Lysine biosynthesis",
+     "path:map00960:Tropane, piperidine and pyridine alkaloi",
+     "path:map00970:Aminoacyl-tRNA biosynthesis",
+     "path:map00975:Biosynthesis of various siderophores",
+     "path:map00997:Biosynthesis of various other secondary "
+    ],
+    "degradation": [
+     "path:map00310:Lysine degradation"
+    ],
+    "metabolism": [
+     "path:map00470:D-Amino acid metabolism",
+     "path:map00780:Biotin metabolism"
+    ],
+    "global_overview": [
+     "path:map01060:Biosynthesis of plant secondary metaboli",
+     "path:map01064:Biosynthesis of alkaloids derived from o",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites",
+     "path:map01120:Microbial metabolism in diverse environm",
+     "path:map01210:2-Oxocarboxylic acid metabolism",
+     "path:map01230:Biosynthesis of amino acids"
+    ],
+    "other": [
+     "path:map02010:ABC transporters"
+    ],
+    "physiology_or_disease": [
+     "path:map04974:Protein digestion and absorption"
+    ]
+   },
+   "n_biosynthesis": 5,
+   "n_specific_metab": 7,
+   "n_noise": 9
+  },
+  {
+   "query_name": "L-threonine",
+   "label": 1,
+   "stratum": "A1",
+   "mw": 119.12,
+   "n_links": 14,
+   "classes": {
+    "metabolism": 3,
+    "biosynthesis": 3,
+    "global_overview": 5,
+    "other": 1,
+    "physiology_or_disease": 2
+   },
+   "detail": {
+    "metabolism": [
+     "path:map00260:Glycine, serine and threonine metabolism",
+     "path:map00470:D-Amino acid metabolism",
+     "path:map00860:Porphyrin metabolism"
+    ],
+    "biosynthesis": [
+     "path:map00261:Monobactam biosynthesis",
+     "path:map00290:Valine, leucine and isoleucine biosynthe",
+     "path:map00970:Aminoacyl-tRNA biosynthesis"
+    ],
+    "global_overview": [
+     "path:map01060:Biosynthesis of plant secondary metaboli",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites",
+     "path:map01120:Microbial metabolism in diverse environm",
+     "path:map01230:Biosynthesis of amino acids"
+    ],
+    "other": [
+     "path:map02010:ABC transporters"
+    ],
+    "physiology_or_disease": [
+     "path:map04974:Protein digestion and absorption",
+     "path:map04978:Mineral absorption"
+    ]
+   },
+   "n_biosynthesis": 3,
+   "n_specific_metab": 6,
+   "n_noise": 7
+  },
+  {
+   "query_name": "L-glutamate",
+   "label": 1,
+   "stratum": "A1",
+   "mw": 147.13,
+   "n_links": 54,
+   "classes": {
+    "biosynthesis": 6,
+    "metabolism": 11,
+    "global_overview": 9,
+    "other": 2,
+    "physiology_or_disease": 26
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00220:Arginine biosynthesis",
+     "path:map00332:Carbapenem biosynthesis",
+     "path:map00524:Neomycin, kanamycin and gentamicin biosy",
+     "path:map00970:Aminoacyl-tRNA biosynthesis",
+     "path:map00975:Biosynthesis of various siderophores",
+     "path:map00998:Biosynthesis of various antibiotics"
+    ],
+    "metabolism": [
+     "path:map00250:Alanine, aspartate and glutamate metabol",
+     "path:map00330:Arginine and proline metabolism",
+     "path:map00340:Histidine metabolism",
+     "path:map00430:Taurine and hypotaurine metabolism",
+     "path:map00470:D-Amino acid metabolism",
+     "path:map00480:Glutathione metabolism",
+     "path:map00630:Glyoxylate and dicarboxylate metabolism",
+     "path:map00650:Butanoate metabolism",
+     "path:map00660:C5-Branched dibasic acid metabolism",
+     "path:map00860:Porphyrin metabolism",
+     "path:map00910:Nitrogen metabolism"
+    ],
+    "global_overview": [
+     "path:map01060:Biosynthesis of plant secondary metaboli",
+     "path:map01064:Biosynthesis of alkaloids derived from o",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites",
+     "path:map01120:Microbial metabolism in diverse environm",
+     "path:map01200:Carbon metabolism",
+     "path:map01210:2-Oxocarboxylic acid metabolism",
+     "path:map01230:Biosynthesis of amino acids",
+     "path:map01240:Biosynthesis of cofactors"
+    ],
+    "other": [
+     "path:map02010:ABC transporters",
+     "path:map02020:Two-component system"
+    ],
+    "physiology_or_disease": [
+     "path:map04068:FoxO signaling pathway",
+     "path:map04072:Phospholipase D signaling pathway",
+     "path:map04080:Neuroactive ligand-receptor interaction",
+     "path:map04082:Neuroactive ligand signaling",
+     "path:map04216:Ferroptosis",
+     "path:map04540:Gap junction",
+     "path:map04713:Circadian entrainment",
+     "path:map04720:Long-term potentiation",
+     "path:map04721:Synaptic vesicle cycle",
+     "path:map04723:Retrograde endocannabinoid signaling",
+     "path:map04724:Glutamatergic synapse",
+     "path:map04727:GABAergic synapse",
+     "path:map04730:Long-term depression",
+     "path:map04742:Taste transduction",
+     "path:map04964:Proximal tubule bicarbonate reclamation",
+     "path:map04974:Protein digestion and absorption",
+     "path:map05014:Amyotrophic lateral sclerosis",
+     "path:map05016:Huntington disease",
+     "path:map05017:Spinocerebellar ataxia",
+     "path:map05022:Pathways of neurodegeneration - multiple",
+     "path:map05030:Cocaine addiction",
+     "path:map05031:Amphetamine addiction",
+     "path:map05033:Nicotine addiction",
+     "path:map05034:Alcoholism",
+     "path:map05215:Prostate cancer",
+     "path:map05230:Central carbon metabolism in cancer"
+    ]
+   },
+   "n_biosynthesis": 6,
+   "n_specific_metab": 17,
+   "n_noise": 35
+  },
+  {
+   "query_name": "shikimate",
+   "label": 1,
+   "stratum": "A1",
+   "mw": 174.15,
+   "n_links": 11,
+   "classes": {
+    "biosynthesis": 3,
+    "global_overview": 8
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00400:Phenylalanine, tyrosine and tryptophan b",
+     "path:map00996:Biosynthesis of various alkaloids",
+     "path:map00999:Biosynthesis of various plant secondary "
+    ],
+    "global_overview": [
+     "path:map01060:Biosynthesis of plant secondary metaboli",
+     "path:map01061:Biosynthesis of phenylpropanoids",
+     "path:map01063:Biosynthesis of alkaloids derived from s",
+     "path:map01070:Biosynthesis of plant hormones",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites",
+     "path:map01230:Biosynthesis of amino acids",
+     "path:map01240:Biosynthesis of cofactors"
+    ]
+   },
+   "n_biosynthesis": 3,
+   "n_specific_metab": 3,
+   "n_noise": 8
+  },
+  {
+   "query_name": "L-malate",
+   "label": 1,
+   "stratum": "A1",
+   "mw": 134.09,
+   "n_links": 25,
+   "classes": {
+    "other": 4,
+    "metabolism": 3,
+    "global_overview": 12,
+    "physiology_or_disease": 6
+   },
+   "detail": {
+    "other": [
+     "path:map00020:Citrate cycle (TCA cycle)",
+     "path:map00710:Carbon fixation by Calvin cycle",
+     "path:map00720:Other carbon fixation pathways",
+     "path:map02020:Two-component system"
+    ],
+    "metabolism": [
+     "path:map00620:Pyruvate metabolism",
+     "path:map00630:Glyoxylate and dicarboxylate metabolism",
+     "path:map00680:Methane metabolism"
+    ],
+    "global_overview": [
+     "path:map01060:Biosynthesis of plant secondary metaboli",
+     "path:map01061:Biosynthesis of phenylpropanoids",
+     "path:map01062:Biosynthesis of terpenoids and steroids",
+     "path:map01063:Biosynthesis of alkaloids derived from s",
+     "path:map01064:Biosynthesis of alkaloids derived from o",
+     "path:map01065:Biosynthesis of alkaloids derived from h",
+     "path:map01066:Biosynthesis of alkaloids derived from t",
+     "path:map01070:Biosynthesis of plant hormones",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites",
+     "path:map01120:Microbial metabolism in diverse environm",
+     "path:map01200:Carbon metabolism"
+    ],
+    "physiology_or_disease": [
+     "path:map04742:Taste transduction",
+     "path:map04922:Glucagon signaling pathway",
+     "path:map04964:Proximal tubule bicarbonate reclamation",
+     "path:map05200:Pathways in cancer",
+     "path:map05211:Renal cell carcinoma",
+     "path:map05230:Central carbon metabolism in cancer"
+    ]
+   },
+   "n_biosynthesis": 0,
+   "n_specific_metab": 3,
+   "n_noise": 18
+  },
+  {
+   "query_name": "L-lactate",
+   "label": 1,
+   "stratum": "A1",
+   "mw": 90.08,
+   "n_links": 13,
+   "classes": {
+    "other": 1,
+    "metabolism": 3,
+    "degradation": 1,
+    "global_overview": 3,
+    "physiology_or_disease": 5
+   },
+   "detail": {
+    "other": [
+     "path:map00010:Glycolysis / Gluconeogenesis"
+    ],
+    "metabolism": [
+     "path:map00051:Fructose and mannose metabolism",
+     "path:map00620:Pyruvate metabolism",
+     "path:map00640:Propanoate metabolism"
+    ],
+    "degradation": [
+     "path:map00643:Styrene degradation"
+    ],
+    "global_overview": [
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites",
+     "path:map01120:Microbial metabolism in diverse environm"
+    ],
+    "physiology_or_disease": [
+     "path:map04024:cAMP signaling pathway",
+     "path:map04066:HIF-1 signaling pathway",
+     "path:map04148:Efferocytosis",
+     "path:map04922:Glucagon signaling pathway",
+     "path:map05230:Central carbon metabolism in cancer"
+    ]
+   },
+   "n_biosynthesis": 0,
+   "n_specific_metab": 3,
+   "n_noise": 9
+  },
+  {
+   "query_name": "L-alanine",
+   "label": 1,
+   "stratum": "A1",
+   "mw": 89.09,
+   "n_links": 21,
+   "classes": {
+    "metabolism": 5,
+    "other": 3,
+    "biosynthesis": 2,
+    "global_overview": 7,
+    "physiology_or_disease": 4
+   },
+   "detail": {
+    "metabolism": [
+     "path:map00250:Alanine, aspartate and glutamate metabol",
+     "path:map00270:Cysteine and methionine metabolism",
+     "path:map00430:Taurine and hypotaurine metabolism",
+     "path:map00450:Selenocompound metabolism",
+     "path:map00470:D-Amino acid metabolism"
+    ],
+    "other": [
+     "path:map00710:Carbon fixation by Calvin cycle",
+     "path:map01502:Vancomycin resistance",
+     "path:map02010:ABC transporters"
+    ],
+    "biosynthesis": [
+     "path:map00970:Aminoacyl-tRNA biosynthesis",
+     "path:map00997:Biosynthesis of various other secondary "
+    ],
+    "global_overview": [
+     "path:map01060:Biosynthesis of plant secondary metaboli",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites",
+     "path:map01120:Microbial metabolism in diverse environm",
+     "path:map01200:Carbon metabolism",
+     "path:map01210:2-Oxocarboxylic acid metabolism",
+     "path:map01230:Biosynthesis of amino acids"
+    ],
+    "physiology_or_disease": [
+     "path:map04122:Sulfur relay system",
+     "path:map04974:Protein digestion and absorption",
+     "path:map04978:Mineral absorption",
+     "path:map05230:Central carbon metabolism in cancer"
+    ]
+   },
+   "n_biosynthesis": 2,
+   "n_specific_metab": 7,
+   "n_noise": 11
+  },
+  {
+   "query_name": "L-valine",
+   "label": 1,
+   "stratum": "A1",
+   "mw": 117.15,
+   "n_links": 18,
+   "classes": {
+    "degradation": 1,
+    "biosynthesis": 5,
+    "metabolism": 1,
+    "global_overview": 7,
+    "other": 1,
+    "physiology_or_disease": 3
+   },
+   "detail": {
+    "degradation": [
+     "path:map00280:Valine, leucine and isoleucine degradati"
+    ],
+    "biosynthesis": [
+     "path:map00290:Valine, leucine and isoleucine biosynthe",
+     "path:map00311:Penicillin and cephalosporin biosynthesi",
+     "path:map00770:Pantothenate and CoA biosynthesis",
+     "path:map00966:Glucosinolate biosynthesis",
+     "path:map00970:Aminoacyl-tRNA biosynthesis"
+    ],
+    "metabolism": [
+     "path:map00460:Cyanoamino acid metabolism"
+    ],
+    "global_overview": [
+     "path:map01060:Biosynthesis of plant secondary metaboli",
+     "path:map01063:Biosynthesis of alkaloids derived from s",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites",
+     "path:map01210:2-Oxocarboxylic acid metabolism",
+     "path:map01230:Biosynthesis of amino acids",
+     "path:map01240:Biosynthesis of cofactors"
+    ],
+    "other": [
+     "path:map02010:ABC transporters"
+    ],
+    "physiology_or_disease": [
+     "path:map04974:Protein digestion and absorption",
+     "path:map04978:Mineral absorption",
+     "path:map05230:Central carbon metabolism in cancer"
+    ]
+   },
+   "n_biosynthesis": 5,
+   "n_specific_metab": 6,
+   "n_noise": 11
+  },
+  {
+   "query_name": "L-serine",
+   "label": 1,
+   "stratum": "A1",
+   "mw": 105.09,
+   "n_links": 28,
+   "classes": {
+    "metabolism": 9,
+    "biosynthesis": 4,
+    "other": 4,
+    "global_overview": 7,
+    "physiology_or_disease": 4
+   },
+   "detail": {
+    "metabolism": [
+     "path:map00260:Glycine, serine and threonine metabolism",
+     "path:map00270:Cysteine and methionine metabolism",
+     "path:map00460:Cyanoamino acid metabolism",
+     "path:map00470:D-Amino acid metabolism",
+     "path:map00564:Glycerophospholipid metabolism",
+     "path:map00600:Sphingolipid metabolism",
+     "path:map00630:Glyoxylate and dicarboxylate metabolism",
+     "path:map00680:Methane metabolism",
+     "path:map00920:Sulfur metabolism"
+    ],
+    "biosynthesis": [
+     "path:map00261:Monobactam biosynthesis",
+     "path:map00970:Aminoacyl-tRNA biosynthesis",
+     "path:map00975:Biosynthesis of various siderophores",
+     "path:map00998:Biosynthesis of various antibiotics"
+    ],
+    "other": [
+     "path:map00670:One carbon pool by folate",
+     "path:map01054:Nonribosomal peptide structures",
+     "path:map01502:Vancomycin resistance",
+     "path:map02010:ABC transporters"
+    ],
+    "global_overview": [
+     "path:map01060:Biosynthesis of plant secondary metaboli",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites",
+     "path:map01120:Microbial metabolism in diverse environm",
+     "path:map01200:Carbon metabolism",
+     "path:map01230:Biosynthesis of amino acids",
+     "path:map01240:Biosynthesis of cofactors"
+    ],
+    "physiology_or_disease": [
+     "path:map04071:Sphingolipid signaling pathway",
+     "path:map04974:Protein digestion and absorption",
+     "path:map04978:Mineral absorption",
+     "path:map05230:Central carbon metabolism in cancer"
+    ]
+   },
+   "n_biosynthesis": 4,
+   "n_specific_metab": 13,
+   "n_noise": 11
+  },
+  {
+   "query_name": "(R)-mevalonate",
+   "label": 1,
+   "stratum": "A1",
+   "mw": 148.16,
+   "n_links": 8,
+   "classes": {
+    "biosynthesis": 2,
+    "global_overview": 5,
+    "physiology_or_disease": 1
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00900:Terpenoid backbone biosynthesis",
+     "path:map00975:Biosynthesis of various siderophores"
+    ],
+    "global_overview": [
+     "path:map01060:Biosynthesis of plant secondary metaboli",
+     "path:map01062:Biosynthesis of terpenoids and steroids",
+     "path:map01070:Biosynthesis of plant hormones",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites"
+    ],
+    "physiology_or_disease": [
+     "path:map04216:Ferroptosis"
+    ]
+   },
+   "n_biosynthesis": 2,
+   "n_specific_metab": 2,
+   "n_noise": 6
+  },
+  {
+   "query_name": "naringenin",
+   "label": 1,
+   "stratum": "A2",
+   "mw": 272.26,
+   "n_links": 6,
+   "classes": {
+    "biosynthesis": 2,
+    "degradation": 1,
+    "global_overview": 3
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00941:Flavonoid biosynthesis",
+     "path:map00943:Isoflavonoid biosynthesis"
+    ],
+    "degradation": [
+     "path:map00946:Degradation of flavonoids"
+    ],
+    "global_overview": [
+     "path:map01061:Biosynthesis of phenylpropanoids",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites"
+    ]
+   },
+   "n_biosynthesis": 2,
+   "n_specific_metab": 2,
+   "n_noise": 4
+  },
+  {
+   "query_name": "hydrocortisone",
+   "label": 1,
+   "stratum": "A2",
+   "mw": 362.47,
+   "n_links": 10,
+   "classes": {
+    "biosynthesis": 1,
+    "global_overview": 1,
+    "physiology_or_disease": 7,
+    "drug_classification": 1
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00140:Steroid hormone biosynthesis"
+    ],
+    "global_overview": [
+     "path:map01100:Metabolic pathways"
+    ],
+    "physiology_or_disease": [
+     "path:map04080:Neuroactive ligand-receptor interaction",
+     "path:map04927:Cortisol synthesis and secretion",
+     "path:map04934:Cushing syndrome",
+     "path:map04960:Aldosterone-regulated sodium reabsorptio",
+     "path:map04976:Bile secretion",
+     "path:map05200:Pathways in cancer",
+     "path:map05215:Prostate cancer"
+    ],
+    "drug_classification": [
+     "path:map07225:Glucocorticoid and mineralocorticoid rec"
+    ]
+   },
+   "n_biosynthesis": 1,
+   "n_specific_metab": 1,
+   "n_noise": 9
+  },
+  {
+   "query_name": "artemisinic acid",
+   "label": 1,
+   "stratum": "A2",
+   "mw": 234.34,
+   "n_links": 0,
+   "classes": {},
+   "detail": {},
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 0
+  },
+  {
+   "query_name": "(S)-reticuline",
+   "label": 1,
+   "stratum": "A2",
+   "mw": 329.4,
+   "n_links": 4,
+   "classes": {
+    "biosynthesis": 1,
+    "global_overview": 3
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00950:Isoquinoline alkaloid biosynthesis"
+    ],
+    "global_overview": [
+     "path:map01063:Biosynthesis of alkaloids derived from s",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites"
+    ]
+   },
+   "n_biosynthesis": 1,
+   "n_specific_metab": 1,
+   "n_noise": 3
+  },
+  {
+   "query_name": "thebaine",
+   "label": 1,
+   "stratum": "A2",
+   "mw": 311.38,
+   "n_links": 5,
+   "classes": {
+    "biosynthesis": 1,
+    "global_overview": 3,
+    "drug_classification": 1
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00950:Isoquinoline alkaloid biosynthesis"
+    ],
+    "global_overview": [
+     "path:map01063:Biosynthesis of alkaloids derived from s",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites"
+    ],
+    "drug_classification": [
+     "path:map07039:Opioid analgesics"
+    ]
+   },
+   "n_biosynthesis": 1,
+   "n_specific_metab": 1,
+   "n_noise": 4
+  },
+  {
+   "query_name": "strictosidine",
+   "label": 1,
+   "stratum": "A2",
+   "mw": 530.57,
+   "n_links": 6,
+   "classes": {
+    "biosynthesis": 2,
+    "global_overview": 4
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00901:Indole alkaloid biosynthesis",
+     "path:map00996:Biosynthesis of various alkaloids"
+    ],
+    "global_overview": [
+     "path:map01060:Biosynthesis of plant secondary metaboli",
+     "path:map01063:Biosynthesis of alkaloids derived from s",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites"
+    ]
+   },
+   "n_biosynthesis": 2,
+   "n_specific_metab": 2,
+   "n_noise": 4
+  },
+  {
+   "query_name": "(R)-limonene",
+   "label": 1,
+   "stratum": "A2",
+   "mw": 136.24,
+   "n_links": 6,
+   "classes": {
+    "biosynthesis": 1,
+    "degradation": 1,
+    "global_overview": 4
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00902:Monoterpenoid biosynthesis"
+    ],
+    "degradation": [
+     "path:map00903:Limonene degradation"
+    ],
+    "global_overview": [
+     "path:map01062:Biosynthesis of terpenoids and steroids",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites",
+     "path:map01120:Microbial metabolism in diverse environm"
+    ]
+   },
+   "n_biosynthesis": 1,
+   "n_specific_metab": 1,
+   "n_noise": 5
+  },
+  {
+   "query_name": "farnesene",
+   "label": 1,
+   "stratum": "A2",
+   "mw": 204.36,
+   "n_links": 2,
+   "classes": {
+    "biosynthesis": 1,
+    "global_overview": 1
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00909:Sesquiterpenoid and triterpenoid biosynt"
+    ],
+    "global_overview": [
+     "path:map01110:Biosynthesis of secondary metabolites"
+    ]
+   },
+   "n_biosynthesis": 1,
+   "n_specific_metab": 1,
+   "n_noise": 1
+  },
+  {
+   "query_name": "ibuprofen",
+   "label": 0,
+   "stratum": "B",
+   "mw": 206.28,
+   "n_links": 0,
+   "classes": {},
+   "detail": {},
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 0
+  },
+  {
+   "query_name": "omeprazole",
+   "label": 0,
+   "stratum": "B",
+   "mw": 345.42,
+   "n_links": 0,
+   "classes": {},
+   "detail": {},
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 0
+  },
+  {
+   "query_name": "atenolol",
+   "label": 0,
+   "stratum": "B",
+   "mw": 266.34,
+   "n_links": 0,
+   "classes": {},
+   "detail": {},
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 0
+  },
+  {
+   "query_name": "naproxen",
+   "label": 0,
+   "stratum": "B",
+   "mw": 230.26,
+   "n_links": 0,
+   "classes": {},
+   "detail": {},
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 0
+  },
+  {
+   "query_name": "levofloxacin",
+   "label": 0,
+   "stratum": "B",
+   "mw": 361.37,
+   "n_links": 1,
+   "classes": {
+    "physiology_or_disease": 1
+   },
+   "detail": {
+    "physiology_or_disease": [
+     "path:map04976:Bile secretion"
+    ]
+   },
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 1
+  },
+  {
+   "query_name": "sertraline",
+   "label": 0,
+   "stratum": "B",
+   "mw": 306.24,
+   "n_links": 0,
+   "classes": {},
+   "detail": {},
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 0
+  },
+  {
+   "query_name": "duloxetine",
+   "label": 0,
+   "stratum": "B",
+   "mw": 297.42,
+   "n_links": 0,
+   "classes": {},
+   "detail": {},
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 0
+  },
+  {
+   "query_name": "clopidogrel",
+   "label": 0,
+   "stratum": "B",
+   "mw": 321.83,
+   "n_links": 0,
+   "classes": {},
+   "detail": {},
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 0
+  },
+  {
+   "query_name": "salbutamol",
+   "label": 0,
+   "stratum": "B",
+   "mw": 239.31,
+   "n_links": 0,
+   "classes": {},
+   "detail": {},
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 0
+  },
+  {
+   "query_name": "ketamine",
+   "label": 0,
+   "stratum": "B",
+   "mw": 237.73,
+   "n_links": 0,
+   "classes": {},
+   "detail": {},
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 0
+  },
+  {
+   "query_name": "citalopram",
+   "label": 0,
+   "stratum": "B",
+   "mw": 324.4,
+   "n_links": 1,
+   "classes": {
+    "xenobiotic_degradation": 1
+   },
+   "detail": {
+    "xenobiotic_degradation": [
+     "path:map00982:Drug metabolism - cytochrome P450"
+    ]
+   },
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 1
+  },
+  {
+   "query_name": "sitagliptin",
+   "label": 0,
+   "stratum": "B",
+   "mw": 407.32,
+   "n_links": 0,
+   "classes": {},
+   "detail": {},
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 0
+  },
+  {
+   "query_name": "paclitaxel",
+   "label": 0,
+   "stratum": "C",
+   "mw": 853.92,
+   "n_links": 5,
+   "classes": {
+    "biosynthesis": 1,
+    "global_overview": 3,
+    "physiology_or_disease": 1
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00904:Diterpenoid biosynthesis"
+    ],
+    "global_overview": [
+     "path:map01062:Biosynthesis of terpenoids and steroids",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites"
+    ],
+    "physiology_or_disease": [
+     "path:map04976:Bile secretion"
+    ]
+   },
+   "n_biosynthesis": 1,
+   "n_specific_metab": 1,
+   "n_noise": 4
+  },
+  {
+   "query_name": "vinblastine",
+   "label": 0,
+   "stratum": "C",
+   "mw": 810.99,
+   "n_links": 5,
+   "classes": {
+    "biosynthesis": 1,
+    "global_overview": 3,
+    "physiology_or_disease": 1
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00901:Indole alkaloid biosynthesis"
+    ],
+    "global_overview": [
+     "path:map01063:Biosynthesis of alkaloids derived from s",
+     "path:map01100:Metabolic pathways",
+     "path:map01110:Biosynthesis of secondary metabolites"
+    ],
+    "physiology_or_disease": [
+     "path:map04976:Bile secretion"
+    ]
+   },
+   "n_biosynthesis": 1,
+   "n_specific_metab": 1,
+   "n_noise": 4
+  },
+  {
+   "query_name": "digoxin",
+   "label": 0,
+   "stratum": "C",
+   "mw": 780.95,
+   "n_links": 1,
+   "classes": {
+    "physiology_or_disease": 1
+   },
+   "detail": {
+    "physiology_or_disease": [
+     "path:map04976:Bile secretion"
+    ]
+   },
+   "n_biosynthesis": 0,
+   "n_specific_metab": 0,
+   "n_noise": 1
+  },
+  {
+   "query_name": "camptothecin",
+   "label": 0,
+   "stratum": "C",
+   "mw": 348.36,
+   "n_links": 3,
+   "classes": {
+    "biosynthesis": 1,
+    "global_overview": 1,
+    "drug_classification": 1
+   },
+   "detail": {
+    "biosynthesis": [
+     "path:map00996:Biosynthesis of various alkaloids"
+    ],
+    "global_overview": [
+     "path:map01063:Biosynthesis of alkaloids derived from s"
+    ],
+    "drug_classification": [
+     "path:map07042:Antineoplastics - agents from natural pr"
+    ]
+   },
+   "n_biosynthesis": 1,
+   "n_specific_metab": 1,
+   "n_noise": 2
+  }
+ ],
+ "auroc": [
+  [
+   "as shipped: any KEGG pathway AND MW<=500",
+   0.85625
+  ],
+  [
+   "any KEGG pathway (count)",
+   0.946875
+  ],
+  [
+   "biosynthesis-map count only",
+   0.8875
+  ],
+  [
+   "has >=1 biosynthesis map",
+   0.83125
+  ],
+  [
+   "has >=1 biosynthesis map AND MW<=500",
+   0.86875
+  ],
+  [
+   "biosynthesis or specific metabolism map",
+   0.946875
+  ]
+ ]
+}

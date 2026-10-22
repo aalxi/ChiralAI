@@ -1,0 +1,1399 @@
+{
+ "pairs": [
+  {
+   "pair": "limonene",
+   "a": "(R)-Limonene",
+   "b": "(S)-Limonene",
+   "a_id": "cpd:C06099",
+   "b_id": "cpd:C00521",
+   "same_skeleton": true,
+   "a_tags": "R",
+   "b_tags": "S",
+   "true_enantiomers": true
+  },
+  {
+   "pair": "lactate",
+   "a": "(S)-Lactate",
+   "b": "(R)-Lactate",
+   "a_id": "cpd:C00186",
+   "b_id": "cpd:C00256",
+   "same_skeleton": true,
+   "a_tags": "S",
+   "b_tags": "R",
+   "true_enantiomers": true
+  },
+  {
+   "pair": "alanine",
+   "a": "L-Alanine",
+   "b": "D-Alanine",
+   "a_id": "cpd:C00041",
+   "b_id": "cpd:C00133",
+   "same_skeleton": true,
+   "a_tags": "S",
+   "b_tags": "R",
+   "true_enantiomers": true
+  },
+  {
+   "pair": "malate",
+   "a": "(S)-Malate",
+   "b": "(R)-Malate",
+   "a_id": "cpd:C00149",
+   "b_id": "cpd:C00497",
+   "same_skeleton": true,
+   "a_tags": "S",
+   "b_tags": "R",
+   "true_enantiomers": true
+  },
+  {
+   "pair": "tryptophan",
+   "a": "L-Tryptophan",
+   "b": "D-Tryptophan",
+   "a_id": "cpd:C00078",
+   "b_id": "cpd:C00525",
+   "same_skeleton": true,
+   "a_tags": "S",
+   "b_tags": "R",
+   "true_enantiomers": true
+  },
+  {
+   "pair": "DOPA",
+   "a": "3,4-Dihydroxy-L-phenylalanine",
+   "b": "Dopaquinone",
+   "a_id": "cpd:C00355",
+   "b_id": "cpd:C00822",
+   "same_skeleton": false,
+   "a_tags": "S",
+   "b_tags": "S",
+   "true_enantiomers": false
+  },
+  {
+   "pair": "serine",
+   "a": "L-Serine",
+   "b": "D-Serine",
+   "a_id": "cpd:C00065",
+   "b_id": "cpd:C00740",
+   "same_skeleton": true,
+   "a_tags": "S",
+   "b_tags": "R",
+   "true_enantiomers": true
+  },
+  {
+   "pair": "threonine",
+   "a": "L-Threonine",
+   "b": "D-Threonine",
+   "a_id": "cpd:C00188",
+   "b_id": "cpd:C00820",
+   "same_skeleton": true,
+   "a_tags": "RS",
+   "b_tags": "SR",
+   "true_enantiomers": true
+  },
+  {
+   "pair": "glutamate",
+   "a": "L-Glutamate",
+   "b": "D-Glutamate",
+   "a_id": "cpd:C00025",
+   "b_id": "cpd:C00217",
+   "same_skeleton": true,
+   "a_tags": "S",
+   "b_tags": "R",
+   "true_enantiomers": true
+  },
+  {
+   "pair": "valine",
+   "a": "L-Valine",
+   "b": "D-Valine",
+   "a_id": "cpd:C00183",
+   "b_id": "cpd:C06417",
+   "same_skeleton": true,
+   "a_tags": "S",
+   "b_tags": "R",
+   "true_enantiomers": true
+  }
+ ],
+ "mismatch": [
+  {
+   "pair": "limonene",
+   "name_used": "(R)-Limonene",
+   "structure_used": "(S)-Limonene",
+   "identical_to_correct": true,
+   "mismatch_flagged": false,
+   "rdkit_identical_between_enantiomers": true,
+   "differing_fields": [
+    "kegg_compound_id"
+   ]
+  },
+  {
+   "pair": "lactate",
+   "name_used": "(S)-Lactate",
+   "structure_used": "(R)-Lactate",
+   "identical_to_correct": true,
+   "mismatch_flagged": false,
+   "rdkit_identical_between_enantiomers": true,
+   "differing_fields": [
+    "kegg_compound_id"
+   ]
+  },
+  {
+   "pair": "alanine",
+   "name_used": "L-Alanine",
+   "structure_used": "D-Alanine",
+   "identical_to_correct": true,
+   "mismatch_flagged": false,
+   "rdkit_identical_between_enantiomers": true,
+   "differing_fields": [
+    "kegg_compound_id"
+   ]
+  },
+  {
+   "pair": "malate",
+   "name_used": "(S)-Malate",
+   "structure_used": "(R)-Malate",
+   "identical_to_correct": true,
+   "mismatch_flagged": false,
+   "rdkit_identical_between_enantiomers": true,
+   "differing_fields": [
+    "kegg_compound_id"
+   ]
+  },
+  {
+   "pair": "tryptophan",
+   "name_used": "L-Tryptophan",
+   "structure_used": "D-Tryptophan",
+   "identical_to_correct": true,
+   "mismatch_flagged": false,
+   "rdkit_identical_between_enantiomers": true,
+   "differing_fields": [
+    "biosynthetic_feasibility",
+    "confidence",
+    "kegg_compound_id",
+    "bottlenecks"
+   ]
+  },
+  {
+   "pair": "serine",
+   "name_used": "L-Serine",
+   "structure_used": "D-Serine",
+   "identical_to_correct": true,
+   "mismatch_flagged": false,
+   "rdkit_identical_between_enantiomers": true,
+   "differing_fields": [
+    "kegg_compound_id"
+   ]
+  },
+  {
+   "pair": "threonine",
+   "name_used": "L-Threonine",
+   "structure_used": "D-Threonine",
+   "identical_to_correct": true,
+   "mismatch_flagged": false,
+   "rdkit_identical_between_enantiomers": true,
+   "differing_fields": [
+    "kegg_compound_id"
+   ]
+  },
+  {
+   "pair": "glutamate",
+   "name_used": "L-Glutamate",
+   "structure_used": "D-Glutamate",
+   "identical_to_correct": true,
+   "mismatch_flagged": false,
+   "rdkit_identical_between_enantiomers": true,
+   "differing_fields": [
+    "kegg_compound_id"
+   ]
+  },
+  {
+   "pair": "valine",
+   "name_used": "L-Valine",
+   "structure_used": "D-Valine",
+   "identical_to_correct": true,
+   "mismatch_flagged": false,
+   "rdkit_identical_between_enantiomers": true,
+   "differing_fields": [
+    "kegg_compound_id"
+   ]
+  }
+ ],
+ "naming": [
+  {
+   "query_name": "L-DOPA",
+   "truth": "C00355",
+   "results": {
+    "canonical": {
+     "query": "L-DOPA",
+     "got": "C00355",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "DOPA",
+     "got": "C00355",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "DOPA",
+     "got": "C00355",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-DOPA",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Dopa",
+     "got": "C00355",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "L-tryptophan",
+   "truth": "C00078",
+   "results": {
+    "canonical": {
+     "query": "L-tryptophan",
+     "got": "C00078",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "tryptophan",
+     "got": "C00078",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "tryptophan",
+     "got": "C00078",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-tryptophan",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Tryptophan",
+     "got": "C00078",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "L-lysine",
+   "truth": "C00047",
+   "results": {
+    "canonical": {
+     "query": "L-lysine",
+     "got": "C00047",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "lysine",
+     "got": "C00047",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "lysine",
+     "got": "C00047",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-lysine",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Lysine",
+     "got": "C00047",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "L-threonine",
+   "truth": "C00188",
+   "results": {
+    "canonical": {
+     "query": "L-threonine",
+     "got": "C00188",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "threonine",
+     "got": "C00188",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "threonine",
+     "got": "C00188",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-threonine",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Threonine",
+     "got": "C00188",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "L-glutamate",
+   "truth": "C00025",
+   "results": {
+    "canonical": {
+     "query": "L-glutamate",
+     "got": "C00025",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "glutamate",
+     "got": "C00025",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "glutamate acid",
+     "got": "C00025",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-glutamate",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Glutamate",
+     "got": "C00025",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "shikimate",
+   "truth": "C00493",
+   "results": {
+    "canonical": {
+     "query": "shikimate",
+     "got": "C00493",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "shikimate",
+     "got": "C00493",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "shikimate acid",
+     "got": "C00493",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-shikimate",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Shikimate",
+     "got": "C00493",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "L-malate",
+   "truth": "C00149",
+   "results": {
+    "canonical": {
+     "query": "L-malate",
+     "got": "C00149",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "malate",
+     "got": "C00149",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "malate acid",
+     "got": "C00149",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-malate",
+     "got": "C00149",
+     "hit": true,
+     "exact": true
+    },
+    "title_case": {
+     "query": "Malate",
+     "got": "C00149",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "L-lactate",
+   "truth": "C00186",
+   "results": {
+    "canonical": {
+     "query": "L-lactate",
+     "got": "C00186",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "lactate",
+     "got": "C00186",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "lactate acid",
+     "got": "C00186",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-lactate",
+     "got": "C00186",
+     "hit": true,
+     "exact": true
+    },
+    "title_case": {
+     "query": "Lactate",
+     "got": "C00186",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "L-alanine",
+   "truth": "C00041",
+   "results": {
+    "canonical": {
+     "query": "L-alanine",
+     "got": "C00041",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "alanine",
+     "got": "C00041",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "alanine",
+     "got": "C00041",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-alanine",
+     "got": "C01314",
+     "hit": true,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Alanine",
+     "got": "C00041",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "L-valine",
+   "truth": "C00183",
+   "results": {
+    "canonical": {
+     "query": "L-valine",
+     "got": "C00183",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "valine",
+     "got": "C00141",
+     "hit": true,
+     "exact": false
+    },
+    "acid_style": {
+     "query": "valine",
+     "got": "C00141",
+     "hit": true,
+     "exact": false
+    },
+    "stereo_prefixed": {
+     "query": "(S)-valine",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Valine",
+     "got": "C00141",
+     "hit": true,
+     "exact": false
+    }
+   }
+  },
+  {
+   "query_name": "L-serine",
+   "truth": "C00065",
+   "results": {
+    "canonical": {
+     "query": "L-serine",
+     "got": "C00065",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "serine",
+     "got": "C00065",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "serine",
+     "got": "C00065",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-serine",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Serine",
+     "got": "C00065",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "(R)-mevalonate",
+   "truth": "C00418",
+   "results": {
+    "canonical": {
+     "query": "(R)-mevalonate",
+     "got": "C00418",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "mevalonate",
+     "got": "C00418",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "mevalonate acid",
+     "got": "C00418",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(R)-mevalonate",
+     "got": "C00418",
+     "hit": true,
+     "exact": true
+    },
+    "title_case": {
+     "query": "Mevalonate",
+     "got": "C00418",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "naringenin",
+   "truth": "C00509",
+   "results": {
+    "canonical": {
+     "query": "naringenin",
+     "got": "C00509",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "naringenin",
+     "got": "C00509",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "naringenin",
+     "got": "C00509",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-naringenin",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Naringenin",
+     "got": "C00509",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "hydrocortisone",
+   "truth": "C00735",
+   "results": {
+    "canonical": {
+     "query": "hydrocortisone",
+     "got": "C00735",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "hydrocortisone",
+     "got": "C00735",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "hydrocortisone",
+     "got": "C00735",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-hydrocortisone",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Hydrocortisone",
+     "got": "C00735",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "artemisinic acid",
+   "truth": "C20309",
+   "results": {
+    "canonical": {
+     "query": "artemisinic acid",
+     "got": "C20309",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "artemisinic acid",
+     "got": "C20309",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "artemisinic acid",
+     "got": "C20309",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-artemisinic acid",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Artemisinic Acid",
+     "got": "C20309",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "(S)-reticuline",
+   "truth": "C02105",
+   "results": {
+    "canonical": {
+     "query": "(S)-reticuline",
+     "got": "C02105",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "reticuline",
+     "got": "C02105",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "reticuline",
+     "got": "C02105",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-reticuline",
+     "got": "C02105",
+     "hit": true,
+     "exact": true
+    },
+    "title_case": {
+     "query": "Reticuline",
+     "got": "C02105",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "thebaine",
+   "truth": "C06173",
+   "results": {
+    "canonical": {
+     "query": "thebaine",
+     "got": "C06173",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "thebaine",
+     "got": "C06173",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "thebaine",
+     "got": "C06173",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-thebaine",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Thebaine",
+     "got": "C06173",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "strictosidine",
+   "truth": "C03470",
+   "results": {
+    "canonical": {
+     "query": "strictosidine",
+     "got": "C03309",
+     "hit": true,
+     "exact": false
+    },
+    "plain": {
+     "query": "strictosidine",
+     "got": "C03309",
+     "hit": true,
+     "exact": false
+    },
+    "acid_style": {
+     "query": "strictosidine",
+     "got": "C03309",
+     "hit": true,
+     "exact": false
+    },
+    "stereo_prefixed": {
+     "query": "(S)-strictosidine",
+     "got": "C03470",
+     "hit": true,
+     "exact": true
+    },
+    "title_case": {
+     "query": "Strictosidine",
+     "got": "C03309",
+     "hit": true,
+     "exact": false
+    }
+   }
+  },
+  {
+   "query_name": "(R)-limonene",
+   "truth": "C06099",
+   "results": {
+    "canonical": {
+     "query": "(R)-limonene",
+     "got": "C06099",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "limonene",
+     "got": "C00521",
+     "hit": true,
+     "exact": false
+    },
+    "acid_style": {
+     "query": "limonene",
+     "got": "C00521",
+     "hit": true,
+     "exact": false
+    },
+    "stereo_prefixed": {
+     "query": "(R)-limonene",
+     "got": "C06099",
+     "hit": true,
+     "exact": true
+    },
+    "title_case": {
+     "query": "Limonene",
+     "got": "C00521",
+     "hit": true,
+     "exact": false
+    }
+   }
+  },
+  {
+   "query_name": "farnesene",
+   "truth": "C09666",
+   "results": {
+    "canonical": {
+     "query": "farnesene",
+     "got": "C09665",
+     "hit": true,
+     "exact": false
+    },
+    "plain": {
+     "query": "farnesene",
+     "got": "C09665",
+     "hit": true,
+     "exact": false
+    },
+    "acid_style": {
+     "query": "farnesene",
+     "got": "C09665",
+     "hit": true,
+     "exact": false
+    },
+    "stereo_prefixed": {
+     "query": "(S)-farnesene",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Farnesene",
+     "got": "C09665",
+     "hit": true,
+     "exact": false
+    }
+   }
+  },
+  {
+   "query_name": "ibuprofen",
+   "truth": "C01588",
+   "results": {
+    "canonical": {
+     "query": "ibuprofen",
+     "got": "C01588",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "ibuprofen",
+     "got": "C01588",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "ibuprofen",
+     "got": "C01588",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-ibuprofen",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Ibuprofen",
+     "got": "C01588",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "omeprazole",
+   "truth": "C07324",
+   "results": {
+    "canonical": {
+     "query": "omeprazole",
+     "got": "C07324",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "omeprazole",
+     "got": "C07324",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "omeprazole",
+     "got": "C07324",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-omeprazole",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Omeprazole",
+     "got": "C07324",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "naproxen",
+   "truth": "C01517",
+   "results": {
+    "canonical": {
+     "query": "naproxen",
+     "got": "C01517",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "naproxen",
+     "got": "C01517",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "naproxen",
+     "got": "C01517",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-naproxen",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Naproxen",
+     "got": "C01517",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "levofloxacin",
+   "truth": "C07660",
+   "results": {
+    "canonical": {
+     "query": "levofloxacin",
+     "got": "C07660",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "levofloxacin",
+     "got": "C07660",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "levofloxacin",
+     "got": "C07660",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-levofloxacin",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Levofloxacin",
+     "got": "C07660",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "sertraline",
+   "truth": "C07246",
+   "results": {
+    "canonical": {
+     "query": "sertraline",
+     "got": "C07246",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "sertraline",
+     "got": "C07246",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "sertraline",
+     "got": "C07246",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-sertraline",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Sertraline",
+     "got": "C07246",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "salbutamol",
+   "truth": "C11770",
+   "results": {
+    "canonical": {
+     "query": "salbutamol",
+     "got": "C11770",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "salbutamol",
+     "got": "C11770",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "salbutamol",
+     "got": "C11770",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-salbutamol",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Salbutamol",
+     "got": "C11770",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "ketamine",
+   "truth": "C07525",
+   "results": {
+    "canonical": {
+     "query": "ketamine",
+     "got": "C07525",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "ketamine",
+     "got": "C07525",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "ketamine",
+     "got": "C07525",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-ketamine",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Ketamine",
+     "got": "C07525",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "citalopram",
+   "truth": "C07572",
+   "results": {
+    "canonical": {
+     "query": "citalopram",
+     "got": "C07572",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "citalopram",
+     "got": "C07572",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "citalopram",
+     "got": "C07572",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-citalopram",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Citalopram",
+     "got": "C07572",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "paclitaxel",
+   "truth": "C07394",
+   "results": {
+    "canonical": {
+     "query": "paclitaxel",
+     "got": "C07394",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "paclitaxel",
+     "got": "C07394",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "paclitaxel",
+     "got": "C07394",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-paclitaxel",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Paclitaxel",
+     "got": "C07394",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "vinblastine",
+   "truth": "C07201",
+   "results": {
+    "canonical": {
+     "query": "vinblastine",
+     "got": "C07201",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "vinblastine",
+     "got": "C07201",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "vinblastine",
+     "got": "C07201",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-vinblastine",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Vinblastine",
+     "got": "C07201",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "digoxin",
+   "truth": "C06956",
+   "results": {
+    "canonical": {
+     "query": "digoxin",
+     "got": "C06956",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "digoxin",
+     "got": "C06956",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "digoxin",
+     "got": "C06956",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-digoxin",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Digoxin",
+     "got": "C06956",
+     "hit": true,
+     "exact": true
+    }
+   }
+  },
+  {
+   "query_name": "camptothecin",
+   "truth": "C01897",
+   "results": {
+    "canonical": {
+     "query": "camptothecin",
+     "got": "C01897",
+     "hit": true,
+     "exact": true
+    },
+    "plain": {
+     "query": "camptothecin",
+     "got": "C01897",
+     "hit": true,
+     "exact": true
+    },
+    "acid_style": {
+     "query": "camptothecin",
+     "got": "C01897",
+     "hit": true,
+     "exact": true
+    },
+    "stereo_prefixed": {
+     "query": "(S)-camptothecin",
+     "got": "",
+     "hit": false,
+     "exact": false
+    },
+    "title_case": {
+     "query": "Camptothecin",
+     "got": "C01897",
+     "hit": true,
+     "exact": true
+    }
+   }
+  }
+ ],
+ "naming_summary": {
+  "canonical": {
+   "hit": 32,
+   "exact": 30,
+   "n": 32
+  },
+  "plain": {
+   "hit": 32,
+   "exact": 28,
+   "n": 32
+  },
+  "acid_style": {
+   "hit": 32,
+   "exact": 28,
+   "n": 32
+  },
+  "stereo_prefixed": {
+   "hit": 7,
+   "exact": 6,
+   "n": 32
+  },
+  "title_case": {
+   "hit": 32,
+   "exact": 28,
+   "n": 32
+  }
+ }
+}

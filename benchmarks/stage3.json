@@ -1,0 +1,93 @@
+{
+ "host": "E. coli",
+ "n": 36,
+ "stage3_enantiomers": [
+  {
+   "pair": "limonene",
+   "a": "(R)-Limonene",
+   "b": "(S)-Limonene",
+   "smiles_differ": true,
+   "rdkit_identical": true,
+   "differing_fields": [
+    "kegg_compound_id"
+   ],
+   "detail": "{\"kegg_compound_id\": [\"C06099\", \"C00521\"]}"
+  },
+  {
+   "pair": "DOPA",
+   "a": "3,4-Dihydroxy-L-phenylalanine",
+   "b": "Dopaquinone",
+   "smiles_differ": true,
+   "rdkit_identical": false,
+   "differing_fields": [
+    "biosynthetic_feasibility",
+    "bottlenecks",
+    "confidence",
+    "kegg_compound_id"
+   ],
+   "detail": "{\"biosynthetic_feasibility\": [false, true], \"confidence\": [0.88, 0.95], \"kegg_compound_id\": [null, \"C00822\"], \"bottlenecks\": [[\"no documented pathway\"], []]}"
+  },
+  {
+   "pair": "lactate",
+   "a": "(S)-Lactate",
+   "b": "(R)-Lactate",
+   "smiles_differ": true,
+   "rdkit_identical": true,
+   "differing_fields": [
+    "kegg_compound_id"
+   ],
+   "detail": "{\"kegg_compound_id\": [\"C00186\", \"C00256\"]}"
+  },
+  {
+   "pair": "alanine",
+   "a": "L-Alanine",
+   "b": "D-Alanine",
+   "smiles_differ": true,
+   "rdkit_identical": true,
+   "differing_fields": [
+    "kegg_compound_id"
+   ],
+   "detail": "{\"kegg_compound_id\": [\"C00041\", \"C00133\"]}"
+  },
+  {
+   "pair": "malate",
+   "a": "(S)-Malate",
+   "b": "(R)-Malate",
+   "smiles_differ": true,
+   "rdkit_identical": true,
+   "differing_fields": [
+    "kegg_compound_id"
+   ],
+   "detail": "{\"kegg_compound_id\": [\"C00149\", \"C00497\"]}"
+  },
+  {
+   "pair": "tryptophan",
+   "a": "L-Tryptophan",
+   "b": "D-Tryptophan",
+   "smiles_differ": true,
+   "rdkit_identical": true,
+   "differing_fields": [
+    "biosynthetic_feasibility",
+    "bottlenecks",
+    "confidence",
+    "kegg_compound_id"
+   ],
+   "detail": "{\"biosynthetic_feasibility\": [true, false], \"confidence\": [0.95, 0.88], \"kegg_compound_id\": [\"C00078\", \"C00525\"], \"bottlenecks\": [[], [\"no documented pathway\"]]}"
+  }
+ ],
+ "url_log_sample": [
+  "http://rest.kegg.jp/find/compound/(R)-Limonene",
+  "http://rest.kegg.jp/link/pathway/C06099",
+  "https://www.brenda-enzymes.org/brenda_download/brenda.json.gz",
+  "http://rest.kegg.jp/find/compound/(S)-Limonene",
+  "http://rest.kegg.jp/link/pathway/C00521",
+  "https://www.brenda-enzymes.org/brenda_download/brenda.json.gz",
+  "http://rest.kegg.jp/find/compound/3,4-Dihydroxy-L-phenylalanine",
+  "https://www.brenda-enzymes.org/brenda_download/brenda.json.gz",
+  "http://rest.kegg.jp/find/compound/Dopaquinone",
+  "http://rest.kegg.jp/link/pathway/C00822",
+  "https://www.brenda-enzymes.org/brenda_download/brenda.json.gz",
+  "http://rest.kegg.jp/find/compound/(S)-Lactate"
+ ],
+ "url_log_count": 35
+}

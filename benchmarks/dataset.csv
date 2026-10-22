@@ -1,0 +1,37 @@
+query_name,label,stratum,reference,truth_kegg_cpd,structure_source,smiles,formula,mw,n_stereocentres,n_defined_stereocentres,stereo_tags,first_hit_kegg,resolve_status
+L-DOPA,1,A1,Munoz 2011 Microb Cell Fact; E. coli HpaBC,C00355,cpd:C00355,N[C@@H](Cc1ccc(O)c(O)c1)C(=O)O,C9H11NO4,197.19,1,1,9S,C00355,EXACT
+L-tryptophan,1,A1,Industrial E. coli fermentation,C00078,cpd:C00078,N[C@@H](Cc1c[nH]c2ccccc12)C(=O)O,C11H12N2O2,204.23,1,1,8S,C00078,EXACT
+L-lysine,1,A1,Industrial C. glutamicum,C00047,cpd:C00047,NCCCC[C@H](N)C(=O)O,C6H14N2O2,146.19,1,1,0S,C00047,EXACT
+L-threonine,1,A1,Industrial E. coli,C00188,cpd:C00188,C[C@@H](O)[C@H](N)C(=O)O,C4H9NO3,119.12,2,2,2S|3R,C00188,EXACT
+L-glutamate,1,A1,Industrial C. glutamicum,C00025,cpd:C00025,N[C@@H](CCC(=O)O)C(=O)O,C5H9NO4,147.13,1,1,0S,C00025,EXACT
+shikimate,1,A1,Draths & Frost 1990s E. coli,C00493,cpd:C00493,O=C(O)C1=C[C@@H](O)[C@@H](O)[C@H](O)C1,C7H10O5,174.15,3,3,4R|5R|8S,C00493,EXACT
+L-malate,1,A1,Zelle 2008 S. cerevisiae,C00149,cpd:C00149,O=C(O)C[C@H](O)C(=O)O,C4H6O5,134.09,1,1,0S,C00149,EXACT
+L-lactate,1,A1,Industrial lactic acid fermentation,C00186,cpd:C00186,C[C@H](O)C(=O)O,C3H6O3,90.08,1,1,0S,C00186,EXACT
+L-alanine,1,A1,Zhang 2007 E. coli,C00041,cpd:C00041,C[C@H](N)C(=O)O,C3H7NO2,89.09,1,1,2S,C00041,EXACT
+L-valine,1,A1,Industrial C. glutamicum,C00183,cpd:C00183,CC(C)[C@H](N)C(=O)O,C5H11NO2,117.15,1,1,0S,C00183,EXACT
+L-serine,1,A1,Industrial C. glutamicum,C00065,cpd:C00065,N[C@@H](CO)C(=O)O,C3H7NO3,105.09,1,1,0S,C00065,EXACT
+(R)-mevalonate,1,A1,Tabata & Hashimoto 2004 E. coli,C00418,cpd:C00418,C[C@@](O)(CCO)CC(=O)O,C6H12O4,148.16,1,1,1R,C00418,EXACT
+naringenin,1,A2,Koopman 2012 Microb Cell Fact; yeast,C00509,cpd:C00509,O=C1C[C@@H](c2ccc(O)cc2)Oc2cc(O)cc(O)c21,C15H12O5,272.26,1,1,10S,C00509,EXACT
+hydrocortisone,1,A2,Szczebara 2003 Nat Biotechnol; yeast,C00735,cpd:C00735,C[C@]12CCC(=O)C=C1CC[C@@H]1[C@@H]2[C@@H](O)C[C@@]2(C)[C@H]1CC[C@]2(O)C(=O)CO,C21H30O5,362.47,7,7,0S|1S|2S|4S|6R|10R|11S,C00735,EXACT
+artemisinic acid,1,A2,Ro 2006 Nature; yeast,C20309,cpd:C20309,C=C(C(=O)O)[C@@H]1CC[C@@H](C)[C@@H]2CCC(C)=C[C@@H]21,C15H22O2,234.34,4,4,2R|3S|4R|5R,C20309,EXACT
+(S)-reticuline,1,A2,Hawkins & Smolke 2008 Nat Chem Biol; yeast,C02105,cpd:C02105,COc1ccc(C[C@H]2c3cc(O)c(OC)cc3CCN2C)cc1O,C19H23NO4,329.4,1,1,1S,C02105,EXACT
+thebaine,1,A2,Galanie 2015 Science; yeast,C06173,cpd:C06173,COC1=CC=C2[C@H]3Cc4ccc(OC)c5c4[C@@]2(CCN3C)[C@H]1O5,C19H21NO3,311.38,3,3,0S|3R|7R,C06173,EXACT
+strictosidine,1,A2,Brown 2015 PNAS; yeast,C03470,cpd:C03470,C=C[C@H]1[C@H](O[C@@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)OC=C(C(=O)OC)[C@H]1C[C@@H]1NCCc2c1[nH]c1ccccc21,C27H34N2O9,530.57,9,9,0S|4R|5S|6S|15S|19R|21R|22S|24S,C03309,EXACT
+(R)-limonene,1,A2,Jongedijk 2015; yeast,C06099,cpd:C06099,C=C(C)[C@H]1CC=C(C)CC1,C10H16,136.24,1,1,2R,C06099,EXACT
+farnesene,1,A2,Amyris industrial yeast,C09666,cpd:C09666,C=CC(=C)CC/C=C(\C)CCC=C(C)C,C15H24,204.36,0,0,,C09665,EXACT
+ibuprofen,0,B,Chemocatalytic; no de novo microbial route,C01588,cpd:C01588,CC(C)Cc1ccc(C(C)C(=O)O)cc1,C13H18O2,206.28,1,0,2?,C01588,EXACT
+omeprazole,0,B,Chemocatalytic sulfoxidation,C07324,cpd:C07324,COc1ccc2[nH]c(S(=O)Cc3ncc(C)c(OC)c3C)nc2c1,C17H19N3O3S,345.42,1,0,9?,C07324,EXACT
+atenolol,0,B,Chemical synthesis,,dr:D01471,CC(C)NC[C@H](O)COc1ccc(CC(N)=O)cc1,C14H22N2O3,266.34,1,1,2S,,NO-HIT
+naproxen,0,B,Chemocatalytic asymmetric synthesis,C01517,cpd:C01517,COc1ccc2cc([C@H](C)C(=O)O)ccc2c1,C14H14O3,230.26,1,1,10S,C01517,EXACT
+levofloxacin,0,B,Chemical synthesis; fluorinated,C07660,cpd:C07660,C[C@H]1COc2c(N3CCN(C)CC3)c(F)cc3c(=O)c(C(=O)O)cn1c23,C18H20FN3O4,361.37,1,1,9S,C07660,EXACT
+sertraline,0,B,Chemical synthesis,C07246,cpd:C07246,CN[C@H]1CC[C@@H](c2ccc(Cl)c(Cl)c2)c2ccccc21,C17H17Cl2N,306.24,2,2,1S|6S,C07246,EXACT
+duloxetine,0,B,Chemical synthesis,,dr:D07880,CNCC[C@H](Oc1cccc2ccccc12)c1cccs1,C18H19NOS,297.42,1,1,5S,,NO-HIT
+clopidogrel,0,B,Chemical synthesis,,dr:D07729,COC(=O)[C@H](c1ccccc1Cl)N1CCc2sccc2C1,C16H16ClNO2S,321.83,1,1,1S,,NO-HIT
+salbutamol,0,B,Chemical synthesis,C11770,cpd:C11770,CC(C)(C)NC[C@H](O)c1ccc(O)c(CO)c1,C13H21NO3,239.31,1,1,2R,C11770,NO-EXACT
+ketamine,0,B,Chemical synthesis; chlorinated,C07525,cpd:C07525,CNC1(c2ccccc2Cl)CCCCC1=O,C13H16ClNO,237.73,1,0,0?,C07525,EXACT
+citalopram,0,B,Chemical synthesis; fluorinated,C07572,cpd:C07572,CN(C)CCCC1(c2ccc(F)cc2)OCc2cc(C#N)ccc21,C20H21FN2O,324.4,1,0,0?,C07572,EXACT
+sitagliptin,0,B,Chemo-enzymatic step only; no de novo route,,dr:D08516,N[C@@H](CC(=O)N1CCn2c(nnc2C(F)(F)F)C1)Cc1cc(F)c(F)cc1F,C16H15F6N5O,407.32,1,1,10R,,NO-HIT
+paclitaxel,0,C,Plant/cell culture; no de novo microbial route,C07394,cpd:C07394,CC(=O)O[C@H]1C(=O)[C@@]2(C)C([C@H](OC(=O)c3ccccc3)[C@]3(O)C[C@H](OC(=O)[C@H](O)[C@@H](NC(=O)c4ccccc4)c4ccccc4)C(C)=C1C3(C)C)[C@]1(OC(C)=O)CO[C@@H]1C[C@@H]2O,C47H51NO14,853.92,11,10,0?|1S|2S|3S|4R|7S|10S|19R|27S|38R|40S,C07394,EXACT
+vinblastine,0,C,Catharanthus roseus only,C07201,cpd:C07201,CC[C@]1(O)C[C@H]2C[N@](CCc3c([nH]c4ccccc34)[C@@](C(=O)OC)(c3cc4c(cc3OC)N(C)[C@H]3[C@@](O)(C(=O)OC)[C@H](OC(C)=O)[C@]5(CC)C=CCN6CC[C@]43[C@@H]65)C2)C1,C46H58N4O9,810.99,10,10,0S|6S|17S|21S|26R|27R|28R|30R|32S|36R,C07201,EXACT
+digoxin,0,C,Digitalis only,C06956,cpd:C06956,C[C@H]1O[C@@H](O[C@H]2[C@@H](O)C[C@H](O[C@H]3[C@@H](O)C[C@H](O[C@H]4CC[C@@]5(C)[C@H](CC[C@@H]6[C@@H]5C[C@@H](O)[C@]5(C)[C@@H](C7=CC(=O)OC7)CC[C@]65O)C4)O[C@@H]3C)O[C@@H]2C)C[C@H](O)[C@@H]1O,C41H64O14,780.95,21,21,1S|3R|4S|9R|10S|11S|12S|13R|17R|27R|29R|30S|31S|34S|38S|39S|40R|43S|45R|46S|47S,C06956,EXACT
+camptothecin,0,C,Camptotheca only,C01897,cpd:C01897,CC[C@@]1(O)C(=O)OCc2c1cc1n(c2=O)Cc2cc3ccccc3nc2-1,C20H16N2O4,348.36,1,1,6S,C01897,EXACT

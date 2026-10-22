@@ -16,9 +16,27 @@ venv/
 
 # Data files
 *.csv
+# ...but the benchmark ground truth is source, not output
+!benchmarks/dataset.csv
 *.log
 *.sqlite
 
 # IDE-specific files
 .idea/
 .vscode/
+
+# benchmark caches
+benchmarks/.kegg_cache/
+benchmarks/.http_cache/
+benchmarks/*.log
+benchmarks/__pycache__/
+
+# stereo module: raw downloads and large intermediates (regenerate with build_index.py)
+stereo/data/structures.tsv.gz
+stereo/data/compounds.tsv.gz
+stereo/data/chebi_struct.tsv
+stereo/data/rhea.tsv
+stereo/data/rxns.json
+stereo/data/names_used.json
+stereo/data/chiral_map.json
+stereo/data/buckets.json
