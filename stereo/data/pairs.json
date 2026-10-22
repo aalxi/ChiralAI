@@ -1,0 +1,4757 @@
+[
+ {
+  "skeleton": "ATRCOGLZUCICIV",
+  "kind": "enantiomers",
+  "a_chebi": "58182",
+  "a_name": "(<i>S</i>)-6-hydroxynicotinium(1+)",
+  "a_smiles": "[H][C@@]1(c2ccc(O)nc2)CCC[NH+]1C",
+  "a_ec": [
+   "EC:1.5.3.5"
+  ],
+  "a_rhea": [
+   "RHEA:11880"
+  ],
+  "a_eq": "(S)-6-hydroxynicotine + O2 + H2O = 6-hydroxypseudooxynicotine + H2O2",
+  "a_enzymes": "2",
+  "b_chebi": "58413",
+  "b_name": "(<i>R</i>)-6-hydroxynicotinium",
+  "b_smiles": "[H][C@]1(c2ccc(O)nc2)CCC[NH+]1C",
+  "b_ec": [
+   "EC:1.5.3.6"
+  ],
+  "b_rhea": [
+   "RHEA:10012"
+  ],
+  "b_eq": "(R)-6-hydroxynicotine + O2 + H2O = 6-hydroxypseudooxynicotine + H2O2",
+  "b_enzymes": "1",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "WHUUTDBJXJRKMK",
+  "kind": "enantiomers",
+  "a_chebi": "29985",
+  "a_name": "<small>L</small>-glutamate(1\u2212)",
+  "a_smiles": "[NH3+][C@@H](CCC(=O)[O-])C(=O)[O-]",
+  "a_ec": [
+   "EC:1.4.3.11"
+  ],
+  "a_rhea": [
+   "RHEA:20728"
+  ],
+  "a_eq": "L-glutamate + O2 + H2O = 2-oxoglutarate + H2O2 + NH4(+)",
+  "a_enzymes": "8",
+  "b_chebi": "29986",
+  "b_name": "<small>D</small>-glutamate(1\u2212)",
+  "b_smiles": "[NH3+][C@H](CCC(=O)[O-])C(=O)[O-]",
+  "b_ec": [
+   "EC:1.4.3.15",
+   "EC:1.4.3.7"
+  ],
+  "b_rhea": [
+   "RHEA:10028"
+  ],
+  "b_eq": "D-glutamate + O2 + H2O = 2-oxoglutarate + H2O2 + NH4(+)",
+  "b_enzymes": "1062",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "BJHIKXHVCXFQLS",
+  "kind": "enantiomers",
+  "a_chebi": "134275",
+  "a_name": "<em>keto</em>-<small>L</small>-tagatose",
+  "a_smiles": "O=C(CO)[C@H](O)[C@H](O)[C@@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.406"
+  ],
+  "a_rhea": [
+   "RHEA:51688"
+  ],
+  "a_eq": "galactitol + NAD(+) = keto-L-tagatose + NADH + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "47693",
+  "b_name": "<em>keto</em>-<small>D</small>-tagatose",
+  "b_smiles": "O=C(CO)[C@@H](O)[C@@H](O)[C@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.16"
+  ],
+  "b_rhea": [
+   "RHEA:20685"
+  ],
+  "b_eq": "galactitol + NAD(+) = keto-D-tagatose + NADH + H(+)",
+  "b_enzymes": "3",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "FBPFZTCFMRRESA",
+  "kind": "stereoisomers",
+  "a_chebi": "134311",
+  "a_name": "<small>D</small>-altritol",
+  "a_smiles": "OC[C@@H](O)[C@H](O)[C@H](O)[C@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.407"
+  ],
+  "a_rhea": [
+   "RHEA:51708"
+  ],
+  "a_eq": "D-altritol + NAD(+) = keto-D-tagatose + NADH + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "16813",
+  "b_name": "galactitol",
+  "b_smiles": "OC[C@@H](O)[C@H](O)[C@H](O)[C@@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.16"
+  ],
+  "b_rhea": [
+   "RHEA:20685"
+  ],
+  "b_eq": "galactitol + NAD(+) = keto-D-tagatose + NADH + H(+)",
+  "b_enzymes": "3",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "WQZGKKKJIJFFOK",
+  "kind": "stereoisomers",
+  "a_chebi": "17925",
+  "a_name": "\u03b1-<small>D</small>-glucose",
+  "a_smiles": "OC[C@H]1O[C@H](O)[C@H](O)[C@@H](O)[C@@H]1O",
+  "a_ec": [
+   "EC:5.1.3.3"
+  ],
+  "a_rhea": [
+   "RHEA:10264"
+  ],
+  "a_eq": "alpha-D-glucose = beta-D-glucose",
+  "a_enzymes": "14241",
+  "b_chebi": "28563",
+  "b_name": "\u03b2-<small>D</small>-mannose",
+  "b_smiles": "OC[C@H]1O[C@@H](O)[C@@H](O)[C@@H](O)[C@@H]1O",
+  "b_ec": [
+   "EC:5.1.3.44"
+  ],
+  "b_rhea": [
+   "RHEA:65936"
+  ],
+  "b_eq": "beta-D-mannose = beta-D-glucose",
+  "b_enzymes": "3",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "UPHPWXPNZIOZJL",
+  "kind": "stereoisomers",
+  "a_chebi": "58628",
+  "a_name": "5-diphospho-1<small>D</small>-<i>myo</i>-inositol pentakisphosphate(13\u2212)",
+  "a_smiles": "O=P([O-])([O-])O[C@H]1[C@@H](OP(=O)([O-])[O-])[C@H](OP(=O)([O-])[O-])[C@@H](OP(=O)([O-])OP(=O)([O-])[O-])[C@H](OP(=O)([O-])[O-])[C@H]1OP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:2.7.4.24"
+  ],
+  "a_rhea": [
+   "RHEA:10276"
+  ],
+  "a_eq": "5-diphospho-1D-myo-inositol 1,2,3,4,6-pentakisphosphate + ATP + H(+) = 1,5-bis(diphospho)-1D-myo-inositol 2,3,4,6-tetrakisphosphate + ADP",
+  "a_enzymes": "10607",
+  "b_chebi": "74946",
+  "b_name": "1-diphospho-1<small>D</small>-<i>myo</i>-inositol 2,3,4,5,6-pentakisphosphate(13\u2212)",
+  "b_smiles": "O=P([O-])([O-])O[C@@H]1[C@@H](OP(=O)([O-])[O-])[C@@H](OP(=O)([O-])[O-])[C@@H](OP(=O)([O-])OP(=O)([O-])[O-])[C@H](OP(=O)([O-])[O-])[C@H]1OP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:2.7.4.21"
+  ],
+  "b_rhea": [
+   "RHEA:37467"
+  ],
+  "b_eq": "1-diphospho-1D-myo-inositol 2,3,4,5,6-pentakisphosphate + ATP + H(+) = 1,5-bis(diphospho)-1D-myo-inositol 2,3,4,6-tetrakisphosphate + ADP",
+  "b_enzymes": "4",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "BJBUEDPLEOHJGE",
+  "kind": "stereoisomers",
+  "a_chebi": "57938",
+  "a_name": "<i>trans</i>-3-hydroxy-<small>L</small>-proline zwitterion",
+  "a_smiles": "O=C([O-])[C@H]1[NH2+]CC[C@@H]1O",
+  "a_ec": [
+   "EC:4.2.1.77"
+  ],
+  "a_rhea": [
+   "RHEA:10320"
+  ],
+  "a_eq": "trans-3-hydroxy-L-proline = 1-pyrroline-2-carboxylate + H2O",
+  "a_enzymes": "1819",
+  "b_chebi": "60041",
+  "b_name": "<i>cis</i>-3-hydroxy-<small>L</small>-proline zwitterion",
+  "b_smiles": "O=C([O-])[C@H]1[NH2+]CC[C@H]1O",
+  "b_ec": [
+   "EC:4.2.1.171"
+  ],
+  "b_rhea": [
+   "RHEA:47624"
+  ],
+  "b_eq": "cis-3-hydroxy-L-proline = 1-pyrroline-2-carboxylate + H2O",
+  "b_enzymes": "47",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "ITPHOIFCAFNCLL",
+  "kind": "stereoisomers",
+  "a_chebi": "57478",
+  "a_name": "\u03b1-maltose 6'-phosphate(2\u2212)",
+  "a_smiles": "O=P([O-])([O-])OC[C@H]1O[C@H](O[C@H]2[C@H](O)[C@@H](O)[C@@H](O)O[C@@H]2CO)[C@H](O)[C@@H](O)[C@@H]1O",
+  "a_ec": [
+   "EC:3.2.1.122"
+  ],
+  "a_rhea": [
+   "RHEA:20421"
+  ],
+  "a_eq": "alpha-maltose 6'-phosphate + H2O = D-glucose 6-phosphate + D-glucose",
+  "a_enzymes": "6",
+  "b_chebi": "58312",
+  "b_name": "6-phosphonato-\u03b2-<small>D</small>-glucosyl-(1\u21924)-<small>D</small>-glucose(2\u2212)",
+  "b_smiles": "O=P([O-])([O-])OC[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)C(O)O[C@@H]2CO)[C@H](O)[C@@H](O)[C@@H]1O",
+  "b_ec": [
+   "EC:3.2.1.86"
+  ],
+  "b_rhea": [
+   "RHEA:10772"
+  ],
+  "b_eq": "6-phospho-beta-D-glucosyl-(1->4)-D-glucose + H2O = D-glucose 6-phosphate + D-glucose",
+  "b_enzymes": "229",
+  "n_stereocentres": 10
+ },
+ {
+  "skeleton": "XMGQYMWWDOXHJM",
+  "kind": "enantiomers",
+  "a_chebi": "15382",
+  "a_name": "(4<i>R</i>)-limonene",
+  "a_smiles": "[H][C@]1(C(=C)C)CC=C(C)CC1",
+  "a_ec": [
+   "EC:4.2.3.20"
+  ],
+  "a_rhea": [
+   "RHEA:10940"
+  ],
+  "a_eq": "(2E)-geranyl diphosphate = (4R)-limonene + diphosphate",
+  "a_enzymes": "6",
+  "b_chebi": "15383",
+  "b_name": "(4<i>S</i>)-limonene",
+  "b_smiles": "[H][C@@]1(C(=C)C)CC=C(C)CC1",
+  "b_ec": [
+   "EC:4.2.3.16"
+  ],
+  "b_rhea": [
+   "RHEA:12869"
+  ],
+  "b_eq": "(2E)-geranyl diphosphate = (4S)-limonene + diphosphate",
+  "b_enzymes": "16",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "MMWCIQZXVOZEGG",
+  "kind": "stereoisomers",
+  "a_chebi": "203600",
+  "a_name": "1<small>D</small>-<i>myo</i>-inositol 1,4,5-trisphosphate(6\u2212)",
+  "a_smiles": "O=P([O-])([O-])O[C@@H]1[C@H](O)[C@H](O)[C@@H](OP(=O)([O-])[O-])[C@H](OP(=O)([O-])[O-])[C@H]1O",
+  "a_ec": [
+   "EC:2.7.1.127"
+  ],
+  "a_rhea": [
+   "RHEA:11020"
+  ],
+  "a_eq": "1D-myo-inositol 1,4,5-trisphosphate + ATP = 1D-myo-inositol 1,3,4,5-tetrakisphosphate + ADP + H(+)",
+  "a_enzymes": "2037",
+  "b_chebi": "58414",
+  "b_name": "1<small>D</small>-<i>myo</i>-inositol 1,3,4-trisphosphate(6\u2212)",
+  "b_smiles": "O=P([O-])([O-])O[C@H]1[C@H](O)[C@@H](O)[C@H](OP(=O)([O-])[O-])[C@@H](OP(=O)([O-])[O-])[C@H]1O",
+  "b_ec": [
+   "EC:2.7.1.159"
+  ],
+  "b_rhea": [
+   "RHEA:13253"
+  ],
+  "b_eq": "1D-myo-inositol 1,3,4-trisphosphate + ATP = 1D-myo-inositol 1,3,4,5-tetrakisphosphate + ADP + H(+)",
+  "b_enzymes": "2224",
+  "n_stereocentres": 6
+ },
+ {
+  "skeleton": "AWUCVROLDVIAJX",
+  "kind": "enantiomers",
+  "a_chebi": "57597",
+  "a_name": "<em>sn</em>-glycerol 3-phosphate(2\u2212)",
+  "a_smiles": "O=P([O-])([O-])OC[C@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.8",
+   "EC:1.1.1.94"
+  ],
+  "a_rhea": [
+   "RHEA:11092"
+  ],
+  "a_eq": "sn-glycerol 3-phosphate + NAD(+) = dihydroxyacetone phosphate + NADH + H(+)",
+  "a_enzymes": "25482",
+  "b_chebi": "57685",
+  "b_name": "<em>sn</em>-glycerol 1-phosphate(2\u2212)",
+  "b_smiles": "O=P([O-])([O-])OC[C@@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.261"
+  ],
+  "b_rhea": [
+   "RHEA:21412"
+  ],
+  "b_eq": "sn-glycerol 1-phosphate + NAD(+) = dihydroxyacetone phosphate + NADH + H(+)",
+  "b_enzymes": "620",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "AWUCVROLDVIAJX",
+  "kind": "enantiomers",
+  "a_chebi": "57597",
+  "a_name": "<em>sn</em>-glycerol 3-phosphate(2\u2212)",
+  "a_smiles": "O=P([O-])([O-])OC[C@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.94"
+  ],
+  "a_rhea": [
+   "RHEA:11096"
+  ],
+  "a_eq": "sn-glycerol 3-phosphate + NADP(+) = dihydroxyacetone phosphate + NADPH + H(+)",
+  "a_enzymes": "18637",
+  "b_chebi": "57685",
+  "b_name": "<em>sn</em>-glycerol 1-phosphate(2\u2212)",
+  "b_smiles": "O=P([O-])([O-])OC[C@@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.261"
+  ],
+  "b_rhea": [
+   "RHEA:21416"
+  ],
+  "b_eq": "sn-glycerol 1-phosphate + NADP(+) = dihydroxyacetone phosphate + NADPH + H(+)",
+  "b_enzymes": "620",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "XUJNEKJLAYXESH",
+  "kind": "enantiomers",
+  "a_chebi": "35235",
+  "a_name": "<small>L</small>-cysteine zwitterion",
+  "a_smiles": "[NH3+][C@@H](CS)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.4.1.1",
+   "EC:4.4.1.28"
+  ],
+  "a_rhea": [
+   "RHEA:24931"
+  ],
+  "a_eq": "L-cysteine + H2O = hydrogen sulfide + pyruvate + NH4(+) + H(+)",
+  "a_enzymes": "5518",
+  "b_chebi": "35236",
+  "b_name": "<small>D</small>-cysteine zwitterion",
+  "b_smiles": "[NH3+][C@H](CS)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.4.1.15"
+  ],
+  "b_rhea": [
+   "RHEA:11268"
+  ],
+  "b_eq": "D-cysteine + H2O = hydrogen sulfide + pyruvate + NH4(+) + H(+)",
+  "b_enzymes": "1006",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "KIHBGTRZFAVZRV",
+  "kind": "enantiomers",
+  "a_chebi": "57562",
+  "a_name": "(<i>R</i>)-2-hydroxyoctadecanoate",
+  "a_smiles": "CCCCCCCCCCCCCCCC[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:1.1.1.98"
+  ],
+  "a_rhea": [
+   "RHEA:15949"
+  ],
+  "a_eq": "(R)-2-hydroxyoctadecanoate + NAD(+) = 2-oxooctadecanoate + NADH + H(+)",
+  "a_enzymes": "0",
+  "b_chebi": "58386",
+  "b_name": "(<i>S</i>)-2-hydroxyoctadecanoate",
+  "b_smiles": "CCCCCCCCCCCCCCCC[C@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:1.1.1.99"
+  ],
+  "b_rhea": [
+   "RHEA:11384"
+  ],
+  "b_eq": "(S)-2-hydroxyoctadecanoate + NAD(+) = 2-oxooctadecanoate + NADH + H(+)",
+  "b_enzymes": "0",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "GAIBLDCXCZKKJE",
+  "kind": "enantiomers",
+  "a_chebi": "49044",
+  "a_name": "(\u2212)-germacrene D",
+  "a_smiles": "C=C1/C=C/[C@H](C(C)C)CC/C(C)=C/CC1",
+  "a_ec": [
+   "EC:4.2.3.75"
+  ],
+  "a_rhea": [
+   "RHEA:12016"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = (-)-germacrene D + diphosphate",
+  "a_enzymes": "9",
+  "b_chebi": "49046",
+  "b_name": "(+)-germacrene D",
+  "b_smiles": "C=C1/C=C/[C@@H](C(C)C)CC/C(C)=C/CC1",
+  "b_ec": [
+   "EC:4.2.3.77"
+  ],
+  "b_rhea": [
+   "RHEA:30427"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = (+)-germacrene D + diphosphate",
+  "b_enzymes": "4",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "PXMCURAOQSNMOZ",
+  "kind": "stereoisomers",
+  "a_chebi": "137564",
+  "a_name": "(+)-(1(10)<i>E</i>,4<i>E</i>,6<i>S</i>,7<i>R</i>)-germacradien-6-ol",
+  "a_smiles": "C/C1=C\\[C@@H](O)[C@@H](C(C)C)CC/C(C)=C/CC1",
+  "a_ec": [
+   "EC:4.2.3.166"
+  ],
+  "a_rhea": [
+   "RHEA:12192"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate + H2O = (+)-(1(10)E,4E,6S,7R)-germacradien-6-ol + diphosphate",
+  "a_enzymes": "1",
+  "b_chebi": "72776",
+  "b_name": "kunzeaol",
+  "b_smiles": "C/C1=C\\[C@H](O)[C@@H](C(C)C)CC/C(C)=C/CC1",
+  "b_ec": [
+   "EC:4.2.3.143"
+  ],
+  "b_rhea": [
+   "RHEA:36063"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate + H2O = kunzeaol + diphosphate",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "MTAVTRZTGFLKSC",
+  "kind": "stereoisomers",
+  "a_chebi": "58091",
+  "a_name": "deacetylisoipecoside(1+)",
+  "a_smiles": "[H][C@]1(C=C)[C@H](O[C@@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)OC=C(C(=O)OC)[C@@]1([H])C[C@]1([H])[NH2+]CCc2cc(O)c(O)cc21",
+  "a_ec": [
+   "EC:3.5.99.15"
+  ],
+  "a_rhea": [
+   "RHEA:21756"
+  ],
+  "a_eq": "deacetylisoipecoside + H2O = secologanin + dopamine",
+  "a_enzymes": "0",
+  "b_chebi": "58379",
+  "b_name": "deacetylipecoside(1+)",
+  "b_smiles": "[H][C@]1(C[C@]2([H])C(C(=O)OC)=CO[C@@H](O[C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)[C@@H]2C=C)[NH2+]CCc2cc(O)c(O)cc21",
+  "b_ec": [
+   "EC:3.5.99.16"
+  ],
+  "b_rhea": [
+   "RHEA:12296"
+  ],
+  "b_eq": "deacetylipecoside + H2O = secologanin + dopamine",
+  "b_enzymes": "0",
+  "n_stereocentres": 9
+ },
+ {
+  "skeleton": "WQZGKKKJIJFFOK",
+  "kind": "stereoisomers",
+  "a_chebi": "15444",
+  "a_name": "(1\u21924)-\u03b1-<small>D</small>-glucan",
+  "a_smiles": "[H]O[C@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "a_ec": [
+   "EC:2.4.1.1"
+  ],
+  "a_rhea": [
+   "RHEA:41732"
+  ],
+  "a_eq": "[(1->4)-alpha-D-glucosyl](n) + phosphate = [(1->4)-alpha-D-glucosyl](n-1) + alpha-D-glucose 1-phosphate",
+  "a_enzymes": "22352",
+  "b_chebi": "18246",
+  "b_name": "(1\u21924)-\u03b2-<small>D</small>-glucan",
+  "b_smiles": "[H]O[C@@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:2.4.1.49"
+  ],
+  "b_rhea": [
+   "RHEA:23024"
+  ],
+  "b_eq": "[(1->4)-beta-D-glucosyl](n) + phosphate = [(1->4)-beta-D-glucosyl](n-1) + alpha-D-glucose 1-phosphate",
+  "b_enzymes": "0",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "WQZGKKKJIJFFOK",
+  "kind": "stereoisomers",
+  "a_chebi": "15444",
+  "a_name": "(1\u21924)-\u03b1-<small>D</small>-glucan",
+  "a_smiles": "[H]O[C@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "a_ec": [
+   "EC:2.4.1.1"
+  ],
+  "a_rhea": [
+   "RHEA:41732"
+  ],
+  "a_eq": "[(1->4)-alpha-D-glucosyl](n) + phosphate = [(1->4)-alpha-D-glucosyl](n-1) + alpha-D-glucose 1-phosphate",
+  "a_enzymes": "22352",
+  "b_chebi": "27517",
+  "b_name": "(1\u21922)-\u03b2-<small>D</small>-glucan",
+  "b_smiles": "[H]O[C@@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:2.4.1.333"
+  ],
+  "b_rhea": [
+   "RHEA:47684"
+  ],
+  "b_eq": "[(1->2)-beta-D-glucosyl](n) + phosphate = [(1->2)-beta-D-glucosyl](n-1) + alpha-D-glucose 1-phosphate",
+  "b_enzymes": "1",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "WQZGKKKJIJFFOK",
+  "kind": "stereoisomers",
+  "a_chebi": "15444",
+  "a_name": "(1\u21924)-\u03b1-<small>D</small>-glucan",
+  "a_smiles": "[H]O[C@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "a_ec": [
+   "EC:2.4.1.1"
+  ],
+  "a_rhea": [
+   "RHEA:41732"
+  ],
+  "a_eq": "[(1->4)-alpha-D-glucosyl](n) + phosphate = [(1->4)-alpha-D-glucosyl](n-1) + alpha-D-glucose 1-phosphate",
+  "a_enzymes": "22352",
+  "b_chebi": "37671",
+  "b_name": "(1\u21923)-\u03b2-<small>D</small>-glucan",
+  "b_smiles": "[H]O[C@@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:2.4.1.30",
+   "EC:2.4.1.97"
+  ],
+  "b_rhea": [
+   "RHEA:16041"
+  ],
+  "b_eq": "[(1->3)-beta-D-glucosyl](n) + phosphate = [(1->3)-beta-D-glucosyl](n-1) + alpha-D-glucose 1-phosphate",
+  "b_enzymes": "0",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "YYLQUHNPNCGKJQ",
+  "kind": "stereoisomers",
+  "a_chebi": "57251",
+  "a_name": "(3<i>S</i>)-3-hydroxy-<small>L</small>-aspartate(1\u2212)",
+  "a_smiles": "[NH3+][C@H](C(=O)[O-])[C@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.3.1.16"
+  ],
+  "a_rhea": [
+   "RHEA:12424"
+  ],
+  "a_eq": "(3S)-3-hydroxy-L-aspartate = oxaloacetate + NH4(+)",
+  "a_enzymes": "2",
+  "b_chebi": "58196",
+  "b_name": "(3<i>R</i>)-3-hydroxy-<small>L</small>-aspartate(1\u2212)",
+  "b_smiles": "[NH3+][C@H](C(=O)[O-])[C@@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.3.1.20"
+  ],
+  "b_rhea": [
+   "RHEA:19757"
+  ],
+  "b_eq": "(3R)-3-hydroxy-L-aspartate = oxaloacetate + NH4(+)",
+  "b_enzymes": "0",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "YYLQUHNPNCGKJQ",
+  "kind": "enantiomers",
+  "a_chebi": "57251",
+  "a_name": "(3<i>S</i>)-3-hydroxy-<small>L</small>-aspartate(1\u2212)",
+  "a_smiles": "[NH3+][C@H](C(=O)[O-])[C@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.3.1.16"
+  ],
+  "a_rhea": [
+   "RHEA:12424"
+  ],
+  "a_eq": "(3S)-3-hydroxy-L-aspartate = oxaloacetate + NH4(+)",
+  "a_enzymes": "2",
+  "b_chebi": "60898",
+  "b_name": "(3<i>R</i>)-3-hydroxy-<small>D</small>-aspartate(1\u2212)",
+  "b_smiles": "[NH3+][C@@H](C(=O)[O-])[C@@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.3.1.27"
+  ],
+  "b_rhea": [
+   "RHEA:27942"
+  ],
+  "b_eq": "(3R)-3-hydroxy-D-aspartate = oxaloacetate + NH4(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "YYLQUHNPNCGKJQ",
+  "kind": "stereoisomers",
+  "a_chebi": "58196",
+  "a_name": "(3<i>R</i>)-3-hydroxy-<small>L</small>-aspartate(1\u2212)",
+  "a_smiles": "[NH3+][C@H](C(=O)[O-])[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.3.1.20"
+  ],
+  "a_rhea": [
+   "RHEA:19757"
+  ],
+  "a_eq": "(3R)-3-hydroxy-L-aspartate = oxaloacetate + NH4(+)",
+  "a_enzymes": "0",
+  "b_chebi": "60898",
+  "b_name": "(3<i>R</i>)-3-hydroxy-<small>D</small>-aspartate(1\u2212)",
+  "b_smiles": "[NH3+][C@@H](C(=O)[O-])[C@@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.3.1.27"
+  ],
+  "b_rhea": [
+   "RHEA:27942"
+  ],
+  "b_eq": "(3R)-3-hydroxy-D-aspartate = oxaloacetate + NH4(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "BJEPYKJPYRNKOW",
+  "kind": "enantiomers",
+  "a_chebi": "15588",
+  "a_name": "(<i>R</i>)-malate(2\u2212)",
+  "a_smiles": "O=C([O-])C[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:1.1.1.83"
+  ],
+  "a_rhea": [
+   "RHEA:18365"
+  ],
+  "a_eq": "(R)-malate + NAD(+) = pyruvate + CO2 + NADH",
+  "a_enzymes": "6148",
+  "b_chebi": "15589",
+  "b_name": "(<i>S</i>)-malate(2\u2212)",
+  "b_smiles": "O=C([O-])C[C@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:1.1.1.38",
+   "EC:1.1.1.39"
+  ],
+  "b_rhea": [
+   "RHEA:12653"
+  ],
+  "b_eq": "(S)-malate + NAD(+) = pyruvate + CO2 + NADH",
+  "b_enzymes": "4258",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "UPHPWXPNZIOZJL",
+  "kind": "stereoisomers",
+  "a_chebi": "58628",
+  "a_name": "5-diphospho-1<small>D</small>-<i>myo</i>-inositol pentakisphosphate(13\u2212)",
+  "a_smiles": "O=P([O-])([O-])O[C@H]1[C@@H](OP(=O)([O-])[O-])[C@H](OP(=O)([O-])[O-])[C@@H](OP(=O)([O-])OP(=O)([O-])[O-])[C@H](OP(=O)([O-])[O-])[C@H]1OP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:2.7.4.21"
+  ],
+  "a_rhea": [
+   "RHEA:12793"
+  ],
+  "a_eq": "1D-myo-inositol hexakisphosphate + ATP = 5-diphospho-1D-myo-inositol 1,2,3,4,6-pentakisphosphate + ADP",
+  "a_enzymes": "13",
+  "b_chebi": "74946",
+  "b_name": "1-diphospho-1<small>D</small>-<i>myo</i>-inositol 2,3,4,5,6-pentakisphosphate(13\u2212)",
+  "b_smiles": "O=P([O-])([O-])O[C@@H]1[C@@H](OP(=O)([O-])[O-])[C@@H](OP(=O)([O-])[O-])[C@@H](OP(=O)([O-])OP(=O)([O-])[O-])[C@H](OP(=O)([O-])[O-])[C@H]1OP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:2.7.4.24"
+  ],
+  "b_rhea": [
+   "RHEA:37459"
+  ],
+  "b_eq": "1D-myo-inositol hexakisphosphate + ATP = 1-diphospho-1D-myo-inositol 2,3,4,5,6-pentakisphosphate + ADP",
+  "b_enzymes": "10607",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "KNYGWWDTPGSEPD",
+  "kind": "stereoisomers",
+  "a_chebi": "57846",
+  "a_name": "<small>L</small>-fuculose 1-phosphate(2\u2212)",
+  "a_smiles": "C[C@H](O)[C@@H](O)[C@@H](O)C(=O)COP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:4.1.2.17"
+  ],
+  "a_rhea": [
+   "RHEA:12933"
+  ],
+  "a_eq": "L-fuculose 1-phosphate = (S)-lactaldehyde + dihydroxyacetone phosphate",
+  "a_enzymes": "214",
+  "b_chebi": "58313",
+  "b_name": "<small>L</small>-rhamnulose 1-phosphate(2\u2212)",
+  "b_smiles": "C[C@H](O)[C@H](O)[C@@H](O)C(=O)COP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:4.1.2.19"
+  ],
+  "b_rhea": [
+   "RHEA:19689"
+  ],
+  "b_eq": "L-rhamnulose 1-phosphate = (S)-lactaldehyde + dihydroxyacetone phosphate",
+  "b_enzymes": "898",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "CTPQAXVNYGZUAJ",
+  "kind": "stereoisomers",
+  "a_chebi": "57257",
+  "a_name": "1<small>L</small>-<i>myo</i>-inositol 1,2,3,4,6-pentakisphosphate(10\u2212)",
+  "a_smiles": "O=P([O-])([O-])O[C@H]1[C@@H](OP(=O)([O-])[O-])[C@H](OP(=O)([O-])[O-])[C@@H](O)[C@H](OP(=O)([O-])[O-])[C@H]1OP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:3.1.3.72"
+  ],
+  "a_rhea": [
+   "RHEA:13001"
+  ],
+  "a_eq": "1D-myo-inositol hexakisphosphate + H2O = 1D-myo-inositol 1,2,3,4,6-pentakisphosphate + phosphate",
+  "a_enzymes": "0",
+  "b_chebi": "57798",
+  "b_name": "1<small>D</small>-<i>myo</i>-inositol 1,2,4,5,6-pentakisphosphate(10\u2212)",
+  "b_smiles": "O=P([O-])([O-])O[C@@H]1[C@@H](OP(=O)([O-])[O-])[C@H](OP(=O)([O-])[O-])[C@@H](O)[C@@H](OP(=O)([O-])[O-])[C@H]1OP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:3.1.3.62",
+   "EC:3.1.3.8"
+  ],
+  "b_rhea": [
+   "RHEA:16989"
+  ],
+  "b_eq": "1D-myo-inositol hexakisphosphate + H2O = 1D-myo-inositol 1,2,4,5,6-pentakisphosphate + phosphate",
+  "b_enzymes": "5291",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "CTPQAXVNYGZUAJ",
+  "kind": "stereoisomers",
+  "a_chebi": "57257",
+  "a_name": "1<small>L</small>-<i>myo</i>-inositol 1,2,3,4,6-pentakisphosphate(10\u2212)",
+  "a_smiles": "O=P([O-])([O-])O[C@H]1[C@@H](OP(=O)([O-])[O-])[C@H](OP(=O)([O-])[O-])[C@@H](O)[C@H](OP(=O)([O-])[O-])[C@H]1OP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:3.1.3.72"
+  ],
+  "a_rhea": [
+   "RHEA:13001"
+  ],
+  "a_eq": "1D-myo-inositol hexakisphosphate + H2O = 1D-myo-inositol 1,2,3,4,6-pentakisphosphate + phosphate",
+  "a_enzymes": "0",
+  "b_chebi": "58747",
+  "b_name": "1<small>D</small>-<i>myo</i>-inositol 1,2,3,5,6-pentakisphosphate(10\u2212)",
+  "b_smiles": "O=P([O-])([O-])O[C@@H]1[C@H](OP(=O)([O-])[O-])[C@H](OP(=O)([O-])[O-])[C@@H](O)[C@H](OP(=O)([O-])[O-])[C@H]1OP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:3.1.3.26",
+   "EC:3.1.3.62"
+  ],
+  "b_rhea": [
+   "RHEA:20960"
+  ],
+  "b_eq": "1D-myo-inositol hexakisphosphate + H2O = 1D-myo-inositol 1,2,3,5,6-pentakisphosphate + phosphate",
+  "b_enzymes": "1023",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "CTPQAXVNYGZUAJ",
+  "kind": "stereoisomers",
+  "a_chebi": "57798",
+  "a_name": "1<small>D</small>-<i>myo</i>-inositol 1,2,4,5,6-pentakisphosphate(10\u2212)",
+  "a_smiles": "O=P([O-])([O-])O[C@@H]1[C@@H](OP(=O)([O-])[O-])[C@H](OP(=O)([O-])[O-])[C@@H](O)[C@@H](OP(=O)([O-])[O-])[C@H]1OP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:3.1.3.62",
+   "EC:3.1.3.8"
+  ],
+  "a_rhea": [
+   "RHEA:16989"
+  ],
+  "a_eq": "1D-myo-inositol hexakisphosphate + H2O = 1D-myo-inositol 1,2,4,5,6-pentakisphosphate + phosphate",
+  "a_enzymes": "5291",
+  "b_chebi": "58747",
+  "b_name": "1<small>D</small>-<i>myo</i>-inositol 1,2,3,5,6-pentakisphosphate(10\u2212)",
+  "b_smiles": "O=P([O-])([O-])O[C@@H]1[C@H](OP(=O)([O-])[O-])[C@H](OP(=O)([O-])[O-])[C@@H](O)[C@H](OP(=O)([O-])[O-])[C@H]1OP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:3.1.3.26",
+   "EC:3.1.3.62"
+  ],
+  "b_rhea": [
+   "RHEA:20960"
+  ],
+  "b_eq": "1D-myo-inositol hexakisphosphate + H2O = 1D-myo-inositol 1,2,3,5,6-pentakisphosphate + phosphate",
+  "b_enzymes": "1023",
+  "n_stereocentres": 6
+ },
+ {
+  "skeleton": "QWNJCCLFGYAGRK",
+  "kind": "enantiomers",
+  "a_chebi": "58430",
+  "a_name": "(<i>S</i>)-2-hydroxypropyl-CoM(1\u2212)",
+  "a_smiles": "C[C@H](O)CSCCS(=O)(=O)[O-]",
+  "a_ec": [
+   "EC:1.1.1.269"
+  ],
+  "a_rhea": [
+   "RHEA:21052"
+  ],
+  "a_eq": "(S)-2-hydroxypropyl-coenzyme M + NAD(+) = 2-oxopropyl-coenzyme M + NADH + H(+)",
+  "a_enzymes": "2",
+  "b_chebi": "58458",
+  "b_name": "(<i>R</i>)-2-hydroxypropyl-CoM(1\u2212)",
+  "b_smiles": "C[C@@H](O)CSCCS(=O)(=O)[O-]",
+  "b_ec": [
+   "EC:1.1.1.268"
+  ],
+  "b_rhea": [
+   "RHEA:13249"
+  ],
+  "b_eq": "(R)-2-hydroxypropyl-coenzyme M + NAD(+) = 2-oxopropyl-coenzyme M + NADH + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "JVTAAEKCZFNVCJ",
+  "kind": "enantiomers",
+  "a_chebi": "16004",
+  "a_name": "(<i>R</i>)-lactate",
+  "a_smiles": "C[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:1.1.2.4",
+   "EC:1.1.2.5"
+  ],
+  "a_rhea": [
+   "RHEA:13521",
+   "RHEA:16465"
+  ],
+  "a_eq": "(R)-lactate + 2 Fe(III)-[cytochrome c] = 2 Fe(II)-[cytochrome c] + pyruvate + 2 H(+)",
+  "a_enzymes": "4753",
+  "b_chebi": "16651",
+  "b_name": "(<i>S</i>)-lactate",
+  "b_smiles": "C[C@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:1.1.2.3"
+  ],
+  "b_rhea": [
+   "RHEA:19909"
+  ],
+  "b_eq": "(S)-lactate + 2 Fe(III)-[cytochrome c] = 2 Fe(II)-[cytochrome c] + pyruvate + 2 H(+)",
+  "b_enzymes": "4199",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "XTZSKDGCELJMAX",
+  "kind": "stereoisomers",
+  "a_chebi": "132224",
+  "a_name": "4-<em>O</em>-({poly[(2<i>R</i>)-1-glycerylphosphonato]}-[2<i>R</i>]-1-glycerylphosphonato)-<em>N</em>-acetyl-\u03b2-<small>D</small>-mannosaminyl-(1\u21924)-<em>N</em>-acetyl-\u03b1-<small>D</small>-glucosaminyl undecaprenyl diphosphate polyanion",
+  "a_smiles": "CC(=O)N[C@H]1[C@@H](OP(=O)([O-])OP(=O)([O-])OC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(\\C)CC/C=C(\\C)CCC=C(C)C)O[C@H](CO)[C@@H](O[C@@H]2O[C@H](CO)[C@@H](OP(=O)([O-])OC[C@H](O)COP(=O)([O-])OC[C@H](O)CO)[C@H](O)[C@H]2NC(C)=O)[C@@H]1O",
+  "a_ec": [
+   "EC:2.7.8.12"
+  ],
+  "a_rhea": [
+   "RHEA:13565"
+  ],
+  "a_eq": "4-O-[(2R)-glycerylphospho]-N-acetyl-beta-D-mannosaminyl-(1->4)-N-acetyl-alpha-D-glucosaminyl di-trans,octa-cis-undecaprenyl diphosphate + n CDP-glycerol = 4-O-{[(2R)-1-glycerylphospho](n)-(2R)-1-glycerylphospho}-N-acetyl-beta-D-mannosaminyl-(1->4)-N-acetyl-alpha-D-glucosaminyl undecaprenyl diphosphate + n CMP + n H(+)",
+  "a_enzymes": "3",
+  "b_chebi": "133867",
+  "b_name": "4-<em>O</em>-[di(2<i>R</i>)-1-glycerylphosphonato]-<em>N</em>-acetyl-\u03b2-<small>D</small>-mannosaminyl-(1\u21924)-<em>N</em>-acetyl-\u03b1-<small>D</small>-glucosaminyl undecaprenyl diphosphate(4\u2212)",
+  "b_smiles": "CC(=O)N[C@@H]1[C@H](O[C@H]2[C@H](O)[C@@H](NC(C)=O)[C@@H](OP(=O)([O-])OP(=O)([O-])OC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(\\C)CC/C=C(\\C)CCC=C(C)C)O[C@@H]2CO)O[C@H](CO)[C@@H](OP(=O)([O-])OC[C@H](O)COP(=O)([O-])OC[C@H](O)CO)[C@@H]1O",
+  "b_ec": [
+   "EC:2.7.8.45"
+  ],
+  "b_rhea": [
+   "RHEA:50880"
+  ],
+  "b_eq": "4-O-[(2R)-glycerylphospho]-N-acetyl-beta-D-mannosaminyl-(1->4)-N-acetyl-alpha-D-glucosaminyl di-trans,octa-cis-undecaprenyl diphosphate + CDP-glycerol = 4-O-[di(2R)-glycerylphospho]-N-acetyl-beta-D-mannosaminyl-(1->4)-N-acetyl-alpha-D-glucosaminyl di-trans,octa-cis-undecaprenyl diphosphate + CMP + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 12
+ },
+ {
+  "skeleton": "FNZLKVNUWIIPSJ",
+  "kind": "enantiomers",
+  "a_chebi": "58121",
+  "a_name": "<small>D</small>-ribulose 5-phosphate(2\u2212)",
+  "a_smiles": "O=C(CO)[C@H](O)[C@H](O)COP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:5.1.3.1"
+  ],
+  "a_rhea": [
+   "RHEA:13677"
+  ],
+  "a_eq": "D-ribulose 5-phosphate = D-xylulose 5-phosphate",
+  "a_enzymes": "23717",
+  "b_chebi": "58226",
+  "b_name": "<small>L</small>-ribulose 5-phosphate(2\u2212)",
+  "b_smiles": "O=C(CO)[C@@H](O)[C@@H](O)COP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:5.1.3.4"
+  ],
+  "b_rhea": [
+   "RHEA:22368"
+  ],
+  "b_eq": "L-ribulose 5-phosphate = D-xylulose 5-phosphate",
+  "b_enzymes": "5998",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "FNZLKVNUWIIPSJ",
+  "kind": "enantiomers",
+  "a_chebi": "57737",
+  "a_name": "<small>D</small>-xylulose 5-phosphate(2\u2212)",
+  "a_smiles": "O=C(CO)[C@@H](O)[C@H](O)COP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:5.1.3.4"
+  ],
+  "a_rhea": [
+   "RHEA:22368"
+  ],
+  "a_eq": "L-ribulose 5-phosphate = D-xylulose 5-phosphate",
+  "a_enzymes": "5998",
+  "b_chebi": "57829",
+  "b_name": "<small>L</small>-xylulose 5-phosphate(2\u2212)",
+  "b_smiles": "O=C(CO)[C@H](O)[C@@H](O)COP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:5.1.3.22"
+  ],
+  "b_rhea": [
+   "RHEA:18497"
+  ],
+  "b_eq": "L-ribulose 5-phosphate = L-xylulose 5-phosphate",
+  "b_enzymes": "428",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "NOOLISFMXDJSKH",
+  "kind": "stereoisomers",
+  "a_chebi": "15402",
+  "a_name": "(+)-neomenthol",
+  "a_smiles": "CC(C)[C@@H]1CC[C@@H](C)C[C@@H]1O",
+  "a_ec": [
+   "EC:1.1.1.208"
+  ],
+  "a_rhea": [
+   "RHEA:23812"
+  ],
+  "a_eq": "(+)-neomenthol + NADP(+) = (1R,4S)-menthone + NADPH + H(+)",
+  "a_enzymes": "2",
+  "b_chebi": "15409",
+  "b_name": "(\u2212)-menthol",
+  "b_smiles": "CC(C)[C@@H]1CC[C@@H](C)C[C@H]1O",
+  "b_ec": [
+   "EC:1.1.1.207"
+  ],
+  "b_rhea": [
+   "RHEA:13917"
+  ],
+  "b_eq": "(-)-menthol + NADP(+) = (1R,4S)-menthone + NADPH + H(+)",
+  "b_enzymes": "0",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "MTCFGRXMJLQNBG",
+  "kind": "enantiomers",
+  "a_chebi": "33384",
+  "a_name": "<small>L</small>-serine zwitterion",
+  "a_smiles": "[NH3+][C@@H](CO)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.3.1.17"
+  ],
+  "a_rhea": [
+   "RHEA:19169"
+  ],
+  "a_eq": "L-serine = pyruvate + NH4(+)",
+  "a_enzymes": "26280",
+  "b_chebi": "35247",
+  "b_name": "<small>D</small>-serine zwitterion",
+  "b_smiles": "[NH3+][C@H](CO)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.3.1.18"
+  ],
+  "b_rhea": [
+   "RHEA:13977"
+  ],
+  "b_eq": "D-serine = pyruvate + NH4(+)",
+  "b_enzymes": "4291",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "BHQCQFFYRZLCQQ",
+  "kind": "stereoisomers",
+  "a_chebi": "15755",
+  "a_name": "3\u03b1,7\u03b1,12\u03b2-trihydroxy-5\u03b2-cholanate",
+  "a_smiles": "[H][C@@]12C[C@H](O)CC[C@]1(C)[C@@]1([H])C[C@@H](O)[C@@]3(C)[C@@]([H])(CC[C@]3([H])[C@H](C)CCC(=O)[O-])[C@]1([H])[C@H](O)C2",
+  "a_ec": [
+   "EC:1.1.1.238"
+  ],
+  "a_rhea": [
+   "RHEA:21424"
+  ],
+  "a_eq": "3alpha,7alpha,12beta-trihydroxy-5beta-cholanate + NADP(+) = 3alpha,7alpha-dihydroxy-12-oxo-5beta-cholanate + NADPH + H(+)",
+  "a_enzymes": "0",
+  "b_chebi": "29747",
+  "b_name": "cholate",
+  "b_smiles": "[H][C@@]12C[C@H](O)CC[C@]1(C)[C@@]1([H])C[C@H](O)[C@@]3(C)[C@@]([H])(CC[C@]3([H])[C@H](C)CCC(=O)[O-])[C@]1([H])[C@H](O)C2",
+  "b_ec": [
+   "EC:1.1.1.176"
+  ],
+  "b_rhea": [
+   "RHEA:14129"
+  ],
+  "b_eq": "cholate + NADP(+) = 3alpha,7alpha-dihydroxy-12-oxo-5beta-cholanate + NADPH + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 11
+ },
+ {
+  "skeleton": "YYLQUHNPNCGKJQ",
+  "kind": "enantiomers",
+  "a_chebi": "58196",
+  "a_name": "(3<i>R</i>)-3-hydroxy-<small>L</small>-aspartate(1\u2212)",
+  "a_smiles": "[NH3+][C@H](C(=O)[O-])[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.1.3.14"
+  ],
+  "a_rhea": [
+   "RHEA:14377"
+  ],
+  "a_eq": "(3R)-3-hydroxy-L-aspartate = glyoxylate + glycine",
+  "a_enzymes": "0",
+  "b_chebi": "60894",
+  "b_name": "(3<i>S</i>)-3-hydroxy-<small>D</small>-aspartate(1\u2212)",
+  "b_smiles": "[NH3+][C@@H](C(=O)[O-])[C@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.1.3.41"
+  ],
+  "b_rhea": [
+   "RHEA:27934"
+  ],
+  "b_eq": "(3S)-3-hydroxy-D-aspartate = glyoxylate + glycine",
+  "b_enzymes": "449",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "YYLQUHNPNCGKJQ",
+  "kind": "stereoisomers",
+  "a_chebi": "58196",
+  "a_name": "(3<i>R</i>)-3-hydroxy-<small>L</small>-aspartate(1\u2212)",
+  "a_smiles": "[NH3+][C@H](C(=O)[O-])[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.1.3.14"
+  ],
+  "a_rhea": [
+   "RHEA:14377"
+  ],
+  "a_eq": "(3R)-3-hydroxy-L-aspartate = glyoxylate + glycine",
+  "a_enzymes": "0",
+  "b_chebi": "60898",
+  "b_name": "(3<i>R</i>)-3-hydroxy-<small>D</small>-aspartate(1\u2212)",
+  "b_smiles": "[NH3+][C@@H](C(=O)[O-])[C@@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.1.3.41"
+  ],
+  "b_rhea": [
+   "RHEA:27938"
+  ],
+  "b_eq": "(3R)-3-hydroxy-D-aspartate = glyoxylate + glycine",
+  "b_enzymes": "449",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "KDXKERNSBIXSRK",
+  "kind": "enantiomers",
+  "a_chebi": "32551",
+  "a_name": "<small>L</small>-lysinium(1+)",
+  "a_smiles": "[NH3+]CCCC[C@H]([NH3+])C(=O)[O-]",
+  "a_ec": [
+   "EC:1.4.3.14"
+  ],
+  "a_rhea": [
+   "RHEA:14437"
+  ],
+  "a_eq": "L-lysine + O2 + H2O = 6-amino-2-oxohexanoate + H2O2 + NH4(+)",
+  "a_enzymes": "6",
+  "b_chebi": "32557",
+  "b_name": "<small>D</small>-lysinium(1+)",
+  "b_smiles": "[NH3+]CCCC[C@@H]([NH3+])C(=O)[O-]",
+  "b_ec": [
+   "EC:1.4.3.3"
+  ],
+  "b_rhea": [
+   "RHEA:37583"
+  ],
+  "b_eq": "D-lysine + O2 + H2O = 6-amino-2-oxohexanoate + H2O2 + NH4(+)",
+  "b_enzymes": "1048",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "QUURPCHWPQNNGL",
+  "kind": "enantiomers",
+  "a_chebi": "42819",
+  "a_name": "5-dehydro-4-deoxy-<small>D</small>-glucarate(2\u2212)",
+  "a_smiles": "O=C([O-])C(=O)C[C@H](O)[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.2.1.42"
+  ],
+  "a_rhea": [
+   "RHEA:16005"
+  ],
+  "a_eq": "galactarate = 5-dehydro-4-deoxy-D-glucarate + H2O",
+  "a_enzymes": "325",
+  "b_chebi": "78267",
+  "b_name": "3-deoxy-<small>D</small>-<i>threo</i>-hex-2-ulosarate(2\u2212)",
+  "b_smiles": "O=C([O-])C(=O)C[C@@H](O)[C@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.2.1.158"
+  ],
+  "b_rhea": [
+   "RHEA:45808"
+  ],
+  "b_eq": "galactarate = (2S,3R)-dihydroxy-5-oxohexanedioate + H2O",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "DSLZVSRJTYRBFB",
+  "kind": "stereoisomers",
+  "a_chebi": "16537",
+  "a_name": "galactarate(2\u2212)",
+  "a_smiles": "O=C([O-])[C@@H](O)[C@H](O)[C@H](O)[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.2.1.42"
+  ],
+  "a_rhea": [
+   "RHEA:16005"
+  ],
+  "a_eq": "galactarate = 5-dehydro-4-deoxy-D-glucarate + H2O",
+  "a_enzymes": "325",
+  "b_chebi": "30612",
+  "b_name": "<small>D</small>-glucarate(2\u2212)",
+  "b_smiles": "O=C([O-])[C@@H](O)[C@@H](O)[C@H](O)[C@@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.2.1.40"
+  ],
+  "b_rhea": [
+   "RHEA:14573"
+  ],
+  "b_eq": "D-glucarate = 5-dehydro-4-deoxy-D-glucarate + H2O",
+  "b_enzymes": "5458",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "DSLZVSRJTYRBFB",
+  "kind": "stereoisomers",
+  "a_chebi": "16537",
+  "a_name": "galactarate(2\u2212)",
+  "a_smiles": "O=C([O-])[C@@H](O)[C@H](O)[C@H](O)[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.2.1.42"
+  ],
+  "a_rhea": [
+   "RHEA:16005"
+  ],
+  "a_eq": "galactarate = 5-dehydro-4-deoxy-D-glucarate + H2O",
+  "a_enzymes": "325",
+  "b_chebi": "37547",
+  "b_name": "<small>L</small>-altrarate(2\u2212)",
+  "b_smiles": "O=C([O-])[C@H](O)[C@H](O)[C@H](O)[C@@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.2.1.156"
+  ],
+  "b_rhea": [
+   "RHEA:44028"
+  ],
+  "b_eq": "L-altrarate = 5-dehydro-4-deoxy-D-glucarate + H2O",
+  "b_enzymes": "1",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "DSLZVSRJTYRBFB",
+  "kind": "stereoisomers",
+  "a_chebi": "30612",
+  "a_name": "<small>D</small>-glucarate(2\u2212)",
+  "a_smiles": "O=C([O-])[C@@H](O)[C@@H](O)[C@H](O)[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.2.1.40"
+  ],
+  "a_rhea": [
+   "RHEA:14573"
+  ],
+  "a_eq": "D-glucarate = 5-dehydro-4-deoxy-D-glucarate + H2O",
+  "a_enzymes": "5458",
+  "b_chebi": "37547",
+  "b_name": "<small>L</small>-altrarate(2\u2212)",
+  "b_smiles": "O=C([O-])[C@H](O)[C@H](O)[C@H](O)[C@@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.2.1.156"
+  ],
+  "b_rhea": [
+   "RHEA:44028"
+  ],
+  "b_eq": "L-altrarate = 5-dehydro-4-deoxy-D-glucarate + H2O",
+  "b_enzymes": "1",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "PPQRONHOSHZGFQ",
+  "kind": "stereoisomers",
+  "a_chebi": "57693",
+  "a_name": "<em>aldehydo</em>-<small>D</small>-arabinose 5-phosphate(2\u2212)",
+  "a_smiles": "[H]C(=O)[C@@H](O)[C@H](O)[C@H](O)COP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:5.3.1.13"
+  ],
+  "a_rhea": [
+   "RHEA:23104"
+  ],
+  "a_eq": "D-arabinose 5-phosphate = D-ribulose 5-phosphate",
+  "a_enzymes": "3361",
+  "b_chebi": "58273",
+  "b_name": "<em>aldehydo</em>-<small>D</small>-ribose 5-phosphate(2\u2212)",
+  "b_smiles": "O=C[C@H](O)[C@H](O)[C@H](O)COP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:5.3.1.6"
+  ],
+  "b_rhea": [
+   "RHEA:14657"
+  ],
+  "b_eq": "aldehydo-D-ribose 5-phosphate = D-ribulose 5-phosphate",
+  "b_enzymes": "18375",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "RNBGYGVWRKECFJ",
+  "kind": "stereoisomers",
+  "a_chebi": "32966",
+  "a_name": "\u03b2-<small>D</small>-fructofuranose 1,6-bisphosphate(4\u2212)",
+  "a_smiles": "O=P([O-])([O-])OC[C@H]1O[C@](O)(COP(=O)([O-])[O-])[C@@H](O)[C@@H]1O",
+  "a_ec": [
+   "EC:4.1.2.13"
+  ],
+  "a_rhea": [
+   "RHEA:14729"
+  ],
+  "a_eq": "beta-D-fructose 1,6-bisphosphate = D-glyceraldehyde 3-phosphate + dihydroxyacetone phosphate",
+  "a_enzymes": "28485",
+  "b_chebi": "58694",
+  "b_name": "<small>D</small>-tagatofuranose 1,6-bisphosphate(4\u2212)",
+  "b_smiles": "O=P([O-])([O-])OC[C@H]1OC(O)(COP(=O)([O-])[O-])[C@@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:4.1.2.40"
+  ],
+  "b_rhea": [
+   "RHEA:22948"
+  ],
+  "b_eq": "D-tagatofuranose 1,6-bisphosphate = D-glyceraldehyde 3-phosphate + dihydroxyacetone phosphate",
+  "b_enzymes": "1340",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "BAVONGHXFVOKBV",
+  "kind": "stereoisomers",
+  "a_chebi": "15388",
+  "a_name": "(+)-<i>trans</i>-carveol",
+  "a_smiles": "C=C(C)[C@H]1CC=C(C)[C@H](O)C1",
+  "a_ec": [
+   "EC:1.1.1.275"
+  ],
+  "a_rhea": [
+   "RHEA:14825"
+  ],
+  "a_eq": "(1R,5S)-carveol + NAD(+) = (S)-carvone + NADH + H(+)",
+  "a_enzymes": "0",
+  "b_chebi": "232",
+  "b_name": "(+)-<i>cis</i>-carveol",
+  "b_smiles": "C=C(C)[C@H]1CC=C(C)[C@@H](O)C1",
+  "b_ec": [
+   "EC:1.1.1.n4"
+  ],
+  "b_rhea": [
+   "RHEA:25848"
+  ],
+  "b_eq": "(1S,5S)-carveol + NAD(+) = (S)-carvone + NADH + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "JCAIWDXKLCEQEO",
+  "kind": "stereoisomers",
+  "a_chebi": "58553",
+  "a_name": "5\u03b2,9\u03b1,10\u03b1-labda-8(20),13-dien-15-yl diphosphate(3\u2212)",
+  "a_smiles": "[H][C@]12CCC(=C)[C@@H](CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-])[C@]1(C)CCCC2(C)C",
+  "a_ec": [
+   "EC:5.5.1.13"
+  ],
+  "a_rhea": [
+   "RHEA:14841"
+  ],
+  "a_eq": "(2E,6E,10E)-geranylgeranyl diphosphate = ent-copalyl diphosphate",
+  "a_enzymes": "24",
+  "b_chebi": "58622",
+  "b_name": "5\u03b1,9\u03b2,10\u03b1-labda-8(20),13-dien-15-yl diphosphate(3\u2212)",
+  "b_smiles": "[H][C@@]12CCC(=C)[C@@H](CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-])[C@@]1(C)CCCC2(C)C",
+  "b_ec": [
+   "EC:5.5.1.14"
+  ],
+  "b_rhea": [
+   "RHEA:25524"
+  ],
+  "b_eq": "(2E,6E,10E)-geranylgeranyl diphosphate = 9alpha-copalyl diphosphate",
+  "b_enzymes": "4",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "JCAIWDXKLCEQEO",
+  "kind": "enantiomers",
+  "a_chebi": "58553",
+  "a_name": "5\u03b2,9\u03b1,10\u03b1-labda-8(20),13-dien-15-yl diphosphate(3\u2212)",
+  "a_smiles": "[H][C@]12CCC(=C)[C@@H](CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-])[C@]1(C)CCCC2(C)C",
+  "a_ec": [
+   "EC:5.5.1.13"
+  ],
+  "a_rhea": [
+   "RHEA:14841"
+  ],
+  "a_eq": "(2E,6E,10E)-geranylgeranyl diphosphate = ent-copalyl diphosphate",
+  "a_enzymes": "24",
+  "b_chebi": "58635",
+  "b_name": "5\u03b1,9\u03b1,10\u03b2-labda-8(20),13-dien-15-yl diphosphate(3\u2212)",
+  "b_smiles": "[H][C@@]12CCC(=C)[C@H](CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-])[C@@]1(C)CCCC2(C)C",
+  "b_ec": [
+   "EC:5.5.1.12"
+  ],
+  "b_rhea": [
+   "RHEA:24316"
+  ],
+  "b_eq": "(2E,6E,10E)-geranylgeranyl diphosphate = (+)-copalyl diphosphate",
+  "b_enzymes": "23",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "JCAIWDXKLCEQEO",
+  "kind": "stereoisomers",
+  "a_chebi": "58622",
+  "a_name": "5\u03b1,9\u03b2,10\u03b1-labda-8(20),13-dien-15-yl diphosphate(3\u2212)",
+  "a_smiles": "[H][C@@]12CCC(=C)[C@@H](CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-])[C@@]1(C)CCCC2(C)C",
+  "a_ec": [
+   "EC:5.5.1.14"
+  ],
+  "a_rhea": [
+   "RHEA:25524"
+  ],
+  "a_eq": "(2E,6E,10E)-geranylgeranyl diphosphate = 9alpha-copalyl diphosphate",
+  "a_enzymes": "4",
+  "b_chebi": "58635",
+  "b_name": "5\u03b1,9\u03b1,10\u03b2-labda-8(20),13-dien-15-yl diphosphate(3\u2212)",
+  "b_smiles": "[H][C@@]12CCC(=C)[C@H](CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-])[C@@]1(C)CCCC2(C)C",
+  "b_ec": [
+   "EC:5.5.1.12"
+  ],
+  "b_rhea": [
+   "RHEA:24316"
+  ],
+  "b_eq": "(2E,6E,10E)-geranylgeranyl diphosphate = (+)-copalyl diphosphate",
+  "b_enzymes": "23",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "AYFVYJQAPQTCCC",
+  "kind": "enantiomers",
+  "a_chebi": "57757",
+  "a_name": "<small>D</small>-threonine zwitterion",
+  "a_smiles": "C[C@H](O)[C@@H]([NH3+])C(=O)[O-]",
+  "a_ec": [
+   "EC:4.1.2.42"
+  ],
+  "a_rhea": [
+   "RHEA:15257"
+  ],
+  "a_eq": "D-threonine = acetaldehyde + glycine",
+  "a_enzymes": "1",
+  "b_chebi": "57926",
+  "b_name": "<small>L</small>-threonine zwitterion",
+  "b_smiles": "C[C@@H](O)[C@H]([NH3+])C(=O)[O-]",
+  "b_ec": [
+   "EC:2.1.2.1",
+   "EC:4.1.2.48",
+   "EC:4.1.2.5"
+  ],
+  "b_rhea": [
+   "RHEA:19625"
+  ],
+  "b_eq": "L-threonine = acetaldehyde + glycine",
+  "b_enzymes": "4732",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "AYFVYJQAPQTCCC",
+  "kind": "stereoisomers",
+  "a_chebi": "57757",
+  "a_name": "<small>D</small>-threonine zwitterion",
+  "a_smiles": "C[C@H](O)[C@@H]([NH3+])C(=O)[O-]",
+  "a_ec": [
+   "EC:4.1.2.42"
+  ],
+  "a_rhea": [
+   "RHEA:15257"
+  ],
+  "a_eq": "D-threonine = acetaldehyde + glycine",
+  "a_enzymes": "1",
+  "b_chebi": "58585",
+  "b_name": "<small>L</small>-allothreonine zwitterion",
+  "b_smiles": "C[C@H](O)[C@H]([NH3+])C(=O)[O-]",
+  "b_ec": [
+   "EC:4.1.2.48",
+   "EC:4.1.2.49"
+  ],
+  "b_rhea": [
+   "RHEA:26209"
+  ],
+  "b_eq": "L-allo-threonine = acetaldehyde + glycine",
+  "b_enzymes": "4735",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "AYFVYJQAPQTCCC",
+  "kind": "stereoisomers",
+  "a_chebi": "57926",
+  "a_name": "<small>L</small>-threonine zwitterion",
+  "a_smiles": "C[C@@H](O)[C@H]([NH3+])C(=O)[O-]",
+  "a_ec": [
+   "EC:2.1.2.1",
+   "EC:4.1.2.48",
+   "EC:4.1.2.5"
+  ],
+  "a_rhea": [
+   "RHEA:19625"
+  ],
+  "a_eq": "L-threonine = acetaldehyde + glycine",
+  "a_enzymes": "4732",
+  "b_chebi": "58585",
+  "b_name": "<small>L</small>-allothreonine zwitterion",
+  "b_smiles": "C[C@H](O)[C@H]([NH3+])C(=O)[O-]",
+  "b_ec": [
+   "EC:4.1.2.48",
+   "EC:4.1.2.49"
+  ],
+  "b_rhea": [
+   "RHEA:26209"
+  ],
+  "b_eq": "L-allo-threonine = acetaldehyde + glycine",
+  "b_enzymes": "4735",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "AYFVYJQAPQTCCC",
+  "kind": "stereoisomers",
+  "a_chebi": "57926",
+  "a_name": "<small>L</small>-threonine zwitterion",
+  "a_smiles": "C[C@@H](O)[C@H]([NH3+])C(=O)[O-]",
+  "a_ec": [
+   "EC:2.1.2.1",
+   "EC:4.1.2.48",
+   "EC:4.1.2.5"
+  ],
+  "a_rhea": [
+   "RHEA:19625"
+  ],
+  "a_eq": "L-threonine = acetaldehyde + glycine",
+  "a_enzymes": "4732",
+  "b_chebi": "58645",
+  "b_name": "<small>D</small>-allothreonine zwitterion",
+  "b_smiles": "C[C@@H](O)[C@@H]([NH3+])C(=O)[O-]",
+  "b_ec": [
+   "EC:4.1.2.42"
+  ],
+  "b_rhea": [
+   "RHEA:20073"
+  ],
+  "b_eq": "D-allo-threonine = acetaldehyde + glycine",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "AYFVYJQAPQTCCC",
+  "kind": "enantiomers",
+  "a_chebi": "58585",
+  "a_name": "<small>L</small>-allothreonine zwitterion",
+  "a_smiles": "C[C@H](O)[C@H]([NH3+])C(=O)[O-]",
+  "a_ec": [
+   "EC:4.1.2.48",
+   "EC:4.1.2.49"
+  ],
+  "a_rhea": [
+   "RHEA:26209"
+  ],
+  "a_eq": "L-allo-threonine = acetaldehyde + glycine",
+  "a_enzymes": "4735",
+  "b_chebi": "58645",
+  "b_name": "<small>D</small>-allothreonine zwitterion",
+  "b_smiles": "C[C@@H](O)[C@@H]([NH3+])C(=O)[O-]",
+  "b_ec": [
+   "EC:4.1.2.42"
+  ],
+  "b_rhea": [
+   "RHEA:20073"
+  ],
+  "b_eq": "D-allo-threonine = acetaldehyde + glycine",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "FEWJPZIEWOKRBE",
+  "kind": "enantiomers",
+  "a_chebi": "30924",
+  "a_name": "<small>L</small>-tartrate(2\u2212)",
+  "a_smiles": "O=C([O-])[C@H](O)[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.2.1.32"
+  ],
+  "a_rhea": [
+   "RHEA:15413"
+  ],
+  "a_eq": "(2R,3R)-tartrate = oxaloacetate + H2O",
+  "a_enzymes": "868",
+  "b_chebi": "30927",
+  "b_name": "<small>D</small>-tartrate(2\u2212)",
+  "b_smiles": "O=C([O-])[C@@H](O)[C@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.2.1.81"
+  ],
+  "b_rhea": [
+   "RHEA:18289"
+  ],
+  "b_eq": "(S,S)-tartrate = oxaloacetate + H2O",
+  "b_enzymes": "2",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "CQQGIWJSICOUON",
+  "kind": "enantiomers",
+  "a_chebi": "58738",
+  "a_name": "(<i>R</i>)-3-sulfolactate",
+  "a_smiles": "O=C([O-])[C@@H](O)CS(=O)(=O)[O-]",
+  "a_ec": [
+   "EC:1.1.1.337"
+  ],
+  "a_rhea": [
+   "RHEA:15533"
+  ],
+  "a_eq": "(2R)-3-sulfolactate + NAD(+) = 3-sulfopyruvate + NADH + H(+)",
+  "a_enzymes": "3",
+  "b_chebi": "61289",
+  "b_name": "(<i>S</i>)-3-sulfonatolactate(2\u2212)",
+  "b_smiles": "O=C([O-])[C@H](O)CS(=O)(=O)[O-]",
+  "b_ec": [
+   "EC:1.1.1.310"
+  ],
+  "b_rhea": [
+   "RHEA:28194"
+  ],
+  "b_eq": "(2S)-3-sulfolactate + NAD(+) = 3-sulfopyruvate + NADH + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "RGHNJXZEOKUKBD",
+  "kind": "stereoisomers",
+  "a_chebi": "13115",
+  "a_name": "<small>L</small>-gulonate",
+  "a_smiles": "O=C([O-])[C@@H](O)[C@@H](O)[C@H](O)[C@@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.380"
+  ],
+  "a_rhea": [
+   "RHEA:43496"
+  ],
+  "a_eq": "L-gulonate + NAD(+) = keto-D-fructuronate + NADH + H(+)",
+  "a_enzymes": "0",
+  "b_chebi": "17767",
+  "b_name": "<small>D</small>-mannonate",
+  "b_smiles": "O=C([O-])[C@@H](O)[C@@H](O)[C@H](O)[C@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.57"
+  ],
+  "b_rhea": [
+   "RHEA:15729"
+  ],
+  "b_eq": "D-mannonate + NAD(+) = keto-D-fructuronate + NADH + H(+)",
+  "b_enzymes": "2",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "RGHNJXZEOKUKBD",
+  "kind": "stereoisomers",
+  "a_chebi": "17360",
+  "a_name": "<small>D</small>-altronate",
+  "a_smiles": "O=C([O-])[C@@H](O)[C@H](O)[C@H](O)[C@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.58"
+  ],
+  "a_rhea": [
+   "RHEA:17813"
+  ],
+  "a_eq": "D-altronate + NAD(+) = keto-D-tagaturonate + NADH + H(+)",
+  "a_enzymes": "397",
+  "b_chebi": "17767",
+  "b_name": "<small>D</small>-mannonate",
+  "b_smiles": "O=C([O-])[C@@H](O)[C@@H](O)[C@H](O)[C@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.57"
+  ],
+  "b_rhea": [
+   "RHEA:51652"
+  ],
+  "b_eq": "D-mannonate + NAD(+) = keto-D-tagaturonate + NADH + H(+)",
+  "b_enzymes": "0",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "RGHNJXZEOKUKBD",
+  "kind": "stereoisomers",
+  "a_chebi": "17360",
+  "a_name": "<small>D</small>-altronate",
+  "a_smiles": "O=C([O-])[C@@H](O)[C@H](O)[C@H](O)[C@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.58"
+  ],
+  "a_rhea": [
+   "RHEA:17813"
+  ],
+  "a_eq": "D-altronate + NAD(+) = keto-D-tagaturonate + NADH + H(+)",
+  "a_enzymes": "397",
+  "b_chebi": "53071",
+  "b_name": "<small>L</small>-galactonate",
+  "b_smiles": "O=C([O-])[C@@H](O)[C@H](O)[C@H](O)[C@@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.414"
+  ],
+  "b_rhea": [
+   "RHEA:30183"
+  ],
+  "b_eq": "L-galactonate + NAD(+) = keto-D-tagaturonate + NADH + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "RGHNJXZEOKUKBD",
+  "kind": "stereoisomers",
+  "a_chebi": "17767",
+  "a_name": "<small>D</small>-mannonate",
+  "a_smiles": "O=C([O-])[C@@H](O)[C@@H](O)[C@H](O)[C@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.57"
+  ],
+  "a_rhea": [
+   "RHEA:51652"
+  ],
+  "a_eq": "D-mannonate + NAD(+) = keto-D-tagaturonate + NADH + H(+)",
+  "a_enzymes": "0",
+  "b_chebi": "53071",
+  "b_name": "<small>L</small>-galactonate",
+  "b_smiles": "O=C([O-])[C@@H](O)[C@H](O)[C@H](O)[C@@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.414"
+  ],
+  "b_rhea": [
+   "RHEA:30183"
+  ],
+  "b_eq": "L-galactonate + NAD(+) = keto-D-tagaturonate + NADH + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "RGHNJXZEOKUKBD",
+  "kind": "stereoisomers",
+  "a_chebi": "17796",
+  "a_name": "<small>L</small>-idonate",
+  "a_smiles": "O=C([O-])[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.264",
+   "EC:1.1.1.366"
+  ],
+  "a_rhea": [
+   "RHEA:21172"
+  ],
+  "a_eq": "L-idonate + NAD(+) = 5-dehydro-D-gluconate + NADH + H(+)",
+  "a_enzymes": "2",
+  "b_chebi": "18391",
+  "b_name": "<small>D</small>-gluconate",
+  "b_smiles": "O=C([O-])[C@H](O)[C@@H](O)[C@H](O)[C@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.69"
+  ],
+  "b_rhea": [
+   "RHEA:23940"
+  ],
+  "b_eq": "D-gluconate + NAD(+) = 5-dehydro-D-gluconate + NADH + H(+)",
+  "b_enzymes": "121",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "CDOSHBSSFJOMGT",
+  "kind": "enantiomers",
+  "a_chebi": "28",
+  "a_name": "(<i>R</i>)-linalool",
+  "a_smiles": "C=C[C@](C)(O)CCC=C(C)C",
+  "a_ec": [
+   "EC:4.2.3.26"
+  ],
+  "a_rhea": [
+   "RHEA:15809"
+  ],
+  "a_eq": "(2E)-geranyl diphosphate + H2O = (R)-linalool + diphosphate",
+  "a_enzymes": "16",
+  "b_chebi": "98",
+  "b_name": "(<i>S</i>)-linalool",
+  "b_smiles": "C=C[C@@](C)(O)CCC=C(C)C",
+  "b_ec": [
+   "EC:4.2.3.25"
+  ],
+  "b_rhea": [
+   "RHEA:24116"
+  ],
+  "b_eq": "(2E)-geranyl diphosphate + H2O = (S)-linalool + diphosphate",
+  "b_enzymes": "10",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "RGHNJXZEOKUKBD",
+  "kind": "stereoisomers",
+  "a_chebi": "17360",
+  "a_name": "<small>D</small>-altronate",
+  "a_smiles": "O=C([O-])[C@@H](O)[C@H](O)[C@H](O)[C@H](O)CO",
+  "a_ec": [
+   "EC:4.2.1.7"
+  ],
+  "a_rhea": [
+   "RHEA:15957"
+  ],
+  "a_eq": "D-altronate = 2-dehydro-3-deoxy-D-gluconate + H2O",
+  "a_enzymes": "2",
+  "b_chebi": "17767",
+  "b_name": "<small>D</small>-mannonate",
+  "b_smiles": "O=C([O-])[C@@H](O)[C@@H](O)[C@H](O)[C@H](O)CO",
+  "b_ec": [
+   "EC:4.2.1.8"
+  ],
+  "b_rhea": [
+   "RHEA:20097"
+  ],
+  "b_eq": "D-mannonate = 2-dehydro-3-deoxy-D-gluconate + H2O",
+  "b_enzymes": "7457",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "RGHNJXZEOKUKBD",
+  "kind": "stereoisomers",
+  "a_chebi": "17360",
+  "a_name": "<small>D</small>-altronate",
+  "a_smiles": "O=C([O-])[C@@H](O)[C@H](O)[C@H](O)[C@H](O)CO",
+  "a_ec": [
+   "EC:4.2.1.7"
+  ],
+  "a_rhea": [
+   "RHEA:15957"
+  ],
+  "a_eq": "D-altronate = 2-dehydro-3-deoxy-D-gluconate + H2O",
+  "a_enzymes": "2",
+  "b_chebi": "18391",
+  "b_name": "<small>D</small>-gluconate",
+  "b_smiles": "O=C([O-])[C@H](O)[C@@H](O)[C@H](O)[C@H](O)CO",
+  "b_ec": [
+   "EC:4.2.1.140",
+   "EC:4.2.1.39"
+  ],
+  "b_rhea": [
+   "RHEA:21612"
+  ],
+  "b_eq": "D-gluconate = 2-dehydro-3-deoxy-D-gluconate + H2O",
+  "b_enzymes": "193",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "RGHNJXZEOKUKBD",
+  "kind": "stereoisomers",
+  "a_chebi": "17767",
+  "a_name": "<small>D</small>-mannonate",
+  "a_smiles": "O=C([O-])[C@@H](O)[C@@H](O)[C@H](O)[C@H](O)CO",
+  "a_ec": [
+   "EC:4.2.1.8"
+  ],
+  "a_rhea": [
+   "RHEA:20097"
+  ],
+  "a_eq": "D-mannonate = 2-dehydro-3-deoxy-D-gluconate + H2O",
+  "a_enzymes": "7457",
+  "b_chebi": "18391",
+  "b_name": "<small>D</small>-gluconate",
+  "b_smiles": "O=C([O-])[C@H](O)[C@@H](O)[C@H](O)[C@H](O)CO",
+  "b_ec": [
+   "EC:4.2.1.140",
+   "EC:4.2.1.39"
+  ],
+  "b_rhea": [
+   "RHEA:21612"
+  ],
+  "b_eq": "D-gluconate = 2-dehydro-3-deoxy-D-gluconate + H2O",
+  "b_enzymes": "193",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "QHHKKMYHDBRONY",
+  "kind": "stereoisomers",
+  "a_chebi": "57315",
+  "a_name": "(<i>R</i>)-3-hydroxybutanoyl-CoA(4\u2212)",
+  "a_smiles": "C[C@@H](O)CC(=O)SCCNC(=O)CCNC(=O)[C@H](O)C(C)(C)COP(=O)([O-])OP(=O)([O-])OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1OP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:1.1.1.36"
+  ],
+  "a_rhea": [
+   "RHEA:45796"
+  ],
+  "a_eq": "(3R)-3-hydroxybutanoyl-CoA + NADP(+) = acetoacetyl-CoA + NADPH + H(+)",
+  "a_enzymes": "3",
+  "b_chebi": "57316",
+  "b_name": "(<i>S</i>)-3-hydroxybutanoyl-CoA(4\u2212)",
+  "b_smiles": "C[C@H](O)CC(=O)SCCNC(=O)CCNC(=O)[C@H](O)C(C)(C)COP(=O)([O-])OP(=O)([O-])OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1OP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:1.1.1.157"
+  ],
+  "b_rhea": [
+   "RHEA:16197"
+  ],
+  "b_eq": "(3S)-3-hydroxybutanoyl-CoA + NADP(+) = acetoacetyl-CoA + NADPH + H(+)",
+  "b_enzymes": "9",
+  "n_stereocentres": 6
+ },
+ {
+  "skeleton": "JVTAAEKCZFNVCJ",
+  "kind": "enantiomers",
+  "a_chebi": "16004",
+  "a_name": "(<i>R</i>)-lactate",
+  "a_smiles": "C[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:1.1.1.28"
+  ],
+  "a_rhea": [
+   "RHEA:16369"
+  ],
+  "a_eq": "(R)-lactate + NAD(+) = pyruvate + NADH + H(+)",
+  "a_enzymes": "253",
+  "b_chebi": "16651",
+  "b_name": "(<i>S</i>)-lactate",
+  "b_smiles": "C[C@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:1.1.1.27"
+  ],
+  "b_rhea": [
+   "RHEA:23444"
+  ],
+  "b_eq": "(S)-lactate + NAD(+) = pyruvate + NADH + H(+)",
+  "b_enzymes": "14021",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "HEBKCHPVOIAQTA",
+  "kind": "stereoisomers",
+  "a_chebi": "15963",
+  "a_name": "ribitol",
+  "a_smiles": "OC[C@@H](O)[C@@H](O)[C@@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.56"
+  ],
+  "a_rhea": [
+   "RHEA:20053"
+  ],
+  "a_eq": "ribitol + NAD(+) = D-ribulose + NADH + H(+)",
+  "a_enzymes": "3",
+  "b_chebi": "18333",
+  "b_name": "<small>D</small>-arabinitol",
+  "b_smiles": "OC[C@@H](O)C(O)[C@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.250"
+  ],
+  "b_rhea": [
+   "RHEA:17389"
+  ],
+  "b_eq": "D-arabinitol + NAD(+) = D-ribulose + NADH + H(+)",
+  "b_enzymes": "4",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "ZAQJHHRNXZUBTE",
+  "kind": "stereoisomers",
+  "a_chebi": "16880",
+  "a_name": "<small>L</small>-ribulose",
+  "a_smiles": "O=C(CO)[C@@H](O)[C@@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.13"
+  ],
+  "a_rhea": [
+   "RHEA:21356"
+  ],
+  "a_eq": "L-arabinitol + NAD(+) = L-ribulose + NADH + H(+)",
+  "a_enzymes": "0",
+  "b_chebi": "17399",
+  "b_name": "<small>L</small>-xylulose",
+  "b_smiles": "O=C(CO)[C@H](O)[C@@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.12"
+  ],
+  "b_rhea": [
+   "RHEA:16381"
+  ],
+  "b_eq": "L-arabinitol + NAD(+) = L-xylulose + NADH + H(+)",
+  "b_enzymes": "2310",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "HEBKCHPVOIAQTA",
+  "kind": "stereoisomers",
+  "a_chebi": "17151",
+  "a_name": "xylitol",
+  "a_smiles": "OC[C@@H](O)[C@H](O)[C@@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.9"
+  ],
+  "a_rhea": [
+   "RHEA:20433"
+  ],
+  "a_eq": "xylitol + NAD(+) = D-xylulose + NADH + H(+)",
+  "a_enzymes": "1006",
+  "b_chebi": "18333",
+  "b_name": "<small>D</small>-arabinitol",
+  "b_smiles": "OC[C@@H](O)C(O)[C@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.11"
+  ],
+  "b_rhea": [
+   "RHEA:17921"
+  ],
+  "b_eq": "D-arabinitol + NAD(+) = D-xylulose + NADH + H(+)",
+  "b_enzymes": "3",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "ZAQJHHRNXZUBTE",
+  "kind": "enantiomers",
+  "a_chebi": "17140",
+  "a_name": "<small>D</small>-xylulose",
+  "a_smiles": "O=C(CO)[C@@H](O)[C@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.9"
+  ],
+  "a_rhea": [
+   "RHEA:20433"
+  ],
+  "a_eq": "xylitol + NAD(+) = D-xylulose + NADH + H(+)",
+  "a_enzymes": "1006",
+  "b_chebi": "17399",
+  "b_name": "<small>L</small>-xylulose",
+  "b_smiles": "O=C(CO)[C@H](O)[C@@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.15"
+  ],
+  "b_rhea": [
+   "RHEA:68100"
+  ],
+  "b_eq": "xylitol + NAD(+) = L-xylulose + NADH + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "ZAQJHHRNXZUBTE",
+  "kind": "stereoisomers",
+  "a_chebi": "17140",
+  "a_name": "<small>D</small>-xylulose",
+  "a_smiles": "O=C(CO)[C@@H](O)[C@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.11"
+  ],
+  "a_rhea": [
+   "RHEA:17921"
+  ],
+  "a_eq": "D-arabinitol + NAD(+) = D-xylulose + NADH + H(+)",
+  "a_enzymes": "3",
+  "b_chebi": "17173",
+  "b_name": "<small>D</small>-ribulose",
+  "b_smiles": "O=C(CO)[C@H](O)[C@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.250"
+  ],
+  "b_rhea": [
+   "RHEA:17389"
+  ],
+  "b_eq": "D-arabinitol + NAD(+) = D-ribulose + NADH + H(+)",
+  "b_enzymes": "4",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "HEBKCHPVOIAQTA",
+  "kind": "stereoisomers",
+  "a_chebi": "17151",
+  "a_name": "xylitol",
+  "a_smiles": "OC[C@@H](O)[C@H](O)[C@@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.15"
+  ],
+  "a_rhea": [
+   "RHEA:68100"
+  ],
+  "a_eq": "xylitol + NAD(+) = L-xylulose + NADH + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "18403",
+  "b_name": "<small>L</small>-arabinitol",
+  "b_smiles": "OC[C@H](O)C(O)[C@@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.12"
+  ],
+  "b_rhea": [
+   "RHEA:16381"
+  ],
+  "b_eq": "L-arabinitol + NAD(+) = L-xylulose + NADH + H(+)",
+  "b_enzymes": "2310",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "VOXZDWNPVJITMN",
+  "kind": "stereoisomers",
+  "a_chebi": "16469",
+  "a_name": "17\u03b2-estradiol",
+  "a_smiles": "[H][C@@]12CCc3cc(O)ccc3[C@@]1([H])CC[C@]1(C)[C@@H](O)CC[C@@]21[H]",
+  "a_ec": [
+   "EC:1.1.1.62"
+  ],
+  "a_rhea": [
+   "RHEA:24612"
+  ],
+  "a_eq": "17beta-estradiol + NAD(+) = estrone + NADH + H(+)",
+  "a_enzymes": "4681",
+  "b_chebi": "17160",
+  "b_name": "17\u03b1-estradiol",
+  "b_smiles": "[H][C@@]12CCc3cc(O)ccc3[C@@]1([H])CC[C@]1(C)[C@H](O)CC[C@@]21[H]",
+  "b_ec": [
+   "EC:1.1.1.148"
+  ],
+  "b_rhea": [
+   "RHEA:16701"
+  ],
+  "b_eq": "17alpha-estradiol + NAD(+) = estrone + NADH + H(+)",
+  "b_enzymes": "0",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "VOXZDWNPVJITMN",
+  "kind": "stereoisomers",
+  "a_chebi": "16469",
+  "a_name": "17\u03b2-estradiol",
+  "a_smiles": "[H][C@@]12CCc3cc(O)ccc3[C@@]1([H])CC[C@]1(C)[C@@H](O)CC[C@@]21[H]",
+  "a_ec": [
+   "EC:1.1.1.62"
+  ],
+  "a_rhea": [
+   "RHEA:24616"
+  ],
+  "a_eq": "17beta-estradiol + NADP(+) = estrone + NADPH + H(+)",
+  "a_enzymes": "4206",
+  "b_chebi": "17160",
+  "b_name": "17\u03b1-estradiol",
+  "b_smiles": "[H][C@@]12CCc3cc(O)ccc3[C@@]1([H])CC[C@]1(C)[C@H](O)CC[C@@]21[H]",
+  "b_ec": [
+   "EC:1.1.1.148"
+  ],
+  "b_rhea": [
+   "RHEA:16705"
+  ],
+  "b_eq": "17alpha-estradiol + NADP(+) = estrone + NADPH + H(+)",
+  "b_enzymes": "41",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "OVPRPPOVAXRCED",
+  "kind": "stereoisomers",
+  "a_chebi": "57569",
+  "a_name": "2-dehydro-3-deoxy-6-phosphonato-<small>D</small>-gluconate(3\u2212)",
+  "a_smiles": "O=C([O-])C(=O)C[C@H](O)[C@H](O)COP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:4.1.2.14",
+   "EC:4.1.2.55"
+  ],
+  "a_rhea": [
+   "RHEA:17089"
+  ],
+  "a_eq": "2-dehydro-3-deoxy-6-phospho-D-gluconate = D-glyceraldehyde 3-phosphate + pyruvate",
+  "a_enzymes": "8013",
+  "b_chebi": "58298",
+  "b_name": "6-phosphonato-2-dehydro-3-deoxy-<small>D</small>-galactate(3\u2212)",
+  "b_smiles": "O=C([O-])C(=O)C[C@@H](O)[C@H](O)COP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:4.1.2.21",
+   "EC:4.1.2.55"
+  ],
+  "b_rhea": [
+   "RHEA:24464"
+  ],
+  "b_eq": "2-dehydro-3-deoxy-6-phospho-D-galactonate = D-glyceraldehyde 3-phosphate + pyruvate",
+  "b_enzymes": "13",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "UQIGQRSJIKIPKZ",
+  "kind": "enantiomers",
+  "a_chebi": "16699",
+  "a_name": "2-dehydro-3-deoxy-<small>D</small>-arabinonate",
+  "a_smiles": "O=C([O-])C(=O)C[C@H](O)CO",
+  "a_ec": [
+   "EC:4.2.1.141"
+  ],
+  "a_rhea": [
+   "RHEA:35807"
+  ],
+  "a_eq": "2-dehydro-3-deoxy-D-arabinonate = 2,5-dioxopentanoate + H2O",
+  "a_enzymes": "2",
+  "b_chebi": "35173",
+  "b_name": "2-dehydro-3-deoxy-<small>L</small>-arabinonate",
+  "b_smiles": "O=C([O-])C(=O)C[C@@H](O)CO",
+  "b_ec": [
+   "EC:4.2.1.43"
+  ],
+  "b_rhea": [
+   "RHEA:17201"
+  ],
+  "b_eq": "2-dehydro-3-deoxy-L-arabinonate = 2,5-dioxopentanoate + H2O",
+  "b_enzymes": "5",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "DSCFFEYYQKSRSV",
+  "kind": "stereoisomers",
+  "a_chebi": "18266",
+  "a_name": "1<small>D</small>-4-<em>O</em>-methyl-<em>myo</em>-inositol",
+  "a_smiles": "CO[C@H]1[C@H](O)[C@@H](O)[C@H](O)[C@H](O)[C@@H]1O",
+  "a_ec": [
+   "EC:2.1.1.129"
+  ],
+  "a_rhea": [
+   "RHEA:23248"
+  ],
+  "a_eq": "myo-inositol + S-adenosyl-L-methionine = 1D-4-O-methyl-myo-inositol + S-adenosyl-L-homocysteine + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "18427",
+  "b_name": "1<small>D</small>-1-<em>O</em>-methyl-<i>myo</i>-inositol",
+  "b_smiles": "CO[C@@H]1[C@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:2.1.1.40"
+  ],
+  "b_rhea": [
+   "RHEA:17565"
+  ],
+  "b_eq": "myo-inositol + S-adenosyl-L-methionine = 1D-1-O-methyl-myo-inositol + S-adenosyl-L-homocysteine + H(+)",
+  "b_enzymes": "0",
+  "n_stereocentres": 6
+ },
+ {
+  "skeleton": "DSCFFEYYQKSRSV",
+  "kind": "stereoisomers",
+  "a_chebi": "18266",
+  "a_name": "1<small>D</small>-4-<em>O</em>-methyl-<em>myo</em>-inositol",
+  "a_smiles": "CO[C@H]1[C@H](O)[C@@H](O)[C@H](O)[C@H](O)[C@@H]1O",
+  "a_ec": [
+   "EC:2.1.1.129"
+  ],
+  "a_rhea": [
+   "RHEA:23248"
+  ],
+  "a_eq": "myo-inositol + S-adenosyl-L-methionine = 1D-4-O-methyl-myo-inositol + S-adenosyl-L-homocysteine + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "28310",
+  "b_name": "1<small>D</small>-3-<em>O</em>-methyl-<i>myo</i>-inositol",
+  "b_smiles": "CO[C@@H]1[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H]1O",
+  "b_ec": [
+   "EC:2.1.1.39"
+  ],
+  "b_rhea": [
+   "RHEA:18877"
+  ],
+  "b_eq": "myo-inositol + S-adenosyl-L-methionine = 1D-3-O-methyl-myo-inositol + S-adenosyl-L-homocysteine + H(+)",
+  "b_enzymes": "0",
+  "n_stereocentres": 6
+ },
+ {
+  "skeleton": "DSCFFEYYQKSRSV",
+  "kind": "enantiomers",
+  "a_chebi": "18427",
+  "a_name": "1<small>D</small>-1-<em>O</em>-methyl-<i>myo</i>-inositol",
+  "a_smiles": "CO[C@@H]1[C@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@H]1O",
+  "a_ec": [
+   "EC:2.1.1.40"
+  ],
+  "a_rhea": [
+   "RHEA:17565"
+  ],
+  "a_eq": "myo-inositol + S-adenosyl-L-methionine = 1D-1-O-methyl-myo-inositol + S-adenosyl-L-homocysteine + H(+)",
+  "a_enzymes": "0",
+  "b_chebi": "28310",
+  "b_name": "1<small>D</small>-3-<em>O</em>-methyl-<i>myo</i>-inositol",
+  "b_smiles": "CO[C@@H]1[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H]1O",
+  "b_ec": [
+   "EC:2.1.1.39"
+  ],
+  "b_rhea": [
+   "RHEA:18877"
+  ],
+  "b_eq": "myo-inositol + S-adenosyl-L-methionine = 1D-3-O-methyl-myo-inositol + S-adenosyl-L-homocysteine + H(+)",
+  "b_enzymes": "0",
+  "n_stereocentres": 6
+ },
+ {
+  "skeleton": "QHHKKMYHDBRONY",
+  "kind": "stereoisomers",
+  "a_chebi": "57315",
+  "a_name": "(<i>R</i>)-3-hydroxybutanoyl-CoA(4\u2212)",
+  "a_smiles": "C[C@@H](O)CC(=O)SCCNC(=O)CCNC(=O)[C@H](O)C(C)(C)COP(=O)([O-])OP(=O)([O-])OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1OP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:4.2.1.55"
+  ],
+  "a_rhea": [
+   "RHEA:17849"
+  ],
+  "a_eq": "(3R)-3-hydroxybutanoyl-CoA = (2E)-butenoyl-CoA + H2O",
+  "a_enzymes": "3",
+  "b_chebi": "57316",
+  "b_name": "(<i>S</i>)-3-hydroxybutanoyl-CoA(4\u2212)",
+  "b_smiles": "C[C@H](O)CC(=O)SCCNC(=O)CCNC(=O)[C@H](O)C(C)(C)COP(=O)([O-])OP(=O)([O-])OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1OP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:4.2.1.116"
+  ],
+  "b_rhea": [
+   "RHEA:26558"
+  ],
+  "b_eq": "(3S)-3-hydroxybutanoyl-CoA = (2E)-butenoyl-CoA + H2O",
+  "b_enzymes": "1066",
+  "n_stereocentres": 6
+ },
+ {
+  "skeleton": "VZPAJODTZAAANV",
+  "kind": "stereoisomers",
+  "a_chebi": "57293",
+  "a_name": "(+)-bornyl diphosphate(3\u2212)",
+  "a_smiles": "[H][C@]1(OP(=O)([O-])OP(=O)([O-])[O-])CC2CCC1(C)C2(C)C",
+  "a_ec": [
+   "EC:5.5.1.8"
+  ],
+  "a_rhea": [
+   "RHEA:18209"
+  ],
+  "a_eq": "(2E)-geranyl diphosphate = (2S,4R)-bornyl diphosphate",
+  "a_enzymes": "1",
+  "b_chebi": "64285",
+  "b_name": "(\u2212)-bornyl diphosphate(3\u2212)",
+  "b_smiles": "CC1(C)[C@H]2CC[C@]1(C)[C@H](OP(=O)([O-])OP(=O)([O-])[O-])C2",
+  "b_ec": [
+   "EC:5.5.1.22"
+  ],
+  "b_rhea": [
+   "RHEA:32707"
+  ],
+  "b_eq": "(2E)-geranyl diphosphate = (2R,4S)-bornyl diphosphate",
+  "b_enzymes": "0",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "LYRIITRHDCNUHV",
+  "kind": "enantiomers",
+  "a_chebi": "16036",
+  "a_name": "ethyl (<i>S</i>)-3-hydroxyhexanoate",
+  "a_smiles": "CCC[C@H](O)CC(=O)OCC",
+  "a_ec": [
+   "EC:1.1.1.280"
+  ],
+  "a_rhea": [
+   "RHEA:18269"
+  ],
+  "a_eq": "ethyl (S)-3-hydroxyhexanoate + NADP(+) = ethyl 3-oxohexanoate + NADPH + H(+)",
+  "a_enzymes": "0",
+  "b_chebi": "16641",
+  "b_name": "ethyl (<i>R</i>)-3-hydroxyhexanoate",
+  "b_smiles": "CCC[C@@H](O)CC(=O)OCC",
+  "b_ec": [
+   "EC:1.1.1.279"
+  ],
+  "b_rhea": [
+   "RHEA:24352"
+  ],
+  "b_eq": "ethyl (R)-3-hydroxyhexanoate + NADP(+) = ethyl 3-oxohexanoate + NADPH + H(+)",
+  "b_enzymes": "0",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "CYHOMWAPJJPNMW",
+  "kind": "stereoisomers",
+  "a_chebi": "57493",
+  "a_name": "pseudotropinium",
+  "a_smiles": "C[NH+]1[C@@H]2CC[C@H]1C[C@H](O)C2",
+  "a_ec": [
+   "EC:1.1.1.236"
+  ],
+  "a_rhea": [
+   "RHEA:24244"
+  ],
+  "a_eq": "pseudotropine + NADP(+) = tropinone + NADPH + H(+)",
+  "a_enzymes": "3",
+  "b_chebi": "57554",
+  "b_name": "tropinium",
+  "b_smiles": "C[NH+]1[C@@H]2CC[C@H]1C[C@@H](O)C2",
+  "b_ec": [
+   "EC:1.1.1.206"
+  ],
+  "b_rhea": [
+   "RHEA:18357"
+  ],
+  "b_eq": "tropine + NADP(+) = tropinone + NADPH + H(+)",
+  "b_enzymes": "3",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "WQZGKKKJIJFFOK",
+  "kind": "stereoisomers",
+  "a_chebi": "27517",
+  "a_name": "(1\u21922)-\u03b2-<small>D</small>-glucan",
+  "a_smiles": "[H]O[C@@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "a_ec": [
+   "EC:7.5.2.3"
+  ],
+  "a_rhea": [
+   "RHEA:18453"
+  ],
+  "a_eq": "[(1->2)-beta-D-glucosyl](n)(in) + ATP + H2O = [(1->2)-beta-D-glucosyl](n)(out) + ADP + phosphate + H(+)",
+  "a_enzymes": "23",
+  "b_chebi": "4139",
+  "b_name": "<small>D</small>-galactopyranose",
+  "b_smiles": "OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:7.5.2.11"
+  ],
+  "b_rhea": [
+   "RHEA:60156"
+  ],
+  "b_eq": "D-galactose(out) + ATP + H2O = D-galactose(in) + ADP + phosphate + H(+)",
+  "b_enzymes": "2257",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "UQIGQRSJIKIPKZ",
+  "kind": "enantiomers",
+  "a_chebi": "16699",
+  "a_name": "2-dehydro-3-deoxy-<small>D</small>-arabinonate",
+  "a_smiles": "O=C([O-])C(=O)C[C@H](O)CO",
+  "a_ec": [
+   "EC:4.1.2.28"
+  ],
+  "a_rhea": [
+   "RHEA:20609"
+  ],
+  "a_eq": "2-dehydro-3-deoxy-D-arabinonate = glycolaldehyde + pyruvate",
+  "a_enzymes": "37",
+  "b_chebi": "35173",
+  "b_name": "2-dehydro-3-deoxy-<small>L</small>-arabinonate",
+  "b_smiles": "O=C([O-])C(=O)C[C@@H](O)CO",
+  "b_ec": [
+   "EC:4.1.2.18"
+  ],
+  "b_rhea": [
+   "RHEA:18545"
+  ],
+  "b_eq": "2-dehydro-3-deoxy-L-arabinonate = glycolaldehyde + pyruvate",
+  "b_enzymes": "0",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "WQZGKKKJIJFFOK",
+  "kind": "stereoisomers",
+  "a_chebi": "15444",
+  "a_name": "(1\u21924)-\u03b1-<small>D</small>-glucan",
+  "a_smiles": "[H]O[C@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "a_ec": [
+   "EC:2.4.1.11"
+  ],
+  "a_rhea": [
+   "RHEA:18549"
+  ],
+  "a_eq": "[(1->4)-alpha-D-glucosyl](n) + UDP-alpha-D-glucose = [(1->4)-alpha-D-glucosyl](n+1) + UDP + H(+)",
+  "a_enzymes": "4945",
+  "b_chebi": "18246",
+  "b_name": "(1\u21924)-\u03b2-<small>D</small>-glucan",
+  "b_smiles": "[H]O[C@@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:2.4.1.12"
+  ],
+  "b_rhea": [
+   "RHEA:19929"
+  ],
+  "b_eq": "[(1->4)-beta-D-glucosyl](n) + UDP-alpha-D-glucose = [(1->4)-beta-D-glucosyl](n+1) + UDP + H(+)",
+  "b_enzymes": "8842",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "WQZGKKKJIJFFOK",
+  "kind": "stereoisomers",
+  "a_chebi": "15444",
+  "a_name": "(1\u21924)-\u03b1-<small>D</small>-glucan",
+  "a_smiles": "[H]O[C@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "a_ec": [
+   "EC:2.4.1.11"
+  ],
+  "a_rhea": [
+   "RHEA:18549"
+  ],
+  "a_eq": "[(1->4)-alpha-D-glucosyl](n) + UDP-alpha-D-glucose = [(1->4)-alpha-D-glucosyl](n+1) + UDP + H(+)",
+  "a_enzymes": "4945",
+  "b_chebi": "37671",
+  "b_name": "(1\u21923)-\u03b2-<small>D</small>-glucan",
+  "b_smiles": "[H]O[C@@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:2.4.1.34"
+  ],
+  "b_rhea": [
+   "RHEA:21476"
+  ],
+  "b_eq": "[(1->3)-beta-D-glucosyl](n) + UDP-alpha-D-glucose = [(1->3)-beta-D-glucosyl](n+1) + UDP + H(+)",
+  "b_enzymes": "8006",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "WQZGKKKJIJFFOK",
+  "kind": "stereoisomers",
+  "a_chebi": "18246",
+  "a_name": "(1\u21924)-\u03b2-<small>D</small>-glucan",
+  "a_smiles": "[H]O[C@@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "a_ec": [
+   "EC:2.4.1.12"
+  ],
+  "a_rhea": [
+   "RHEA:19929"
+  ],
+  "a_eq": "[(1->4)-beta-D-glucosyl](n) + UDP-alpha-D-glucose = [(1->4)-beta-D-glucosyl](n+1) + UDP + H(+)",
+  "a_enzymes": "8842",
+  "b_chebi": "28100",
+  "b_name": "(1\u21923)-\u03b1-<small>D</small>-glucan",
+  "b_smiles": "[H]O[C@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:2.4.1.183"
+  ],
+  "b_rhea": [
+   "RHEA:19749"
+  ],
+  "b_eq": "[(1->3)-alpha-D-glucosyl](n) + UDP-alpha-D-glucose = [(1->3)-alpha-D-glucosyl](n+1) + UDP + H(+)",
+  "b_enzymes": "1571",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "WQZGKKKJIJFFOK",
+  "kind": "stereoisomers",
+  "a_chebi": "28100",
+  "a_name": "(1\u21923)-\u03b1-<small>D</small>-glucan",
+  "a_smiles": "[H]O[C@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "a_ec": [
+   "EC:2.4.1.183"
+  ],
+  "a_rhea": [
+   "RHEA:19749"
+  ],
+  "a_eq": "[(1->3)-alpha-D-glucosyl](n) + UDP-alpha-D-glucose = [(1->3)-alpha-D-glucosyl](n+1) + UDP + H(+)",
+  "a_enzymes": "1571",
+  "b_chebi": "37671",
+  "b_name": "(1\u21923)-\u03b2-<small>D</small>-glucan",
+  "b_smiles": "[H]O[C@@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:2.4.1.34"
+  ],
+  "b_rhea": [
+   "RHEA:21476"
+  ],
+  "b_eq": "[(1->3)-beta-D-glucosyl](n) + UDP-alpha-D-glucose = [(1->3)-beta-D-glucosyl](n+1) + UDP + H(+)",
+  "b_enzymes": "8006",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "DGABKXLVXPYZII",
+  "kind": "stereoisomers",
+  "a_chebi": "58875",
+  "a_name": "hyodeoxycholate",
+  "a_smiles": "[H][C@@]12C[C@H](O)[C@]3([H])C[C@H](O)CC[C@]3(C)[C@@]1([H])CC[C@@]1(C)[C@@]2([H])CC[C@]1([H])[C@H](C)CCC(=O)[O-]",
+  "a_ec": [
+   "EC:1.14.14.57"
+  ],
+  "a_rhea": [
+   "RHEA:23644"
+  ],
+  "a_eq": "lithocholate + reduced [NADPH--hemoprotein reductase] + O2 = hyodeoxycholate + oxidized [NADPH--hemoprotein reductase] + H2O + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "58876",
+  "b_name": "murideoxycholate",
+  "b_smiles": "[H][C@@]12C[C@@H](O)[C@]3([H])C[C@H](O)CC[C@]3(C)[C@@]1([H])CC[C@@]1(C)[C@@]2([H])CC[C@]1([H])[C@H](C)CCC(=O)[O-]",
+  "b_ec": [
+   "EC:1.14.14.138"
+  ],
+  "b_rhea": [
+   "RHEA:18857"
+  ],
+  "b_eq": "lithocholate + reduced [NADPH--hemoprotein reductase] + O2 = 6beta-hydroxylithocholate + oxidized [NADPH--hemoprotein reductase] + H2O + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 10
+ },
+ {
+  "skeleton": "QXKAIJAYHKCRRA",
+  "kind": "stereoisomers",
+  "a_chebi": "145753",
+  "a_name": "<small>L</small>-lyxonate",
+  "a_smiles": "O=C([O-])[C@H](O)[C@H](O)[C@@H](O)CO",
+  "a_ec": [
+   "EC:4.2.1.176"
+  ],
+  "a_rhea": [
+   "RHEA:62436"
+  ],
+  "a_eq": "L-lyxonate = 2-dehydro-3-deoxy-L-arabinonate + H2O",
+  "a_enzymes": "343",
+  "b_chebi": "16501",
+  "b_name": "<small>L</small>-arabinonate",
+  "b_smiles": "O=C([O-])[C@H](O)[C@@H](O)[C@@H](O)CO",
+  "b_ec": [
+   "EC:4.2.1.25"
+  ],
+  "b_rhea": [
+   "RHEA:20968"
+  ],
+  "b_eq": "L-arabinonate = 2-dehydro-3-deoxy-L-arabinonate + H2O",
+  "b_enzymes": "2",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "QXKAIJAYHKCRRA",
+  "kind": "stereoisomers",
+  "a_chebi": "16157",
+  "a_name": "<small>D</small>-arabinonate",
+  "a_smiles": "O=C([O-])[C@@H](O)[C@H](O)[C@H](O)CO",
+  "a_ec": [
+   "EC:4.2.1.5"
+  ],
+  "a_rhea": [
+   "RHEA:21836"
+  ],
+  "a_eq": "D-arabinonate = 2-dehydro-3-deoxy-D-arabinonate + H2O",
+  "a_enzymes": "1",
+  "b_chebi": "17746",
+  "b_name": "<small>D</small>-xylonate",
+  "b_smiles": "O=C([O-])[C@H](O)[C@@H](O)[C@H](O)CO",
+  "b_ec": [
+   "EC:4.2.1.82"
+  ],
+  "b_rhea": [
+   "RHEA:19157"
+  ],
+  "b_eq": "D-xylonate = 2-dehydro-3-deoxy-D-arabinonate + H2O",
+  "b_enzymes": "111",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "FUCYIEXQVQJBKY",
+  "kind": "enantiomers",
+  "a_chebi": "15385",
+  "a_name": "(+)-\u03b4-cadinene",
+  "a_smiles": "[H][C@@]12C=C(C)CCC1=C(C)CC[C@H]2C(C)C",
+  "a_ec": [
+   "EC:4.2.3.13"
+  ],
+  "a_rhea": [
+   "RHEA:19525"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = (1S,8aR)-delta-cadinene + diphosphate",
+  "a_enzymes": "8",
+  "b_chebi": "63703",
+  "b_name": "(\u2212)-\u03b4-cadinene",
+  "b_smiles": "[H][C@]12C=C(C)CCC1=C(C)CC[C@@H]2C(C)C",
+  "b_ec": [
+   "EC:4.2.3.97"
+  ],
+  "b_rhea": [
+   "RHEA:32015"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = (-)-delta-cadinene + diphosphate",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "SMEROWZSTRWXGI",
+  "kind": "stereoisomers",
+  "a_chebi": "29744",
+  "a_name": "lithocholate",
+  "a_smiles": "[H][C@]12CC[C@]3([H])[C@]([H])(CC[C@@]4(C)[C@@]3([H])CC[C@]4([H])[C@H](C)CCC(=O)[O-])[C@@]1(C)CC[C@@H](O)C2",
+  "a_ec": [
+   "EC:1.1.1.52"
+  ],
+  "a_rhea": [
+   "RHEA:19585"
+  ],
+  "a_eq": "lithocholate + NAD(+) = 3-oxo-5beta-cholan-24-oate + NADH + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "87728",
+  "b_name": "isolithocholate",
+  "b_smiles": "[H][C@]12CC[C@]3([H])[C@]([H])(CC[C@@]4(C)[C@@]3([H])CC[C@]4([H])[C@H](C)CCC(=O)[O-])[C@@]1(C)CC[C@H](O)C2",
+  "b_ec": [
+   "EC:1.1.1.391"
+  ],
+  "b_rhea": [
+   "RHEA:47508"
+  ],
+  "b_eq": "3-oxo-5beta-cholan-24-oate + NADH + H(+) = isolithocholate + NAD(+)",
+  "b_enzymes": "197",
+  "n_stereocentres": 9
+ },
+ {
+  "skeleton": "GACTWZZMVMUKNG",
+  "kind": "stereoisomers",
+  "a_chebi": "60084",
+  "a_name": "<small>D</small>-glucitol 6-phosphate(2\u2212)",
+  "a_smiles": "O=P([O-])([O-])OC[C@@H](O)[C@@H](O)[C@H](O)[C@@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.140"
+  ],
+  "a_rhea": [
+   "RHEA:19837"
+  ],
+  "a_eq": "D-sorbitol 6-phosphate + NAD(+) = beta-D-fructose 6-phosphate + NADH + H(+)",
+  "a_enzymes": "2",
+  "b_chebi": "61381",
+  "b_name": "<small>D</small>-mannitol 1-phosphate(2\u2212)",
+  "b_smiles": "O=P([O-])([O-])OC[C@@H](O)[C@@H](O)[C@H](O)[C@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.17"
+  ],
+  "b_rhea": [
+   "RHEA:19661"
+  ],
+  "b_eq": "D-mannitol 1-phosphate + NAD(+) = beta-D-fructose 6-phosphate + NADH + H(+)",
+  "b_enzymes": "7472",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "YONHOSLUBQJXPR",
+  "kind": "stereoisomers",
+  "a_chebi": "23925",
+  "a_name": "(+)-5-<em>epi</em>-aristolochene",
+  "a_smiles": "C=C(C)[C@@H]1CC=C2CCC[C@@H](C)[C@@]2(C)C1",
+  "a_ec": [
+   "EC:4.2.3.61"
+  ],
+  "a_rhea": [
+   "RHEA:28635"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = (+)-5-epi-aristolochene + diphosphate",
+  "a_enzymes": "6",
+  "b_chebi": "43445",
+  "b_name": "(+)-aristolochene",
+  "b_smiles": "C=C(C)[C@H]1CC=C2CCC[C@H](C)[C@@]2(C)C1",
+  "b_ec": [
+   "EC:4.2.3.9"
+  ],
+  "b_rhea": [
+   "RHEA:19825"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = (+)-aristolochene + diphosphate",
+  "b_enzymes": "5",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "QEFRNWWLZKMPFJ",
+  "kind": "stereoisomers",
+  "a_chebi": "58772",
+  "a_name": "<small>L</small>-methionine (<i>S</i>)-<em>S</em>-oxide zwitterion",
+  "a_smiles": "C[S@](=O)CC[C@H]([NH3+])C(=O)[O-]",
+  "a_ec": [
+   "EC:1.8.4.11",
+   "EC:1.8.4.13"
+  ],
+  "a_rhea": [
+   "RHEA:19993"
+  ],
+  "a_eq": "[thioredoxin]-disulfide + L-methionine + H2O = L-methionine (S)-S-oxide + [thioredoxin]-dithiol",
+  "a_enzymes": "31790",
+  "b_chebi": "58773",
+  "b_name": "<small>L</small>-methionine (<i>R</i>)-<em>S</em>-oxide zwitterion",
+  "b_smiles": "C[S@@](=O)CC[C@H]([NH3+])C(=O)[O-]",
+  "b_ec": [
+   "EC:1.8.4.14"
+  ],
+  "b_rhea": [
+   "RHEA:21260"
+  ],
+  "b_eq": "[thioredoxin]-disulfide + L-methionine + H2O = L-methionine (R)-S-oxide + [thioredoxin]-dithiol",
+  "b_enzymes": "3027",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "SXZYCXMUPBBULW",
+  "kind": "stereoisomers",
+  "a_chebi": "17464",
+  "a_name": "<small>L</small>-galactono-1,4-lactone",
+  "a_smiles": "[H][C@]1([C@@H](O)CO)OC(=O)[C@@H](O)[C@@H]1O",
+  "a_ec": [
+   "EC:1.3.3.12"
+  ],
+  "a_rhea": [
+   "RHEA:20617"
+  ],
+  "a_eq": "L-galactono-1,4-lactone + O2 = L-ascorbate + H2O2 + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "17587",
+  "b_name": "<small>L</small>-gulono-1,4-lactone",
+  "b_smiles": "[H][C@]1([C@@H](O)CO)OC(=O)[C@@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:1.1.3.8"
+  ],
+  "b_rhea": [
+   "RHEA:32363"
+  ],
+  "b_eq": "L-gulono-1,4-lactone + O2 = L-ascorbate + H2O2 + H(+)",
+  "b_enzymes": "2359",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "MPCAJMNYNOGXPB",
+  "kind": "stereoisomers",
+  "a_chebi": "16070",
+  "a_name": "1,5-anhydro-<small>D</small>-glucitol",
+  "a_smiles": "OC[C@H]1OC[C@H](O)[C@@H](O)[C@@H]1O",
+  "a_ec": [
+   "EC:1.1.1.263"
+  ],
+  "a_rhea": [
+   "RHEA:20665"
+  ],
+  "a_eq": "1,5-anhydro-D-glucitol + NADP(+) = 1,5-anhydro-D-fructose + NADPH + H(+)",
+  "a_enzymes": "154",
+  "b_chebi": "49182",
+  "b_name": "1,5-anhydro-<small>D</small>-mannitol",
+  "b_smiles": "OC[C@H]1OC[C@@H](O)[C@@H](O)[C@@H]1O",
+  "b_ec": [
+   "EC:1.1.1.292"
+  ],
+  "b_rhea": [
+   "RHEA:24208"
+  ],
+  "b_eq": "1,5-anhydro-D-mannitol + NADP(+) = 1,5-anhydro-D-fructose + NADPH + H(+)",
+  "b_enzymes": "2",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "QRDCEYBRRFPBMZ",
+  "kind": "enantiomers",
+  "a_chebi": "131849",
+  "a_name": "<small>D</small>-erythritol 1-phosphate(2\u2212)",
+  "a_smiles": "O=P([O-])([O-])OC[C@H](O)[C@H](O)CO",
+  "a_ec": [
+   "EC:2.7.1.215"
+  ],
+  "a_rhea": [
+   "RHEA:49624"
+  ],
+  "a_eq": "erythritol + ATP = D-erythritol 1-phosphate + ADP + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "57508",
+  "b_name": "<small>D</small>-erythritol 4-phosphate(2\u2212)",
+  "b_smiles": "O=P([O-])([O-])OC[C@@H](O)[C@@H](O)CO",
+  "b_ec": [
+   "EC:2.7.1.27"
+  ],
+  "b_rhea": [
+   "RHEA:20708"
+  ],
+  "b_eq": "erythritol + ATP = D-erythritol 4-phosphate + ADP + H(+)",
+  "b_enzymes": "0",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "CGWVOSJMYGNKHF",
+  "kind": "stereoisomers",
+  "a_chebi": "139145",
+  "a_name": "4-<em>O</em>-({poly[2-<em>N</em>-acetyl-\u03b1-<small>D</small>-glucosaminyl-1-<small>D</small>-ribitylphosphonato]}-di{[2<i>R</i>]-1-glycerylphosphonato})-<em>N</em>-acetyl-\u03b2-<small>D</small>-mannosaminyl-(1\u21924)-<em>N</em>-acetyl-\u03b1-<small>D</small>-glucosaminyl <em>ditrans</em>,<em>octacis</em>-undecaprenyl diphosphate polyanion",
+  "a_smiles": "CC(=O)N[C@H]1[C@@H](OP(=O)([O-])OP(=O)([O-])OC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(\\C)CC/C=C(\\C)CCC=C(C)C)O[C@H](CO)[C@@H](O[C@@H]2O[C@H](CO)[C@@H](OP(=O)([O-])OC[C@H](O)COP(=O)([O-])OC[C@H](O)COP(=O)([O-])OC[C@@H](O[C@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3NC(C)=O)[C@@H](O)[C@@H](O)CO)[C@H](O)[C@H]2NC(C)=O)[C@@H]1O",
+  "a_ec": [
+   "EC:2.4.1.70"
+  ],
+  "a_rhea": [
+   "RHEA:21012"
+  ],
+  "a_eq": "4-O-[(D-ribitylphospho)(n)-di{(2R)-glycerylphospho}]-N-acetyl-beta-D-mannosaminyl-(1->4)-N-acetyl-alpha-D-glucosaminyl di-trans,octa-cis-undecaprenyl diphosphate + n UDP-N-acetyl-alpha-D-glucosamine = 4-O-([2-N-acetyl-alpha-D-glucosaminyl-1-D-ribitylphospho](n)-di{[2R]-1-glycerylphospho})-N-acetyl-beta-D-mannosaminyl-(1->4)-N-acetyl-alpha-D-glucosaminyl di-trans,octa-cis-undecaprenyl diphosphate + n UDP + n H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "139146",
+  "b_name": "4-<em>O</em>-({poly[2-<em>N</em>-acetyl-\u03b2-<small>D</small>-glucosaminyl-1-<small>D</small>-ribitylphosphonato]}-di{[2<i>R</i>]-1-glycerylphosphonato})-<em>N</em>-acetyl-\u03b2-<small>D</small>-mannosaminyl-(1\u21924)-<em>N</em>-acetyl-\u03b1-<small>D</small>-glucosaminyl <em>ditrans</em>,<em>octacis</em>-undecaprenyl diphosphate polyanion",
+  "b_smiles": "CC(=O)N[C@H]1[C@@H](OP(=O)([O-])OP(=O)([O-])OC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(\\C)CC/C=C(\\C)CCC=C(C)C)O[C@H](CO)[C@@H](O[C@@H]2O[C@H](CO)[C@@H](OP(=O)([O-])OC[C@H](O)COP(=O)([O-])OC[C@H](O)COP(=O)([O-])OC[C@@H](O[C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3NC(C)=O)[C@@H](O)[C@@H](O)CO)[C@H](O)[C@H]2NC(C)=O)[C@@H]1O",
+  "b_ec": [
+   "EC:2.4.1.355"
+  ],
+  "b_rhea": [
+   "RHEA:55672"
+  ],
+  "b_eq": "4-O-[(D-ribitylphospho)(n)-di{(2R)-glycerylphospho}]-N-acetyl-beta-D-mannosaminyl-(1->4)-N-acetyl-alpha-D-glucosaminyl di-trans,octa-cis-undecaprenyl diphosphate + n UDP-N-acetyl-alpha-D-glucosamine = 4-O-([2-N-acetyl-beta-D-glucosaminyl-1-D-ribitylphospho](n)-di{[2R]-1-glycerylphospho})-N-acetyl-beta-D-mannosaminyl-(1->4)-N-acetyl-alpha-D-glucosaminyl di-trans,octa-cis-undecaprenyl diphosphate + n UDP + n H(+)",
+  "b_enzymes": "2",
+  "n_stereocentres": 20
+ },
+ {
+  "skeleton": "RGHNJXZEOKUKBD",
+  "kind": "stereoisomers",
+  "a_chebi": "17796",
+  "a_name": "<small>L</small>-idonate",
+  "a_smiles": "O=C([O-])[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.264"
+  ],
+  "a_rhea": [
+   "RHEA:21176"
+  ],
+  "a_eq": "L-idonate + NADP(+) = 5-dehydro-D-gluconate + NADPH + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "18391",
+  "b_name": "<small>D</small>-gluconate",
+  "b_smiles": "O=C([O-])[C@H](O)[C@@H](O)[C@H](O)[C@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.69"
+  ],
+  "b_rhea": [
+   "RHEA:23936"
+  ],
+  "b_eq": "D-gluconate + NADP(+) = 5-dehydro-D-gluconate + NADPH + H(+)",
+  "b_enzymes": "122",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "HWXBTNAVRSUOJR",
+  "kind": "enantiomers",
+  "a_chebi": "15801",
+  "a_name": "(<i>R</i>)-2-hydroxyglutarate(2\u2212)",
+  "a_smiles": "O=C([O-])CC[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:1.1.99.39"
+  ],
+  "a_rhea": [
+   "RHEA:38295"
+  ],
+  "a_eq": "(R)-2-hydroxyglutarate + A = 2-oxoglutarate + AH2",
+  "a_enzymes": "3784",
+  "b_chebi": "16782",
+  "b_name": "(<i>S</i>)-2-hydroxyglutarate(2\u2212)",
+  "b_smiles": "O=C([O-])CC[C@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:1.1.99.2"
+  ],
+  "b_rhea": [
+   "RHEA:21252"
+  ],
+  "b_eq": "(S)-2-hydroxyglutarate + A = 2-oxoglutarate + AH2",
+  "b_enzymes": "3994",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "KDXKERNSBIXSRK",
+  "kind": "enantiomers",
+  "a_chebi": "32551",
+  "a_name": "<small>L</small>-lysinium(1+)",
+  "a_smiles": "[NH3+]CCCC[C@H]([NH3+])C(=O)[O-]",
+  "a_ec": [
+   "EC:4.1.1.18"
+  ],
+  "a_rhea": [
+   "RHEA:22352"
+  ],
+  "a_eq": "L-lysine + H(+) = cadaverine + CO2",
+  "a_enzymes": "497",
+  "b_chebi": "32557",
+  "b_name": "<small>D</small>-lysinium(1+)",
+  "b_smiles": "[NH3+]CCCC[C@@H]([NH3+])C(=O)[O-]",
+  "b_ec": [
+   "EC:4.1.1.116"
+  ],
+  "b_rhea": [
+   "RHEA:59052"
+  ],
+  "b_eq": "D-lysine + H(+) = cadaverine + CO2",
+  "b_enzymes": "1",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "XYGOWHUIVNMEIA",
+  "kind": "stereoisomers",
+  "a_chebi": "58668",
+  "a_name": "(3<i>S</i>)-citramalyl-CoA(5\u2212)",
+  "a_smiles": "CC(C)(COP(=O)([O-])OP(=O)([O-])OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1OP(=O)([O-])[O-])[C@@H](O)C(=O)NCCC(=O)NCCSC(=O)C[C@](C)(O)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.1.3.25"
+  ],
+  "a_rhea": [
+   "RHEA:22612"
+  ],
+  "a_eq": "(3S)-citramalyl-CoA = pyruvate + acetyl-CoA",
+  "a_enzymes": "1139",
+  "b_chebi": "75637",
+  "b_name": "(3<i>R</i>)-citramalyl-CoA(5\u2212)",
+  "b_smiles": "CC(C)(COP(=O)([O-])OP(=O)([O-])OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1OP(=O)([O-])[O-])[C@@H](O)C(=O)NCCC(=O)NCCSC(=O)C[C@@](C)(O)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.1.3.46"
+  ],
+  "b_rhea": [
+   "RHEA:38275"
+  ],
+  "b_eq": "(3R)-citramalyl-CoA = pyruvate + acetyl-CoA",
+  "b_enzymes": "1",
+  "n_stereocentres": 6
+ },
+ {
+  "skeleton": "JCMPRFCVZKOFIT",
+  "kind": "enantiomers",
+  "a_chebi": "15390",
+  "a_name": "(+)-bisdechlorogeodin",
+  "a_smiles": "COC(=O)C1=CC(=O)C=C(OC)[C@@]12Oc1cc(C)cc(O)c1C2=O",
+  "a_ec": [
+   "EC:1.21.3.4"
+  ],
+  "a_rhea": [
+   "RHEA:24092"
+  ],
+  "a_eq": "2 sulochrin + O2 + 2 H(+) = 2 (2S)-bisdechlorogeodin + 2 H2O",
+  "a_enzymes": "0",
+  "b_chebi": "15391",
+  "b_name": "(\u2212)-bisdechlorogeodin",
+  "b_smiles": "COC(=O)C1=CC(=O)C=C(OC)[C@]12Oc1cc(C)cc(O)c1C2=O",
+  "b_ec": [
+   "EC:1.21.3.5"
+  ],
+  "b_rhea": [
+   "RHEA:22616"
+  ],
+  "b_eq": "2 sulochrin + O2 + 2 H(+) = 2 (2R)-bisdechlorogeodin + 2 H2O",
+  "b_enzymes": "0",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "ROWKJAVDOGWPAT",
+  "kind": "enantiomers",
+  "a_chebi": "15686",
+  "a_name": "(<i>R</i>)-acetoin",
+  "a_smiles": "CC(=O)[C@@H](C)O",
+  "a_ec": [
+   "EC:1.1.1.303"
+  ],
+  "a_rhea": [
+   "RHEA:22900"
+  ],
+  "a_eq": "(R)-acetoin + NAD(+) = diacetyl + NADH + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "15687",
+  "b_name": "(<i>S</i>)-acetoin",
+  "b_smiles": "CC(=O)[C@H](C)O",
+  "b_ec": [
+   "EC:1.1.1.304"
+  ],
+  "b_rhea": [
+   "RHEA:27286"
+  ],
+  "b_eq": "(S)-acetoin + NAD(+) = diacetyl + NADH + H(+)",
+  "b_enzymes": "2124",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "AHLPHDHHMVZTML",
+  "kind": "enantiomers",
+  "a_chebi": "46911",
+  "a_name": "<small>L</small>-ornithinium(1+)",
+  "a_smiles": "[NH3+]CCC[C@H]([NH3+])C(=O)[O-]",
+  "a_ec": [
+   "EC:4.1.1.17"
+  ],
+  "a_rhea": [
+   "RHEA:22964"
+  ],
+  "a_eq": "L-ornithine + H(+) = putrescine + CO2",
+  "a_enzymes": "3525",
+  "b_chebi": "57668",
+  "b_name": "<small>D</small>-ornithinium(1+)",
+  "b_smiles": "[NH3+]CCC[C@@H]([NH3+])C(=O)[O-]",
+  "b_ec": [
+   "EC:4.1.1.116"
+  ],
+  "b_rhea": [
+   "RHEA:59048"
+  ],
+  "b_eq": "D-ornithine + H(+) = putrescine + CO2",
+  "b_enzymes": "1",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "MNQZXJOMYWMBOU",
+  "kind": "enantiomers",
+  "a_chebi": "17378",
+  "a_name": "<small>D</small>-glyceraldehyde",
+  "a_smiles": "[H]C(=O)[C@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.372",
+   "EC:1.1.1.72"
+  ],
+  "a_rhea": [
+   "RHEA:23592"
+  ],
+  "a_eq": "glycerol + NADP(+) = D-glyceraldehyde + NADPH + H(+)",
+  "a_enzymes": "405",
+  "b_chebi": "27975",
+  "b_name": "<small>L</small>-glyceraldehyde",
+  "b_smiles": "[H]C(=O)[C@@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.372"
+  ],
+  "b_rhea": [
+   "RHEA:38111"
+  ],
+  "b_eq": "glycerol + NADP(+) = L-glyceraldehyde + NADPH + H(+)",
+  "b_enzymes": "404",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "VBUYCZFBVCCYFD",
+  "kind": "stereoisomers",
+  "a_chebi": "16808",
+  "a_name": "2-dehydro-<small>D</small>-gluconate",
+  "a_smiles": "O=C([O-])C(=O)[C@@H](O)[C@H](O)[C@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.274"
+  ],
+  "a_rhea": [
+   "RHEA:23828"
+  ],
+  "a_eq": "2-dehydro-D-gluconate + NADP(+) = 2,5-didehydro-D-gluconate + NADPH + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "36602",
+  "b_name": "2-dehydro-<small>L</small>-idonate",
+  "b_smiles": "O=C([O-])C(=O)[C@@H](O)[C@H](O)[C@@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.346"
+  ],
+  "b_rhea": [
+   "RHEA:35111"
+  ],
+  "b_eq": "2-dehydro-L-idonate + NADP(+) = 2,5-didehydro-D-gluconate + NADPH + H(+)",
+  "b_enzymes": "3",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "WPAMZTWLKIDIOP",
+  "kind": "stereoisomers",
+  "a_chebi": "57990",
+  "a_name": "2-dehydro-3-deoxy-<small>D</small>-gluconate",
+  "a_smiles": "O=C([O-])C(=O)C[C@H](O)[C@H](O)CO",
+  "a_ec": [
+   "EC:1.1.1.127"
+  ],
+  "a_rhea": [
+   "RHEA:24232"
+  ],
+  "a_eq": "2-dehydro-3-deoxy-D-gluconate + NAD(+) = 3-deoxy-D-glycero-2,5-hexodiulosonate + NADH + H(+)",
+  "a_enzymes": "1363",
+  "b_chebi": "75545",
+  "b_name": "2-keto-3-deoxy-<small>L</small>-galactonate",
+  "b_smiles": "O=C([O-])C(=O)C[C@H](O)[C@@H](O)CO",
+  "b_ec": [
+   "EC:1.1.1.389"
+  ],
+  "b_rhea": [
+   "RHEA:47988"
+  ],
+  "b_eq": "2-dehydro-3-deoxy-L-galactonate + NAD(+) = 3-deoxy-D-glycero-2,5-hexodiulosonate + NADH + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "CRPUJAZIXJMDBK",
+  "kind": "enantiomers",
+  "a_chebi": "20",
+  "a_name": "(+)-camphene",
+  "a_smiles": "C=C1[C@H]2CC[C@H](C2)C1(C)C",
+  "a_ec": [
+   "EC:4.2.3.116"
+  ],
+  "a_rhea": [
+   "RHEA:32567"
+  ],
+  "a_eq": "(2E)-geranyl diphosphate = (1R,4S)-camphene + diphosphate",
+  "a_enzymes": "1",
+  "b_chebi": "89",
+  "b_name": "(\u2212)-camphene",
+  "b_smiles": "C=C1[C@@H]2CC[C@@H](C2)C1(C)C",
+  "b_ec": [
+   "EC:4.2.3.117"
+  ],
+  "b_rhea": [
+   "RHEA:25484"
+  ],
+  "b_eq": "(2E)-geranyl diphosphate = (1S,4R)-camphene + diphosphate",
+  "b_enzymes": "3",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "GRWFGVWFFZKLTI",
+  "kind": "enantiomers",
+  "a_chebi": "28261",
+  "a_name": "(+)-\u03b1-pinene",
+  "a_smiles": "CC1=CC[C@@H]2C[C@H]1C2(C)C",
+  "a_ec": [
+   "EC:4.2.3.121"
+  ],
+  "a_rhea": [
+   "RHEA:32575"
+  ],
+  "a_eq": "(2E)-geranyl diphosphate = (1R,5R)-alpha-pinene + diphosphate",
+  "a_enzymes": "10",
+  "b_chebi": "28660",
+  "b_name": "(\u2212)-\u03b1-pinene",
+  "b_smiles": "CC1=CC[C@H]2C[C@@H]1C2(C)C",
+  "b_ec": [
+   "EC:4.2.3.119"
+  ],
+  "b_rhea": [
+   "RHEA:25488"
+  ],
+  "b_eq": "(2E)-geranyl diphosphate = (1S,5S)-alpha-pinene + diphosphate",
+  "b_enzymes": "15",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "WTARULDDTDQWMU",
+  "kind": "enantiomers",
+  "a_chebi": "28359",
+  "a_name": "(\u2212)-\u03b2-pinene",
+  "a_smiles": "C=C1CC[C@H]2C[C@@H]1C2(C)C",
+  "a_ec": [
+   "EC:4.2.3.120"
+  ],
+  "a_rhea": [
+   "RHEA:25496"
+  ],
+  "a_eq": "(2E)-geranyl diphosphate = (1S,5S)-beta-pinene + diphosphate",
+  "a_enzymes": "13",
+  "b_chebi": "50026",
+  "b_name": "(+)-\u03b2-pinene",
+  "b_smiles": "C=C1CC[C@@H]2C[C@H]1C2(C)C",
+  "b_ec": [
+   "EC:4.2.3.122"
+  ],
+  "b_rhea": [
+   "RHEA:32579"
+  ],
+  "b_eq": "(2E)-geranyl diphosphate = (1R,5R)-beta-pinene + diphosphate",
+  "b_enzymes": "2",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "NDVASEGYNIMXJL",
+  "kind": "enantiomers",
+  "a_chebi": "50028",
+  "a_name": "(\u2212)-sabinene",
+  "a_smiles": "[H][C@@]12C[C@]1(C(C)C)CCC2=C",
+  "a_ec": [
+   "EC:4.2.3.109"
+  ],
+  "a_rhea": [
+   "RHEA:25508"
+  ],
+  "a_eq": "(2E)-geranyl diphosphate = (1S,5S)-sabinene + diphosphate",
+  "a_enzymes": "1",
+  "b_chebi": "50029",
+  "b_name": "(+)-sabinene",
+  "b_smiles": "[H][C@]12C[C@@]1(C(C)C)CCC2=C",
+  "b_ec": [
+   "EC:4.2.3.110"
+  ],
+  "b_rhea": [
+   "RHEA:32547"
+  ],
+  "b_eq": "(2E)-geranyl diphosphate = (1R,5R)-sabinene + diphosphate",
+  "b_enzymes": "5",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "XDSYKASBVOZOAG",
+  "kind": "stereoisomers",
+  "a_chebi": "50061",
+  "a_name": "<em>ent</em>-sandaracopimara-8(14),15-diene",
+  "a_smiles": "[H][C@@]12CC[C@@](C)(C=C)C=C1CC[C@]1([H])C(C)(C)CCC[C@@]21C",
+  "a_ec": [
+   "EC:4.2.3.29"
+  ],
+  "a_rhea": [
+   "RHEA:25536"
+  ],
+  "a_eq": "ent-copalyl diphosphate = ent-sandaracopimara-8(14),15-diene + diphosphate",
+  "a_enzymes": "3",
+  "b_chebi": "50063",
+  "b_name": "<em>ent</em>-pimara-8(14),15-diene",
+  "b_smiles": "[H][C@@]12CC[C@](C)(C=C)C=C1CC[C@]1([H])C(C)(C)CCC[C@@]21C",
+  "b_ec": [
+   "EC:4.2.3.30"
+  ],
+  "b_rhea": [
+   "RHEA:25540"
+  ],
+  "b_eq": "ent-copalyl diphosphate = ent-pimara-8(14),15-diene + diphosphate",
+  "b_enzymes": "2",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "LKJRXYMJDDAXEN",
+  "kind": "enantiomers",
+  "a_chebi": "138310",
+  "a_name": "(\u2212)-kolavenyl diphosphate(3\u2212)",
+  "a_smiles": "[H][C@]12CCC=C(C)[C@]1(C)CC[C@@H](C)[C@]2(C)CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:5.5.1.28"
+  ],
+  "a_rhea": [
+   "RHEA:54684"
+  ],
+  "a_eq": "(2E,6E,10E)-geranylgeranyl diphosphate = (-)-kolavenyl diphosphate",
+  "a_enzymes": "11",
+  "b_chebi": "138311",
+  "b_name": "(+)-kolavenyl diphosphate(3\u2212)",
+  "b_smiles": "[H][C@@]12CCC=C(C)[C@@]1(C)CC[C@H](C)[C@@]2(C)CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:5.5.1.29"
+  ],
+  "b_rhea": [
+   "RHEA:54676"
+  ],
+  "b_eq": "(2E,6E,10E)-geranylgeranyl diphosphate = (+)-kolavenyl diphosphate",
+  "b_enzymes": "2",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "LKJRXYMJDDAXEN",
+  "kind": "stereoisomers",
+  "a_chebi": "138310",
+  "a_name": "(\u2212)-kolavenyl diphosphate(3\u2212)",
+  "a_smiles": "[H][C@]12CCC=C(C)[C@]1(C)CC[C@@H](C)[C@]2(C)CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:5.5.1.28"
+  ],
+  "a_rhea": [
+   "RHEA:54684"
+  ],
+  "a_eq": "(2E,6E,10E)-geranylgeranyl diphosphate = (-)-kolavenyl diphosphate",
+  "a_enzymes": "11",
+  "b_chebi": "58821",
+  "b_name": "terpentedienyl diphosphate(3\u2212)",
+  "b_smiles": "[H][C@@]12CCC=C(C)[C@@]1(C)CC[C@@H](C)[C@@]2(C)CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:5.5.1.15"
+  ],
+  "b_rhea": [
+   "RHEA:25613"
+  ],
+  "b_eq": "(2E,6E,10E)-geranylgeranyl diphosphate = terpentedienyl diphosphate",
+  "b_enzymes": "1",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "LKJRXYMJDDAXEN",
+  "kind": "stereoisomers",
+  "a_chebi": "138311",
+  "a_name": "(+)-kolavenyl diphosphate(3\u2212)",
+  "a_smiles": "[H][C@@]12CCC=C(C)[C@@]1(C)CC[C@H](C)[C@@]2(C)CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:5.5.1.29"
+  ],
+  "a_rhea": [
+   "RHEA:54676"
+  ],
+  "a_eq": "(2E,6E,10E)-geranylgeranyl diphosphate = (+)-kolavenyl diphosphate",
+  "a_enzymes": "2",
+  "b_chebi": "58821",
+  "b_name": "terpentedienyl diphosphate(3\u2212)",
+  "b_smiles": "[H][C@@]12CCC=C(C)[C@@]1(C)CC[C@@H](C)[C@@]2(C)CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:5.5.1.15"
+  ],
+  "b_rhea": [
+   "RHEA:25613"
+  ],
+  "b_eq": "(2E,6E,10E)-geranylgeranyl diphosphate = terpentedienyl diphosphate",
+  "b_enzymes": "1",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "FRIWJYNKZPJVRL",
+  "kind": "stereoisomers",
+  "a_chebi": "37448",
+  "a_name": "2-dehydro-3-deoxy-<small>L</small>-fuconate",
+  "a_smiles": "C[C@H](O)[C@@H](O)CC(=O)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.1.2.64"
+  ],
+  "a_rhea": [
+   "RHEA:76523"
+  ],
+  "a_eq": "2-dehydro-3-deoxy-L-fuconate = (S)-lactaldehyde + pyruvate",
+  "a_enzymes": "0",
+  "b_chebi": "58371",
+  "b_name": "2-dehydro-3-deoxy-<small>L</small>-rhamnonate",
+  "b_smiles": "C[C@H](O)[C@H](O)CC(=O)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.1.2.53"
+  ],
+  "b_rhea": [
+   "RHEA:25784"
+  ],
+  "b_eq": "2-dehydro-3-deoxy-L-rhamnonate = (S)-lactaldehyde + pyruvate",
+  "b_enzymes": "59",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "ISAOCJYIOMOJEB",
+  "kind": "enantiomers",
+  "a_chebi": "51509",
+  "a_name": "(<i>R</i>)-benzoin",
+  "a_smiles": "O=C(c1ccccc1)[C@H](O)c1ccccc1",
+  "a_ec": [
+   "EC:1.1.1.321"
+  ],
+  "a_rhea": [
+   "RHEA:25964"
+  ],
+  "a_eq": "(R)-benzoin + NADP(+) = benzil + NADPH + H(+)",
+  "a_enzymes": "0",
+  "b_chebi": "51510",
+  "b_name": "(<i>S</i>)-benzoin",
+  "b_smiles": "O=C(c1ccccc1)[C@@H](O)c1ccccc1",
+  "b_ec": [
+   "EC:1.1.1.320"
+  ],
+  "b_rhea": [
+   "RHEA:25968"
+  ],
+  "b_eq": "(S)-benzoin + NADP(+) = benzil + NADPH + H(+)",
+  "b_enzymes": "5",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "FQTLCLSUCSAZDY",
+  "kind": "enantiomers",
+  "a_chebi": "59958",
+  "a_name": "(3<i>S</i>,6<i>E</i>)-nerolidol",
+  "a_smiles": "C=C[C@@](C)(O)CC/C=C(\\C)CCC=C(C)C",
+  "a_ec": [
+   "EC:4.2.3.48"
+  ],
+  "a_rhea": [
+   "RHEA:27530"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate + H2O = (3S,6E)-nerolidol + diphosphate",
+  "a_enzymes": "5",
+  "b_chebi": "59959",
+  "b_name": "(3<i>R</i>,6<i>E</i>)-nerolidol",
+  "b_smiles": "C=C[C@](C)(O)CC/C=C(\\C)CCC=C(C)C",
+  "b_ec": [
+   "EC:4.2.3.49"
+  ],
+  "b_rhea": [
+   "RHEA:27534"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate + H2O = (3R,6E)-nerolidol + diphosphate",
+  "b_enzymes": "2",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "NPNUFJAVOOONJE",
+  "kind": "enantiomers",
+  "a_chebi": "10357",
+  "a_name": "(\u2212)-\u03b2-caryophyllene",
+  "a_smiles": "[H][C@@]12CC/C(C)=C/CCC(=C)[C@@]1([H])CC2(C)C",
+  "a_ec": [
+   "EC:4.2.3.57"
+  ],
+  "a_rhea": [
+   "RHEA:28294"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = (-)-(E)-beta-caryophyllene + diphosphate",
+  "a_enzymes": "22",
+  "b_chebi": "63190",
+  "b_name": "(+)-\u03b2-caryophyllene",
+  "b_smiles": "[H][C@@]12CC(C)(C)[C@@]1([H])CC/C(C)=C/CCC2=C",
+  "b_ec": [
+   "EC:4.2.3.89"
+  ],
+  "b_rhea": [
+   "RHEA:31815"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = (+)-(E)-beta-caryophyllene + diphosphate",
+  "b_enzymes": "2",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "NPNUFJAVOOONJE",
+  "kind": "stereoisomers",
+  "a_chebi": "10357",
+  "a_name": "(\u2212)-\u03b2-caryophyllene",
+  "a_smiles": "[H][C@@]12CC/C(C)=C/CCC(=C)[C@@]1([H])CC2(C)C",
+  "a_ec": [
+   "EC:4.2.3.57"
+  ],
+  "a_rhea": [
+   "RHEA:28294"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = (-)-(E)-beta-caryophyllene + diphosphate",
+  "a_enzymes": "22",
+  "b_chebi": "68667",
+  "b_name": "(<i>E</i>)-2-<em>epi</em>-\u03b2-caryophyllene",
+  "b_smiles": "[H][C@@]12CC(C)(C)[C@]1([H])CC/C(C)=C/CCC2=C",
+  "b_ec": [
+   "EC:4.2.3.137"
+  ],
+  "b_rhea": [
+   "RHEA:34703"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = (E)-2-epi-beta-caryophyllene + diphosphate",
+  "b_enzymes": "2",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "NPNUFJAVOOONJE",
+  "kind": "stereoisomers",
+  "a_chebi": "63190",
+  "a_name": "(+)-\u03b2-caryophyllene",
+  "a_smiles": "[H][C@@]12CC(C)(C)[C@@]1([H])CC/C(C)=C/CCC2=C",
+  "a_ec": [
+   "EC:4.2.3.89"
+  ],
+  "a_rhea": [
+   "RHEA:31815"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = (+)-(E)-beta-caryophyllene + diphosphate",
+  "a_enzymes": "2",
+  "b_chebi": "68667",
+  "b_name": "(<i>E</i>)-2-<em>epi</em>-\u03b2-caryophyllene",
+  "b_smiles": "[H][C@@]12CC(C)(C)[C@]1([H])CC/C(C)=C/CCC2=C",
+  "b_ec": [
+   "EC:4.2.3.137"
+  ],
+  "b_rhea": [
+   "RHEA:34703"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = (E)-2-epi-beta-caryophyllene + diphosphate",
+  "b_enzymes": "2",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "KKOXKGNSUHTUBV",
+  "kind": "stereoisomers",
+  "a_chebi": "10115",
+  "a_name": "zingiberene",
+  "a_smiles": "[H][C@@]1([C@@H](C)CCC=C(C)C)C=CC(C)=CC1",
+  "a_ec": [
+   "EC:4.2.3.65"
+  ],
+  "a_rhea": [
+   "RHEA:28643"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = alpha-zingiberene + diphosphate",
+  "a_enzymes": "4",
+  "b_chebi": "71688",
+  "b_name": "7-<em>epi</em>-zingiberene",
+  "b_smiles": "[H][C@@]1([C@H](C)CCC=C(C)C)C=CC(C)=CC1",
+  "b_ec": [
+   "EC:4.2.3.142"
+  ],
+  "b_rhea": [
+   "RHEA:35747"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = 7-epizingiberene + diphosphate",
+  "b_enzymes": "0",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "WQZGKKKJIJFFOK",
+  "kind": "stereoisomers",
+  "a_chebi": "15903",
+  "a_name": "\u03b2-<small>D</small>-glucose",
+  "a_smiles": "OC[C@H]1O[C@@H](O)[C@H](O)[C@@H](O)[C@@H]1O",
+  "a_ec": [
+   "EC:3.2.1.205"
+  ],
+  "a_rhea": [
+   "RHEA:52752"
+  ],
+  "a_eq": "isomaltose + H2O = beta-D-glucose + D-glucose",
+  "a_enzymes": "1",
+  "b_chebi": "17925",
+  "b_name": "\u03b1-<small>D</small>-glucose",
+  "b_smiles": "OC[C@H]1O[C@H](O)[C@H](O)[C@@H](O)[C@@H]1O",
+  "b_ec": [
+   "EC:3.2.1.10"
+  ],
+  "b_rhea": [
+   "RHEA:68864"
+  ],
+  "b_eq": "isomaltose + H2O = alpha-D-glucose + D-glucose",
+  "b_enzymes": "282",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "QEBNYNLSCGVZOH",
+  "kind": "stereoisomers",
+  "a_chebi": "137562",
+  "a_name": "(+)-eremophilene",
+  "a_smiles": "C=C(C)[C@H]1CCC2=CCC[C@@H](C)[C@]2(C)C1",
+  "a_ec": [
+   "EC:4.2.3.164"
+  ],
+  "a_rhea": [
+   "RHEA:52804"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = (+)-eremophilene + diphosphate",
+  "a_enzymes": "2",
+  "b_chebi": "142537",
+  "b_name": "(\u2212)-5-<em>epi</em>-eremophilene",
+  "b_smiles": "C=C(C)[C@@H]1CCC2=CCC[C@H](C)[C@]2(C)C1",
+  "b_ec": [
+   "EC:4.2.3.199"
+  ],
+  "b_rhea": [
+   "RHEA:58168"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = (-)-5-epi-eremophilene + diphosphate",
+  "b_enzymes": "3",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "QEBNYNLSCGVZOH",
+  "kind": "stereoisomers",
+  "a_chebi": "137562",
+  "a_name": "(+)-eremophilene",
+  "a_smiles": "C=C(C)[C@H]1CCC2=CCC[C@@H](C)[C@]2(C)C1",
+  "a_ec": [
+   "EC:4.2.3.164"
+  ],
+  "a_rhea": [
+   "RHEA:52804"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = (+)-eremophilene + diphosphate",
+  "a_enzymes": "2",
+  "b_chebi": "61700",
+  "b_name": "(+)-valencene",
+  "b_smiles": "C=C(C)[C@@H]1CCC2=CCC[C@@H](C)[C@]2(C)C1",
+  "b_ec": [
+   "EC:4.2.3.73"
+  ],
+  "b_rhea": [
+   "RHEA:29511"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = (+)-valencene + diphosphate",
+  "b_enzymes": "7",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "QEBNYNLSCGVZOH",
+  "kind": "stereoisomers",
+  "a_chebi": "142537",
+  "a_name": "(\u2212)-5-<em>epi</em>-eremophilene",
+  "a_smiles": "C=C(C)[C@@H]1CCC2=CCC[C@H](C)[C@]2(C)C1",
+  "a_ec": [
+   "EC:4.2.3.199"
+  ],
+  "a_rhea": [
+   "RHEA:58168"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = (-)-5-epi-eremophilene + diphosphate",
+  "a_enzymes": "3",
+  "b_chebi": "61700",
+  "b_name": "(+)-valencene",
+  "b_smiles": "C=C(C)[C@@H]1CCC2=CCC[C@@H](C)[C@]2(C)C1",
+  "b_ec": [
+   "EC:4.2.3.73"
+  ],
+  "b_rhea": [
+   "RHEA:29511"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = (+)-valencene + diphosphate",
+  "b_enzymes": "7",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "SRBFZHDQGSBBOR",
+  "kind": "stereoisomers",
+  "a_chebi": "17535",
+  "a_name": "<small>L</small>-arabinopyranose",
+  "a_smiles": "OC1OC[C@H](O)[C@H](O)[C@H]1O",
+  "a_ec": [
+   "EC:7.5.2.12",
+   "EC:7.5.2.13"
+  ],
+  "a_rhea": [
+   "RHEA:30007"
+  ],
+  "a_eq": "L-arabinose(out) + ATP + H2O = L-arabinose(in) + ADP + phosphate + H(+)",
+  "a_enzymes": "1513",
+  "b_chebi": "53455",
+  "b_name": "<small>D</small>-xylopyranose",
+  "b_smiles": "OC1OC[C@@H](O)[C@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:7.5.2.10",
+   "EC:7.5.2.13"
+  ],
+  "b_rhea": [
+   "RHEA:29899"
+  ],
+  "b_eq": "D-xylose(out) + ATP + H2O = D-xylose(in) + ADP + phosphate + H(+)",
+  "b_enzymes": "1504",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "JGUNZIWGNMQSBM",
+  "kind": "enantiomers",
+  "a_chebi": "60955",
+  "a_name": "9(<i>S</i>)-HPODE(1\u2212)",
+  "a_smiles": "CCCCC/C=C\\C=C\\[C@H](CCCCCCCC(=O)[O-])OO",
+  "a_ec": [
+   "EC:1.13.11.58"
+  ],
+  "a_rhea": [
+   "RHEA:30291"
+  ],
+  "a_eq": "(9Z,12Z)-octadecadienoate + O2 = (9S)-hydroperoxy-(10E,12Z)-octadecadienoate",
+  "a_enzymes": "589",
+  "b_chebi": "63323",
+  "b_name": "9(<i>R</i>)-HPODE(1\u2212)",
+  "b_smiles": "CCCCC/C=C\\C=C\\[C@@H](CCCCCCCC(=O)[O-])OO",
+  "b_ec": [
+   "EC:1.13.11.61"
+  ],
+  "b_rhea": [
+   "RHEA:31691"
+  ],
+  "b_eq": "(9Z,12Z)-octadecadienoate + O2 = (9R)-hydroperoxy-(10E,12Z)-octadecadienoate",
+  "b_enzymes": "0",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "OZQAPQSEYFAMCY",
+  "kind": "stereoisomers",
+  "a_chebi": "59961",
+  "a_name": "\u03b1-selinene",
+  "a_smiles": "[H][C@@]1(C(=C)C)CC[C@@]2(C)CCC=C(C)[C@]2([H])C1",
+  "a_ec": [
+   "EC:4.2.3.198"
+  ],
+  "a_rhea": [
+   "RHEA:47052"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = alpha-selinene + diphosphate",
+  "a_enzymes": "8",
+  "b_chebi": "62224",
+  "b_name": "(\u2212)-7-<em>epi</em>-\u03b1-selinene",
+  "b_smiles": "[H][C@@]12C[C@@H](C(=C)C)CC[C@@]1(C)CCC=C2C",
+  "b_ec": [
+   "EC:4.2.3.86"
+  ],
+  "b_rhea": [
+   "RHEA:30383"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = (-)-7-epi-alpha-selinene + diphosphate",
+  "b_enzymes": "2",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "OZQAPQSEYFAMCY",
+  "kind": "stereoisomers",
+  "a_chebi": "59961",
+  "a_name": "\u03b1-selinene",
+  "a_smiles": "[H][C@@]1(C(=C)C)CC[C@@]2(C)CCC=C(C)[C@]2([H])C1",
+  "a_ec": [
+   "EC:4.2.3.198"
+  ],
+  "a_rhea": [
+   "RHEA:47052"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = alpha-selinene + diphosphate",
+  "a_enzymes": "8",
+  "b_chebi": "63445",
+  "b_name": "5-<em>epi</em>-\u03b1-selinene",
+  "b_smiles": "[H][C@@]1(C(=C)C)CC[C@@]2(C)CCC=C(C)[C@@]2([H])C1",
+  "b_ec": [
+   "EC:4.2.3.90"
+  ],
+  "b_rhea": [
+   "RHEA:31819"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = 5-epi-alpha-selinene + diphosphate",
+  "b_enzymes": "1",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "OZQAPQSEYFAMCY",
+  "kind": "stereoisomers",
+  "a_chebi": "62224",
+  "a_name": "(\u2212)-7-<em>epi</em>-\u03b1-selinene",
+  "a_smiles": "[H][C@@]12C[C@@H](C(=C)C)CC[C@@]1(C)CCC=C2C",
+  "a_ec": [
+   "EC:4.2.3.86"
+  ],
+  "a_rhea": [
+   "RHEA:30383"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = (-)-7-epi-alpha-selinene + diphosphate",
+  "a_enzymes": "2",
+  "b_chebi": "63445",
+  "b_name": "5-<em>epi</em>-\u03b1-selinene",
+  "b_smiles": "[H][C@@]1(C(=C)C)CC[C@@]2(C)CCC=C(C)[C@@]2([H])C1",
+  "b_ec": [
+   "EC:4.2.3.90"
+  ],
+  "b_rhea": [
+   "RHEA:31819"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = 5-epi-alpha-selinene + diphosphate",
+  "b_enzymes": "1",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "WXSKVKPSMAHCSG",
+  "kind": "enantiomers",
+  "a_chebi": "62213",
+  "a_name": "<small>D</small>-4-hydroxy-2-oxoglutarate(2\u2212)",
+  "a_smiles": "O=C([O-])C(=O)C[C@@H](O)C(=O)[O-]",
+  "a_ec": [
+   "EC:4.1.3.16"
+  ],
+  "a_rhea": [
+   "RHEA:30687"
+  ],
+  "a_eq": "(4R)-4-hydroxy-2-oxoglutarate = glyoxylate + pyruvate",
+  "a_enzymes": "1070",
+  "b_chebi": "71685",
+  "b_name": "<small>L</small>-4-hydroxy-2-oxoglutarate(2\u2212)",
+  "b_smiles": "O=C([O-])C(=O)C[C@H](O)C(=O)[O-]",
+  "b_ec": [
+   "EC:4.1.3.16",
+   "EC:4.1.3.42"
+  ],
+  "b_rhea": [
+   "RHEA:35639"
+  ],
+  "b_eq": "(4S)-4-hydroxy-2-oxoglutarate = glyoxylate + pyruvate",
+  "b_enzymes": "1223",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "FCSRUSQUAVXUKK",
+  "kind": "stereoisomers",
+  "a_chebi": "10278",
+  "a_name": "\u03b1-eudesmol",
+  "a_smiles": "[H][C@@]12C[C@H](C(C)(C)O)CC[C@@]1(C)CCC=C2C",
+  "a_ec": [
+   "EC:4.2.3.85"
+  ],
+  "a_rhea": [
+   "RHEA:30951"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate + H2O = alpha-eudesmol + diphosphate",
+  "a_enzymes": "1",
+  "b_chebi": "138040",
+  "b_name": "7-<em>epi</em>-\u03b1-eudesmol",
+  "b_smiles": "[H][C@@]12C[C@@H](C(C)(C)O)CC[C@@]1(C)CCC=C2C",
+  "b_ec": [
+   "EC:4.2.3.169"
+  ],
+  "b_rhea": [
+   "RHEA:54044"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate + H2O = 7-epi-alpha-eudesmol + diphosphate",
+  "b_enzymes": "1",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "YONQBPOWOZLKHS",
+  "kind": "enantiomers",
+  "a_chebi": "63324",
+  "a_name": "(8<i>E</i>,10<i>R</i>,12<i>Z</i>)-10-hydroperoxy-8,12-octadecadienoate",
+  "a_smiles": "CCCCC/C=C\\C[C@H](/C=C/CCCCCCC(=O)[O-])OO",
+  "a_ec": [
+   "EC:1.13.11.62"
+  ],
+  "a_rhea": [
+   "RHEA:31695"
+  ],
+  "a_eq": "(9Z,12Z)-octadecadienoate + O2 = (8E,10R,12Z)-10-hydroperoxyoctadeca-8,12-dienoate",
+  "a_enzymes": "3",
+  "b_chebi": "75346",
+  "b_name": "(8<i>E</i>,10<i>S</i>,12<i>Z</i>)-10-hydroperoxyoctadeca-8,12-dienoate",
+  "b_smiles": "CCCCC/C=C\\C[C@@H](/C=C/CCCCCCC(=O)[O-])OO",
+  "b_ec": [
+   "EC:1.13.11.77"
+  ],
+  "b_rhea": [
+   "RHEA:37919"
+  ],
+  "b_eq": "(9Z,12Z)-octadecadienoate + O2 = (8E,10S,12Z)-10-hydroperoxyoctadeca-8,12-dienoate",
+  "b_enzymes": "1",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "KONGRWVLXLWGDV",
+  "kind": "stereoisomers",
+  "a_chebi": "138041",
+  "a_name": "(+)-4-<em>epi</em>-cubebol",
+  "a_smiles": "[H][C@@]12[C@@H](C(C)C)CC[C@H](C)[C@@]13CC[C@](C)(O)[C@@]23[H]",
+  "a_ec": [
+   "EC:4.2.3.170"
+  ],
+  "a_rhea": [
+   "RHEA:54048"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate + H2O = 4-epi-cubebol + diphosphate",
+  "a_enzymes": "1",
+  "b_chebi": "138045",
+  "b_name": "(\u2212)-10-<em>epi</em>-cubebol",
+  "b_smiles": "[H][C@]12[C@H](C(C)C)CC[C@H](C)[C@]13CC[C@](C)(O)[C@]23[H]",
+  "b_ec": [
+   "EC:4.2.3.175"
+  ],
+  "b_rhea": [
+   "RHEA:54064"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate + H2O = 10-epi-cubebol + diphosphate",
+  "b_enzymes": "1",
+  "n_stereocentres": 6
+ },
+ {
+  "skeleton": "KONGRWVLXLWGDV",
+  "kind": "stereoisomers",
+  "a_chebi": "138041",
+  "a_name": "(+)-4-<em>epi</em>-cubebol",
+  "a_smiles": "[H][C@@]12[C@@H](C(C)C)CC[C@H](C)[C@@]13CC[C@](C)(O)[C@@]23[H]",
+  "a_ec": [
+   "EC:4.2.3.170"
+  ],
+  "a_rhea": [
+   "RHEA:54048"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate + H2O = 4-epi-cubebol + diphosphate",
+  "a_enzymes": "1",
+  "b_chebi": "63446",
+  "b_name": "(\u2212)-cubebol",
+  "b_smiles": "[H][C@]12[C@H](C(C)C)CC[C@@H](C)[C@]13CC[C@](C)(O)[C@]23[H]",
+  "b_ec": [
+   "EC:4.2.3.91"
+  ],
+  "b_rhea": [
+   "RHEA:31823"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate + H2O = cubebol + diphosphate",
+  "b_enzymes": "3",
+  "n_stereocentres": 6
+ },
+ {
+  "skeleton": "KONGRWVLXLWGDV",
+  "kind": "stereoisomers",
+  "a_chebi": "138045",
+  "a_name": "(\u2212)-10-<em>epi</em>-cubebol",
+  "a_smiles": "[H][C@]12[C@H](C(C)C)CC[C@H](C)[C@]13CC[C@](C)(O)[C@]23[H]",
+  "a_ec": [
+   "EC:4.2.3.175"
+  ],
+  "a_rhea": [
+   "RHEA:54064"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate + H2O = 10-epi-cubebol + diphosphate",
+  "a_enzymes": "1",
+  "b_chebi": "63446",
+  "b_name": "(\u2212)-cubebol",
+  "b_smiles": "[H][C@]12[C@H](C(C)C)CC[C@@H](C)[C@]13CC[C@](C)(O)[C@]23[H]",
+  "b_ec": [
+   "EC:4.2.3.91"
+  ],
+  "b_rhea": [
+   "RHEA:31823"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate + H2O = cubebol + diphosphate",
+  "b_enzymes": "3",
+  "n_stereocentres": 6
+ },
+ {
+  "skeleton": "WRHGORWNJGOVQY",
+  "kind": "stereoisomers",
+  "a_chebi": "63205",
+  "a_name": "(+)-\u03b3-cadinene",
+  "a_smiles": "[H][C@@]12CCC(C)=C[C@@]1([H])[C@H](C(C)C)CCC2=C",
+  "a_ec": [
+   "EC:4.2.3.92"
+  ],
+  "a_rhea": [
+   "RHEA:31827"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = (+)-gamma-cadinene + diphosphate",
+  "a_enzymes": "3",
+  "b_chebi": "64798",
+  "b_name": "\u03b3-muurolene",
+  "b_smiles": "[H][C@@]12C=C(C)CC[C@]1([H])C(=C)CC[C@H]2C(C)C",
+  "b_ec": [
+   "EC:4.2.3.126"
+  ],
+  "b_rhea": [
+   "RHEA:33107"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = gamma-muurolene + diphosphate",
+  "b_enzymes": "11",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "UCQHFDKBUHCAFR",
+  "kind": "stereoisomers",
+  "a_chebi": "63710",
+  "a_name": "7-<em>epi</em>-sesquithujene",
+  "a_smiles": "CC(C)=CCC[C@@H](C)[C@@]12CC=C(C)[C@@H]1C2",
+  "a_ec": [
+   "EC:4.2.3.101"
+  ],
+  "a_rhea": [
+   "RHEA:31995"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = 7-epi-sesquithujene + diphosphate",
+  "a_enzymes": "1",
+  "b_chebi": "63711",
+  "b_name": "sesquithujene",
+  "b_smiles": "CC(C)=CCC[C@H](C)[C@@]12CC=C(C)[C@@H]1C2",
+  "b_ec": [
+   "EC:4.2.3.102"
+  ],
+  "b_rhea": [
+   "RHEA:31991"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = sesquithujene + diphosphate",
+  "b_enzymes": "1",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "LHYHMMRYTDARSZ",
+  "kind": "stereoisomers",
+  "a_chebi": "138042",
+  "a_name": "\u03c4-cadinol",
+  "a_smiles": "[H][C@@]12CCC(C)=C[C@@]1([H])[C@H](C(C)C)CC[C@]2(C)O",
+  "a_ec": [
+   "EC:4.2.3.173"
+  ],
+  "a_rhea": [
+   "RHEA:54052"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate + H2O = tau-cadinol + diphosphate",
+  "a_enzymes": "3",
+  "b_chebi": "184119",
+  "b_name": "(+)-\u03b4-cadinol",
+  "b_smiles": "[H][C@@]12CCC(C)=C[C@]1([H])[C@@H](C(C)C)CC[C@]2(C)O",
+  "b_ec": [
+   "EC:4.2.3.212"
+  ],
+  "b_rhea": [
+   "RHEA:78271"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate + H2O = (+)-delta-cadinol + diphosphate",
+  "b_enzymes": "3",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "LHYHMMRYTDARSZ",
+  "kind": "stereoisomers",
+  "a_chebi": "138042",
+  "a_name": "\u03c4-cadinol",
+  "a_smiles": "[H][C@@]12CCC(C)=C[C@@]1([H])[C@H](C(C)C)CC[C@]2(C)O",
+  "a_ec": [
+   "EC:4.2.3.173"
+  ],
+  "a_rhea": [
+   "RHEA:54052"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate + H2O = tau-cadinol + diphosphate",
+  "a_enzymes": "3",
+  "b_chebi": "63704",
+  "b_name": "(+)-\u03a4-muurolol",
+  "b_smiles": "[H][C@@]12CCC(C)=C[C@]1([H])[C@@H](C(C)C)CC[C@@]2(C)O",
+  "b_ec": [
+   "EC:4.2.3.98"
+  ],
+  "b_rhea": [
+   "RHEA:32011"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate + H2O = (+)-T-muurolol + diphosphate",
+  "b_enzymes": "3",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "LHYHMMRYTDARSZ",
+  "kind": "stereoisomers",
+  "a_chebi": "184119",
+  "a_name": "(+)-\u03b4-cadinol",
+  "a_smiles": "[H][C@@]12CCC(C)=C[C@]1([H])[C@@H](C(C)C)CC[C@]2(C)O",
+  "a_ec": [
+   "EC:4.2.3.212"
+  ],
+  "a_rhea": [
+   "RHEA:78271"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate + H2O = (+)-delta-cadinol + diphosphate",
+  "a_enzymes": "3",
+  "b_chebi": "63704",
+  "b_name": "(+)-\u03a4-muurolol",
+  "b_smiles": "[H][C@@]12CCC(C)=C[C@]1([H])[C@@H](C(C)C)CC[C@@]2(C)O",
+  "b_ec": [
+   "EC:4.2.3.98"
+  ],
+  "b_rhea": [
+   "RHEA:32011"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate + H2O = (+)-T-muurolol + diphosphate",
+  "b_enzymes": "3",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "PMMYEEVYMWASQN",
+  "kind": "stereoisomers",
+  "a_chebi": "58375",
+  "a_name": "<i>trans</i>-4-hydroxy-<small>L</small>-proline zwitterion",
+  "a_smiles": "O=C([O-])[C@@H]1C[C@@H](O)C[NH2+]1",
+  "a_ec": [
+   "EC:1.14.11.57"
+  ],
+  "a_rhea": [
+   "RHEA:51508"
+  ],
+  "a_eq": "L-proline + 2-oxoglutarate + O2 = trans-4-hydroxy-L-proline + succinate + CO2",
+  "a_enzymes": "3",
+  "b_chebi": "63727",
+  "b_name": "<i>cis</i>-4-hydroxy-<small>L</small>-proline zwitterion",
+  "b_smiles": "O=C([O-])[C@@H]1C[C@H](O)C[NH2+]1",
+  "b_ec": [
+   "EC:1.14.11.56"
+  ],
+  "b_rhea": [
+   "RHEA:32127"
+  ],
+  "b_eq": "L-proline + 2-oxoglutarate + O2 = cis-4-hydroxy-L-proline + succinate + CO2",
+  "b_enzymes": "2",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "WUOACPNHFRMFPN",
+  "kind": "enantiomers",
+  "a_chebi": "128",
+  "a_name": "(<i>S</i>)-(\u2212)-\u03b1-terpineol",
+  "a_smiles": "[H][C@@]1(C(C)(C)O)CC=C(C)CC1",
+  "a_ec": [
+   "EC:4.2.3.111"
+  ],
+  "a_rhea": [
+   "RHEA:32551"
+  ],
+  "a_eq": "(2E)-geranyl diphosphate + H2O = (S)-alpha-terpineol + diphosphate",
+  "a_enzymes": "12",
+  "b_chebi": "300",
+  "b_name": "(<i>R</i>)-(+)-\u03b1-terpineol",
+  "b_smiles": "[H][C@]1(C(C)(C)O)CC=C(C)CC1",
+  "b_ec": [
+   "EC:4.2.3.112"
+  ],
+  "b_rhea": [
+   "RHEA:32555"
+  ],
+  "b_eq": "(2E)-geranyl diphosphate + H2O = (R)-alpha-terpineol + diphosphate",
+  "b_enzymes": "8",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "ZDGVATANBJCRHY",
+  "kind": "enantiomers",
+  "a_chebi": "138223",
+  "a_name": "<em>ent</em>-copal-8-ol diphosphate(3\u2212)",
+  "a_smiles": "[H][C@]12CC[C@](C)(O)[C@@H](CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-])[C@]1(C)CCCC2(C)C",
+  "a_ec": [
+   "EC:4.2.1.173"
+  ],
+  "a_rhea": [
+   "RHEA:54648"
+  ],
+  "a_eq": "ent-8alpha-hydroxylabd-13-en-15-yl diphosphate = (2E,6E,10E)-geranylgeranyl diphosphate + H2O",
+  "a_enzymes": "1",
+  "b_chebi": "64283",
+  "b_name": "copal-8-ol diphosphate(3\u2212)",
+  "b_smiles": "[H][C@@]12CC[C@@](C)(O)[C@H](CC/C(C)=C/COP(=O)([O-])OP(=O)([O-])[O-])[C@@]1(C)CCCC2(C)C",
+  "b_ec": [
+   "EC:4.2.1.133"
+  ],
+  "b_rhea": [
+   "RHEA:32703"
+  ],
+  "b_eq": "(2E,6E,10E)-geranylgeranyl diphosphate + H2O = 8-hydroxycopalyl diphosphate",
+  "b_enzymes": "5",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "YVCUGZBVCHODNB",
+  "kind": "stereoisomers",
+  "a_chebi": "16271",
+  "a_name": "2-<i>exo</i>-hydroxy-1,8-cineole",
+  "a_smiles": "CC1(C)O[C@]2(C)CC[C@H]1C[C@@H]2O",
+  "a_ec": [
+   "EC:1.14.14.56"
+  ],
+  "a_rhea": [
+   "RHEA:32895"
+  ],
+  "a_eq": "1,8-cineole + reduced [NADPH--hemoprotein reductase] + O2 = 2-exo-hydroxy-1,8-cineole + oxidized [NADPH--hemoprotein reductase] + H2O + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "35811",
+  "b_name": "2-<i>endo</i>-hydroxy-1,8-cineole",
+  "b_smiles": "CC1(C)O[C@]2(C)CC[C@H]1C[C@H]2O",
+  "b_ec": [
+   "EC:1.14.14.133"
+  ],
+  "b_rhea": [
+   "RHEA:32899"
+  ],
+  "b_eq": "1,8-cineole + reduced [flavodoxin] + O2 = 2-endo-hydroxy-1,8-cineole + oxidized [flavodoxin] + H2O + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "QMAYBMKBYCGXDH",
+  "kind": "stereoisomers",
+  "a_chebi": "137533",
+  "a_name": "(\u2212)-\u03b1-amorphene",
+  "a_smiles": "[H][C@@]12CCC(C)=C[C@]1([H])[C@H](C(C)C)CC=C2C",
+  "a_ec": [
+   "EC:4.2.3.162"
+  ],
+  "a_rhea": [
+   "RHEA:53640"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate = (-)-alpha-amorphene + diphosphate",
+  "a_enzymes": "1",
+  "b_chebi": "64797",
+  "b_name": "\u03b1-muurolene",
+  "b_smiles": "[H][C@@]12C=C(C)CC[C@]1([H])C(C)=CC[C@H]2C(C)C",
+  "b_ec": [
+   "EC:4.2.3.125"
+  ],
+  "b_rhea": [
+   "RHEA:33103"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate = alpha-muurolene + diphosphate",
+  "b_enzymes": "11",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "UJOYFRCOTPUKAK",
+  "kind": "enantiomers",
+  "a_chebi": "67158",
+  "a_name": "(<i>R</i>)-3-ammonio-3-phenylpropanoate",
+  "a_smiles": "[NH3+][C@H](CC(=O)[O-])c1ccccc1",
+  "a_ec": [
+   "EC:5.4.3.10"
+  ],
+  "a_rhea": [
+   "RHEA:34395"
+  ],
+  "a_eq": "L-phenylalanine = (3R)-beta-phenylalanine",
+  "a_enzymes": "6",
+  "b_chebi": "68506",
+  "b_name": "(<i>S</i>)-3-ammonio-3-phenylpropanoate",
+  "b_smiles": "[NH3+][C@@H](CC(=O)[O-])c1ccccc1",
+  "b_ec": [
+   "EC:5.4.3.11"
+  ],
+  "b_rhea": [
+   "RHEA:34527"
+  ],
+  "b_eq": "L-phenylalanine = (S)-3-amino-3-phenylpropanoate",
+  "b_enzymes": "0",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "JHEDABDMLBOYRG",
+  "kind": "stereoisomers",
+  "a_chebi": "70784",
+  "a_name": "CDP-\u03b1-<small>D</small>-abequose(2\u2212)",
+  "a_smiles": "C[C@H]1O[C@H](OP(=O)([O-])OP(=O)([O-])OC[C@H]2O[C@@H](n3ccc(N)nc3=O)[C@H](O)[C@@H]2O)[C@H](O)C[C@H]1O",
+  "a_ec": [
+   "EC:1.1.1.341"
+  ],
+  "a_rhea": [
+   "RHEA:34563"
+  ],
+  "a_eq": "CDP-alpha-D-abequose + NADP(+) = CDP-4-dehydro-3,6-dideoxy-alpha-D-glucose + NADPH + H(+)",
+  "a_enzymes": "3",
+  "b_chebi": "70785",
+  "b_name": "CDP-3,6-dideoxy-\u03b1-<small>D</small>-glucose(2\u2212)",
+  "b_smiles": "C[C@H]1O[C@H](OP(=O)([O-])OP(=O)([O-])OC[C@H]2O[C@@H](n3ccc(N)nc3=O)[C@H](O)[C@@H]2O)[C@H](O)C[C@@H]1O",
+  "b_ec": [
+   "EC:1.1.1.342"
+  ],
+  "b_rhea": [
+   "RHEA:34567"
+  ],
+  "b_eq": "CDP-alpha-D-paratose + NADP(+) = CDP-4-dehydro-3,6-dideoxy-alpha-D-glucose + NADPH + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 8
+ },
+ {
+  "skeleton": "FRIWJYNKZPJVRL",
+  "kind": "stereoisomers",
+  "a_chebi": "37448",
+  "a_name": "2-dehydro-3-deoxy-<small>L</small>-fuconate",
+  "a_smiles": "C[C@H](O)[C@@H](O)CC(=O)C(=O)[O-]",
+  "a_ec": [
+   "EC:1.1.1.434"
+  ],
+  "a_rhea": [
+   "RHEA:75191"
+  ],
+  "a_eq": "2-dehydro-3-deoxy-L-fuconate + NAD(+) = 2,4-didehydro-3-deoxy-L-rhamnonate + NADH + H(+)",
+  "a_enzymes": "2",
+  "b_chebi": "58371",
+  "b_name": "2-dehydro-3-deoxy-<small>L</small>-rhamnonate",
+  "b_smiles": "C[C@H](O)[C@H](O)CC(=O)C(=O)[O-]",
+  "b_ec": [
+   "EC:1.1.1.401"
+  ],
+  "b_rhea": [
+   "RHEA:36499"
+  ],
+  "b_eq": "2-dehydro-3-deoxy-L-rhamnonate + NAD(+) = 2,4-didehydro-3-deoxy-L-rhamnonate + NADH + H(+)",
+  "b_enzymes": "2",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "WZXSCLOEBAZOTJ",
+  "kind": "stereoisomers",
+  "a_chebi": "133491",
+  "a_name": "\u03b1-<small>D</small>-Gal-(1\u21923)-\u03b1-<small>D</small>-GlcNAc-diphospho-<em>ditrans</em>,<em>octacis</em>-undecaprenol(2\u2212)",
+  "a_smiles": "CC(=O)N[C@H]1[C@@H](OP(=O)([O-])OP(=O)([O-])OC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(\\C)CC/C=C(\\C)CCC=C(C)C)O[C@H](CO)[C@@H](O)[C@@H]1O[C@H]1O[C@H](CO)[C@H](O)[C@H](O)[C@H]1O",
+  "a_ec": [
+   "EC:2.4.1.343"
+  ],
+  "a_rhea": [
+   "RHEA:50620"
+  ],
+  "a_eq": "N-acetyl-alpha-D-glucosaminyl-di-trans,octa-cis-undecaprenyl diphosphate + UDP-alpha-D-galactose = alpha-D-Gal-(1->3)-alpha-D-GlcNAc-di-trans,octa-cis-undecaprenyl diphosphate + UDP + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "73973",
+  "b_name": "\u03b2-<small>D</small>-Gal-(1\u21923)-\u03b1-<small>D</small>-GlcNAc-diphospho-<em>ditrans</em>,<em>octacis</em>-undecaprenol(2\u2212)",
+  "b_smiles": "CC(=O)N[C@H]1[C@@H](OP(=O)([O-])OP(=O)([O-])OC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(/C)CC/C=C(\\C)CC/C=C(\\C)CCC=C(C)C)O[C@H](CO)[C@@H](O)[C@@H]1O[C@@H]1O[C@H](CO)[C@H](O)[C@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:2.4.1.303"
+  ],
+  "b_rhea": [
+   "RHEA:36747"
+  ],
+  "b_eq": "N-acetyl-alpha-D-glucosaminyl-di-trans,octa-cis-undecaprenyl diphosphate + UDP-alpha-D-galactose = beta-D-Gal-(1->3)-alpha-D-GlcNAc-di-trans,octa-cis-undecaprenyl diphosphate + UDP + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 10
+ },
+ {
+  "skeleton": "WNTGYJSOUMFZEP",
+  "kind": "enantiomers",
+  "a_chebi": "75284",
+  "a_name": "(<i>R</i>)-2-(4-chloro-2-methylphenoxy)propanoate",
+  "a_smiles": "Cc1cc(Cl)ccc1O[C@H](C)C(=O)[O-]",
+  "a_ec": [
+   "EC:1.14.11.44"
+  ],
+  "a_rhea": [
+   "RHEA:37815"
+  ],
+  "a_eq": "(R)-2-(4-chloro-2-methylphenoxy)propanoate + 2-oxoglutarate + O2 = 2-methyl-4-chlorophenol + pyruvate + succinate + CO2",
+  "a_enzymes": "2",
+  "b_chebi": "75285",
+  "b_name": "(<i>S</i>)-2-(4-chloro-2-methylphenoxy)propanoate",
+  "b_smiles": "Cc1cc(Cl)ccc1O[C@@H](C)C(=O)[O-]",
+  "b_ec": [
+   "EC:1.14.11.43"
+  ],
+  "b_rhea": [
+   "RHEA:37831"
+  ],
+  "b_eq": "(S)-2-(4-chloro-2-methylphenoxy)propanoate + 2-oxoglutarate + O2 = 2-methyl-4-chlorophenol + pyruvate + succinate + CO2",
+  "b_enzymes": "2",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "MZHCENGPTKEIGP",
+  "kind": "enantiomers",
+  "a_chebi": "75287",
+  "a_name": "(<i>S</i>)-dichlorprop(1\u2212)",
+  "a_smiles": "C[C@H](Oc1ccc(Cl)cc1Cl)C(=O)[O-]",
+  "a_ec": [
+   "EC:1.14.11.43"
+  ],
+  "a_rhea": [
+   "RHEA:37827"
+  ],
+  "a_eq": "(S)-(2,4-dichlorophenoxy)propanoate + 2-oxoglutarate + O2 = 2,4-dichlorophenol + pyruvate + succinate + CO2",
+  "a_enzymes": "2",
+  "b_chebi": "75288",
+  "b_name": "(<i>R</i>)-dichlorprop(1\u2212)",
+  "b_smiles": "C[C@@H](Oc1ccc(Cl)cc1Cl)C(=O)[O-]",
+  "b_ec": [
+   "EC:1.14.11.44"
+  ],
+  "b_rhea": [
+   "RHEA:37823"
+  ],
+  "b_eq": "(R)-(2,4-dichlorophenoxy)propanoate + 2-oxoglutarate + O2 = 2,4-dichlorophenol + pyruvate + succinate + CO2",
+  "b_enzymes": "2",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "HXXFSFRBOHSIMQ",
+  "kind": "stereoisomers",
+  "a_chebi": "57684",
+  "a_name": "\u03b2-<small>D</small>-glucose 1-phosphate(2\u2212)",
+  "a_smiles": "O=P([O-])([O-])O[C@@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "a_ec": [
+   "EC:2.4.1.332"
+  ],
+  "a_rhea": [
+   "RHEA:43060"
+  ],
+  "a_eq": "2-O-(alpha-D-glucopyranosyl)glycerol + phosphate = beta-D-glucose 1-phosphate + glycerol",
+  "a_enzymes": "1",
+  "b_chebi": "58601",
+  "b_name": "\u03b1-<small>D</small>-glucose 1-phosphate(2\u2212)",
+  "b_smiles": "O=P([O-])([O-])O[C@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O",
+  "b_ec": [
+   "EC:2.4.1.359"
+  ],
+  "b_rhea": [
+   "RHEA:56416"
+  ],
+  "b_eq": "2-O-(alpha-D-glucopyranosyl)glycerol + phosphate = alpha-D-glucose 1-phosphate + glycerol",
+  "b_enzymes": "1",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "JCZFNXYQGNLHDQ",
+  "kind": "stereoisomers",
+  "a_chebi": "131717",
+  "a_name": "2-<em>epi</em>-valiolone",
+  "a_smiles": "O=C1C[C@](O)(CO)[C@@H](O)[C@H](O)[C@@H]1O",
+  "a_ec": [
+   "EC:4.2.3.155"
+  ],
+  "a_rhea": [
+   "RHEA:49564"
+  ],
+  "a_eq": "D-sedoheptulose 7-phosphate = 2-epi-valiolone + phosphate",
+  "a_enzymes": "2",
+  "b_chebi": "84187",
+  "b_name": "2-<em>epi</em>-5-<em>epi</em>-valiolone",
+  "b_smiles": "O=C1C[C@@](O)(CO)[C@@H](O)[C@H](O)[C@@H]1O",
+  "b_ec": [
+   "EC:4.2.3.152"
+  ],
+  "b_rhea": [
+   "RHEA:44184"
+  ],
+  "b_eq": "D-sedoheptulose 7-phosphate = 2-epi-5-epi-valiolone + phosphate",
+  "b_enzymes": "384",
+  "n_stereocentres": 4
+ },
+ {
+  "skeleton": "NVKAWKQGWWIWPM",
+  "kind": "stereoisomers",
+  "a_chebi": "16330",
+  "a_name": "17\u03b2-hydroxy-5\u03b1-androstan-3-one",
+  "a_smiles": "[H][C@@]12CC[C@]3([H])[C@]([H])(CC[C@]4(C)[C@@H](O)CC[C@@]34[H])[C@@]1(C)CCC(=O)C2",
+  "a_ec": [
+   "EC:1.3.1.22"
+  ],
+  "a_rhea": [
+   "RHEA:50820"
+  ],
+  "a_eq": "17beta-hydroxy-5alpha-androstan-3-one + NADP(+) = testosterone + NADPH + H(+)",
+  "a_enzymes": "2588",
+  "b_chebi": "2150",
+  "b_name": "5\u03b2-dihydrotestosterone",
+  "b_smiles": "[H][C@]12CC[C@]3([H])[C@]([H])(CC[C@]4(C)[C@@H](O)CC[C@@]34[H])[C@@]1(C)CCC(=O)C2",
+  "b_ec": [
+   "EC:1.3.1.3"
+  ],
+  "b_rhea": [
+   "RHEA:46636"
+  ],
+  "b_eq": "5beta-dihydrotestosterone + NADP(+) = testosterone + NADPH + H(+)",
+  "b_enzymes": "4",
+  "n_stereocentres": 7
+ },
+ {
+  "skeleton": "SMEROWZSTRWXGI",
+  "kind": "stereoisomers",
+  "a_chebi": "29744",
+  "a_name": "lithocholate",
+  "a_smiles": "[H][C@]12CC[C@]3([H])[C@]([H])(CC[C@@]4(C)[C@@]3([H])CC[C@]4([H])[C@H](C)CCC(=O)[O-])[C@@]1(C)CC[C@@H](O)C2",
+  "a_ec": [
+   "EC:1.1.1.392"
+  ],
+  "a_rhea": [
+   "RHEA:47496"
+  ],
+  "a_eq": "lithocholate + NADP(+) = 3-oxo-5beta-cholan-24-oate + NADPH + H(+)",
+  "a_enzymes": "3",
+  "b_chebi": "87728",
+  "b_name": "isolithocholate",
+  "b_smiles": "[H][C@]12CC[C@]3([H])[C@]([H])(CC[C@@]4(C)[C@@]3([H])CC[C@]4([H])[C@H](C)CCC(=O)[O-])[C@@]1(C)CC[C@H](O)C2",
+  "b_ec": [
+   "EC:1.1.1.393"
+  ],
+  "b_rhea": [
+   "RHEA:47520"
+  ],
+  "b_eq": "3-oxo-5beta-cholan-24-oate + NADPH + H(+) = isolithocholate + NADP(+)",
+  "b_enzymes": "3",
+  "n_stereocentres": 9
+ },
+ {
+  "skeleton": "COLOZALSGXIPJV",
+  "kind": "stereoisomers",
+  "a_chebi": "235535",
+  "a_name": "2-dehydro-3,6-dideoxy-6-sulfo-<small>D</small>-galactonate(2\u2212)",
+  "a_smiles": "O=C([O-])C(=O)C[C@@H](O)[C@H](O)CS(=O)(=O)[O-]",
+  "a_ec": [
+   "EC:4.1.2.67"
+  ],
+  "a_rhea": [
+   "RHEA:86355"
+  ],
+  "a_eq": "2-dehydro-3,6-dideoxy-6-sulfo-D-galactonate = (2S)-3-sulfolactaldehyde + pyruvate",
+  "a_enzymes": "0",
+  "b_chebi": "88094",
+  "b_name": "2-dehydro-3,6-dideoxy-6-sulfo-<small>D</small>-gluconate(2\u2212)",
+  "b_smiles": "O=C([O-])C(=O)C[C@H](O)[C@H](O)CS(=O)(=O)[O-]",
+  "b_ec": [
+   "EC:4.1.2.58"
+  ],
+  "b_rhea": [
+   "RHEA:47924"
+  ],
+  "b_eq": "2-dehydro-3,6-dideoxy-6-sulfo-D-gluconate = (2S)-3-sulfolactaldehyde + pyruvate",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "PSXQJZDFWDKBIP",
+  "kind": "stereoisomers",
+  "a_chebi": "71541",
+  "a_name": "(25<i>S</i>)-\u0394<small><sup>4</small></sup>-dafachronate",
+  "a_smiles": "[H][C@@]12CCC3=CC(=O)CC[C@]3(C)[C@@]1([H])CC[C@@]1(C)[C@@]2([H])CC[C@]1([H])[C@H](C)CCC[C@H](C)C(=O)[O-]",
+  "a_ec": [
+   "EC:1.14.15.29"
+  ],
+  "a_rhea": [
+   "RHEA:51564"
+  ],
+  "a_eq": "cholest-4-en-3-one + 6 reduced [2Fe-2S]-[ferredoxin] + 3 O2 + 5 H(+) = (25S)-3-oxocholest-4-en-26-oate + 6 oxidized [2Fe-2S]-[ferredoxin] + 4 H2O",
+  "a_enzymes": "22",
+  "b_chebi": "71570",
+  "b_name": "(25<i>R</i>)-\u0394<small><sup>4</small></sup>-dafachronate",
+  "b_smiles": "[H][C@@]12CCC3=CC(=O)CC[C@]3(C)[C@@]1([H])CC[C@@]1(C)[C@@]2([H])CC[C@]1([H])[C@H](C)CCC[C@@H](C)C(=O)[O-]",
+  "b_ec": [
+   "EC:1.14.15.28"
+  ],
+  "b_rhea": [
+   "RHEA:49996"
+  ],
+  "b_eq": "cholest-4-en-3-one + 6 reduced [2Fe-2S]-[ferredoxin] + 3 O2 + 5 H(+) = (25R)-3-oxocholest-4-en-26-oate + 6 oxidized [2Fe-2S]-[ferredoxin] + 4 H2O",
+  "b_enzymes": "10",
+  "n_stereocentres": 8
+ },
+ {
+  "skeleton": "ZCZXOHUILRHRQJ",
+  "kind": "stereoisomers",
+  "a_chebi": "136590",
+  "a_name": "4-<em>O</em>-phosphonato-<small>D</small>-threonate(3\u2212)",
+  "a_smiles": "O=C([O-])[C@@H](O)[C@H](O)COP(=O)([O-])[O-]",
+  "a_ec": [
+   "EC:1.1.1.408"
+  ],
+  "a_rhea": [
+   "RHEA:52396"
+  ],
+  "a_eq": "4-O-phospho-D-threonate + NAD(+) = dihydroxyacetone phosphate + CO2 + NADH",
+  "a_enzymes": "67",
+  "b_chebi": "58766",
+  "b_name": "4-<em>O</em>-phosphonato-<small>D</small>-erythronate(3\u2212)",
+  "b_smiles": "O=C([O-])[C@H](O)[C@H](O)COP(=O)([O-])[O-]",
+  "b_ec": [
+   "EC:1.1.1.409"
+  ],
+  "b_rhea": [
+   "RHEA:52408"
+  ],
+  "b_eq": "4-phospho-D-erythronate + NAD(+) = dihydroxyacetone phosphate + CO2 + NADH",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "SDMLCXJKAYFHQM",
+  "kind": "stereoisomers",
+  "a_chebi": "138043",
+  "a_name": "(2<i>E</i>,6<i>E</i>)-hedycaryol",
+  "a_smiles": "C/C1=C\\C[C@H](C(C)(C)O)CC/C(C)=C/CC1",
+  "a_ec": [
+   "EC:4.2.3.174"
+  ],
+  "a_rhea": [
+   "RHEA:54056"
+  ],
+  "a_eq": "(2E,6E)-farnesyl diphosphate + H2O = (2E,6E)-hedycaryol + diphosphate",
+  "a_enzymes": "2",
+  "b_chebi": "138044",
+  "b_name": "(2<i>Z</i>,6<i>E</i>)-hedycaryol",
+  "b_smiles": "C/C1=C/C[C@H](C(C)(C)O)CC/C(C)=C/CC1",
+  "b_ec": [
+   "EC:4.2.3.187"
+  ],
+  "b_rhea": [
+   "RHEA:54060"
+  ],
+  "b_eq": "(2E,6E)-farnesyl diphosphate + H2O = (2Z,6E)-hedycaryol + diphosphate",
+  "b_enzymes": "1",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "VLRYIIPJIVGFIV",
+  "kind": "stereoisomers",
+  "a_chebi": "138945",
+  "a_name": "maniladiol",
+  "a_smiles": "[H][C@]12CC=C3[C@]4([H])CC(C)(C)CC[C@]4(C)[C@@H](O)C[C@@]3(C)[C@]1(C)CC[C@@]1([H])C(C)(C)[C@@H](O)CC[C@]21C",
+  "a_ec": [
+   "EC:1.14.14.63"
+  ],
+  "a_rhea": [
+   "RHEA:55440"
+  ],
+  "a_eq": "beta-amyrin + reduced [NADPH--hemoprotein reductase] + O2 = maniladiol + oxidized [NADPH--hemoprotein reductase] + H2O + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "140655",
+  "b_name": "16\u03b1-hydroxy-\u03b2-amyrin",
+  "b_smiles": "[H][C@]12CC=C3[C@]4([H])CC(C)(C)CC[C@]4(C)[C@H](O)C[C@@]3(C)[C@]1(C)CC[C@@]1([H])C(C)(C)[C@@H](O)CC[C@]21C",
+  "b_ec": [
+   "EC:1.14.14.171"
+  ],
+  "b_rhea": [
+   "RHEA:56708"
+  ],
+  "b_eq": "beta-amyrin + reduced [NADPH--hemoprotein reductase] + O2 = 16alpha-hydroxy-beta-amyrin + oxidized [NADPH--hemoprotein reductase] + H2O + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 9
+ },
+ {
+  "skeleton": "QFBWOLBPVQLZEH",
+  "kind": "stereoisomers",
+  "a_chebi": "142956",
+  "a_name": "6-sulfo-\u03b1-<small>D</small>-quinovose(1\u2212)",
+  "a_smiles": "O=S(=O)([O-])C[C@H]1O[C@H](O)[C@H](O)[C@@H](O)[C@@H]1O",
+  "a_ec": [
+   "EC:5.1.3.43"
+  ],
+  "a_rhea": [
+   "RHEA:59228"
+  ],
+  "a_eq": "6-sulfo-alpha-D-quinovose = 6-sulfo-beta-D-quinovose",
+  "a_enzymes": "0",
+  "b_chebi": "190019",
+  "b_name": "6-sulfo-<small>D</small>-rhamnose(1\u2212)",
+  "b_smiles": "O=S(=O)([O-])C[C@H]1OC(O)[C@@H](O)[C@@H](O)[C@@H]1O",
+  "b_ec": [
+   "EC:5.3.1.31"
+  ],
+  "b_rhea": [
+   "RHEA:70707"
+  ],
+  "b_eq": "6-sulfo-beta-D-quinovose = 6-sulfo-D-rhamnose",
+  "b_enzymes": "19",
+  "n_stereocentres": 5
+ },
+ {
+  "skeleton": "OJGPEAXUHQRLNC",
+  "kind": "stereoisomers",
+  "a_chebi": "144485",
+  "a_name": "<i>cis</i>-<i>cis</i>-nepetalactol",
+  "a_smiles": "[H][C@@]12CC[C@H](C)[C@]1([H])C(O)OC=C2C",
+  "a_ec": [
+   "EC:5.5.1.35"
+  ],
+  "a_rhea": [
+   "RHEA:61420"
+  ],
+  "a_eq": "(S)-8-oxocitronellyl enol = cis-cis-nepetalactol",
+  "a_enzymes": "1",
+  "b_chebi": "71494",
+  "b_name": "<i>cis</i>-<i>trans</i>-nepetalactol",
+  "b_smiles": "[H][C@]12CC[C@H](C)[C@@]1([H])C(O)OC=C2C",
+  "b_ec": [
+   "EC:5.5.1.34"
+  ],
+  "b_rhea": [
+   "RHEA:61416"
+  ],
+  "b_eq": "(S)-8-oxocitronellyl enol = cis-trans-nepetalactol",
+  "b_enzymes": "2",
+  "n_stereocentres": 3
+ },
+ {
+  "skeleton": "CUVKIWGKVWHEEO",
+  "kind": "enantiomers",
+  "a_chebi": "144481",
+  "a_name": "(<i>S</i>)-8-oxocitronellyl enol",
+  "a_smiles": "C/C(C=O)=C\\CC[C@H](C)/C=C/O",
+  "a_ec": [
+   "EC:1.3.1.122"
+  ],
+  "a_rhea": [
+   "RHEA:62592"
+  ],
+  "a_eq": "(S)-8-oxocitronellyl enol + NADP(+) = (6E)-8-oxogeranial + NADPH + H(+)",
+  "a_enzymes": "34",
+  "b_chebi": "144487",
+  "b_name": "(<i>R</i>)-8-oxocitronellyl enol",
+  "b_smiles": "C/C(C=O)=C\\CC[C@@H](C)/C=C/O",
+  "b_ec": [
+   "EC:1.3.1.123"
+  ],
+  "b_rhea": [
+   "RHEA:61432"
+  ],
+  "b_eq": "(R)-8-oxocitronellyl enol + NADP(+) = (6E)-8-oxogeranial + NADPH + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "KWGRBVOPPLSCSI",
+  "kind": "stereoisomers",
+  "a_chebi": "132296",
+  "a_name": "pseudoephedrine(1+)",
+  "a_smiles": "C[NH2+][C@@H](C)[C@@H](O)c1ccccc1",
+  "a_ec": [
+   "EC:1.1.1.422"
+  ],
+  "a_rhea": [
+   "RHEA:62396"
+  ],
+  "a_eq": "(1S,2S)-pseudoephedrine + NAD(+) = (S)-2-methylamino-1-phenylpropan-1-one + NADH + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "57295",
+  "b_name": "(\u2212)-ephedrinium",
+  "b_smiles": "C[NH2+][C@@H](C)[C@H](O)c1ccccc1",
+  "b_ec": [
+   "EC:1.1.1.423"
+  ],
+  "b_rhea": [
+   "RHEA:62400"
+  ],
+  "b_eq": "(1R,2S)-ephedrine + NAD(+) = (S)-2-methylamino-1-phenylpropan-1-one + NADH + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "KWGRBVOPPLSCSI",
+  "kind": "stereoisomers",
+  "a_chebi": "149673",
+  "a_name": "(1<i>S</i>,2<i>R</i>)-ephedrine(1+)",
+  "a_smiles": "C[NH2+][C@H](C)[C@@H](O)c1ccccc1",
+  "a_ec": [
+   "EC:1.1.1.422"
+  ],
+  "a_rhea": [
+   "RHEA:64056"
+  ],
+  "a_eq": "(1S,2R)-ephedrine + NAD(+) = (R)-2-methylamino-1-phenylpropan-1-one + NADH + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "149674",
+  "b_name": "(1<i>R</i>,2<i>R</i>)-pseudoephedrine(1+)",
+  "b_smiles": "C[NH2+][C@H](C)[C@H](O)c1ccccc1",
+  "b_ec": [
+   "EC:1.1.1.423"
+  ],
+  "b_rhea": [
+   "RHEA:64064"
+  ],
+  "b_eq": "(1R,2R)-pseudoephedrine + NAD(+) = (R)-2-methylamino-1-phenylpropan-1-one + NADH + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 2
+ },
+ {
+  "skeleton": "ZBFFNPODXBJBPW",
+  "kind": "enantiomers",
+  "a_chebi": "149670",
+  "a_name": "(<i>S</i>)-phenylacetylcarbinol",
+  "a_smiles": "CC(=O)[C@@H](O)c1ccccc1",
+  "a_ec": [
+   "EC:1.1.1.422"
+  ],
+  "a_rhea": [
+   "RHEA:64060"
+  ],
+  "a_eq": "(S)-phenylacetylcarbinol + NAD(+) = 1-phenyl-1,2-propanedione + NADH + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "149671",
+  "b_name": "(<i>R</i>)-phenylacetylcarbinol",
+  "b_smiles": "CC(=O)[C@H](O)c1ccccc1",
+  "b_ec": [
+   "EC:1.1.1.423"
+  ],
+  "b_rhea": [
+   "RHEA:64068"
+  ],
+  "b_eq": "(R)-phenylacetylcarbinol + NAD(+) = 1-phenyl-1,2-propanedione + NADH + H(+)",
+  "b_enzymes": "1",
+  "n_stereocentres": 1
+ },
+ {
+  "skeleton": "PWFHKWYTYWTQSK",
+  "kind": "stereoisomers",
+  "a_chebi": "157670",
+  "a_name": "\u03b1-<small>D</small>-mannopyranosyl-(1\u21924)-\u03b1-<small>L</small>-rhamnopyranosyl-(1\u21923)-\u03b1-<small>D</small>-galactopyranosyl-diphospho-<em>ditrans</em>,<em>octacis</em>-undecaprenol(2\u2212)",
+  "a_smiles": "CC(C)=CCC/C(C)=C/CC/C(C)=C/CC/C(C)=C\\CC/C(C)=C\\CC/C(C)=C\\CC/C(C)=C\\CC/C(C)=C\\CC/C(C)=C\\CC/C(C)=C\\CC/C(C)=C\\COP(=O)([O-])OP(=O)([O-])O[C@H]1O[C@H](CO)[C@H](O)[C@H](O[C@@H]2O[C@@H](C)[C@H](O[C@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@@H]3O)[C@@H](O)[C@H]2O)[C@H]1O",
+  "a_ec": [
+   "EC:2.4.1.378"
+  ],
+  "a_rhea": [
+   "RHEA:66956"
+  ],
+  "a_eq": "alpha-L-rhamnosyl-(1->3)-alpha-D-galactosyl-1-diphospho-di-trans,octa-cis-undecaprenol + GDP-alpha-D-mannose = alpha-D-Man-(1->4)-alpha-L-Rha-(1->3)-alpha-D-Gal-di-trans,octa-cis-undecaprenyl diphosphate + GDP + H(+)",
+  "a_enzymes": "1",
+  "b_chebi": "167469",
+  "b_name": "\u03b2-<small>D</small>-mannopyranosyl-(1\u21924)-\u03b1-<small>L</small>-rhamnopyranosyl-(1\u21923)-\u03b1-<small>D</small>-galactopyranosyl-diphospho-<em>ditrans</em>,<em>octacis</em>-undecaprenol(2\u2212)",
+  "b_smiles": "CC(C)=CCC/C(C)=C/CC/C(C)=C/CC/C(C)=C\\CC/C(C)=C\\CC/C(C)=C\\CC/C(C)=C\\CC/C(C)=C\\CC/C(C)=C\\CC/C(C)=C\\CC/C(C)=C\\COP(=O)([O-])OP(=O)([O-])O[C@H]1O[C@H](CO)[C@H](O)[C@H](O[C@@H]2O[C@@H](C)[C@H](O[C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@@H]3O)[C@@H](O)[C@H]2O)[C@H]1O",
+  "b_ec": [
+   "EC:2.4.1.383"
+  ],
+  "b_rhea": [
+   "RHEA:66960"
+  ],
+  "b_eq": "alpha-L-rhamnosyl-(1->3)-alpha-D-galactosyl-1-diphospho-di-trans,octa-cis-undecaprenol + GDP-alpha-D-mannose = beta-D-Man-(1->4)-alpha-L-Rha-(1->3)-alpha-D-Gal-diphospho-di-trans,octa-cis-undecaprenol + GDP + H(+)",
+  "b_enzymes": "0",
+  "n_stereocentres": 15
+ }
+]
